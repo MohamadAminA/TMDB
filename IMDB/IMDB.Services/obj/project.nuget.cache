@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "aFbatk2aN8T0V97hQYPxj30rB1svbRuqKWlp3QB31dC9VjKoQWN1EhLONpjJHPUCsFujuNMyeRb3GoZ2Qafu7Q==",
+  "dgSpecHash": "VXYN8cjXEpsVAhwCMm8QDVmCGWQmxaCL1LWiqLet5uZQO6eBHSFOp8aYWUMvvsGFBHdlrwBYFrfquYeqO3bV9A==",
   "success": true,
   "projectFilePath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Services\\IMDB.Services.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\hp\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\tmdblib\\1.9.2\\tmdblib.1.9.2.nupkg.sha512"
+  ],
   "logs": []
 }
