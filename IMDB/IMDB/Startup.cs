@@ -2,8 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IMDB.DataLayer;
+using IMDB.Services.Api;
+using Infrastructure;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,6 +28,42 @@ namespace IMDB
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            #region Authorization
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            }).AddCookie(options =>
+            {
+                options.LoginPath = "/Login";
+                options.LogoutPath = "/Logout";
+            });
+            #endregion
+
+            #region DataBase Context
+            services.AddDbContext<ContextDB>(options =>
+                options.UseSqlServer(
+                    "Data Source=.;Initial Catalog=IMDB_DB;Integrated Security=true;MultipleActiveResultSets=true;",
+                    b => b.MigrationsAssembly("IMDB.DataLayer")),
+                    ServiceLifetime.Transient
+            );
+            #endregion
+
+            services.AddTransient<IMovie, MovieRepo>();
+
+
+            #region DataBase Context
+
+            services.AddDbContext<ContextDB>(options =>
+            {
+                options.UseSqlServer();
+            }
+            );
+
+            #endregion
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +81,11 @@ namespace IMDB
 
             app.UseRouting();
 
+            #region security
+            app.UseAuthentication();
+            app.UseAuthorization();
+            #endregion
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
