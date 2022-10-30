@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MrXyVAG/6MGtE2oTyOJ/WBBf78RayisZohQ18xpU1/nT87I+sBacPD9qggiJONwIxSTjUTekTdJriBq98/jC5w==",
+  "dgSpecHash": "01wpyECxfwr3fypB58OndWTTcwTIoJQnK04EKa1JBtq5LozhIqUw7WBe4ZtUBeeNn7HERSgwRDJ8ammlyE3LYw==",
   "success": true,
   "projectFilePath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.DataLayer\\IMDB.DataLayer.csproj",
   "expectedPackageFiles": [
@@ -100,7 +100,8 @@
     "C:\\Users\\hp\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\hp\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\hp\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\tmdblib\\1.9.2\\tmdblib.1.9.2.nupkg.sha512"
   ],
   "logs": []
 }

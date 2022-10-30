@@ -1763,6 +1763,22 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "TMDbLib/1.9.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/TMDbLib.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/TMDbLib.dll": {
+            "related": ".xml"
+          }
+        }
       }
     }
   },
@@ -6031,6 +6047,25 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "TMDbLib/1.9.2": {
+      "sha512": "WpOgYzM/I54eVNG94Zc9GpMcK3VSaFC9AEf45pbPj8KoxbA+7z5OUY96I9qXduPPr0ifqLYq9FIge5xSb0jCvQ==",
+      "type": "package",
+      "path": "tmdblib/1.9.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/TMDbLib.dll",
+        "lib/net45/TMDbLib.xml",
+        "lib/netstandard1.2/TMDbLib.dll",
+        "lib/netstandard1.2/TMDbLib.xml",
+        "lib/netstandard2.0/TMDbLib.dll",
+        "lib/netstandard2.0/TMDbLib.xml",
+        "lib/netstandard2.1/TMDbLib.dll",
+        "lib/netstandard2.1/TMDbLib.xml",
+        "tmdblib.1.9.2.nupkg.sha512",
+        "tmdblib.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -6041,7 +6076,8 @@
       "Microsoft.EntityFrameworkCore.Design >= 5.0.17",
       "Microsoft.EntityFrameworkCore.Relational >= 5.0.17",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.17",
-      "Microsoft.EntityFrameworkCore.Tools >= 5.0.17"
+      "Microsoft.EntityFrameworkCore.Tools >= 5.0.17",
+      "TMDbLib >= 1.9.2"
     ]
   },
   "packageFolders": {
@@ -6114,6 +6150,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[5.0.17, )"
+          },
+          "TMDbLib": {
+            "target": "Package",
+            "version": "[1.9.2, )"
           }
         },
         "imports": [

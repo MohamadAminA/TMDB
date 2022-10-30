@@ -4,6 +4,160 @@
     "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Services\\IMDB.Services.csproj": {}
   },
   "projects": {
+    "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.DataLayer\\IMDB.DataLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.DataLayer\\IMDB.DataLayer.csproj",
+        "projectName": "IMDB.DataLayer",
+        "projectPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.DataLayer\\IMDB.DataLayer.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.DataLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Analyzers": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "TMDbLib": {
+              "target": "Package",
+              "version": "[1.9.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj",
+        "projectName": "IMDB.Domain",
+        "projectPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "TMDbLib": {
+              "target": "Package",
+              "version": "[1.9.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Services\\IMDB.Services.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -28,6 +182,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj": {
+                "projectPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj"
+              },
               "C:\\Projects\\ASP.net\\IMDB\\IMDB\\Infrastructure\\Infrastructure.csproj": {
                 "projectPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\Infrastructure\\Infrastructure.csproj"
               }
@@ -96,7 +253,14 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.DataLayer\\IMDB.DataLayer.csproj": {
+                "projectPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.DataLayer\\IMDB.DataLayer.csproj"
+              },
+              "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj": {
+                "projectPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

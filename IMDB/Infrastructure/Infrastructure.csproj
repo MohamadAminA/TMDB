@@ -8,4 +8,9 @@
     <PackageReference Include="TMDbLib" Version="1.9.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IMDB.DataLayer\IMDB.DataLayer.csproj" />
+    <ProjectReference Include="..\IMDB.Domain\IMDB.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

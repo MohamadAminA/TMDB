@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using IMDB.DataLayer;
 using IMDB.Services.Api;
+using IMDB.Services.Database;
 using Infrastructure;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
@@ -52,6 +53,7 @@ namespace IMDB
             #endregion
 
             services.AddTransient<IMovie, MovieRepo>();
+            services.AddTransient<IUser, UserRepo>();
 
 
             #region DataBase Context

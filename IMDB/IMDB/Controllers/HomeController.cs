@@ -11,21 +11,22 @@ using Newtonsoft.Json;
 using TMDbLib.Objects.Movies;
 using System.IO;
 using System.Text;
+using Infrastructure;
 
 namespace IMDB.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IMovie _movie;
+        private readonly IUser _user;
+        public HomeController(IMovie movie, IUser user)
         {
-            _logger = logger;
+            _movie = movie;
+            _user = user;
         }
 
         public IActionResult Index()
         {
-
             return View();
         }
 

@@ -71,6 +71,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.17, )"
+            },
+            "TMDbLib": {
+              "target": "Package",
+              "version": "[1.9.2, )"
             }
           },
           "imports": [
