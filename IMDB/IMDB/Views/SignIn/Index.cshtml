@@ -1,16 +1,12 @@
 ﻿@model IMDB.Domain.CardViewModel.SignInViewModel
 @{
-    Layout = null;
+	ViewData["Title"] = "SignIn";
 }
 <!DOCTYPE html>
 <html>
-
 <head>
 
     <meta charset="UTF-8">
-
-    <title>signin_IMDB</title>
-
     <style>
 
 body{
@@ -32,12 +28,19 @@ body{
             bottom: -40px;
             width: auto;
             height: auto;
-            background-image: src("/20-Anniversary.jpg");
+            background-image: url("../wwwroot/20-Anniversary.jpg");
             background-size: cover;
             -webkit-filter: blur(5px);
             z-index: 0;
         }
 
+		.img {
+			pointer-events: none;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+		}
 .grad{
 	position: absolute;
 	top: -20px;
@@ -168,15 +171,15 @@ body{
     <br>
 
     <div class="login">
-        <form asp-controller="signin" asp-action="signinUser">
-            <input type="text" placeholder="username" asp-for="UserName"><br>
+        <form asp-controller="SignIn" asp-action="Index">
+            <input class="input-group" type="text" placeholder="username" asp-for="UserName"><br>
             <span asp-validation-for="UserName"></span><br/>
 
 
             <input type="password" placeholder="password" asp-for="Password"><br/>
             <span asp-validation-for="Password"></span><br />
 
-
+			<label asp-for="RememberMe">  </label> <input type="checkbox" placeholder="RememberMe" asp-for="RememberMe"> <br />
             <input type="submit" value="Login">
         </form>
     </div>

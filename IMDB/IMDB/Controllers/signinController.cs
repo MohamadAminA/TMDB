@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -6,14 +6,12 @@ using System.Net.Http.Headers;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using TMDbLib.Objects.Movies;
-using System.IO;
-using System.Text;
 using Infrastructure;
 using IMDB.Domain.CardViewModel;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
 
 namespace IMDB.Controllers
 {
@@ -26,33 +24,64 @@ namespace IMDB.Controllers
             _movie = movie;
             _user = user;
         }
+        public IActionResult Index()
+        {
+            return View();
+        }
         [HttpPost]
-        public IActionResult signinUser(SignInViewModel model)
+        public IActionResult Index(SignInViewModel model)
         {
             if (!ModelState.IsValid)
-                return View("Signin",model);
+                return View(model);
             var user = _user.GetUserByName(model.UserName);
             if (model.Password== user.Password)
             {
+                #region Set Cookie for Session
                 if (string.IsNullOrEmpty(this.Request.Cookies["SessionId"]))
                 {
                     var newSession = _movie.CreateSession();
                     Response.Cookies.Append("SessionId", newSession.GuestSessionId, new CookieOptions
                     {
-                        HttpOnly = true,
+                        HttpOnly = false,
                         Path = Request.PathBase.HasValue ? this.Request.PathBase.ToString() : "/",
                         Secure = Request.IsHttps,
                         Expires = newSession.ExpiresAt
                     });
-
                 }
+                #endregion
+                UserAuthentication(user.Id,user.Name,model.RememberMe);
             }
             else
             {
-                ModelState.AddModelError("Password","UserName or Password is not correct");
-                return View("Signin", model);
+                ModelState.AddModelError("Password","نام کاربری یا رمز اشتباه می باشد");
+                return View(model);
             }
-            return Ok();
+            return RedirectToAction("Index","Home");
         }
+        private List<Claim> UserAuthentication(int id,string userName,bool isRememberMe = false)
+        {
+            var claims = new List<Claim>()
+            {
+                new System.Security.Claims.Claim(ClaimTypes.Name,id.ToString()),
+                new System.Security.Claims.Claim(ClaimTypes.GivenName,userName)
+            };
+            ClaimsIdentity identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var principle = new ClaimsPrincipal(identity);
+            var properties = new AuthenticationProperties()
+            {
+                IsPersistent = isRememberMe
+            };
+            HttpContext.SignInAsync(principle, properties);
+            return claims;
+        }
+
+        #region Logout
+        [Route("/Logout")]
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index", "Home");
+        }
+        #endregion
     }
 }
