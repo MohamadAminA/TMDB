@@ -107,23 +107,15 @@ namespace IMDB.Services.Api
             return null;
         }
 
-        public bool RateMovie(int movieId,int userId, double rate)
+        public bool RateMovie(int movieId,int userId, double rate,string SessionId)
         {
             try
             {
                 var user = _user.GetUserById(userId);
-                if(user.ExpireSession<DateTime.Now||user.ExpireSession == DateTime.MinValue ||String.IsNullOrEmpty( user.GuestSessionId))
-                {
-                    var newSession = CreateSession();
-                    user.ExpireSession = newSession.ExpiresAt;
-                    user.GuestSessionId = newSession.GuestSessionId;
-                    _user.UpdateUser(user);
-                    _user.SaveChanges();
-                }
                 HttpClient httpClient = new HttpClient();
 
 
-                string path = $"https://api.themoviedb.org/3/movie/{movieId}/rating?{api_key}&guest_session_id={user.GuestSessionId}";
+                string path = $"https://api.themoviedb.org/3/movie/{movieId}/rating?{api_key}&guest_session_id={SessionId}";
 
                 #region Request Body
                 var requestData = new Dictionary<string, string>
@@ -217,7 +209,7 @@ namespace IMDB.Services.Api
             return null;
         }
 
-        private TMDbLib.Objects.Authentication.GuestSession CreateSession()
+        public TMDbLib.Objects.Authentication.GuestSession CreateSession()
         {
 
             HttpClient httpClient = new HttpClient();

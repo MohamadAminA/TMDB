@@ -21,8 +21,6 @@ namespace IMDB.DataLayer.Model
         [Required]
         [DataType(DataType.DateTime)]
         public DateTime RegisterDate { get; set; }
-        public string GuestSessionId { get; set; }
-        public DateTime ExpireSession { get; set; }
 
     }
     
