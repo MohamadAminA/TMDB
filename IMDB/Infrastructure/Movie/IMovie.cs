@@ -40,11 +40,17 @@ namespace Infrastructure
         /// <param name="userId">Current Loged in User id</param>
         /// <param name="rate"></param>
         /// <returns></returns>
-        public bool RateMovie(int movieId, int userId, double rate);
+        public bool RateMovie(int movieId, int userId, double rate,string SessionId);
 
         /// <summary>
         /// returns All Genres
         /// </summary>
         public TMDbLib.Objects.Genres.GenreContainer GetAllGenre();
+
+        /// <summary>
+        /// Create Guest Session Id For Rate movie
+        /// </summary>
+        /// <returns></returns>
+        public TMDbLib.Objects.Authentication.GuestSession CreateSession();
     }
 }

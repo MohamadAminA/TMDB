@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -13,6 +13,7 @@ using System.IO;
 using System.Text;
 using Infrastructure;
 using IMDB.Domain.CardViewModel;
+using Microsoft.AspNetCore.Http;
 
 namespace IMDB.Controllers
 {
@@ -33,7 +34,18 @@ namespace IMDB.Controllers
             var user = _user.GetUserByName(model.UserName);
             if (model.Password== user.Password)
             {
-                //login
+                if (string.IsNullOrEmpty(this.Request.Cookies["SessionId"]))
+                {
+                    var newSession = _movie.CreateSession();
+                    Response.Cookies.Append("SessionId", newSession.GuestSessionId, new CookieOptions
+                    {
+                        HttpOnly = true,
+                        Path = Request.PathBase.HasValue ? this.Request.PathBase.ToString() : "/",
+                        Secure = Request.IsHttps,
+                        Expires = newSession.ExpiresAt
+                    });
+
+                }
             }
             else
             {
@@ -42,6 +54,5 @@ namespace IMDB.Controllers
             }
             return Ok();
         }
-
     }
 }
