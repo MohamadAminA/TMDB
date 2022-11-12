@@ -27,7 +27,7 @@ namespace IMDB.Controllers
 
         public IActionResult Index()
         {
-            return View("testt");
+            return View();
         }
 
     }
