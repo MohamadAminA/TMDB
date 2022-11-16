@@ -39,27 +39,27 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" style="margin-left:-177px">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" id="textWhite" asp-area="" asp-controller="Home" asp-action="Index" style="background-color:dimgray ;  ">خانه</a>
+                                  <a class="nav-link text-dark" id="textWhite" asp-area="" asp-controller="Home" asp-action="Index" style="background-color:dimgray ;  ">خانه</a>
                         </li>
-                        @if (User.Identity.IsAuthenticated)
+                       @if (User.Identity.IsAuthenticated)
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" id="textWhite" asp-area="" asp-controller="Profile" asp-action="Index" style="background-color:dimgray ;  "> @(Html.Raw(User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.GivenName).Value)) خوش آمدید</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" id="textWhite" asp-controller="SignIn" asp-action="Logout" style="background-color:dimgray ;  ">خروج</a>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" id="textWhite" asp-area="" asp-controller="SignIn" asp-action="Index" style="background-color:dimgray ;  ">ورود</a>
-                            </li>
-                            <li>
-                                <a class="nav-link text-dark" id="textWhite" asp-area="" asp-controller="SignUp" asp-action="Index" style="background-color:dimgray ;  ">ثبت نام</a>
+        <li class="nav-item">
+            <a class="nav-link text-dark" id="textWhite" asp-area="" asp-controller="Profile" asp-action="Index" style="background-color:dimgray ;  "> @(Html.Raw(User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.GivenName).Value)) خوش آمدید</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" id="textWhite" asp-controller="SignIn" asp-action="Logout" style="background-color:dimgray ;  ">خروج</a>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" id="textWhite" asp-area="" asp-controller="SignIn" asp-action="Index" style="background-color:dimgray ;  ">ورود</a>
+        </li>
+        <li>
+            <a class="nav-link text-dark" id="textWhite" asp-area="" asp-controller="SignUp" asp-action="Index" style="background-color:dimgray ;  ">ثبت نام</a>
 
-                            </li>
-                        }
+        </li>
+    }
                     </ul>
                 </div>
             </div>
