@@ -34,7 +34,7 @@ namespace IMDB.Controllers
             if (!ModelState.IsValid)
                 return View(model);
             var user = _user.GetUserByName(model.UserName);
-            if (model.Password== user.Password)
+            if (user != null && !string.IsNullOrWhiteSpace(user.Password) && model.Password== user.Password)
             {
                 #region Set Cookie for Session
                 if (string.IsNullOrEmpty(this.Request.Cookies["SessionId"]))
