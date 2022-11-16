@@ -35,17 +35,15 @@
     <header class="header">
         <div class="container">
             <div class="header-area">
-                <div class="logo">
-                    <a href="index-2.html"><img src="assets/img/logo.png" alt="logo" /></a>
-                </div>
                 <div class="header-right">
-                    <form action="#">
-                        <select>
+                    <form asp-action="Index" asp-controller="SearchMovie">
+                        <select name="searchType">
                             <option value="Movies">Movies</option>
-                            <option value="Movies">Movies</option>
-                            <option value="Movies">Movies</option>
+@*                            <option value="Movies">Movies</option>
+                            <option value="Movies">Movies</option>*@
                         </select>
-                        <input type="text" />
+                        <input type="text" name="searchText" id="searchText" />
+                        
                         <button><i class="icofont icofont-search"></i></button>
                     </form>
                     <ul>
@@ -933,7 +931,7 @@
                         <ul>
                             <li><a href="#">Terms of Use</a></li>
                             <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Security</a></li>
+                            <li><a href="tel://09013348988">تماس با ما</a></li>
                         </ul>
                     </div>
                 </div>
@@ -964,11 +962,6 @@
         <div class="copyright">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 text-center text-lg-left">
-                        <div class="copyright-content">
-                            <p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
-                        </div>
-                    </div>
                     <div class="col-lg-6 text-center text-lg-right">
                         <div class="copyright-content">
                             <a href="#" class="scrollToTop">

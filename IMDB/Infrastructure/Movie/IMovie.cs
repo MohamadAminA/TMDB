@@ -7,6 +7,7 @@ using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
 using TMDbLib.Objects.Reviews;
+using TMDbLib.Objects.Trending;
 using static IMDB.Domain.DTOs.ApiDTO;
 using static IMDB.Domain.DTOs.MovieDTO;
 
@@ -72,5 +73,7 @@ namespace Infrastructure
         public APIListResult<Review> GetReviewsOfMovieById(int id, int page = 1);
 
         public Credits GetMovieCreditsById(int id);
+
+        public APIListResult<Movie> GetTrendingMovies(MediaType mediaType, TimeWindow period, int page = 1);
     }
 }

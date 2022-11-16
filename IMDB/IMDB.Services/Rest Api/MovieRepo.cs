@@ -16,6 +16,7 @@ using TMDbLib.Objects.Genres;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
 using TMDbLib.Objects.Reviews;
+using TMDbLib.Objects.Trending;
 using static System.Net.Mime.MediaTypeNames;
 using static IMDB.Domain.DTOs.ApiDTO;
 using static IMDB.Domain.DTOs.MovieDTO;
@@ -188,6 +189,33 @@ namespace IMDB.Services.Api
             }
             return null;
         }
+
+        public APIListResult<Movie> GetTrendingMovies(MediaType mediaType , TimeWindow period,int page = 1)
+        {
+
+            HttpClient httpClient = new HttpClient();
+
+
+            string path = $"https://api.themoviedb.org/3/trending/{mediaType}/{period}?{api_key}&page={page}";
+            path = path.ToLower();
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var res = response.Content.ReadAsStreamAsync().Result;
+
+                using Stream receiveStream = res;
+                using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                string strContent = readStream.ReadToEnd();
+
+                APIListResult<Movie> popMovies = Newtonsoft.Json.JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
+                return popMovies;
+            }
+            return null;
+        }
+
 
         public APIListResult<Person> GetPopularPeople(int page = 1)
         {

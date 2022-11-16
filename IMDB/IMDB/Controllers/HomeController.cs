@@ -13,6 +13,7 @@ using System.IO;
 using System.Text;
 using Infrastructure;
 using IMDB.Domain.CardViewModel;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace IMDB.Controllers
 {
@@ -35,6 +36,9 @@ namespace IMDB.Controllers
                 model.TopRatedMovies = _movie.GetTopRatedMovies(1);
                 model.LatestMovie = _movie.GetLatestMovies();
                 model.PopularPeople = _movie.GetPopularPeople();
+                model.TrendingMoviesOfWeek = _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie,TMDbLib.Objects.Trending.TimeWindow.Week);
+                model.TrendingMoviesOfDay = _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Day);
+        
                 return View(model);
             }
             catch (System.AggregateException)
