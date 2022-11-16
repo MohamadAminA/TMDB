@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Movies;
+using static IMDB.Domain.DTOs.ApiDTO;
 using static IMDB.Domain.DTOs.MovieDTO;
 
 namespace Infrastructure
@@ -52,5 +53,12 @@ namespace Infrastructure
         /// </summary>
         /// <returns></returns>
         public TMDbLib.Objects.Authentication.GuestSession CreateSession();
+
+        /// <summary>
+        /// Get trailler of movie
+        /// </summary>
+        /// <param name="id">id of movie</param>
+        /// <returns></returns>
+        public TrailersResult GetVideoById(int id);
     }
 }

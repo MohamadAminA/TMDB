@@ -32,14 +32,13 @@ namespace IMDB.Controllers
             {
                 HomeViewModel model = new HomeViewModel();
                 model.PopularMovies = _movie.GetPopularMovies(1);
-                var movies = model.PopularMovies.results;
-
+                return View(model);
             }
             catch (System.AggregateException)
             {
                 return View("NetError");
             }
-            return View();
+            
         }
 
     }

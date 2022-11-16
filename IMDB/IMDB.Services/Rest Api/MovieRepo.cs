@@ -81,6 +81,32 @@ namespace IMDB.Services.Api
             return null;
         }
 
+        public TrailersResult GetVideoById(int id)
+        {
+
+            HttpClient httpClient = new HttpClient();
+
+
+            string path = $"https://api.themoviedb.org/3/movie/{id}/videos?{api_key}&language=en-US";
+
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var res = response.Content.ReadAsStreamAsync().Result;
+
+                using Stream receiveStream = res;
+                using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                string strContent = readStream.ReadToEnd();
+
+                TrailersResult trailers = Newtonsoft.Json.JsonConvert.DeserializeObject<TrailersResult>(strContent);
+                return trailers;
+            }
+            return null;
+        }
+
         public MovieListResault GetPopularMovies(int page = 1)
         {
 
