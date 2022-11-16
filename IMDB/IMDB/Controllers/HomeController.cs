@@ -32,6 +32,9 @@ namespace IMDB.Controllers
             {
                 HomeViewModel model = new HomeViewModel();
                 model.PopularMovies = _movie.GetPopularMovies(1);
+                model.TopRatedMovies = _movie.GetTopRatedMovies(1);
+                model.LatestMovie = _movie.GetLatestMovies();
+                model.PopularPeople = _movie.GetPopularPeople();
                 return View(model);
             }
             catch (System.AggregateException)

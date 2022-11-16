@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
+using TMDbLib.Objects.Reviews;
 using static IMDB.Domain.DTOs.MovieDTO;
 
 namespace IMDB.Domain.CardViewModel
 {
-    public class HomeViewModel
+    public class MovieDetailsViewModel
     {
-        public APIListResult<Movie> PopularMovies { get; set; }
-        public APIListResult<Movie> TopRatedMovies { get; set; }
-        public Movie LatestMovie { get; set; }
-        public APIListResult<Person> PopularPeople { get; set; }
+        public Movie Movie{ get; set; }
+        public Credits Credits{ get; set; }
+        public APIListResult<Review> Reviews{ get; set; }
     }
 }

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.Services\\IMDB.Services.csproj": {}
+    "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Services\\IMDB.Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.DataLayer\\IMDB.DataLayer.csproj": {
+    "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.DataLayer\\IMDB.DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.DataLayer\\IMDB.DataLayer.csproj",
+        "projectUniqueName": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.DataLayer\\IMDB.DataLayer.csproj",
         "projectName": "IMDB.DataLayer",
-        "projectPath": "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.DataLayer\\IMDB.DataLayer.csproj",
-        "packagesPath": "C:\\Users\\Shams\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.DataLayer\\obj\\",
+        "projectPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.DataLayer\\IMDB.DataLayer.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Shams\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -87,7 +83,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -96,25 +93,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj": {
+    "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj",
+        "projectUniqueName": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj",
         "projectName": "IMDB.Domain",
-        "projectPath": "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj",
-        "packagesPath": "C:\\Users\\Shams\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.Domain\\obj\\",
+        "projectPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Shams\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -151,7 +144,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -160,25 +154,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.Services\\IMDB.Services.csproj": {
+    "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Services\\IMDB.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.Services\\IMDB.Services.csproj",
+        "projectUniqueName": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Services\\IMDB.Services.csproj",
         "projectName": "IMDB.Services",
-        "projectPath": "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.Services\\IMDB.Services.csproj",
-        "packagesPath": "C:\\Users\\Shams\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.Services\\obj\\",
+        "projectPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Services\\IMDB.Services.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Services\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Shams\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -192,11 +182,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj": {
-                "projectPath": "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj"
+              "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj": {
+                "projectPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj"
               },
-              "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Projects\\ASP.net\\IMDB\\IMDB\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -226,7 +216,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -235,25 +226,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Projects\\ASP.net\\IMDB\\IMDB\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Shams\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\Infrastructure\\obj\\",
+        "projectPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Shams\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -267,11 +254,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.DataLayer\\IMDB.DataLayer.csproj": {
-                "projectPath": "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.DataLayer\\IMDB.DataLayer.csproj"
+              "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.DataLayer\\IMDB.DataLayer.csproj": {
+                "projectPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.DataLayer\\IMDB.DataLayer.csproj"
               },
-              "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj": {
-                "projectPath": "C:\\Users\\Shams\\source\\repos\\project-1-anonymous-dev\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj"
+              "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj": {
+                "projectPath": "C:\\Projects\\ASP.net\\IMDB\\IMDB\\IMDB.Domain\\IMDB.Domain.csproj"
               }
             }
           }
@@ -297,7 +284,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -306,7 +294,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
