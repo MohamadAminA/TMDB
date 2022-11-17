@@ -57,7 +57,7 @@ namespace IMDB.Services.Database
 
         public User GetUserByName(string name)
         {
-            return _context.Users.FirstOrDefault(n => n.Name.Equals(name));
+            return _context.Users.FirstOrDefault(n => n.Name == name );
         }
 
         public bool IsUserExist(int id = 0, string name = "")

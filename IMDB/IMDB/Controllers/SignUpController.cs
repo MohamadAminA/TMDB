@@ -23,6 +23,11 @@ namespace IMDB.Controllers
         {
 			if (!ModelState.IsValid)
 				return View(model);
+			if (_user.IsUserExist(name: model.UserName))
+			{
+				ModelState.AddModelError("password","نام کاربری قبلا ثبت شده است");
+				return View(model);
+			}
 			_user.AddUser(new User()
 			{
 				Name = model.UserName,
