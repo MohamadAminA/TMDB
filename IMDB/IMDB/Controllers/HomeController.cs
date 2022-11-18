@@ -37,7 +37,7 @@ namespace IMDB.Controllers
             }
             catch (System.AggregateException)
             {
-                return View("NetError");
+                return View();
             }
             return View();
         }
