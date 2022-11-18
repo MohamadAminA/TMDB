@@ -43,7 +43,7 @@ namespace IMDB.Controllers
                 model.TrendingMoviesOfWeek = _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie,TMDbLib.Objects.Trending.TimeWindow.Week);
                 model.TrendingMoviesOfDay = _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Day);
         
-                return View(model);
+                return View( model);
             }
             catch (System.AggregateException)
             {
@@ -76,7 +76,7 @@ namespace IMDB.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("Password", "نام کاربری یا رمز اشتباه می باشد");
+                    ModelState.AddModelError("Password", "The username or password is incorrect");
                     return View(model);
                 }
                 return RedirectToAction("Index", "Home");

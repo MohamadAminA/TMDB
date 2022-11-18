@@ -10,17 +10,17 @@ namespace IMDB.Domain.CardViewModel
 {
 	public class SignUpViewModel
 	{
-        [DisplayName("نام کاربری")]
-        [Required(ErrorMessage = "لطفا {0} را وارد نمایید")]
+        [DisplayName("Username")]
+        [Required(ErrorMessage = "Please enter Enter the {0} ")]
         public string UserName { get; set; }
-        [DisplayName("رمز")]
+        [DisplayName("password")]
         [DataType(DataType.Password)]
-        [Required(ErrorMessage = "لطفا {0} را وارد نمایید")]
+        [Required(ErrorMessage = "Please enter Enter the {0} ")]
         public string Password { get; set; }
-        [DisplayName("تکرار رمز")]
+        [DisplayName("repeating of password")]
         [DataType(DataType.Password)]
-        [Compare("Password",ErrorMessage = "رمز با تکرار رمز مغایرت دارد")]
-        [Required(ErrorMessage = "لطفا {0} را وارد نمایید")]
+        [Compare("Password",ErrorMessage = "password not equlse repeating password")]
+        [Required(ErrorMessage = "enter Enter the {0}")]
         public string RepeatPassword { get; set; }
 
     }
