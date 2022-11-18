@@ -3,6 +3,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    Layout = null;
 }
 @model SignUpViewModel
 <!DOCTYPE html>
@@ -183,15 +184,15 @@
 
     <div class="login">
         <form asp-controller="Signup" asp-action="Index">
-            <input class="input-group" type="text" placeholder="نام کاربری" asp-for="UserName"><br>
+            <input class="input-group" type="text" placeholder="UserName" asp-for="UserName"><br>
             <span asp-validation-for="UserName" class="sdfaa"></span><br />
 
-            <input type="password" placeholder="رمز" asp-for="Password"><br />
+            <input type="password" placeholder="password" asp-for="Password"><br />
             <span asp-validation-for="Password" class="sdfaa"></span><br />
 
             <input type="password" placeholder="RepeatPassword" asp-for="RepeatPassword"><br />
             <span asp-validation-for="RepeatPassword"></span><br />
-            <input type="submit" value="ثبت نام">
+            <input type="submit" value="Enter">
 
         </form>
     </div>

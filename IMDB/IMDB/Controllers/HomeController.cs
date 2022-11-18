@@ -14,6 +14,10 @@ using System.Text;
 using Infrastructure;
 using IMDB.Domain.CardViewModel;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using Microsoft.AspNetCore.Http;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace IMDB.Controllers
 {
@@ -47,6 +51,60 @@ namespace IMDB.Controllers
             }
             
         }
+            [HttpPost]
+            public IActionResult loginfunc(SignInViewModel model)
+            {
+                if (!ModelState.IsValid)
+                    return View(model);
+                var user = _user.GetUserByName(model.UserName);
+                if (user != null && !string.IsNullOrWhiteSpace(user.Password) && model.Password == user.Password)
+                {
+                    #region Set Cookie for Session
+                    if (string.IsNullOrEmpty(this.Request.Cookies["SessionId"]))
+                    {
+                        var newSession = _movie.CreateSession();
+                        Response.Cookies.Append("SessionId", newSession.GuestSessionId, new CookieOptions
+                        {
+                            HttpOnly = false,
+                            Path = Request.PathBase.HasValue ? this.Request.PathBase.ToString() : "/",
+                            Secure = Request.IsHttps,
+                            Expires = newSession.ExpiresAt
+                        });
+                    }
+                    #endregion
+                    UserAuthentication(user.Id, user.Name, model.RememberMe);
+                }
+                else
+                {
+                    ModelState.AddModelError("Password", "نام کاربری یا رمز اشتباه می باشد");
+                    return View(model);
+                }
+                return RedirectToAction("Index", "Home");
+            }
+            private List<Claim> UserAuthentication(int id, string userName, bool isRememberMe = false)
+            {
+                var claims = new List<Claim>()
+            {
+                new System.Security.Claims.Claim(ClaimTypes.Name,id.ToString()),
+                new System.Security.Claims.Claim(ClaimTypes.GivenName,userName)
+            };
+                ClaimsIdentity identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var principle = new ClaimsPrincipal(identity);
+                var properties = new AuthenticationProperties()
+                {
+                    IsPersistent = isRememberMe
+                };
+                HttpContext.SignInAsync(principle, properties);
+                return claims;
+            }
 
+            #region Logout
+            [Route("/Logout")]
+            public IActionResult Logout()
+            {
+                HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+                return RedirectToAction("Index", "Home");
+            }
+            #endregion
+        }
     }
-}
