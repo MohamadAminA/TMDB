@@ -1,12 +1,39 @@
-﻿<!DOCTYPE HTML>
-<html lang="zxx">
-
+﻿@using IMDB.Domain.CardViewModel
+@model HomeViewModel
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
 </head>
 <body>
     <!-- Page loader -->
     <div id="preloader"></div>
     <!-- header section start -->
+    <header class="header">
+        <div class="container">
+            <div class="header-area">
+                <div class="header-right">
+                    <form asp-action="Index" asp-controller="SearchMovie">
+                        <select name="searchType">
+                            <option value="Movies">Movies</option>
+@*                            <option value="Movies">Movies</option>
+                            <option value="Movies">Movies</option>*@
+                        </select>
+                        <input type="text" name="searchText" id="searchText" />
+                        
+                        <button><i class="icofont icofont-search"></i></button>
+                    </form>
+                    <ul>
+                        <li><a href="#">Welcome Guest!</a></li>
+                        <li><a class="login-popup" href="#">Login</a></li>
+                    </ul>
+                </div>
+                <div class="menu-area">
+                    <div class="responsive-menu"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
     <div class="login-area">
         <div class="login-box">
             <a href="#"><i class="icofont icofont-close"></i></a>
@@ -880,7 +907,7 @@
                         <ul>
                             <li><a href="#">Terms of Use</a></li>
                             <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Security</a></li>
+                            <li><a href="tel://09013348988">تماس با ما</a></li>
                         </ul>
                     </div>
                 </div>
@@ -911,11 +938,6 @@
         <div class="copyright">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 text-center text-lg-left">
-                        <div class="copyright-content">
-                            <p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
-                        </div>
-                    </div>
                     <div class="col-lg-6 text-center text-lg-right">
                         <div class="copyright-content">
                             <a href="#" class="scrollToTop">

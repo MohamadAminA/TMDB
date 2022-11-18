@@ -14,6 +14,9 @@ using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Genres;
 using TMDbLib.Objects.Movies;
+using TMDbLib.Objects.People;
+using TMDbLib.Objects.Reviews;
+using TMDbLib.Objects.Trending;
 using static System.Net.Mime.MediaTypeNames;
 using static IMDB.Domain.DTOs.ApiDTO;
 using static IMDB.Domain.DTOs.MovieDTO;
@@ -81,7 +84,87 @@ namespace IMDB.Services.Api
             return null;
         }
 
-        public MovieListResault GetPopularMovies(int page = 1)
+
+        public Credits GetMovieCreditsById(int id)
+        {
+
+            HttpClient httpClient = new HttpClient();
+
+
+            string path = $"https://api.themoviedb.org/3/movie/{id}/credits?{api_key}&language=en-US";
+
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var res = response.Content.ReadAsStreamAsync().Result;
+
+                using Stream receiveStream = res;
+                using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                string strContent = readStream.ReadToEnd();
+
+                Credits Credits = Newtonsoft.Json.JsonConvert.DeserializeObject<Credits>(strContent);
+                return Credits;
+            }
+            
+            return null;
+        }
+
+        public APIListResult<Review> GetReviewsOfMovieById(int id,int page = 1)
+        {
+
+            HttpClient httpClient = new HttpClient();
+
+
+            string path = $"https://api.themoviedb.org/3/movie/{id}/reviews?{api_key}&language=en-US&page={page}";
+
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var res = response.Content.ReadAsStreamAsync().Result;
+
+                using Stream receiveStream = res;
+                using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                string strContent = readStream.ReadToEnd();
+
+                APIListResult<Review> movieReview = Newtonsoft.Json.JsonConvert.DeserializeObject<APIListResult<Review>>(strContent);
+                return movieReview;
+            }
+            return null;
+        }
+
+        public TrailersResult GetVideoById(int id)
+        {
+
+            HttpClient httpClient = new HttpClient();
+
+
+            string path = $"https://api.themoviedb.org/3/movie/{id}/videos?{api_key}&language=en-US";
+
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var res = response.Content.ReadAsStreamAsync().Result;
+
+                using Stream receiveStream = res;
+                using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                string strContent = readStream.ReadToEnd();
+
+                TrailersResult trailers = Newtonsoft.Json.JsonConvert.DeserializeObject<TrailersResult>(strContent);
+                return trailers;
+            }
+            return null;
+        }
+
+        public APIListResult<Movie> GetPopularMovies(int page = 1)
         {
 
             HttpClient httpClient = new HttpClient();
@@ -101,7 +184,113 @@ namespace IMDB.Services.Api
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                MovieListResault popMovies = Newtonsoft.Json.JsonConvert.DeserializeObject<MovieListResault>(strContent);
+                APIListResult<Movie> popMovies = Newtonsoft.Json.JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
+                return popMovies;
+            }
+            return null;
+        }
+
+        public APIListResult<Movie> GetTrendingMovies(MediaType mediaType , TimeWindow period,int page = 1)
+        {
+
+            HttpClient httpClient = new HttpClient();
+
+
+            string path = $"https://api.themoviedb.org/3/trending/{mediaType}/{period}?{api_key}&page={page}";
+            path = path.ToLower();
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var res = response.Content.ReadAsStreamAsync().Result;
+
+                using Stream receiveStream = res;
+                using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                string strContent = readStream.ReadToEnd();
+
+                APIListResult<Movie> popMovies = Newtonsoft.Json.JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
+                return popMovies;
+            }
+            return null;
+        }
+
+
+        public APIListResult<Person> GetPopularPeople(int page = 1)
+        {
+
+            HttpClient httpClient = new HttpClient();
+
+
+            string path = $"https://api.themoviedb.org/3/person/popular?{api_key}&language=en-US&page={page}";
+
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var res = response.Content.ReadAsStreamAsync().Result;
+
+                using Stream receiveStream = res;
+                using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                string strContent = readStream.ReadToEnd();
+
+                APIListResult<Person> popPeople = Newtonsoft.Json.JsonConvert.DeserializeObject<APIListResult<Person>>(strContent);
+                
+                return popPeople;
+            }
+            return null;
+        }
+
+        public Movie GetLatestMovies()
+        {
+
+            HttpClient httpClient = new HttpClient();
+
+
+            string path = $"https://api.themoviedb.org/3/movie/latest?{api_key}&language=en-US";
+
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var res = response.Content.ReadAsStreamAsync().Result;
+
+                using Stream receiveStream = res;
+                using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                string strContent = readStream.ReadToEnd();
+
+                Movie popMovies = Newtonsoft.Json.JsonConvert.DeserializeObject<Movie>(strContent);
+                return popMovies;
+            }
+            return null;
+        }
+
+        public APIListResult<Movie> GetTopRatedMovies(int page = 1)
+        {
+
+            HttpClient httpClient = new HttpClient();
+
+
+            string path = $"https://api.themoviedb.org/3/movie/top_rated?{api_key}&language=en-US&page={page}";
+
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var res = response.Content.ReadAsStreamAsync().Result;
+
+                using Stream receiveStream = res;
+                using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                string strContent = readStream.ReadToEnd();
+
+                APIListResult<Movie> popMovies = Newtonsoft.Json.JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
                 return popMovies;
             }
             return null;
@@ -159,7 +348,7 @@ namespace IMDB.Services.Api
 
         }
 
-        public MovieListResault SearchMovies(string txt, int page = 1)
+        public APIListResult<Movie> SearchMovies(string txt, int page = 1)
         {
             HttpClient httpClient = new HttpClient();
 
@@ -178,13 +367,13 @@ namespace IMDB.Services.Api
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                var movie = Newtonsoft.Json.JsonConvert.DeserializeObject<MovieListResault>(strContent);
+                var movie = Newtonsoft.Json.JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
                 return movie;
             }
             return null;
         }
 
-        public MovieListResault SimilarMovies(int movieId, int page = 1)
+        public APIListResult<Movie> SimilarMovies(int movieId, int page = 1)
         {
             HttpClient httpClient = new HttpClient();
 
@@ -203,7 +392,7 @@ namespace IMDB.Services.Api
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                var movie = Newtonsoft.Json.JsonConvert.DeserializeObject<MovieListResault>(strContent);
+                var movie = Newtonsoft.Json.JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
                 return movie;
             }
             return null;
