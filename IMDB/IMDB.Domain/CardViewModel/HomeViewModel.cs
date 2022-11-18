@@ -22,14 +22,14 @@ namespace IMDB.Domain.CardViewModel
         public APIListResult<Movie> TrendingEpisodeOfDay { get; set; }
         public APIListResult<Movie> TrendingEpisodeOfWeek { get; set; }
 
-        [DisplayName("نام کاربری")]
-        [Required(ErrorMessage = "لطفا {0} را وارد نمایید")]
+        [DisplayName("User Name")]
+        [Required(ErrorMessage = "Please enter Enter the {0} ")]
         public string UserName { get; set; }
-        [DisplayName("رمز")]
+        [DisplayName("Passwoed")]
         [DataType(DataType.Password)]
-        [Required(ErrorMessage = "لطفا {0} را وارد نمایید")]
+        [Required(ErrorMessage = "Please enter Enter the {0} ")]
         public string Password { get; set; }
-        [DisplayName("مرا به خاطر بسپار")]
+        [DisplayName("remember me")]
         public bool RememberMe { get; set; }
     }
 }

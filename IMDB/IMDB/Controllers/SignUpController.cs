@@ -25,7 +25,7 @@ namespace IMDB.Controllers
 				return View(model);
 			if (_user.IsUserExist(name: model.UserName))
 			{
-				ModelState.AddModelError("password","نام کاربری قبلا ثبت شده است");
+				ModelState.AddModelError("password", "Username is already registered");
 				return View(model);
 			}
 			_user.AddUser(new User()
