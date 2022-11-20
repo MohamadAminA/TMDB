@@ -75,5 +75,7 @@ namespace Infrastructure
         public Credits GetMovieCreditsById(int id);
 
         public APIListResult<Movie> GetTrendingMovies(MediaType mediaType, TimeWindow period, int page = 1);
+
+        public Person GetPersonDetailes(int person_id);
     }
 }
