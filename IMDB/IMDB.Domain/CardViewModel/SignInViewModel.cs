@@ -10,14 +10,14 @@ namespace IMDB.Domain.CardViewModel
 {
     public class SignInViewModel
     {
-        [DisplayName("نام کاربری")]
-        [Required(ErrorMessage ="لطفا {0} را وارد نمایید")]
+        [DisplayName("User name")]
+        [Required(ErrorMessage = "Please enter the {0}")]
         public string UserName { get; set; }
-        [DisplayName("رمز")]
+        [DisplayName("password")]
         [DataType(DataType.Password)]
-        [Required(ErrorMessage = "لطفا {0} را وارد نمایید")]
+        [Required(ErrorMessage = "Please enter the {0}")]
         public string Password { get; set; }
-        [DisplayName("مرا به خاطر بسپار")]
+        [DisplayName("remember me")]
         public bool RememberMe { get; set; }
     }
 }

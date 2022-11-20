@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,5 +21,15 @@ namespace IMDB.Domain.CardViewModel
         public APIListResult<Movie> TrendingMoviesOfDay { get; set; }
         public APIListResult<Movie> TrendingEpisodeOfDay { get; set; }
         public APIListResult<Movie> TrendingEpisodeOfWeek { get; set; }
+
+        [DisplayName("User Name")]
+        [Required(ErrorMessage = "Please enter Enter the {0} ")]
+        public string UserName { get; set; }
+        [DisplayName("Passwoed")]
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "Please enter Enter the {0} ")]
+        public string Password { get; set; }
+        [DisplayName("remember me")]
+        public bool RememberMe { get; set; }
     }
 }
