@@ -1,4 +1,28 @@
 ﻿@using IMDB.Domain.CardViewModel
+@using Infrastructure
+@using System;
+@using System.Collections.Generic;
+@using System.IO;
+@using System.Linq;
+@using System.Net.Http;
+@using System.Net.Http.Headers;
+@using System.Text;
+@using System.Threading.Tasks;
+@using IMDB.Domain.DTOs;
+@using Infrastructure;
+@using Newtonsoft.Json;
+@using TMDbLib.Objects;
+@using TMDbLib.Objects.Authentication;
+@using TMDbLib.Objects.General;
+@using TMDbLib.Objects.Genres;
+@using TMDbLib.Objects.Movies;
+@using TMDbLib.Objects.People;
+@using TMDbLib.Objects.Reviews;
+@using TMDbLib.Objects.Trending;
+@using static System.Net.Mime.MediaTypeNames;
+@using static IMDB.Domain.DTOs.ApiDTO;
+@using static IMDB.Domain.DTOs.MovieDTO;
+@using IMDB.Services.Api;
 @model HomeViewModel
 @{
     Layout = null;
@@ -43,23 +67,32 @@
             cursor: pointer;
             font-weight: 500;
         }
-
+        #oadAction {
+            padding-left = 25px ;
+        }
         #radiusImg {
             border-radius: 3%;
             height: 405px;
         }
+
         #radiusprofile {
-                border-radius: 170%;
-    height: 111px;
-    width: 50%;
-    margin-top: 0;
-}
+            border-radius: 170%;
+            height: 111px;
+            width: 50%;
+            margin-top: 0;
+        }
+
         #senoh {
             width: 255px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
+
+        #imgeRad {
+            border-radius: 25px;
+        }
+
         }
         }
         }
@@ -381,7 +414,7 @@
                 <div class="row hero-area-slide">
                     <div class="col-lg-6 col-md-5">
                         <div class="hero-area-content">
-                            <img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[1].PosterPath" alt="about" />
+                            <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[1].PosterPath" alt="about" />
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-7">
@@ -435,7 +468,7 @@
                 <div class="row hero-area-slide">
                     <div class="col-lg-6 col-md-5">
                         <div class="hero-area-content">
-                            <img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[0].PosterPath" alt="about" />
+                            <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[0].PosterPath" alt="about" />
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-7">
@@ -489,7 +522,7 @@
                 <div class="row hero-area-slide">
                     <div class="col-lg-6 col-md-5">
                         <div class="hero-area-content">
-                            <img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[2].PosterPath" alt="about" />
+                            <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[2].PosterPath" alt="about" />
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-7">
@@ -546,7 +579,7 @@
                     <div class="row hero-area-slide">
                         <div class="col-lg-6">
                             <div class="hero-area-content">
-                                <img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[2].PosterPath" alt="about" />
+                                <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[2].PosterPath" alt="about" />
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -602,7 +635,7 @@
                     <div class="row hero-area-slide">
                         <div class="col-lg-6">
                             <div class="hero-area-content">
-                                <img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[0].PosterPath" alt="about" />
+                                <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[0].PosterPath" alt="about" />
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -683,19 +716,22 @@
                 <div class="col-lg-9">
                     <div class="row portfolio-item">
                         @{
+                            MovieRepo keyMovie = new MovieRepo();
                             Random rd = new Random();
                             int rand_num = rd.Next(0, 3);
                             var arrayMovieCounter = rand_num;
+                            TrailersResult trailers = keyMovie.GetVideoById(Model.PopularMovies.results.ToArray()[arrayMovieCounter].Id);
+
                         }
                         <div class="col-md-4 col-sm-6 soon released">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
                                     <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(3, 6);
-                                        arrayMovieCounter = rand_num;
-                                    }
-                                    <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+
+                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
+
                                         <i class="icofont icofont-ui-play"></i>
+
                                     </a>
                                 </div>
                                 <div class="portfolio-content">
@@ -718,10 +754,15 @@
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
 
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(6, 9);
+                                    @{
+                                        rand_num = rd.Next(3, 6);
                                         arrayMovieCounter = rand_num;
-                                    }    <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                                        trailers = keyMovie.GetVideoById(Model.PopularMovies.results.ToArray()[arrayMovieCounter].Id);
+
+                                    }
+
+                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                 <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                                         <i class="icofont icofont-ui-play"></i>
                                     </a>
                                 </div>
@@ -743,10 +784,13 @@
                         <div class="col-md-4 col-sm-6 soon">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(9, 11);
+                                    @{ rand_num = rd.Next(6, 9);
                                         arrayMovieCounter = rand_num;
-                                    }  <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                                        trailers = keyMovie.GetVideoById(Model.PopularMovies.results.ToArray()[arrayMovieCounter].Id);
+
+                                    }
+                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                      <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                                         <i class="icofont icofont-ui-play"></i>
                                     </a>
                                 </div>
@@ -768,13 +812,16 @@
                         <div class="col-md-4 col-sm-6 top released">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(11, 14);
+                                    @{ rand_num = rd.Next(9, 11);
                                         arrayMovieCounter = rand_num;
-                                    }   <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
-                                    </a>
-                                </div>
+                                        trailers = keyMovie.GetVideoById(Model.PopularMovies.results.ToArray()[arrayMovieCounter].Id);
+
+                                    }
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                      <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
+                                            <i class="icofont icofont-ui-play"></i>
+                                        </a>
+                                    </div>
                                 <div class="portfolio-content">
                                     <h2 id="senoh">@Model.PopularMovies.results.ToArray()[arrayMovieCounter].Title</h2>
                                     <div class="review">
@@ -793,10 +840,14 @@
                         <div class="col-md-4 col-sm-6 released">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(14, 20);
+                                    @{ rand_num = rd.Next(11, 14);
                                         arrayMovieCounter = rand_num;
-                                    }   <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                                        trailers = keyMovie.GetVideoById(Model.PopularMovies.results.ToArray()[arrayMovieCounter].Id);
+
+                                    }
+                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                   
+                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                                         <i class="icofont icofont-ui-play"></i>
                                     </a>
                                 </div>
@@ -818,8 +869,13 @@
                         <div class="col-md-4 col-sm-6 soon top">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
+                                    @{ rand_num = rd.Next(14, 19);
+                                        arrayMovieCounter = rand_num;
+                                        trailers = keyMovie.GetVideoById(Model.PopularMovies.results.ToArray()[arrayMovieCounter].Id);
+
+                                    }
                                     <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                                         <i class="icofont icofont-ui-play"></i>
                                     </a>
                                 </div>
@@ -880,14 +936,14 @@
                         @{
                             rand_num = rd.Next(0, 3);
                             arrayMovieCounter = rand_num;
-                        }
+                            trailers = keyMovie.GetVideoById(Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].Id);
+
+                            }
                         <div class="col-md-4 col-sm-6 soon released">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
                                     <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(3, 6);
-                                        arrayMovieCounter = rand_num;
-                                    }  <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                                   <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                                         <i class="icofont icofont-ui-play"></i>
                                     </a>
                                 </div>
@@ -910,11 +966,13 @@
                         <div class="col-md-4 col-sm-6 top">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
-
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(6, 9);
+                                    @{ rand_num = rd.Next(3, 6);
                                         arrayMovieCounter = rand_num;
-                                    }    <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                                        trailers = keyMovie.GetVideoById(Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].Id);
+
+                                    }
+                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                       <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                                         <i class="icofont icofont-ui-play"></i>
                                     </a>
                                 </div>
@@ -936,10 +994,13 @@
                         <div class="col-md-4 col-sm-6 soon">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(9, 11);
+                                    @{ rand_num = rd.Next(6, 9);
                                         arrayMovieCounter = rand_num;
-                                    }     <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                                        trailers = keyMovie.GetVideoById(Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].Id);
+
+                                    }
+                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                         <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                                         <i class="icofont icofont-ui-play"></i>
                                     </a>
                                 </div>
@@ -961,10 +1022,13 @@
                         <div class="col-md-4 col-sm-6 top released">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(11, 14);
+                                    @{ rand_num = rd.Next(9, 11);
                                         arrayMovieCounter = rand_num;
-                                    }     <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                                        trailers = keyMovie.GetVideoById(Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].Id);
+
+                                    }
+                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                         <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                                         <i class="icofont icofont-ui-play"></i>
                                     </a>
                                 </div>
@@ -986,10 +1050,14 @@
                         <div class="col-md-4 col-sm-6 released">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(14, 20);
+                                    @{ rand_num = rd.Next(11, 14);
                                         arrayMovieCounter = rand_num;
-                                    }<a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                                        trailers = keyMovie.GetVideoById(Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].Id);
+
+                                    }
+                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                    
+                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                                         <i class="icofont icofont-ui-play"></i>
                                     </a>
                                 </div>
@@ -1011,8 +1079,12 @@
                         <div class="col-md-4 col-sm-6 soon top">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
+                                    @{ rand_num = rd.Next(14, 19);
+                                        arrayMovieCounter = rand_num;
+                                        trailers = keyMovie.GetVideoById(Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].Id);
+                                    }
                                     <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                                         <i class="icofont icofont-ui-play"></i>
                                     </a>
                                 </div>
@@ -1070,17 +1142,17 @@
                 <div class="col-lg-9">
                     <div class="row portfolio-item">
                         @{
-                             rand_num = rd.Next(0, 3);
-                             arrayMovieCounter = rand_num;
-                        }
+                            rand_num = rd.Next(0, 3);
+                            arrayMovieCounter = rand_num;
+                            trailers = keyMovie.GetVideoById(Model.PopularMovies.results.ToArray()[arrayMovieCounter].Id);
+
+                            }
                         <div class="col-md-4 col-sm-6 soon released">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
                                     <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(3, 6);
-                                        arrayMovieCounter = rand_num;
-                                    }
-                                    <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                                    
+                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                                         <i class="icofont icofont-ui-play"></i>
                                     </a>
                                 </div>
@@ -1103,11 +1175,13 @@
                         <div class="col-md-4 col-sm-6 top">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
-
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(6, 9);
+                                    @{ rand_num = rd.Next(3, 6);
                                         arrayMovieCounter = rand_num;
-                                    }    <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                                        trailers = keyMovie.GetVideoById(Model.PopularMovies.results.ToArray()[arrayMovieCounter].Id);
+
+                                        }
+                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+   <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                                         <i class="icofont icofont-ui-play"></i>
                                     </a>
                                 </div>
@@ -1129,10 +1203,13 @@
                         <div class="col-md-4 col-sm-6 soon">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(9, 11);
+                                    @{ rand_num = rd.Next(6, 9);
                                         arrayMovieCounter = rand_num;
-                                    }  <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                                        trailers = keyMovie.GetVideoById(Model.PopularMovies.results.ToArray()[arrayMovieCounter].Id);
+
+                                    }
+                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                      <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                                         <i class="icofont icofont-ui-play"></i>
                                     </a>
                                 </div>
@@ -1154,10 +1231,13 @@
                         <div class="col-md-4 col-sm-6 top released">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(11, 14);
+                                    @{ rand_num = rd.Next(9, 11);
                                         arrayMovieCounter = rand_num;
-                                    }   <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                                        trailers = keyMovie.GetVideoById(Model.PopularMovies.results.ToArray()[arrayMovieCounter].Id);
+
+                                    }
+                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                       <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                                         <i class="icofont icofont-ui-play"></i>
                                     </a>
                                 </div>
@@ -1179,10 +1259,13 @@
                         <div class="col-md-4 col-sm-6 released">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(14, 20);
+                                    @{ rand_num = rd.Next(11, 14);
                                         arrayMovieCounter = rand_num;
-                                    }   <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                                        trailers = keyMovie.GetVideoById(Model.PopularMovies.results.ToArray()[arrayMovieCounter].Id);
+
+                                    }
+                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                       <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                                         <i class="icofont icofont-ui-play"></i>
                                     </a>
                                 </div>
@@ -1204,8 +1287,13 @@
                         <div class="col-md-4 col-sm-6 soon top">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
+                                    @{ rand_num = rd.Next(14, 20);
+                                        arrayMovieCounter = rand_num;
+                                        trailers = keyMovie.GetVideoById(Model.PopularMovies.results.ToArray()[arrayMovieCounter].Id);
+
+                                    }
                                     <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                                         <i class="icofont icofont-ui-play"></i>
                                     </a>
                                 </div>
@@ -1266,15 +1354,13 @@
                         @{
                             rand_num = rd.Next(0, 3);
                             arrayMovieCounter = rand_num;
-                        }    <div class="col-md-4 col-sm-6 soon released">
+                            
+                            }    <div class="col-md-4 col-sm-6 soon released">
                             <div class="single-portfolio">
-                                <div class="single-portfolio-img">
-                                    <img id="radiusprofile" src="http://image.tmdb.org/t/p/w500/@Model.PopularPeople.results.ToArray()[arrayMovieCounter].ProfilePath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(3, 6);
-                                        arrayMovieCounter = rand_num;
-                                    } <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
-                                    </a>
+                                <div class="single-portfolio-img" id="oadAction">
+                                    <img id="radiusprofile" src="http://image.tmdb.org/t/p/w500/@Model.PopularPeople.results.ToArray()[arrayMovieCounter].ProfilePath" alt="portfolio" style="
+    padding-left: 25px;
+"/>
                                 </div>
                                 <div class="portfolio-content">
                                     <h2 id="senoh">@Model.PopularPeople.results.ToArray()[arrayMovieCounter].Name</h2>
@@ -1294,14 +1380,14 @@
 
                         <div class="col-md-4 col-sm-6 top">
                             <div class="single-portfolio">
-                                <div class="single-portfolio-img">
-
-                                    <img id="radiusprofile" src="http://image.tmdb.org/t/p/w500/@Model.PopularPeople.results.ToArray()[arrayMovieCounter].ProfilePath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(6, 9);
+                                <div class="single-portfolio-img"id="oadAction">
+                                    @{ rand_num = rd.Next(3, 6);
                                         arrayMovieCounter = rand_num;
-                                    } <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
-                                    </a>
+                                    }
+                                    <img id="radiusprofile" src="http://image.tmdb.org/t/p/w500/@Model.PopularPeople.results.ToArray()[arrayMovieCounter].ProfilePath" alt="portfolio" style="
+    padding-left: 25px;
+"/>
+                                     
                                 </div>
                                 <div class="portfolio-content">
                                     <h2 id="senoh">@Model.PopularPeople.results.ToArray()[arrayMovieCounter].Name</h2>
@@ -1320,13 +1406,15 @@
                         </div>
                         <div class="col-md-4 col-sm-6 soon">
                             <div class="single-portfolio">
-                                <div class="single-portfolio-img">
-                                    <img id="radiusprofile" src="http://image.tmdb.org/t/p/w500/@Model.PopularPeople.results.ToArray()[arrayMovieCounter].ProfilePath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(9, 11);
+                                <div class="single-portfolio-img"id="oadAction">
+                                    @{ rand_num = rd.Next(6, 9);
                                         arrayMovieCounter = rand_num;
-                                    }  <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
-                                    </a>
+
+                                    }
+                                    <img id="radiusprofile" src="http://image.tmdb.org/t/p/w500/@Model.PopularPeople.results.ToArray()[arrayMovieCounter].ProfilePath" alt="portfolio" style="
+    padding-left: 25px;
+"/>
+                                   
                                 </div>
                                 <div class="portfolio-content">
                                     <h2 id="senoh">@Model.PopularPeople.results.ToArray()[arrayMovieCounter].Name</h2>
@@ -1345,13 +1433,16 @@
                         </div>
                         <div class="col-md-4 col-sm-6 top released">
                             <div class="single-portfolio">
-                                <div class="single-portfolio-img">
-                                    <img id="radiusprofile" src="http://image.tmdb.org/t/p/w500/@Model.PopularPeople.results.ToArray()[arrayMovieCounter].ProfilePath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(11, 14);
+                                <div class="single-portfolio-img"id="oadAction">
+                                    @{ rand_num = rd.Next(9, 11);
                                         arrayMovieCounter = rand_num;
-                                    } <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
-                                    </a>
+
+
+                                    }
+                                    <img id="radiusprofile" src="http://image.tmdb.org/t/p/w500/@Model.PopularPeople.results.ToArray()[arrayMovieCounter].ProfilePath" alt="portfolio" style="
+    padding-left: 25px;
+"/>
+                                    
                                 </div>
                                 <div class="portfolio-content">
                                     <h2 id="senoh">@Model.PopularPeople.results.ToArray()[arrayMovieCounter].Name</h2>
@@ -1370,13 +1461,15 @@
                         </div>
                         <div class="col-md-4 col-sm-6 released">
                             <div class="single-portfolio">
-                                <div class="single-portfolio-img">
-                                    <img id="radiusprofile" src="http://image.tmdb.org/t/p/w500/@Model.PopularPeople.results.ToArray()[arrayMovieCounter].ProfilePath" alt="portfolio" />
-                                    @{ rand_num = rd.Next(14, 20);
+                                <div class="single-portfolio-img"id="oadAction">
+                                    @{ rand_num = rd.Next(11, 14);
                                         arrayMovieCounter = rand_num;
-                                    }  <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
-                                    </a>
+                                        
+                                    }
+                                    <img id="radiusprofile" src="http://image.tmdb.org/t/p/w500/@Model.PopularPeople.results.ToArray()[arrayMovieCounter].ProfilePath" alt="portfolio" style="
+    padding-left: 25px;
+"/>
+                                   
                                 </div>
                                 <div class="portfolio-content">
                                     <h2 id="senoh">@Model.PopularPeople.results.ToArray()[arrayMovieCounter].Name</h2>
@@ -1395,11 +1488,15 @@
                         </div>
                         <div class="col-md-4 col-sm-6 soon top">
                             <div class="single-portfolio">
-                                <div class="single-portfolio-img">
-                                    <img id="radiusprofile" src="http://image.tmdb.org/t/p/w500/@Model.PopularPeople.results.ToArray()[arrayMovieCounter].ProfilePath" alt="portfolio" />
-                                    <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
-                                    </a>
+                                <div class="single-portfolio-img"id="oadAction">
+                                    @{ rand_num = rd.Next(14, 20);
+                                        arrayMovieCounter = rand_num;
+
+                                    }
+                                    <img id="radiusprofile" src="http://image.tmdb.org/t/p/w500/@Model.PopularPeople.results.ToArray()[arrayMovieCounter].ProfilePath" alt="portfolio" style="
+    padding-left: 25px;
+"/>
+                                   
                                 </div>
                                 <div class="portfolio-content">
                                     <h2>Last Hero</h2>
@@ -1444,7 +1541,7 @@
                 <div class="col-md-9">
                     <div class="video-area">
                         <img src="assets/img/video/video1.png" alt="video" />
-                        <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                        <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                             <i class="icofont icofont-ui-play"></i>
                         </a>
                         <div class="video-text">
@@ -1467,7 +1564,7 @@
                         <div class="col-md-12 col-sm-6">
                             <div class="video-area">
                                 <img src="assets/img/video/video2.png" alt="video" />
-                                <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                                <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                                     <i class="icofont icofont-ui-play"></i>
                                 </a>
                             </div>
@@ -1475,7 +1572,7 @@
                         <div class="col-md-12 col-sm-6">
                             <div class="video-area">
                                 <img src="assets/img/video/video3.png" alt="video" />
-                                <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+                                <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
                                     <i class="icofont icofont-ui-play"></i>
                                 </a>
                             </div>

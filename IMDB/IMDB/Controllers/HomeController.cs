@@ -43,11 +43,11 @@ namespace IMDB.Controllers
                 model.TrendingMoviesOfWeek = _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie,TMDbLib.Objects.Trending.TimeWindow.Week);
                 model.TrendingMoviesOfDay = _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Day);
         
-                return View( model);
+                return View(model);
             }
             catch (System.AggregateException)
             {
-                return View();
+                return View("NetError");
             }
             
         }

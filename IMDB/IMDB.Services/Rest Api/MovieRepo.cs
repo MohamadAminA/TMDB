@@ -33,14 +33,17 @@ namespace IMDB.Services.Api
         {
             _user = user;   
         }
-
+        public MovieRepo()
+        {
+         
+        }
         public GenreContainer GetAllGenre()
         {
             HttpClient httpClient = new HttpClient();
 
 
             string path = $"https://api.themoviedb.org/3/genre/movie/list?{api_key}&language=en-US";
-
+                         
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -66,7 +69,7 @@ namespace IMDB.Services.Api
 
 
             string path = $"https://api.themoviedb.org/3/movie/{id}?{api_key}";
-
+                          
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -80,6 +83,7 @@ namespace IMDB.Services.Api
                 string strContent = readStream.ReadToEnd();
 
                 Movie movie = Newtonsoft.Json.JsonConvert.DeserializeObject<Movie>(strContent);
+                return movie;
             }
             return null;
         }
@@ -142,23 +146,17 @@ namespace IMDB.Services.Api
         {
 
             HttpClient httpClient = new HttpClient();
-
-
             string path = $"https://api.themoviedb.org/3/movie/{id}/videos?{api_key}&language=en-US";
-
-            httpClient.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
-
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            TrailersResult trailers = new TrailersResult();
             if (response.IsSuccessStatusCode)
             {
                 var res = response.Content.ReadAsStreamAsync().Result;
-
                 using Stream receiveStream = res;
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
-
-                TrailersResult trailers = Newtonsoft.Json.JsonConvert.DeserializeObject<TrailersResult>(strContent);
+                trailers = Newtonsoft.Json.JsonConvert.DeserializeObject<TrailersResult>(strContent);
                 return trailers;
             }
             return null;
@@ -425,6 +423,17 @@ namespace IMDB.Services.Api
 
             return null;
 
+        }
+
+        Movie IMovie.GetMovieById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        TrailersResult IMovie.GetVideoById(int id)
+        {
+            throw new NotImplementedException();
         }
 
 
