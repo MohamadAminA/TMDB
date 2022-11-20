@@ -23,6 +23,7 @@
 @using static IMDB.Domain.DTOs.ApiDTO;
 @using static IMDB.Domain.DTOs.MovieDTO;
 @using IMDB.Services.Api;
+@inject IMovie movieRepo
 @model HomeViewModel
 @{
     Layout = null;
@@ -692,6 +693,140 @@
             </div>
         </div>
     </section><!-- hero area end -->
+
+    <!--show movies section-->
+    <!--0-->
+
+    <section class="portfolio-area pt-60">
+        <div class="container">
+            <div class="row flexbox-center">
+                <div class="col-lg-6 text-center text-lg-left">
+                    <div class="section-title">
+                        <h1><i class="icofont icofont-movie"></i>The Most Famous </h1>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center text-lg-right">
+                    <div class="portfolio-menu">
+                        <ul>
+                            @*<li data-filter="*" class="active">Latest</li>*@
+                            <li data-filter=".soon" class="active">Popular</li>
+                            <li data-filter=".top">Top Rated</li>
+                            <li data-filter=".released">Trending Movies Of Week</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="row portfolio-item">
+                            @foreach (var item in Model.TopRatedMovies.results.Take(10))
+                            {
+                                <div class="col-md-4 col-sm-6 top">
+                            <div class="single-portfolio">
+                                <div class="single-portfolio-img">
+                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
+
+                                    <a href="https://www.youtube.com/watch?v=@movieRepo.GetVideoById(item.Id).Results.FirstOrDefault().Key" class="popup-youtube">
+
+                                        <i class="icofont icofont-ui-play"></i>
+
+                                    </a>
+                                </div>
+                                <div class="portfolio-content">
+                                    <h2 id="senoh">@item.Title</h2>
+                                    <div class="review">
+                                        <div class="author-review">
+                                            @for (int i = 0; i < item.VoteAverage; i++)
+                                                {
+                                                    <i class="icofont icofont-star"></i>
+                                                }
+                                            
+                                        </div>
+                                        <h4>@item.VoteCount voters</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                            }
+                                                        @foreach (var item in Model.PopularMovies.results.Skip(3).Take(10))
+                            {
+                                <div class="col-md-4 col-sm-6 soon">
+                            <div class="single-portfolio">
+                                <div class="single-portfolio-img">
+                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
+
+                                    <a href="https://www.youtube.com/watch?v=@movieRepo.GetVideoById(item.Id).Results.FirstOrDefault().Key" class="popup-youtube">
+
+                                        <i class="icofont icofont-ui-play"></i>
+
+                                    </a>
+                                </div>
+                                <div class="portfolio-content">
+                                    <h2 id="senoh">@item.Title</h2>
+                                    <div class="review">
+                                        <div class="author-review">
+                                            @for (int i = 0; i < item.VoteAverage; i++)
+                                                {
+                                                    <i class="icofont icofont-star"></i>
+                                                }
+                                            
+                                        </div>
+                                        <h4>@item.VoteCount voters</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                            }
+
+                                                                                    @foreach (var item in Model.TrendingMoviesOfWeek.results.Take(10))
+                            {
+                                <div class="col-md-4 col-sm-6 released">
+                            <div class="single-portfolio">
+                                <div class="single-portfolio-img">
+                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
+
+                                    <a href="https://www.youtube.com/watch?v=@movieRepo.GetVideoById(item.Id).Results.FirstOrDefault().Key" class="popup-youtube">
+
+                                        <i class="icofont icofont-ui-play"></i>
+
+                                    </a>
+                                </div>
+                                <div class="portfolio-content">
+                                    <h2 id="senoh">@item.Title</h2>
+                                    <div class="review">
+                                        <div class="author-review">
+                                            @for (int i = 0; i < item.VoteAverage; i++)
+                                                {
+                                                    <i class="icofont icofont-star"></i>
+                                                }
+                                            
+                                        </div>
+                                        <h4>@item.VoteCount voters</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                            }
+                        
+                       
+                    </div>
+                </div>
+                <div class="col-lg-3 text-center text-lg-left">
+                    <div class="portfolio-sidebar">
+                        <img src="assets/img/sidebar/sidebar1.png" alt="sidebar" />
+                        <img src="assets/img/sidebar/sidebar2.png" alt="sidebar" />
+                        <img src="assets/img/sidebar/sidebar3.png" alt="sidebar" />
+                        <img src="assets/img/sidebar/sidebar4.png" alt="sidebar" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- movie section end -->
+
     <!-- portfolio section start -->
     <!--1-->
     <section class="portfolio-area pt-60">

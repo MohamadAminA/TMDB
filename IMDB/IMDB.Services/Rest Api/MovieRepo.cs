@@ -451,17 +451,6 @@ namespace IMDB.Services.Api
 
         }
 
-        Movie IMovie.GetMovieById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        TrailersResult IMovie.GetVideoById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
 
         //        public void test()
         //        {
