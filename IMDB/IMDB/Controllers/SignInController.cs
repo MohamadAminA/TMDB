@@ -39,7 +39,7 @@ namespace IMDB.Controllers
                 #region Set Cookie for Session
                 if (string.IsNullOrEmpty(this.Request.Cookies["SessionId"]))
                 {
-                    var newSession = _movie.CreateSession();
+                    var newSession = _movie.CreateSession().Result;
                     Response.Cookies.Append("SessionId", newSession.GuestSessionId, new CookieOptions
                     {
                         HttpOnly = false,

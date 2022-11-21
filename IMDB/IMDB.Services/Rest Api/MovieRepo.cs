@@ -13,7 +13,6 @@ using TMDbLib.Objects;
 using TMDbLib.Objects.Authentication;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Genres;
-using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
 using TMDbLib.Objects.Reviews;
 using TMDbLib.Objects.Trending;
@@ -36,9 +35,8 @@ namespace IMDB.Services.Api
         }
         public MovieRepo()
         {
-         
         }
-        public GenreContainer GetAllGenre()
+        public async Task<GenreContainer> GetAllGenre()
         {
             HttpClient httpClient = new HttpClient();
 
@@ -48,22 +46,22 @@ namespace IMDB.Services.Api
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            HttpResponseMessage response = await  httpClient.GetAsync(path);
             if (response.IsSuccessStatusCode)
             {
-                var res = response.Content.ReadAsStreamAsync().Result;
+                var res = await response.Content.ReadAsStreamAsync();
 
                 using Stream receiveStream = res;
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                var ResponseResult = Newtonsoft.Json.JsonConvert.DeserializeObject<TMDbLib.Objects.Genres.GenreContainer>(strContent);
-                return ResponseResult;
+                var Respons = Newtonsoft.Json.JsonConvert.DeserializeObject<TMDbLib.Objects.Genres.GenreContainer>(strContent);
+                return Respons;
             }
             return null;
         }
 
-        public Movie GetMovieById(int id)
+        public async Task<Movie> GetMovieById(int id)
         {
 
             HttpClient httpClient = new HttpClient();
@@ -74,10 +72,10 @@ namespace IMDB.Services.Api
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            HttpResponseMessage response = await  httpClient.GetAsync(path);
             if (response.IsSuccessStatusCode)
             {
-                var res = response.Content.ReadAsStreamAsync().Result;
+                var res = await response.Content.ReadAsStreamAsync();
 
                 using Stream receiveStream = res;
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
@@ -90,7 +88,7 @@ namespace IMDB.Services.Api
         }
 
 
-        public Credits GetMovieCreditsById(int id)
+        public async Task<TMDbLib.Objects.Movies.Credits> GetMovieCreditsById(int id)
         {
 
             HttpClient httpClient = new HttpClient();
@@ -101,23 +99,23 @@ namespace IMDB.Services.Api
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            HttpResponseMessage response = await  httpClient.GetAsync(path);
             if (response.IsSuccessStatusCode)
             {
-                var res = response.Content.ReadAsStreamAsync().Result;
+                var res = await response.Content.ReadAsStreamAsync();
 
                 using Stream receiveStream = res;
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                Credits Credits = Newtonsoft.Json.JsonConvert.DeserializeObject<Credits>(strContent);
+                var Credits = Newtonsoft.Json.JsonConvert.DeserializeObject<TMDbLib.Objects.Movies.Credits>(strContent);
                 return Credits;
             }
             
             return null;
         }
 
-        public APIListResult<Review> GetReviewsOfMovieById(int id,int page = 1)
+        public async Task<APIListResult<Review>> GetReviewsOfMovieById(int id,int page = 1)
         {
 
             HttpClient httpClient = new HttpClient();
@@ -128,10 +126,10 @@ namespace IMDB.Services.Api
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            HttpResponseMessage response = await  httpClient.GetAsync(path);
             if (response.IsSuccessStatusCode)
             {
-                var res = response.Content.ReadAsStreamAsync().Result;
+                var res = await response.Content.ReadAsStreamAsync();
 
                 using Stream receiveStream = res;
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
@@ -143,17 +141,17 @@ namespace IMDB.Services.Api
             return null;
         }
 
-        public TrailersResult GetVideoById(int id)
+        public  async Task<TrailersResult> GetVideoById(int id)
         {
 
             HttpClient httpClient = new HttpClient();
             string path = $"https://api.themoviedb.org/3/movie/{id}/videos?{api_key}&language=en-US";
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            HttpResponseMessage response = await  httpClient.GetAsync(path);
             TrailersResult trailers = new TrailersResult();
             if (response.IsSuccessStatusCode)
             {
-                var res = response.Content.ReadAsStreamAsync().Result;
+                var res = await response.Content.ReadAsStreamAsync();
                 using Stream receiveStream = res;
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
@@ -163,7 +161,7 @@ namespace IMDB.Services.Api
             return null;
         }
 
-        public APIListResult<Movie> GetPopularMovies(int page = 1)
+        public async Task<APIListResult<Movie>> GetPopularMovies(int page = 1)
         {
 
             HttpClient httpClient = new HttpClient();
@@ -174,10 +172,10 @@ namespace IMDB.Services.Api
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            HttpResponseMessage response = await  httpClient.GetAsync(path);
             if (response.IsSuccessStatusCode)
             {
-                var res = response.Content.ReadAsStreamAsync().Result;
+                var res = await response.Content.ReadAsStreamAsync();
 
                 using Stream receiveStream = res;
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
@@ -189,7 +187,7 @@ namespace IMDB.Services.Api
             return null;
         }
 
-        public APIListResult<Movie> GetTrendingMovies(MediaType mediaType , TimeWindow period,int page = 1)
+        public async Task<APIListResult<Movie>> GetTrendingMovies(MediaType mediaType , TimeWindow period,int page = 1)
         {
 
             HttpClient httpClient = new HttpClient();
@@ -200,10 +198,10 @@ namespace IMDB.Services.Api
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            HttpResponseMessage response = await  httpClient.GetAsync(path);
             if (response.IsSuccessStatusCode)
             {
-                var res = response.Content.ReadAsStreamAsync().Result;
+                var res = await response.Content.ReadAsStreamAsync();
 
                 using Stream receiveStream = res;
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
@@ -216,7 +214,7 @@ namespace IMDB.Services.Api
         }
 
 
-        public APIListResult<Person> GetPopularPeople(int page = 1)
+        public async Task<APIListResult<Person>> GetPopularPeople(int page = 1)
         {
 
             HttpClient httpClient = new HttpClient();
@@ -227,10 +225,10 @@ namespace IMDB.Services.Api
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            HttpResponseMessage response = await  httpClient.GetAsync(path);
             if (response.IsSuccessStatusCode)
             {
-                var res = response.Content.ReadAsStreamAsync().Result;
+                var res = await response.Content.ReadAsStreamAsync();
 
                 using Stream receiveStream = res;
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
@@ -243,7 +241,7 @@ namespace IMDB.Services.Api
             return null;
         }
 
-        public Movie GetLatestMovies()
+        public async Task<Movie> GetLatestMovies()
         {
 
             HttpClient httpClient = new HttpClient();
@@ -254,10 +252,10 @@ namespace IMDB.Services.Api
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            HttpResponseMessage response = await  httpClient.GetAsync(path);
             if (response.IsSuccessStatusCode)
             {
-                var res = response.Content.ReadAsStreamAsync().Result;
+                var res = await response.Content.ReadAsStreamAsync();
 
                 using Stream receiveStream = res;
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
@@ -269,7 +267,7 @@ namespace IMDB.Services.Api
             return null;
         }
 
-        public APIListResult<Movie> GetTopRatedMovies(int page = 1)
+        public async Task<APIListResult<Movie>> GetTopRatedMovies(int page = 1)
         {
 
             HttpClient httpClient = new HttpClient();
@@ -280,10 +278,10 @@ namespace IMDB.Services.Api
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            HttpResponseMessage response = await  httpClient.GetAsync(path);
             if (response.IsSuccessStatusCode)
             {
-                var res = response.Content.ReadAsStreamAsync().Result;
+                var res = await response.Content.ReadAsStreamAsync();
 
                 using Stream receiveStream = res;
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
@@ -295,7 +293,7 @@ namespace IMDB.Services.Api
             return null;
         }
 
-        public bool RateMovie(int movieId,int userId, double rate,string SessionId)
+        public async Task<bool> RateMovie(int movieId,int userId, double rate,string SessionId)
         {
             try
             {
@@ -325,17 +323,17 @@ namespace IMDB.Services.Api
                 httpClient.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = httpClient.SendAsync(request).Result;
+                HttpResponseMessage response = await httpClient.SendAsync(request);
                 if (!response.IsSuccessStatusCode)
                 {
-                    var res = response.Content.ReadAsStreamAsync().Result;
+                    var res = await response.Content.ReadAsStreamAsync();
 
                     using Stream receiveStream = res;
                     using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                     string strContent = readStream.ReadToEnd();
 
-                    var responseResult = Newtonsoft.Json.JsonConvert.DeserializeObject<ApiResponse>(strContent);
-                    throw new Exception(responseResult.status_message);
+                    var respons = Newtonsoft.Json.JsonConvert.DeserializeObject<ApiResponse>(strContent);
+                    throw new Exception(respons.status_message);
                 }
                 else
                     return true;
@@ -347,7 +345,7 @@ namespace IMDB.Services.Api
 
         }
 
-        public APIListResult<Movie> SearchMovies(string txt, int page = 1)
+        public async Task<APIListResult<Movie>> SearchMovies(string txt, int page = 1)
         {
             HttpClient httpClient = new HttpClient();
 
@@ -357,10 +355,10 @@ namespace IMDB.Services.Api
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            HttpResponseMessage response = await httpClient.GetAsync(path);
             if (response.IsSuccessStatusCode)
             {
-                var res = response.Content.ReadAsStreamAsync().Result;
+                var res = await response.Content.ReadAsStreamAsync();
 
                 using Stream receiveStream = res;
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
@@ -372,7 +370,7 @@ namespace IMDB.Services.Api
             return null;
         }
 
-        public Person GetPersonDetailes(int person_id)
+        public async Task<Person> GetPersonDetailes(int person_id)
         {
             HttpClient httpClient = new HttpClient();
 
@@ -382,10 +380,10 @@ namespace IMDB.Services.Api
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            HttpResponseMessage response = await httpClient.GetAsync(path);
             if (response.IsSuccessStatusCode)
             {
-                var res = response.Content.ReadAsStreamAsync().Result;
+                var res = await response.Content.ReadAsStreamAsync();
 
                 using Stream receiveStream = res;
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
@@ -397,7 +395,7 @@ namespace IMDB.Services.Api
             return null;
         }
 
-        public APIListResult<Movie> SimilarMovies(int movieId, int page = 1)
+        public async Task<APIListResult<Movie>> SimilarMovies(int movieId, int page = 1)
         {
             HttpClient httpClient = new HttpClient();
 
@@ -407,10 +405,10 @@ namespace IMDB.Services.Api
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            HttpResponseMessage response = await httpClient.GetAsync(path);
             if (response.IsSuccessStatusCode)
             {
-                var res = response.Content.ReadAsStreamAsync().Result;
+                var res = await response.Content.ReadAsStreamAsync();
 
                 using Stream receiveStream = res;
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
@@ -422,7 +420,7 @@ namespace IMDB.Services.Api
             return null;
         }
 
-        public TMDbLib.Objects.Authentication.GuestSession CreateSession()
+        public async Task<GuestSession> CreateSession()
         {
 
             HttpClient httpClient = new HttpClient();
@@ -434,17 +432,17 @@ namespace IMDB.Services.Api
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = httpClient.GetAsync(path).Result;
+            HttpResponseMessage response = await httpClient.GetAsync(path);
             if (response.IsSuccessStatusCode)
             {
-                var res = response.Content.ReadAsStreamAsync().Result;
+                var res = await response.Content.ReadAsStreamAsync();
 
                 using Stream receiveStream = res;
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                var responseResult = Newtonsoft.Json.JsonConvert.DeserializeObject<TMDbLib.Objects.Authentication.GuestSession>(strContent);
-                return responseResult;
+                var respons = Newtonsoft.Json.JsonConvert.DeserializeObject<TMDbLib.Objects.Authentication.GuestSession>(strContent);
+                return respons;
             }
 
             return null;
@@ -474,10 +472,10 @@ namespace IMDB.Services.Api
         //            var response = client.SendAsync(request);
 
         //            // To read the response as string
-        //            var responseString = response.Result.Content.ReadAsStringAsync().Result;
+        //            var responseString = await response.Content.ReadAsStringAsync();
 
         //            // To read the response as json
-        //            //var responseJson = response.Result.Content.ReadAsStringAsync<ResponseObject>().Result;
+        //            //var responseJson = await response.Content.ReadAsStringAsync<ResponseObject>();
         //        }
     }
 }

@@ -6,18 +6,10 @@ using System.Net.Http.Headers;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using TMDbLib.Objects.Movies;
-using System.IO;
-using System.Text;
 using Infrastructure;
 using IMDB.Domain.CardViewModel;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using Microsoft.AspNetCore.Http;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using IMDB.Domain.DTOs;
 
 namespace IMDB.Controllers
 {
@@ -31,72 +23,43 @@ namespace IMDB.Controllers
             _user = user;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             try
             {
                 HomeViewModel model = new HomeViewModel();
-                model.PopularMovies = _movie.GetPopularMovies(1);
-                model.TopRatedMovies = _movie.GetTopRatedMovies(1);
-                model.LatestMovie = _movie.GetLatestMovies();
-                model.PopularPeople = _movie.GetPopularPeople();
-                model.TrendingMoviesOfWeek = _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie,TMDbLib.Objects.Trending.TimeWindow.Week);
-                model.TrendingMoviesOfDay = _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Day);
-        
+
+                model.PopularMovies = await _movie.GetPopularMovies(1);
+                model.TopRatedMovies = await _movie.GetTopRatedMovies(1);
+                model.LatestMovie = await _movie.GetLatestMovies();
+                model.PopularPeople = await _movie.GetPopularPeople();
+                model.TrendingMoviesOfWeek = await _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Week);
+                model.TrendingMoviesOfDay = await _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Day);
+                foreach (MovieDTO.Movie movie in model.PopularMovies.results)
+                {
+                    movie.Key = (await _movie.GetVideoById(movie.Id)).Results.FirstOrDefault()?.Key;
+                }
+                foreach (MovieDTO.Movie movie in model.TopRatedMovies.results)
+                {
+                    movie.Key = (await _movie.GetVideoById(movie.Id)).Results.FirstOrDefault()?.Key;
+                }
+
+                model.LatestMovie.Key = (await _movie.GetVideoById(model.LatestMovie.Id)).Results.FirstOrDefault()?.Key;
+
+                foreach (MovieDTO.Movie movie in model.TrendingMoviesOfWeek.results)
+                {
+                    movie.Key = (await _movie.GetVideoById(movie.Id)).Results.FirstOrDefault()?.Key;
+                }
+                foreach (MovieDTO.Movie movie in model.TrendingMoviesOfDay.results)
+                {
+                    movie.Key = (await _movie.GetVideoById(movie.Id)).Results.FirstOrDefault()?.Key;
+                }
                 return View(model);
             }
-            catch (Exception)
+            catch (System.Net.Http.HttpRequestException)
             {
                 return View("NetError");
             }
-            
-        }
-            [HttpPost]
-            public IActionResult loginfunc(HomeViewModel model)
-            {
-                if (!ModelState.IsValid)
-                    return View(model);
-                var user = _user.GetUserByName(model.UserName);
-                if (user != null && !string.IsNullOrWhiteSpace(user.Password) && model.Password == user.Password)
-                {
-                    #region Set Cookie for Session
-                    if (string.IsNullOrEmpty(this.Request.Cookies["SessionId"]))
-                    {
-                        var newSession = _movie.CreateSession();
-                        Response.Cookies.Append("SessionId", newSession.GuestSessionId, new CookieOptions
-                        {
-                            HttpOnly = false,
-                            Path = Request.PathBase.HasValue ? this.Request.PathBase.ToString() : "/",
-                            Secure = Request.IsHttps,
-                            Expires = newSession.ExpiresAt
-                        });
-                    }
-                    #endregion
-                    UserAuthentication(user.Id, user.Name, model.RememberMe);
-                }
-                else
-                {
-                    ModelState.AddModelError("Password", "The username or password is incorrect");
-                    return View("Index",model);
-                }
-                return RedirectToAction("Index", "Home");
-            }
-            private List<Claim> UserAuthentication(int id, string userName, bool isRememberMe = false)
-            {
-                var claims = new List<Claim>()
-            {
-                new System.Security.Claims.Claim(ClaimTypes.Name,id.ToString()),
-                new System.Security.Claims.Claim(ClaimTypes.GivenName,userName)
-            };
-                ClaimsIdentity identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                var principle = new ClaimsPrincipal(identity);
-                var properties = new AuthenticationProperties()
-                {
-                    IsPersistent = isRememberMe
-                };
-                HttpContext.SignInAsync(principle, properties);
-                return claims;
-            }
-
         }
     }
+}

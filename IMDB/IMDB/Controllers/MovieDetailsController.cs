@@ -1,4 +1,5 @@
-﻿using IMDB.Domain.CardViewModel;
+﻿using System.Threading.Tasks;
+using IMDB.Domain.CardViewModel;
 using IMDB.Services.Api;
 using Infrastructure;
 using Microsoft.AspNetCore.Mvc;
@@ -13,12 +14,12 @@ namespace IMDB.Controllers
             _movie = movie;
         }
 
-        public IActionResult Index(int id)
+        public async Task<IActionResult> Index(int id)
         {
             MovieDetailsViewModel model = new MovieDetailsViewModel();
-            model.Movie = _movie.GetMovieById(id);
-            model.Credits = _movie.GetMovieCreditsById(id);
-            model.Reviews = _movie.GetReviewsOfMovieById(id);
+            model.Movie = await _movie.GetMovieById(id);
+            model.Credits = await _movie.GetMovieCreditsById(id);
+            model.Reviews = await _movie.GetReviewsOfMovieById(id);
             return View(model);
         }
     }
