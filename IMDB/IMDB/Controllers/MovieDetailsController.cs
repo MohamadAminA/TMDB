@@ -19,7 +19,7 @@ namespace IMDB.Controllers
             model.Movie = _movie.GetMovieById(id);
             model.Credits = _movie.GetMovieCreditsById(id);
             model.Reviews = _movie.GetReviewsOfMovieById(id);
-            return View();
+            return View(model);
         }
     }
 }
