@@ -43,7 +43,7 @@ namespace IMDB
             });
             #endregion
 
-            #region DataBase Context
+           #region DataBase Context
             services.AddDbContext<ContextDB>(options =>
                 options.UseSqlServer(
                     "Data Source=.;Initial Catalog=IMDB_DB;Integrated Security=true;MultipleActiveResultSets=true;",
@@ -51,7 +51,7 @@ namespace IMDB
                     ServiceLifetime.Transient
             );
             #endregion
-
+       
             services.AddTransient<IMovie, MovieRepo>();
             services.AddTransient<IUser, UserRepo>();
 
