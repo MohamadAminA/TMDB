@@ -86,7 +86,6 @@
         }
 
         #senoh {
-            width: 255px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -427,7 +426,7 @@
 
                             <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.Movie.PosterPath" alt="portfolio" />
 
-                            <a href="https://www.youtube.com/watch?v=@Model.trailers.Results[0].Key" class="popup-youtube" style=" right: 145px;">
+                            <a href="https://www.youtube.com/watch?v=@Model.Movie.Key" class="popup-youtube" style=" right: 145px;">
 
                                 <i class="icofont icofont-ui-play"></i>
 
@@ -561,7 +560,7 @@
                                                 {
                                                     int rand_num = rd.Next(0, 19);
                                                     var arrayMovieCounter = rand_num;
-                                                    TrailersResult trailers = keyMovie.GetVideoById(item.Id);
+                                                    TrailersResult trailers = keyMovie.GetVideoById(item.Id).Result;
 
 
                                                     <div class="col-md-4 col-sm-6 soon released">

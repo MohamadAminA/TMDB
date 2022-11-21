@@ -15,5 +15,6 @@ namespace IMDB.Domain.CardViewModel
         public Movie Movie{ get; set; }
         public TMDbLib.Objects.Movies.Credits Credits { get; set; }
         public APIListResult<Review> Reviews{ get; set; }
+        public APIListResult<Movie> SimilarMovie { get; set; }
     }
 }
