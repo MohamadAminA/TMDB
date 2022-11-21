@@ -10,33 +10,35 @@
 	<!-- Favicon Icon -->
 	<link rel="icon" type="image/png" href="assets/img/favcion.png" />
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" media="all" />
 	<!-- Slick nav CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/slicknav.min.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/slicknav.min.css" media="all" />
 	<!-- Iconfont CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/icofont.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/icofont.css" media="all" />
 	<!-- Owl carousel CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/owl.carousel.css">
 	<!-- Popup CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/magnific-popup.css">
 	<!-- Main style CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css" media="all" />
 	<!-- Responsive CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/responsive.css" media="all" />
+
 	<!--[if lt IE 9]>
 	  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	<style>
-        #senoh {
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        body {
-            background: linear-gradient(45deg, black, gray,black);
-        }
-    </style>
+		#senoh {
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+
+		body {
+			background: linear-gradient(45deg, black, gray,black);
+		}
+	</style>
 	@RenderSection("Header",false)
 </head>
 <body>
@@ -53,32 +55,32 @@
 					<form action="#">
 						<select>
 							<option value="Movies">Movies</option>
-							<option value="Movies">Movies</option>
-							<option value="Movies">Movies</option>
+							<option value="Movies">Casts</option>
+							<option value="Movies">Genre</option>
 						</select>
 						<input type="text" />
 						<button><i class="icofont icofont-search"></i></button>
 					</form>
 
 					<ul>
-											                @if (User.Identity.IsAuthenticated)
-                {
+						@if (User.Identity.IsAuthenticated)
+						{
 
-					<li>
-                    <a asp-area="" asp-controller="Profile" asp-action="Index" style="margin-left: 25px;">Welcome @(Html.Raw(User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.GivenName).Value)) !</a>
-					</li>
+							<li>
+								<a asp-area="" asp-controller="Profile" asp-action="Index" style="margin-left: 25px;">Welcome @(Html.Raw(User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.GivenName).Value)) !</a>
+							</li>
 							<li>
 								<a href="/Logout">Exit</a>
 							</li>
-                }
-                else
-                {
+						}
+						else
+						{
 							<li><a class="theme-btn" asp-controller="SignIn" asp-action="Index" style="margin-left: 48px;">Login</a></li>
 							<li><a asp-controller="SignUp" asp-action="Index">signUp</a></li>
 
-                }
-						
-						
+						}
+
+
 					</ul>
 				</div>
 				<div class="menu-area">
@@ -86,15 +88,13 @@
 					<div class="mainmenu">
 						<ul id="primary-menu">
 							<li><a class="active" href="index-2.html">Home</a></li>
-							<li><a href="movies.html">Movies</a></li>
-							<li><a href="celebrities.html">CelebritiesList</a></li>
-							<li><a href="top-movies.html">Top Movies</a></li>
-							<li><a href="blog.html">News</a></li>
+							<li><a href="#">CelebritiesList</a></li>
+							<li><a href="/MovieDetails/Index/882598">Movie Details</a></li>
 							<li>
-								<a href="#">Pages <i class="icofont icofont-simple-down"></i></a>
+								<a href="#">Movies <i class="icofont icofont-simple-down"></i></a>
 								<ul>
-									<li><a href="blog-details.html">Blog Details</a></li>
-									<li><a href="movie-details.html">Movie Details</a></li>
+									<li><a href="#">Popular Movies</a></li>
+									<li><a href="#">Top Movies</a></li>
 								</ul>
 							</li>
 
@@ -105,7 +105,7 @@
 		</div>
 	</header>
 
-    @RenderBody()
+	@RenderBody()
 
 	<!-- footer section start -->
 	<footer class="footer">
@@ -172,19 +172,19 @@
 		</div>
 	</footer><!-- footer section end -->
 	<!-- jquery main JS -->
-	<script src="assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.min.js"></script>
 	<!-- Bootstrap JS -->
-	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
 	<!-- Slick nav JS -->
-	<script src="assets/js/jquery.slicknav.min.js"></script>
+	<script src="/assets/js/jquery.slicknav.min.js"></script>
 	<!-- owl carousel JS -->
-	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="/assets/js/owl.carousel.min.js"></script>
 	<!-- Popup JS -->
-	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="/assets/js/jquery.magnific-popup.min.js"></script>
 	<!-- Isotope JS -->
-	<script src="assets/js/isotope.pkgd.min.js"></script>
+	<script src="/assets/js/isotope.pkgd.min.js"></script>
 	<!-- main JS -->
-	<script src="assets/js/main.js"></script>
+	<script src="/assets/js/main.js"></script>
 
 	@RenderSection("Footer",false)
 </body>

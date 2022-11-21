@@ -14,180 +14,76 @@
 <section class="hero-area" id="home">
     <div class="container">
         <div class="hero-area-slider">
-            <div class="row hero-area-slide">
-                <div class="col-lg-6 col-md-5">
-                    <div class="hero-area-content">
-                        <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[1].PosterPath" alt="about" />
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-7">
-                    <div class="hero-area-content pr-50">
-                        <h2>@Model.PopularMovies.results.ToArray()[1].Title</h2>
-                        <div class="review">
-                            <div class="author-review">
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                            </div>
-                            <h4>180k voters</h4>
-                        </div>
-                        <p>@Model.PopularMovies.results.ToArray()[1].Overview</p>
-                        <h3>Cast:</h3>
-                        <div class="slide-cast">
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast1.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast2.html" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast3.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast4.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast5.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast6.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast7.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast text-center">
-                                5+
-                            </div>
-                        </div>
-                        <div class="slide-trailor">
-                            <h3>Watch Trailer</h3>
-                            <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
+            @foreach (var heroMovie in Model.PopularMovies.results.Take(8))
+            {
+                <div class="row hero-area-slide">
+                    <div class="col-lg-6 col-md-5">
+                        <div class="hero-area-content">
+                            <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@heroMovie.PosterPath" alt="about" />
+                            <a href="https://www.youtube.com/watch?v=@heroMovie.Key" class="popup-youtube">
+
+                                <i class="icofont icofont-ui-play"></i>
+
+                            </a>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row hero-area-slide">
-                <div class="col-lg-6 col-md-5">
-                    <div class="hero-area-content">
-                        <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[0].PosterPath" alt="about" />
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-7">
-                    <div class="hero-area-content pr-50">
-                        <h2>@Model.PopularMovies.results.ToArray()[0].Title</h2>
-                        <div class="review">
-                            <div class="author-review">
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
+                    <div class="col-lg-6 col-md-7">
+                        <div class="hero-area-content pr-50">
+                            <h2>@heroMovie.Title</h2>
+                            <div class="review">
+                                <div class="author-review">
+                                    @for (int i = 0; i < ((heroMovie.VoteAverage == 10) ? (heroMovie.VoteAverage / 2) : (heroMovie.VoteAverage / 2) + 1); i++)
+                                    {
+                                        <i class="icofont icofont-star"></i>
+                                    }
+                                </div>
+                                <h4>@heroMovie.VoteCount voters</h4>
                             </div>
-                            <h4>180k voters</h4>
-                        </div>
-                        <p>@Model.PopularMovies.results.ToArray()[0].Overview</p>
-                        <h3>Cast:</h3>
-                        <div class="slide-cast">
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast1.png" alt="about" />
+                            <p>@heroMovie.Overview</p>
+                            <h3>Cast:</h3>
+                            <div class="slide-cast">
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast1.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast3.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast4.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast5.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast6.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast7.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast text-center">
+                                    5+
+                                </div>
                             </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast2.html" alt="about" />
+                            <div class="slide-trailor">
+
+                                <a class="theme-btn theme-btn2" asp-controller="MovieDetails" asp-action="Index" asp-route-id="@heroMovie.Id"><i class="icofont icofont-play"></i> Watch Trailer</a>
                             </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast3.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast4.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast5.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast6.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast7.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast text-center">
-                                5+
-                            </div>
-                        </div>
-                        <div class="slide-trailor">
-                            <h3>Watch Trailer</h3>
-                            <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row hero-area-slide">
-                <div class="col-lg-6 col-md-5">
-                    <div class="hero-area-content">
-                        <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[2].PosterPath" alt="about" />
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-7">
-                    <div class="hero-area-content pr-50">
-                        <h2>@Model.PopularMovies.results.ToArray()[2].Title</h2>
-                        <div class="review">
-                            <div class="author-review">
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                            </div>
-                            <h4>180k voters</h4>
-                        </div>
-                        <p>@Model.PopularMovies.results.ToArray()[2].Overview</p>
-                        <h3>Cast:</h3>
-                        <div class="slide-cast">
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast1.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast2.html" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast3.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast4.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast5.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast6.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast7.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast text-center">
-                                5+
-                            </div>
-                        </div>
-                        <div class="slide-trailor">
-                            <h3>Watch Trailer</h3>
-                            <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
         <div class="hero-area-thumb">
             <div class="thumb-prev">
                 <div class="row hero-area-slide">
                     <div class="col-lg-6">
                         <div class="hero-area-content">
-                            <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[2].PosterPath" alt="about" />
+                            <img src="assets/img/slide3.png" alt="about" />
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="hero-area-content pr-50">
-                            <h2>@Model.PopularMovies.results.ToArray()[2].Title</h2>
+                            <h2>Last Avatar</h2>
                             <div class="review">
                                 <div class="author-review">
                                     <i class="icofont icofont-star"></i>
@@ -198,7 +94,7 @@
                                 </div>
                                 <h4>180k voters</h4>
                             </div>
-                            <p>@Model.PopularMovies.results.ToArray()[2].Overview</p>
+                            <p>She is a devil princess from the demon world. She grew up sheltered by her parents and doesn't really know how to be evil or any of the common actions,   She is unable to cry due to Keita's accidental first wish, despite needed for him to wish...</p>
                             <h3>Cast:</h3>
                             <div class="slide-cast">
                                 <div class="single-slide-cast">
@@ -238,12 +134,12 @@
                 <div class="row hero-area-slide">
                     <div class="col-lg-6">
                         <div class="hero-area-content">
-                            <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[0].PosterPath" alt="about" />
+                            <img src="assets/img/slide1.png" alt="about" />
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="hero-area-content pr-50">
-                            <h2>@Model.PopularMovies.results.ToArray()[1].Title</h2>
+                            <h2>The Deer God</h2>
                             <div class="review">
                                 <div class="author-review">
                                     <i class="icofont icofont-star"></i>
@@ -254,7 +150,7 @@
                                 </div>
                                 <h4>180k voters</h4>
                             </div>
-                            <p>@Model.PopularMovies.results.ToArray()[0].Overview</p>
+                            <p>She is a devil princess from the demon world. She grew up sheltered by her parents and doesn't really know how to be evil or any of the common actions,   She is unable to cry due to Keita's accidental first wish, despite needed for him to wish...</p>
                             <h3>Cast:</h3>
                             <div class="slide-cast">
                                 <div class="single-slide-cast">
@@ -309,7 +205,7 @@
                     <ul>
                         @*<li data-filter="*" class="active">Latest</li>*@
                         <li data-filter=".soon" class="active">Popular</li>
-                        <li data-filter=".top">Top Rated</li>
+                        <li data-filter=".toprated">Top Rated</li>
                         <li data-filter=".released">Trending Movies Of Week</li>
                         <li data-filter=".TrendingDay">Trending Movies Of Day</li>
                     </ul>
@@ -320,19 +216,13 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="row portfolio-item">
-                    @{
-                    int counter = 0 ;;
-                    }
-                    @foreach (var item in Model.PopularMovies.results.Skip(3).Take(12))
+                    @foreach (var item in Model.PopularMovies.results.Skip(8).Take(12))
                     {
-                        counter++;
-                        if (counter >13) { break; }
                         <div class="col-lg-3 col-md-4 col-sm-6 soon popular born">
                             <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img">
 
-                                        <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
                                             <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" style="border-radius: 15px;" />
 
                                             <a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
@@ -340,7 +230,6 @@
                                                 <i class="icofont icofont-ui-play"></i>
 
                                             </a>
-                                        </a>
                                     </div>
                                     <div class="portfolio-content">
                                         <h2 id="senoh">@item.Title</h2>
@@ -362,38 +251,35 @@
                     }
                     @foreach (var item in Model.TopRatedMovies.results.Take(12))
                     {
-                        <div class="col-lg-3 col-md-4 col-sm-6 top" style="display:none">
+                        <div class="col-lg-3 col-md-4 col-sm-6 toprated">
                             <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
-                                <div class="col-lg-3 col-md-4 col-sm-6 top" style="
-    display: none;
-">
-                                    <div class="single-portfolio">
-                                        <div class="single-portfolio-img">
-                                            <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" style="border-radius: 15px;"/>
+                                <div class="single-portfolio">
+                                    <div class="single-portfolio-img">
 
+                                           <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" style="border-radius: 15px;" />
+@* 
                                             <a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
 
                                                 <i class="icofont icofont-ui-play"></i>
 
-                                            </a>
-                                        </div>
-                                        <div class="portfolio-content">
-                                            <h2 id="senoh">@item.Title</h2>
-                                            <div class="review">
-                                                <div class="author-review">
-                                                    @for (int i = 0; i < ((item.VoteAverage == 10) ? (item.VoteAverage / 2) : (item.VoteAverage / 2) + 1); i++)
-                                                    {
-                                                        <i class="icofont icofont-star"></i>
-                                                    }
+                                            </a>*@
+                                    </div>
+                                    <div class="portfolio-content">
+                                        <h2 id="senoh">@item.Title</h2>
+                                        <div class="review">
+                                            <div class="author-review">
+                                                @for (int i = 0; i < ((item.VoteAverage == 10) ? (item.VoteAverage / 2) : (item.VoteAverage / 2) + 1); i++)
+                                                {
+                                                    <i class="icofont icofont-star"></i>
+                                                }
 
-                                                </div>
-                                                <h5>@item.VoteCount voters</h5>
                                             </div>
+                                            <h5>@item.VoteCount voters</h5>
                                         </div>
                                     </div>
+                                </div>
                             </a>
                         </div>
-
                     }
                     @foreach (var item in Model.TrendingMoviesOfWeek.results.Take(12))
                     {
@@ -402,12 +288,12 @@
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img">
                                         <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" style="border-radius: 15px;"/>
-
+@*
                                         <a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
 
                                             <i class="icofont icofont-ui-play"></i>
 
-                                        </a>
+                                        </a>*@
                                     </div>
                                     <div class="portfolio-content">
                                         <h2 id="senoh">@item.Title</h2>
@@ -433,13 +319,13 @@
                             <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img">
-                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" style="border-radius: 30px;"/>
-
-                                        <a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
+                                       <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" style="border-radius: 30px;"/>
+                                        @*
+                                    <a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
 
                                             <i class="icofont icofont-ui-play"></i>
 
-                                        </a>
+                                        </a>*@
                                     </div>
                                     <div class="portfolio-content">
                                         <h2 id="senoh">@item.Title</h2>
@@ -469,7 +355,7 @@
 <!--4-->
 <section class="portfolio-area pt-60">
     <div class="container">
-        <div class="row ">
+        <div class="row flexbox-center">
             <div class="col-lg-6 text-center text-lg-left">
                 <div class="section-title" id="4444">
                     <h1><i class="icofont icofont-movie"></i> Casts </h1>
@@ -490,7 +376,7 @@
                     @foreach (var cast in Model.PopularPeople.results.Take(8).OrderByDescending(n => n.Popularity))
                     {
 
-                        <div class="col-lg-3 col-md-4 col-sm-6 popular soon TrendingDay released top">
+                        <div class="col-lg-3 col-md-4 col-sm-6 popular soon TrendingDay released toprated">
                             <a asp-controller="CastDetails" asp-action="Index" asp-route-id="@cast.Id">
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img" id="oadAction">
