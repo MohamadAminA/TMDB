@@ -14,6 +14,7 @@
 <section class="hero-area" id="home">
     <div class="container">
         <div class="hero-area-slider">
+<<<<<<< HEAD
             @foreach (var heroMovie in Model.PopularMovies.results.Take(8))
             {
                 <div class="row hero-area-slide">
@@ -38,6 +39,26 @@
                                     }
                                 </div>
                                 <h4>@heroMovie.VoteCount voters</h4>
+=======
+            <div class="row hero-area-slide">
+                <div class="col-lg-6 col-md-5">
+                    <div class="hero-area-content">
+                        <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@Model.PopularMovies.results.ToArray()[0].Id">
+                            <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[1].PosterPath" alt="about" />
+                   </a>
+                            </div>
+                </div>
+                <div class="col-lg-6 col-md-7">
+                    <div class="hero-area-content pr-50">
+                        <h2>@Model.PopularMovies.results.ToArray()[1].Title</h2>
+                        <div class="review">
+                            <div class="author-review">
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+>>>>>>> 1319b8bd2d17339aee805685d3fc87c2e284e58d
                             </div>
                             <p>@heroMovie.Overview</p>
                             <h3>Cast:</h3>
@@ -71,14 +92,136 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
             }
+=======
+            </div>
+            <div class="row hero-area-slide">
+                <div class="col-lg-6 col-md-5">
+                    <div class="hero-area-content">
+                        <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@Model.PopularMovies.results.ToArray()[0].Id">
+                            <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[0].PosterPath" alt="about" />
+                            </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-7">
+                    <div class="hero-area-content pr-50">
+                        <h2>@Model.PopularMovies.results.ToArray()[0].Title</h2>
+                        <div class="review">
+                            <div class="author-review">
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                            </div>
+                            <h4>180k voters</h4>
+                        </div>
+                        <p>@Model.PopularMovies.results.ToArray()[0].Overview</p>
+                        <h3>Cast:</h3>
+                        <div class="slide-cast">
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast1.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast2.html" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast3.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast4.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast5.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast6.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast7.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast text-center">
+                                5+
+                            </div>
+                        </div>
+                        <div class="slide-trailor">
+                            <h3>Watch Trailer</h3>
+                            <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row hero-area-slide">
+                <div class="col-lg-6 col-md-5">
+                    <div class="hero-area-content">
+                        <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@Model.PopularMovies.results.ToArray()[0].Id">
+                            <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[2].PosterPath" alt="about" />
+                            </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-7">
+                    <div class="hero-area-content pr-50">
+                        <h2>@Model.PopularMovies.results.ToArray()[2].Title</h2>
+                        <div class="review">
+                            <div class="author-review">
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                            </div>
+                            <h4>180k voters</h4>
+                        </div>
+                        <p>@Model.PopularMovies.results.ToArray()[2].Overview</p>
+                        <h3>Cast:</h3>
+                        <div class="slide-cast">
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast1.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast2.html" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast3.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast4.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast5.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast6.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast7.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast text-center">
+                                5+
+                            </div>
+                        </div>
+                        <div class="slide-trailor">
+                            <h3>Watch Trailer</h3>
+                            <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+>>>>>>> 1319b8bd2d17339aee805685d3fc87c2e284e58d
         </div>
         <div class="hero-area-thumb">
             <div class="thumb-prev">
                 <div class="row hero-area-slide">
                     <div class="col-lg-6">
                         <div class="hero-area-content">
+<<<<<<< HEAD
                             <img src="assets/img/slide3.png" alt="about" />
+=======
+                            <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@Model.PopularMovies.results.ToArray()[0].Id">
+                                <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[2].PosterPath" alt="about" />
+                                </a>
+>>>>>>> 1319b8bd2d17339aee805685d3fc87c2e284e58d
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -134,7 +277,13 @@
                 <div class="row hero-area-slide">
                     <div class="col-lg-6">
                         <div class="hero-area-content">
+<<<<<<< HEAD
                             <img src="assets/img/slide1.png" alt="about" />
+=======
+                            <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@Model.PopularMovies.results.ToArray()[0].Id">
+                                <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[0].PosterPath" alt="about" />
+                                </a>
+>>>>>>> 1319b8bd2d17339aee805685d3fc87c2e284e58d
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -180,7 +329,7 @@
                             </div>
                             <div class="slide-trailor">
                                 <h3>Watch Trailer</h3>
-                                <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
+                               
                             </div>
                         </div>
                     </div>
