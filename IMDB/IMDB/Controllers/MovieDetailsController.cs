@@ -23,6 +23,9 @@ namespace IMDB.Controllers
             model.Reviews = await _movie.GetReviewsOfMovieById(id);
             model.SimilarMovie = await _movie.SimilarMovies(id);
             model.Movie.Key = (await _movie.GetVideoById(id)).Results[0]?.Key;
+            foreach(var input in model.SimilarMovie.results){
+                input.Key = (await _movie.GetVideoById(input.Id)).Results[0]?.Key;
+            }
             return View(model);
         }
     }
