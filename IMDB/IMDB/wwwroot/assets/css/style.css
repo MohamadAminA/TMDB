@@ -1296,3 +1296,42 @@ hr {
 /*--------------------------------------
 --------- Pre Loader Style END ---------
 ---------------------------------------*/
+
+#loginText {
+    background: #eb315a;
+    border: 1px solid #eb315a;
+    color: #fff;
+    border-radius: 35px;
+    padding: 5px 25px;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+#oadAction {
+    padding-left: 25px;
+}
+
+#radiusImg {
+    border-radius: 3%;
+    height: 405px;
+}
+
+#radiusprofile {
+    border-radius: 170%;
+    height: 111px;
+    width: 50%;
+    margin-top: 0;
+}
+
+#senoh {
+    width: 255px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#imgeRad {
+    border-radius: 25px;
+}

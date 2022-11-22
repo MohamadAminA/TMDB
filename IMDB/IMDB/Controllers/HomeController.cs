@@ -53,7 +53,7 @@ namespace IMDB.Controllers
 
         }
             [HttpPost]
-            public IActionResult loginfunc(SignInViewModel model)
+            public IActionResult loginfunc(HomeViewModel model)
             {
                 if (!ModelState.IsValid)
                     return View(model);
@@ -78,7 +78,7 @@ namespace IMDB.Controllers
                 else
                 {
                     ModelState.AddModelError("Password", "The username or password is incorrect");
-                    return View(model);
+                    return View("Index",model);
                 }
                 return RedirectToAction("Index", "Home");
             }
@@ -99,13 +99,5 @@ namespace IMDB.Controllers
                 return claims;
             }
 
-            #region Logout
-            [Route("/Logout")]
-            public IActionResult Logout()
-            {
-                HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-                return RedirectToAction("Index", "Home");
-            }
-            #endregion
         }
     }
