@@ -17,8 +17,10 @@
             <div class="row hero-area-slide">
                 <div class="col-lg-6 col-md-5">
                     <div class="hero-area-content">
-                        <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[1].PosterPath" alt="about" />
-                    </div>
+                        <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@Model.PopularMovies.results.ToArray()[0].Id">
+                            <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[1].PosterPath" alt="about" />
+                   </a>
+                            </div>
                 </div>
                 <div class="col-lg-6 col-md-7">
                     <div class="hero-area-content pr-50">
@@ -71,7 +73,9 @@
             <div class="row hero-area-slide">
                 <div class="col-lg-6 col-md-5">
                     <div class="hero-area-content">
-                        <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[0].PosterPath" alt="about" />
+                        <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@Model.PopularMovies.results.ToArray()[0].Id">
+                            <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[0].PosterPath" alt="about" />
+                            </a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-7">
@@ -125,7 +129,9 @@
             <div class="row hero-area-slide">
                 <div class="col-lg-6 col-md-5">
                     <div class="hero-area-content">
-                        <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[2].PosterPath" alt="about" />
+                        <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@Model.PopularMovies.results.ToArray()[0].Id">
+                            <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[2].PosterPath" alt="about" />
+                            </a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-7">
@@ -182,7 +188,9 @@
                 <div class="row hero-area-slide">
                     <div class="col-lg-6">
                         <div class="hero-area-content">
-                            <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[2].PosterPath" alt="about" />
+                            <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@Model.PopularMovies.results.ToArray()[0].Id">
+                                <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[2].PosterPath" alt="about" />
+                                </a>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -238,7 +246,9 @@
                 <div class="row hero-area-slide">
                     <div class="col-lg-6">
                         <div class="hero-area-content">
-                            <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[0].PosterPath" alt="about" />
+                            <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@Model.PopularMovies.results.ToArray()[0].Id">
+                                <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[0].PosterPath" alt="about" />
+                                </a>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -284,7 +294,7 @@
                             </div>
                             <div class="slide-trailor">
                                 <h3>Watch Trailer</h3>
-                                <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
+                               
                             </div>
                         </div>
                     </div>
