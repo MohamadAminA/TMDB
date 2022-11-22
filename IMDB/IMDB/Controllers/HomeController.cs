@@ -49,7 +49,8 @@ namespace IMDB.Controllers
             {
                 return View("NetError");
             }
-            
+         
+
         }
             [HttpPost]
             public IActionResult loginfunc(SignInViewModel model)

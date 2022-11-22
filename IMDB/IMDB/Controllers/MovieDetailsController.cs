@@ -18,6 +18,7 @@ namespace IMDB.Controllers
             MovieDetailsViewModel model = new MovieDetailsViewModel();
             model.Movie = _movie.GetMovieById(id);
             model.SimilarMovie = _movie.SimilarMovies(id);
+            model.trailers = _movie.GetVideoById(id);
             return View(model);
         }
     }

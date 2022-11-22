@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.People;
 using TMDbLib.Objects.Reviews;
+using static IMDB.Domain.DTOs.ApiDTO;
 using static IMDB.Domain.DTOs.MovieDTO;
 
 namespace IMDB.Domain.CardViewModel
@@ -14,5 +15,6 @@ namespace IMDB.Domain.CardViewModel
     {
         public Movie Movie{ get; set; }
        public APIListResult<Movie> SimilarMovie { get; set; }
+        public TrailersResult trailers;
     }
 }
