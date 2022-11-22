@@ -16,6 +16,7 @@ namespace IMDB.Domain.CardViewModel
         public APIListResult<Movie> TopRatedMovies { get; set; }
         public Movie LatestMovie { get; set; }
         public APIListResult<Person> PopularPeople { get; set; }
+        public APIListResult<Person> BornTodayPeople { get; set; }
         public APIListResult<Movie> TrendingMoviesOfWeek { get; set; }
         public APIListResult<Movie> TrendingMoviesOfDay { get; set; }
         public APIListResult<Movie> TrendingEpisodeOfDay { get; set; }

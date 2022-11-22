@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using IMDB.Domain.CardViewModel;
 using IMDB.Services.Api;
 using Infrastructure;
@@ -20,7 +21,7 @@ namespace IMDB.Controllers
             model.Movie = await _movie.GetMovieById(id);
             model.Credits = await _movie.GetMovieCreditsById(id);
             model.Reviews = await _movie.GetReviewsOfMovieById(id);
-            model.similarMovie = await _movie.SimilarMovies(id);
+            model.SimilarMovie = await _movie.SimilarMovies(id);
             model.Movie.Key = (await _movie.GetVideoById(id)).Results[0]?.Key;
             return View(model);
         }

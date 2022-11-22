@@ -86,7 +86,6 @@
         }
 
         #senoh {
-            width: 255px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -561,7 +560,7 @@
                                                 {
                                                     int rand_num = rd.Next(0, 19);
                                                     var arrayMovieCounter = rand_num;
-                                                    TrailersResult trailers =await keyMovie.GetVideoById(item.Id);
+                                                    TrailersResult trailers = keyMovie.GetVideoById(item.Id).Result;
 
 
                                                     <div class="col-md-4 col-sm-6 soon released">

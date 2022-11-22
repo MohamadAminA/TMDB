@@ -324,9 +324,11 @@
 
 					@foreach (var item in Model.PopularMovies.results.Skip(3).Take(12))
 					{
-						<div class="col-lg-3 col-md-4 col-sm-6 soon popular">
+						<div class="col-lg-3 col-md-4 col-sm-6 soon popular born">
+							<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
 							<div class="single-portfolio">
 								<div class="single-portfolio-img">
+
 					<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
 									<img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
 
@@ -351,11 +353,14 @@
 									</div>
 								</div>
 							</div>
+							</a>
 						</div>
 
 					}
 					@foreach (var item in Model.TopRatedMovies.results.Take(12))
 					{
+						<div class="col-lg-3 col-md-4 col-sm-6 top" style="display:none">
+							<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
 						<div class="col-lg-3 col-md-4 col-sm-6 top" style="
     display: none;
 ">
@@ -383,12 +388,14 @@
 									</div>
 								</div>
 							</div>
+							</a>
 						</div>
 
 					}
 					@foreach (var item in Model.TrendingMoviesOfWeek.results.Take(12))
 					{
 						<div class="col-lg-3 col-md-4 col-sm-6 released" style="display:none">
+							<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
 							<div class="single-portfolio">
 								<div class="single-portfolio-img">
 									<img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
@@ -413,12 +420,14 @@
 									</div>
 								</div>
 							</div>
+							</a>
 						</div>
 
 					}
 					@foreach (var item in Model.TrendingMoviesOfDay.results.Take(12))
 					{
 						<div class="col-lg-3 col-md-4 col-sm-6 TrendingDay" style="display:none">
+							<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
 							<div class="single-portfolio">
 								<div class="single-portfolio-img">
 									<img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
@@ -443,6 +452,7 @@
 									</div>
 								</div>
 							</div>
+							</a>
 						</div>
 
 					}
@@ -478,6 +488,7 @@
 				{
 
 						<div class="col-lg-3 col-md-4 col-sm-6 popular soon TrendingDay released top">
+							<a asp-controller="CastDetails" asp-action="Index" asp-route-id="@cast.Id">
 						<div class="single-portfolio">
 							<div class="single-portfolio-img" id="oadAction">
 								<img id="radiusprofile" src="http://image.tmdb.org/t/p/w500/@cast.ProfilePath" alt="portfolio" @*style="
@@ -491,6 +502,7 @@
 								</div>
 							</div>
 						</div>
+							</a>
 					</div>
 				}
 			</div>
@@ -519,7 +531,7 @@
 						<i class="icofont icofont-ui-play"></i>
 					</a>
 					<div class="video-text">
-						<h2>Angle of Death</h2>
+						<h2>@Model.PopularMovies.results.ToArray()[6].Title</h2>
 						<div class="review">
 							<div class="author-review">
 								<i class="icofont icofont-star"></i>
@@ -528,7 +540,7 @@
 								<i class="icofont icofont-star"></i>
 								<i class="icofont icofont-star"></i>
 							</div>
-							<h4>180k voters</h4>
+							<h4>@Model.PopularMovies.results.ToArray()[6].VoteAverage</h4>
 						</div>
 					</div>
 				</div>
