@@ -728,12 +728,14 @@
                         <div class="col-md-4 col-sm-6 soon released">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                    <a asp-controller="MovieDetails" asp-action="Index" >
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
 
-                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
+                                        <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
 
-                                        <i class="icofont icofont-ui-play"></i>
+                                            <i class="icofont icofont-ui-play"></i>
 
+                                        </a>
                                     </a>
                                 </div>
                                 <div class="portfolio-content">
@@ -762,10 +764,11 @@
                                         trailers = keyMovie.GetVideoById(Model.PopularMovies.results.ToArray()[arrayMovieCounter].Id);
 
                                     }
-
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
+                                    <a asp-controller="MovieDetails" asp-action="Index" >
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                        <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
+                                            <i class="icofont icofont-ui-play"></i>
+                                        </a>
                                     </a>
                                 </div>
                                 <div class="portfolio-content">
@@ -791,11 +794,13 @@
                                         trailers = keyMovie.GetVideoById(Model.PopularMovies.results.ToArray()[arrayMovieCounter].Id);
 
                                     }
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
+                                    <a asp-controller="MovieDetails" asp-action="Index" >
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                        <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
+                                            <i class="icofont icofont-ui-play"></i>
+                                        </a>
                                     </a>
-                                </div>
+</div>
                                 <div class="portfolio-content">
                                     <h2 id="senoh">@Model.PopularMovies.results.ToArray()[arrayMovieCounter].Title</h2>
                                     <div class="review">
@@ -819,11 +824,12 @@
                                         trailers = keyMovie.GetVideoById(Model.PopularMovies.results.ToArray()[arrayMovieCounter].Id);
 
                                     }
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
-                                    </a>
-                                </div>
+                                    <a asp-controller="MovieDetails" asp-action="Index" >
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                        <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
+                                            <i class="icofont icofont-ui-play"></i>
+                                        </a>   </a>
+</div>
                                 <div class="portfolio-content">
                                     <h2 id="senoh">@Model.PopularMovies.results.ToArray()[arrayMovieCounter].Title</h2>
                                     <div class="review">
@@ -847,12 +853,14 @@
                                         trailers = keyMovie.GetVideoById(Model.PopularMovies.results.ToArray()[arrayMovieCounter].Id);
 
                                     }
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                    <a asp-controller="MovieDetails" asp-action="Index" >
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
 
-                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
+                                        <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
+                                            <i class="icofont icofont-ui-play"></i>
+                                        </a>
                                     </a>
-                                </div>
+</div>
                                 <div class="portfolio-content">
                                     <h2 id="senoh">@Model.PopularMovies.results.ToArray()[arrayMovieCounter].Title</h2>
                                     <div class="review">
@@ -876,11 +884,13 @@
                                         trailers = keyMovie.GetVideoById(Model.PopularMovies.results.ToArray()[arrayMovieCounter].Id);
 
                                     }
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
+                                    <a asp-controller="MovieDetails" asp-action="Index" >
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                        <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
+                                            <i class="icofont icofont-ui-play"></i>
+                                        </a>
                                     </a>
-                                </div>
+</div>
                                 <div class="portfolio-content">
                                     <h2 id="senoh">@Model.PopularMovies.results.ToArray()[arrayMovieCounter].Title</h2>
                                     <div class="review">
@@ -944,11 +954,13 @@
                         <div class="col-md-4 col-sm-6 soon released">
                             <div class="single-portfolio">
                                 <div class="single-portfolio-img">
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
+                                    <a asp-controller="MovieDetails" asp-action="Index" >
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                        <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
+                                            <i class="icofont icofont-ui-play"></i>
+                                        </a>
                                     </a>
-                                </div>
+</div>
                                 <div class="portfolio-content">
                                     <h2 id="senoh">@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].Title</h2>
                                     <div class="review">
@@ -973,11 +985,13 @@
                                         trailers = keyMovie.GetVideoById(Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].Id);
 
                                     }
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
+                                    <a asp-controller="MovieDetails" asp-action="Index" >
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                        <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
+                                            <i class="icofont icofont-ui-play"></i>
+                                        </a>
                                     </a>
-                                </div>
+</div>
                                 <div class="portfolio-content">
                                     <h2 id="senoh">@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].Title</h2>
                                     <div class="review">
@@ -1001,11 +1015,13 @@
                                         trailers = keyMovie.GetVideoById(Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].Id);
 
                                     }
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
+                                    <a asp-controller="MovieDetails" asp-action="Index" >
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                        <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
+                                            <i class="icofont icofont-ui-play"></i>
+                                        </a>
                                     </a>
-                                </div>
+</div>
                                 <div class="portfolio-content">
                                     <h2 id="senoh">@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].Title</h2>
                                     <div class="review">
@@ -1029,11 +1045,12 @@
                                         trailers = keyMovie.GetVideoById(Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].Id);
 
                                     }
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
-                                    </a>
-                                </div>
+                                    <a asp-controller="MovieDetails" asp-action="Index" >
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                        <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
+                                            <i class="icofont icofont-ui-play"></i>
+                                        </a></a>
+</div>
                                 <div class="portfolio-content">
                                     <h2 id="senoh">@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].Title</h2>
                                     <div class="review">
@@ -1057,12 +1074,14 @@
                                         trailers = keyMovie.GetVideoById(Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].Id);
 
                                     }
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                    <a asp-controller="MovieDetails" asp-action="Index" >
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
 
-                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
+                                        <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
+                                            <i class="icofont icofont-ui-play"></i>
+                                        </a>
                                     </a>
-                                </div>
+</div>
                                 <div class="portfolio-content">
                                     <h2 id="senoh">@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].Title</h2>
                                     <div class="review">
@@ -1085,11 +1104,13 @@
                                         arrayMovieCounter = rand_num;
                                         trailers = keyMovie.GetVideoById(Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].Id);
                                     }
-                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
-                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
-                                    </a>
-                                </div>
+                                    <a asp-controller="MovieDetails" asp-action="Index" >
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].PosterPath" alt="portfolio" />
+                                        <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
+                                            <i class="icofont icofont-ui-play"></i>
+                                        </a>
+                                        </a>
+</div>
                                 <div class="portfolio-content">
                                     <h2 id="senoh">@Model.TopRatedMovies.results.ToArray()[arrayMovieCounter].Title</h2>
                                     <div class="review">
@@ -1356,7 +1377,7 @@
                         @{
                             rand_num = rd.Next(0, 3);
                             arrayMovieCounter = rand_num;
-                            
+
 
                         }    <div class="col-md-4 col-sm-6 soon released">
                             <div class="single-portfolio">

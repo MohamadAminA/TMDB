@@ -69,7 +69,7 @@ namespace IMDB.Services.Api
             HttpClient httpClient = new HttpClient();
 
 
-            string path = $"https://api.themoviedb.org/3/movie/{id}?{api_key}";
+            string path = $"https://api.themoviedb.org/3/movie/{id}?api_key=646f26e9bfd4f042f28a7160726dd239&language=en-US";
                           
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
@@ -450,18 +450,6 @@ namespace IMDB.Services.Api
             return null;
 
         }
-
-        Movie IMovie.GetMovieById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        TrailersResult IMovie.GetVideoById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
 
         //        public void test()
         //        {

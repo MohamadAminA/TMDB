@@ -12,13 +12,12 @@ namespace IMDB.Controllers
         {
             _movie = movie;
         }
-
+               
         public IActionResult Index(int id)
         {
             MovieDetailsViewModel model = new MovieDetailsViewModel();
             model.Movie = _movie.GetMovieById(id);
-            model.Credits = _movie.GetMovieCreditsById(id);
-            model.Reviews = _movie.GetReviewsOfMovieById(id);
+            model.SimilarMovie = _movie.SimilarMovies(id);
             return View(model);
         }
     }
