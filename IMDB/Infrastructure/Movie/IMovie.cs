@@ -27,7 +27,7 @@ namespace Infrastructure
         /// <param name="txt">search text</param>
         /// <param name="page"></param>
         /// <returns></returns>
-        public Task< APIListResult<Movie>> SearchMovies(string txt, int page = 1);
+        public Task< APIListResult<Movie>> SearchMovies(string txt,int releaseDate, int page = 1);
         /// <summary>
         /// returns a list of Recomendation movies that relates to movie id
         /// </summary>
