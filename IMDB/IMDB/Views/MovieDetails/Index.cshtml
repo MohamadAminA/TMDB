@@ -427,7 +427,7 @@
 
                             <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.Movie.PosterPath" alt="portfolio" />
 
-                            <a href="https://www.youtube.com/watch?v=@Model.trailers.Results[0].Key" class="popup-youtube" style=" right: 145px;">
+                            <a href="https://www.youtube.com/watch?v=@Model.Movie.Key" class="popup-youtube" style=" right: 145px;">
 
                                 <i class="icofont icofont-ui-play"></i>
 
@@ -557,11 +557,11 @@
                                             @{
                                                 MovieRepo keyMovie = new MovieRepo();
                                                 Random rd = new Random();
-                                               foreach (var item in Model.SimilarMovie.results)
+                                               foreach (var item in Model.similarMovie.results)
                                                 {
                                                     int rand_num = rd.Next(0, 19);
                                                     var arrayMovieCounter = rand_num;
-                                                    TrailersResult trailers = keyMovie.GetVideoById(item.Id);
+                                                    TrailersResult trailers =await keyMovie.GetVideoById(item.Id);
 
 
                                                     <div class="col-md-4 col-sm-6 soon released">

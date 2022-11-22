@@ -327,6 +327,7 @@
 						<div class="col-lg-3 col-md-4 col-sm-6 soon popular">
 							<div class="single-portfolio">
 								<div class="single-portfolio-img">
+					<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
 									<img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
 
 									<a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
@@ -334,6 +335,7 @@
 										<i class="icofont icofont-ui-play"></i>
 
 									</a>
+						</a>
 								</div>
 								<div class="portfolio-content">
 									<h2 id="senoh">@item.Title</h2>
@@ -354,7 +356,9 @@
 					}
 					@foreach (var item in Model.TopRatedMovies.results.Take(12))
 					{
-						<div class="col-lg-3 col-md-4 col-sm-6 top" style="display:none">
+						<div class="col-lg-3 col-md-4 col-sm-6 top" style="
+    display: none;
+">
 							<div class="single-portfolio">
 								<div class="single-portfolio-img">
 									<img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
