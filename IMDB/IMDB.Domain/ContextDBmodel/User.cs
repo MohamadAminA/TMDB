@@ -21,7 +21,10 @@ namespace IMDB.DataLayer.Model
         [Required]
         [DataType(DataType.DateTime)]
         public DateTime RegisterDate { get; set; }
-
+        [MaxLength(200)]
+        [EmailAddress]
+        public string Email { get; set; }
+        public long? Phone { get; set; }
     }
     
 }
