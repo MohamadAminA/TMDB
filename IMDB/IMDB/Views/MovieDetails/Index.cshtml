@@ -29,7 +29,7 @@
 }
 @model MovieDetailsViewModel
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zxx">
 
 <head>
     <meta charset="UTF-8">
@@ -57,43 +57,13 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
-        #loginText {
-            background: #eb315a;
-            border: 1px solid #eb315a;
-            color: #fff;
-            border-radius: 35px;
-            padding: 5px 25px;
-            display: inline-block;
-            font-size: 16px;
-            cursor: pointer;
-            font-weight: 500;
-        }
-
-        #oadAction {
-            padding-left = 25px;
-        }
-
-        #radiusImg {
-            border-radius: 3%;
-            height: 405px;
-        }
-
-        #radiusprofile {
-            border-radius: 170%;
-            height: 111px;
-            width: 50%;
-            margin-top: 0;
-        }
-
         #senoh {
-            overflow: hidden;
             text-overflow: ellipsis;
+            overflow: hidden;
             white-space: nowrap;
         }
-
-        #imgeRad {
-            border-radius: 25px;
-        }
+        body {
+            background: linear-gradient(45deg, black, gray,black);
         }
     </style>
 </head>
@@ -105,7 +75,7 @@
         <div class="container">
             <div class="header-area">
                 <div class="logo">
-                    <a class="sc-iqHYGH hSaKRS imdb-header__logo-link" id="home_img_holder" asp-controller="Home" asp-action="Index" aria-label="Home"><svg id="home_img" class="ipc-logo" xmlns="http://www.w3.org/2000/svg" width="64" height="32" viewBox="0 0 64 32" version="1.1"><g fill="#F5C518"><rect x="0" y="0" width="100%" height="100%" rx="4"></rect></g><g transform="translate(8.000000, 7.000000)" fill="#000000" fill-rule="nonzero"><polygon points="0 18 5 18 5 0 0 0"></polygon><path d="M15.6725178,0 L14.5534833,8.40846934 L13.8582008,3.83502426 C13.65661,2.37009263 13.4632474,1.09175121 13.278113,0 L7,0 L7,18 L11.2416347,18 L11.2580911,6.11380679 L13.0436094,18 L16.0633571,18 L17.7583653,5.8517865 L17.7707076,18 L22,18 L22,0 L15.6725178,0 Z"></path><path d="M24,18 L24,0 L31.8045586,0 C33.5693522,0 35,1.41994415 35,3.17660424 L35,14.8233958 C35,16.5777858 33.5716617,18 31.8045586,18 L24,18 Z M29.8322479,3.2395236 C29.6339219,3.13233348 29.2545158,3.08072342 28.7026524,3.08072342 L28.7026524,14.8914865 C29.4312846,14.8914865 29.8796736,14.7604764 30.0478195,14.4865461 C30.2159654,14.2165858 30.3021941,13.486105 30.3021941,12.2871637 L30.3021941,5.3078959 C30.3021941,4.49404499 30.272014,3.97397442 30.2159654,3.74371416 C30.1599168,3.5134539 30.0348852,3.34671372 29.8322479,3.2395236 Z"></path><path d="M44.4299079,4.50685823 L44.749518,4.50685823 C46.5447098,4.50685823 48,5.91267586 48,7.64486762 L48,14.8619906 C48,16.5950653 46.5451816,18 44.749518,18 L44.4299079,18 C43.3314617,18 42.3602746,17.4736618 41.7718697,16.6682739 L41.4838962,17.7687785 L37,17.7687785 L37,0 L41.7843263,0 L41.7843263,5.78053556 C42.4024982,5.01015739 43.3551514,4.50685823 44.4299079,4.50685823 Z M43.4055679,13.2842155 L43.4055679,9.01907814 C43.4055679,8.31433946 43.3603268,7.85185468 43.2660746,7.63896485 C43.1718224,7.42607505 42.7955881,7.2893916 42.5316822,7.2893916 C42.267776,7.2893916 41.8607934,7.40047379 41.7816216,7.58767002 L41.7816216,9.01907814 L41.7816216,13.4207851 L41.7816216,14.8074788 C41.8721037,15.0130276 42.2602358,15.1274059 42.5316822,15.1274059 C42.8031285,15.1274059 43.1982131,15.0166981 43.281155,14.8074788 C43.3640968,14.5982595 43.4055679,14.0880581 43.4055679,13.2842155 Z"></path></g></svg></a>
+                    <a href="index-2.html"><img src="assets/img/logo.png" alt="logo" /></a>
                 </div>
                 <div class="header-right">
                     <form action="#">
@@ -423,50 +393,51 @@
                 <div class="row flexbox-center">
                     <div class="col-lg-5 text-lg-left text-center">
                         <div class="transformers-content">
+                            <a href="https://www.youtube.com/watch?v=@Model.Movie.Key" class="popup-youtube">
 
-                            <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@Model.Movie.PosterPath" alt="portfolio" />
-
-                            <a href="https://www.youtube.com/watch?v=@Model.Movie.Key" class="popup-youtube" style=" right: 145px;">
+                                <img src="http://image.tmdb.org/t/p/w500/@Model.Movie.PosterPath" alt="about" />
 
                                 <i class="icofont icofont-ui-play"></i>
 
                             </a>
 
                         </div>
-                        </a>
+                           
                     </div>
                     <div class="col-lg-7">
-                        <div class="transformers-content">
-                            <h2>@Model.Movie.Title</h2>
+                        <div class="transformers-content"style="
+    font-size: 30px;
+">
+                            <h2>The Transformers</h2>
                             <p>3D | Animation | Action | Sci-Fi</p>
                             <ul>
                                 <li>
                                     <div class="transformers-left">
-                                        status:
+                                        Movie:
                                     </div>
                                     <div class="transformers-right">
-                                        <a href="#">@Model.Movie.Status</a>
+                                        <a href="#">@Model.Movie.Title</a>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="transformers-left">
-                                        Tag Line:
+                                        Status:
                                     </div>
                                     <div class="transformers-right">
-                                        @Model.Movie.Tagline
+                                        @Model.Movie.Status
                                     </div>
                                 </li>
                                 <li>
                                     <div class="transformers-left">
-                                        Geners:
+                                        Gener:
                                     </div>
                                     <div class="transformers-right">
-                                        @Model.Movie.Genres
+                                        @Model.Movie.Genres[0].Name
                                     </div>
                                 </li>
                                 <li>
                                     <div class="transformers-left">
-                                        ReleaseDate:
+                                        Release Date:
                                     </div>
                                     <div class="transformers-right">
                                         @Model.Movie.ReleaseDate.Value.Year
@@ -475,42 +446,26 @@
 
                                 <li>
                                     <div class="transformers-left">
-                                        Popularity:
-                                    </div>
-                                    <div class="transformers-right">
-                                        @Model.Movie.Popularity
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="transformers-left">
                                         VoteAverage:
                                     </div>
-                                    <div class="transformers-right">
-                                        @Model.Movie.VoteAverage
-                                        <div class="transformers-bottom">
-                                            <p>May 19, 2018 <span>15h47</span></p>
-                                            <p>May 19, 2018 <span>15h47</span></p>
-                                            <p>May 19, 2018 <span>15h47</span></p>
-                                            <p>May 19, 2018 <span>15h47</span></p>
-                                            <p>May 19, 2018 <span>15h47</span></p>
-                                            <p>May 19, 2018 <span>15h47</span></p>      <p>May 19, 2018 <span>15h47</span></p>
-                                            <p>May 19, 2018 <span>15h47</span></p>
-                                            <p>May 19, 2018 <span>15h47</span></p>
-                                        </div>
+                                    <div class="author-review">
+                                        @for (int i = 0; i < ((Model.Movie.VoteAverage == 10) ? (Model.Movie.VoteAverage / 2) : (Model.Movie.VoteAverage / 2) + 1); i++)
+                                        {
+                                            <i class="icofont icofont-star"></i>
+                                        }
 
                                     </div>
                                 </li>
                                 <li>
                                     <div class="transformers-left">
-                                        Share:
+                                        TagLine:
                                     </div>
                                     <div class="transformers-right">
-                                        <a href="#"><i class="icofont icofont-social-facebook"></i></a>
-                                        <a href="#"><i class="icofont icofont-social-twitter"></i></a>
-                                        <a href="#"><i class="icofont icofont-social-google-plus"></i></a>
-                                        <a href="#"><i class="icofont icofont-youtube-play"></i></a>
+                                      <br />
+                                        @Model.Movie.Tagline
                                     </div>
                                 </li>
+
                             </ul>
                         </div>
                     </div>
@@ -523,150 +478,129 @@
     <section class="details-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                     <div class="details-content">
                         <div class="details-overview">
                             <h2>Overview</h2>
-                            <p>@Model.Movie.Overview</p>
+                            <p style="
+    font-size: 22px;
+">@Model.Movie.Overview</p>
+                    </div>
+                    <div class="col-lg-12" style="margin-bottom:11px">
+                        <div class="col-lg-6 text-center text-lg-left" style="
+    margin-bottom: 8px;
+">
+                            <div class="section-title">
+                                <h1><i class="icofont icofont-movie"></i>The similar Movie </h1>
+                            </div>
                         </div>
-                        <!--1-->
-                        <section class="portfolio-area pt-60">
-                            <div class="container">
-                                <div class="row flexbox-center">
-                                    <div class="col-lg-6 text-center text-lg-left">
-                                        <div class="section-title">
-                                            <h1><i class="icofont icofont-movie"></i>The Most Famous </h1>
+                        <hr />
+                        <div class="row portfolio-item">
+
+                            @{
+                                int counter = 0; ;
+                            }
+                            @foreach (var item in Model.SimilarMovie.results.Skip(3).Take(12))
+                            {
+                                counter++;
+                                if (counter > 13) { break; }
+                                <div class="col-lg-4 col-md-6 col-sm-8 soon popular born">
+                                    <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
+                                        <div class="single-portfolio">
+                                            <div class="single-portfolio-img">
+
+                                                <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
+                                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
+
+                                                    <a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
+
+                                                        <i class="icofont icofont-ui-play"></i>
+
+                                                    </a>
+                                                </a>
+                                            </div>
+                                            <div class="portfolio-content">
+                                                <h2 id="senoh">@item.Title</h2>
+                                                <div class="review">
+                                                    <div class="author-review">
+                                                        @for (int i = 0; i < ((item.VoteAverage == 10) ? (item.VoteAverage / 2) : (item.VoteAverage / 2) + 1); i++)
+                                                        {
+                                                            <i class="icofont icofont-star"></i>
+                                                        }
+
+                                                    </div>
+                                                    <h5>@item.VoteCount voters</h5>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-6 text-center text-lg-right">
-                                        <div class="portfolio-menu">
-                                            <ul>
-                                                <li data-filter="*" class="active">Latest</li>
-                                                <li data-filter=".soon">Comming Soon</li>
-                                                <li data-filter=".top">Top Rated</li>
-                                                <li data-filter=".released">Recently Released</li>
-                                            </ul>
-                                        </div>
+                                    </a>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                    <hr />
+                     <div class="details-reply">
+                        <h2>Leave a Reply</h2>
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="select-container">
+                                        <input type="text" placeholder="Name" />
+                                        <i class="icofont icofont-ui-user"></i>
                                     </div>
                                 </div>
-                                <hr />
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="row portfolio-item">
-                                            @{
-                                                MovieRepo keyMovie = new MovieRepo();
-                                                Random rd = new Random();
-                                               foreach (var item in Model.similarMovie.results)
-                                                {
-                                                    int rand_num = rd.Next(0, 19);
-                                                    var arrayMovieCounter = rand_num;
-                                                    TrailersResult trailers = keyMovie.GetVideoById(item.Id).Result;
-
-
-                                                    <div class="col-md-4 col-sm-6 soon released">
-                                                        <div class="single-portfolio">
-                                                            <div class="single-portfolio-img">
-                                                                <a asp-controller="MovieDetails" asp-action="Index">
-                                                                    <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
-
-                                                                    <a href="https://www.youtube.com/watch?v=@trailers.Results[0].Key" class="popup-youtube">
-
-                                                                        <i class="icofont icofont-ui-play"></i>
-
-                                                                    </a>
-                                                                </a>
-                                                            </div>
-                                                            <div class="portfolio-content">
-                                                                <h2 id="senoh">@item.Title</h2>
-                                                                <div class="review">
-                                                                    <div class="author-review">
-                                                                        <i class="icofont icofont-star"></i>
-                                                                        <i class="icofont icofont-star"></i>
-                                                                        <i class="icofont icofont-star"></i>
-                                                                        <i class="icofont icofont-star"></i>
-                                                                        <i class="icofont icofont-star"></i>
-                                                                    </div>
-                                                                    <h4>180k voters</h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                }
-                                            }
-                                        </div>
+                                <div class="col-lg-4">
+                                    <div class="select-container">
+                                        <input type="text" placeholder="Email" />
+                                        <i class="icofont icofont-envelope"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="select-container">
+                                        <input type="text" placeholder="Phone" />
+                                        <i class="icofont icofont-phone"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="textarea-container">
+                                        <textarea placeholder="Type Here Message"></textarea>
+                                        <button><i class="icofont icofont-send-mail"></i></button>
                                     </div>
                                 </div>
                             </div>
+                        </form>
                     </div>
-                </div>
-    </section><!-- portfolio section end -->
 
-    <div class="details-reply">
-        <h2>Leave a Reply</h2>
-        <form action="#">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="select-container">
-                        <input type="text" placeholder="Name" />
-                        <i class="icofont icofont-ui-user"></i>
+                    <div class="details-comment">
+                        <a class="theme-btn theme-btn2" href="#">Post Comment</a>
+                        <p>You may use these HTML tags and attributes: You may use these HTML tags and attributes: You may use these HTML tags and attributes: </p>
+                    </div>
+                    <div class="details-thumb">
+                        <div class="details-thumb-prev">
+                            <div class="thumb-icon">
+                                <i class="icofont icofont-simple-left"></i>
+                            </div>
+                            <div class="thumb-text">
+                                <h4>Previous Post</h4>
+                                <p>Standard Post With Gallery</p>
+                            </div>
+                        </div>
+                        <div class="details-thumb-next">
+                            <div class="thumb-text">
+                                <h4>Next Post</h4>
+                                <p>Standard Post With Preview Image</p>
+                            </div>
+                            <div class="thumb-icon">
+                                <i class="icofont icofont-simple-right"></i>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="select-container">
-                        <input type="text" placeholder="Email" />
-                        <i class="icofont icofont-envelope"></i>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="select-container">
-                        <input type="text" placeholder="Phone" />
-                        <i class="icofont icofont-phone"></i>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="textarea-container">
-                        <textarea placeholder="Type Here Message"></textarea>
-                        <button><i class="icofont icofont-send-mail"></i></button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="details-comment">
-        <a class="theme-btn theme-btn2" href="#">Post Comment</a>
-        <p>You may use these HTML tags and attributes: You may use these HTML tags and attributes: You may use these HTML tags and attributes: </p>
-    </div>
-    <div class="details-thumb">
-        <div class="details-thumb-prev">
-            <div class="thumb-icon">
-                <i class="icofont icofont-simple-left"></i>
-            </div>
-            <div class="thumb-text">
-                <h4>Previous Post</h4>
-                <p>Standard Post With Gallery</p>
+                
             </div>
         </div>
-        <div class="details-thumb-next">
-            <div class="thumb-text">
-                <h4>Next Post</h4>
-                <p>Standard Post With Preview Image</p>
-            </div>
-            <div class="thumb-icon">
-                <i class="icofont icofont-simple-right"></i>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    <div class="col-lg-3 text-center text-lg-left">
-        <div class="portfolio-sidebar">
-            <img src="assets/img/sidebar/sidebar1.png" alt="sidebar" />
-            <img src="assets/img/sidebar/sidebar2.png" alt="sidebar" />
-            <img src="assets/img/sidebar/sidebar4.png" alt="sidebar" />
-        </div>
-    </div>
-    </div>
-    </div>
     </section><!-- details area end -->
     <!-- footer section start -->
     <footer class="footer">
@@ -706,7 +640,7 @@
                         <p>Subscribe to our newsletter system now to get latest news from us.</p>
                         <form action="#">
                             <input type="text" placeholder="Enter your email.." />
-                            <button>SUBSCRIBE NOW</button>
+                            <button style="margin-left: 16px;">SUBSCRIBE NOW</buttonstyle="margin-left:>
                         </form>
                     </div>
                 </div>
@@ -737,7 +671,7 @@
     <!-- Bootstrap JS -->
     <script src="/assets/js/bootstrap.min.js"></script>
     <!-- Slick nav JS -->
-    <script src="/a/ssets/js/jquery.slicknav.min.js"></script>
+    <script src="/assets/js/jquery.slicknav.min.js"></script>
     <!-- owl carousel JS -->
     <script src="/assets/js/owl.carousel.min.js"></script>
     <!-- Popup JS -->

@@ -10,652 +10,653 @@
 @inject IMovie movieRepo
 @model HomeViewModel
 
-
 <!-- hero area start -->
 <section class="hero-area" id="home">
-	<div class="container">
-		<div class="hero-area-slider">
-			<div class="row hero-area-slide">
-				<div class="col-lg-6 col-md-5">
-					<div class="hero-area-content">
-						<img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[1].PosterPath" alt="about" />
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-7">
-					<div class="hero-area-content pr-50">
-						<h2>@Model.PopularMovies.results.ToArray()[1].Title</h2>
-						<div class="review">
-							<div class="author-review">
-								<i class="icofont icofont-star"></i>
-								<i class="icofont icofont-star"></i>
-								<i class="icofont icofont-star"></i>
-								<i class="icofont icofont-star"></i>
-								<i class="icofont icofont-star"></i>
-							</div>
-							<h4>180k voters</h4>
-						</div>
-						<p>@Model.PopularMovies.results.ToArray()[1].Overview</p>
-						<h3>Cast:</h3>
-						<div class="slide-cast">
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast1.png" alt="about" />
-							</div>
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast2.html" alt="about" />
-							</div>
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast3.png" alt="about" />
-							</div>
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast4.png" alt="about" />
-							</div>
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast5.png" alt="about" />
-							</div>
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast6.png" alt="about" />
-							</div>
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast7.png" alt="about" />
-							</div>
-							<div class="single-slide-cast text-center">
-								5+
-							</div>
-						</div>
-						<div class="slide-trailor">
-							<h3>Watch Trailer</h3>
-							<a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row hero-area-slide">
-				<div class="col-lg-6 col-md-5">
-					<div class="hero-area-content">
-						<img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[0].PosterPath" alt="about" />
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-7">
-					<div class="hero-area-content pr-50">
-						<h2>@Model.PopularMovies.results.ToArray()[0].Title</h2>
-						<div class="review">
-							<div class="author-review">
-								<i class="icofont icofont-star"></i>
-								<i class="icofont icofont-star"></i>
-								<i class="icofont icofont-star"></i>
-								<i class="icofont icofont-star"></i>
-								<i class="icofont icofont-star"></i>
-							</div>
-							<h4>180k voters</h4>
-						</div>
-						<p>@Model.PopularMovies.results.ToArray()[0].Overview</p>
-						<h3>Cast:</h3>
-						<div class="slide-cast">
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast1.png" alt="about" />
-							</div>
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast2.html" alt="about" />
-							</div>
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast3.png" alt="about" />
-							</div>
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast4.png" alt="about" />
-							</div>
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast5.png" alt="about" />
-							</div>
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast6.png" alt="about" />
-							</div>
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast7.png" alt="about" />
-							</div>
-							<div class="single-slide-cast text-center">
-								5+
-							</div>
-						</div>
-						<div class="slide-trailor">
-							<h3>Watch Trailer</h3>
-							<a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row hero-area-slide">
-				<div class="col-lg-6 col-md-5">
-					<div class="hero-area-content">
-						<img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[2].PosterPath" alt="about" />
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-7">
-					<div class="hero-area-content pr-50">
-						<h2>@Model.PopularMovies.results.ToArray()[2].Title</h2>
-						<div class="review">
-							<div class="author-review">
-								<i class="icofont icofont-star"></i>
-								<i class="icofont icofont-star"></i>
-								<i class="icofont icofont-star"></i>
-								<i class="icofont icofont-star"></i>
-								<i class="icofont icofont-star"></i>
-							</div>
-							<h4>180k voters</h4>
-						</div>
-						<p>@Model.PopularMovies.results.ToArray()[2].Overview</p>
-						<h3>Cast:</h3>
-						<div class="slide-cast">
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast1.png" alt="about" />
-							</div>
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast2.html" alt="about" />
-							</div>
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast3.png" alt="about" />
-							</div>
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast4.png" alt="about" />
-							</div>
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast5.png" alt="about" />
-							</div>
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast6.png" alt="about" />
-							</div>
-							<div class="single-slide-cast">
-								<img src="assets/img/cast/cast7.png" alt="about" />
-							</div>
-							<div class="single-slide-cast text-center">
-								5+
-							</div>
-						</div>
-						<div class="slide-trailor">
-							<h3>Watch Trailer</h3>
-							<a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="hero-area-thumb">
-			<div class="thumb-prev">
-				<div class="row hero-area-slide">
-					<div class="col-lg-6">
-						<div class="hero-area-content">
-							<img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[2].PosterPath" alt="about" />
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="hero-area-content pr-50">
-							<h2>@Model.PopularMovies.results.ToArray()[2].Title</h2>
-							<div class="review">
-								<div class="author-review">
-									<i class="icofont icofont-star"></i>
-									<i class="icofont icofont-star"></i>
-									<i class="icofont icofont-star"></i>
-									<i class="icofont icofont-star"></i>
-									<i class="icofont icofont-star"></i>
-								</div>
-								<h4>180k voters</h4>
-							</div>
-							<p>@Model.PopularMovies.results.ToArray()[2].Overview</p>
-							<h3>Cast:</h3>
-							<div class="slide-cast">
-								<div class="single-slide-cast">
-									<img src="assets/img/cast/cast1.png" alt="about" />
-								</div>
-								<div class="single-slide-cast">
-									<img src="assets/img/cast/cast2.html" alt="about" />
-								</div>
-								<div class="single-slide-cast">
-									<img src="assets/img/cast/cast3.png" alt="about" />
-								</div>
-								<div class="single-slide-cast">
-									<img src="assets/img/cast/cast4.png" alt="about" />
-								</div>
-								<div class="single-slide-cast">
-									<img src="assets/img/cast/cast5.png" alt="about" />
-								</div>
-								<div class="single-slide-cast">
-									<img src="assets/img/cast/cast6.png" alt="about" />
-								</div>
-								<div class="single-slide-cast">
-									<img src="assets/img/cast/cast7.png" alt="about" />
-								</div>
-								<div class="single-slide-cast text-center">
-									5+
-								</div>
-							</div>
-							<div class="slide-trailor">
-								<h3>Watch Trailer</h3>
-								<a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="thumb-next">
-				<div class="row hero-area-slide">
-					<div class="col-lg-6">
-						<div class="hero-area-content">
-							<img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[0].PosterPath" alt="about" />
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="hero-area-content pr-50">
-							<h2>@Model.PopularMovies.results.ToArray()[1].Title</h2>
-							<div class="review">
-								<div class="author-review">
-									<i class="icofont icofont-star"></i>
-									<i class="icofont icofont-star"></i>
-									<i class="icofont icofont-star"></i>
-									<i class="icofont icofont-star"></i>
-									<i class="icofont icofont-star"></i>
-								</div>
-								<h4>180k voters</h4>
-							</div>
-							<p>@Model.PopularMovies.results.ToArray()[0].Overview</p>
-							<h3>Cast:</h3>
-							<div class="slide-cast">
-								<div class="single-slide-cast">
-									<img src="assets/img/cast/cast1.png" alt="about" />
-								</div>
-								<div class="single-slide-cast">
-									<img src="assets/img/cast/cast2.html" alt="about" />
-								</div>
-								<div class="single-slide-cast">
-									<img src="assets/img/cast/cast3.png" alt="about" />
-								</div>
-								<div class="single-slide-cast">
-									<img src="assets/img/cast/cast4.png" alt="about" />
-								</div>
-								<div class="single-slide-cast">
-									<img src="assets/img/cast/cast5.png" alt="about" />
-								</div>
-								<div class="single-slide-cast">
-									<img src="assets/img/cast/cast6.png" alt="about" />
-								</div>
-								<div class="single-slide-cast">
-									<img src="assets/img/cast/cast7.png" alt="about" />
-								</div>
-								<div class="single-slide-cast text-center">
-									5+
-								</div>
-							</div>
-							<div class="slide-trailor">
-								<h3>Watch Trailer</h3>
-								<a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="hero-area-slider">
+            <div class="row hero-area-slide">
+                <div class="col-lg-6 col-md-5">
+                    <div class="hero-area-content">
+                        <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[1].PosterPath" alt="about" />
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-7">
+                    <div class="hero-area-content pr-50">
+                        <h2>@Model.PopularMovies.results.ToArray()[1].Title</h2>
+                        <div class="review">
+                            <div class="author-review">
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                            </div>
+                            <h4>180k voters</h4>
+                        </div>
+                        <p>@Model.PopularMovies.results.ToArray()[1].Overview</p>
+                        <h3>Cast:</h3>
+                        <div class="slide-cast">
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast1.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast2.html" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast3.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast4.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast5.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast6.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast7.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast text-center">
+                                5+
+                            </div>
+                        </div>
+                        <div class="slide-trailor">
+                            <h3>Watch Trailer</h3>
+                            <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row hero-area-slide">
+                <div class="col-lg-6 col-md-5">
+                    <div class="hero-area-content">
+                        <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[0].PosterPath" alt="about" />
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-7">
+                    <div class="hero-area-content pr-50">
+                        <h2>@Model.PopularMovies.results.ToArray()[0].Title</h2>
+                        <div class="review">
+                            <div class="author-review">
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                            </div>
+                            <h4>180k voters</h4>
+                        </div>
+                        <p>@Model.PopularMovies.results.ToArray()[0].Overview</p>
+                        <h3>Cast:</h3>
+                        <div class="slide-cast">
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast1.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast2.html" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast3.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast4.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast5.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast6.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast7.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast text-center">
+                                5+
+                            </div>
+                        </div>
+                        <div class="slide-trailor">
+                            <h3>Watch Trailer</h3>
+                            <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row hero-area-slide">
+                <div class="col-lg-6 col-md-5">
+                    <div class="hero-area-content">
+                        <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[2].PosterPath" alt="about" />
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-7">
+                    <div class="hero-area-content pr-50">
+                        <h2>@Model.PopularMovies.results.ToArray()[2].Title</h2>
+                        <div class="review">
+                            <div class="author-review">
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                            </div>
+                            <h4>180k voters</h4>
+                        </div>
+                        <p>@Model.PopularMovies.results.ToArray()[2].Overview</p>
+                        <h3>Cast:</h3>
+                        <div class="slide-cast">
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast1.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast2.html" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast3.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast4.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast5.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast6.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast">
+                                <img src="assets/img/cast/cast7.png" alt="about" />
+                            </div>
+                            <div class="single-slide-cast text-center">
+                                5+
+                            </div>
+                        </div>
+                        <div class="slide-trailor">
+                            <h3>Watch Trailer</h3>
+                            <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-area-thumb">
+            <div class="thumb-prev">
+                <div class="row hero-area-slide">
+                    <div class="col-lg-6">
+                        <div class="hero-area-content">
+                            <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[2].PosterPath" alt="about" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-area-content pr-50">
+                            <h2>@Model.PopularMovies.results.ToArray()[2].Title</h2>
+                            <div class="review">
+                                <div class="author-review">
+                                    <i class="icofont icofont-star"></i>
+                                    <i class="icofont icofont-star"></i>
+                                    <i class="icofont icofont-star"></i>
+                                    <i class="icofont icofont-star"></i>
+                                    <i class="icofont icofont-star"></i>
+                                </div>
+                                <h4>180k voters</h4>
+                            </div>
+                            <p>@Model.PopularMovies.results.ToArray()[2].Overview</p>
+                            <h3>Cast:</h3>
+                            <div class="slide-cast">
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast1.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast2.html" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast3.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast4.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast5.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast6.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast7.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast text-center">
+                                    5+
+                                </div>
+                            </div>
+                            <div class="slide-trailor">
+                                <h3>Watch Trailer</h3>
+                                <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="thumb-next">
+                <div class="row hero-area-slide">
+                    <div class="col-lg-6">
+                        <div class="hero-area-content">
+                            <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[0].PosterPath" alt="about" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-area-content pr-50">
+                            <h2>@Model.PopularMovies.results.ToArray()[1].Title</h2>
+                            <div class="review">
+                                <div class="author-review">
+                                    <i class="icofont icofont-star"></i>
+                                    <i class="icofont icofont-star"></i>
+                                    <i class="icofont icofont-star"></i>
+                                    <i class="icofont icofont-star"></i>
+                                    <i class="icofont icofont-star"></i>
+                                </div>
+                                <h4>180k voters</h4>
+                            </div>
+                            <p>@Model.PopularMovies.results.ToArray()[0].Overview</p>
+                            <h3>Cast:</h3>
+                            <div class="slide-cast">
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast1.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast2.html" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast3.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast4.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast5.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast6.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast7.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast text-center">
+                                    5+
+                                </div>
+                            </div>
+                            <div class="slide-trailor">
+                                <h3>Watch Trailer</h3>
+                                <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section><!-- hero area end -->
 <!--show movies section-->
 <!--0-->
 
 <section class="portfolio-area pt-60">
-	<div class="container">
-		<div class="row flexbox-center">
-			<div class="col-lg-6 text-center text-lg-left">
-				<div class="section-title">
-					<h1><i class="icofont icofont-movie"></i>The Most Famous </h1>
-				</div>
-			</div>
-			<div class="col-lg-6 text-center text-lg-right">
-				<div class="portfolio-menu">
-					<ul>
-						@*<li data-filter="*" class="active">Latest</li>*@
-						<li data-filter=".soon" class="active">Popular</li>
-						<li data-filter=".top">Top Rated</li>
-						<li data-filter=".released">Trending Movies Of Week</li>
-						<li data-filter=".TrendingDay">Trending Movies Of Day</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<hr />
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="row portfolio-item">
+    <div class="container">
+        <div class="row flexbox-center">
+            <div class="col-lg-6 text-center text-lg-left">
+                <div class="section-title">
+                    <h1><i class="icofont icofont-movie"></i>The Most Famous </h1>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="portfolio-menu">
+                    <ul>
+                        @*<li data-filter="*" class="active">Latest</li>*@
+                        <li data-filter=".soon" class="active">Popular</li>
+                        <li data-filter=".top">Top Rated</li>
+                        <li data-filter=".released">Trending Movies Of Week</li>
+                        <li data-filter=".TrendingDay">Trending Movies Of Day</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row portfolio-item">
+                    @{
+                    int counter = 0 ;;
+                    }
+                    @foreach (var item in Model.PopularMovies.results.Skip(3).Take(12))
+                    {
+                        counter++;
+                        if (counter >13) { break; }
+                        <div class="col-lg-3 col-md-4 col-sm-6 soon popular born">
+                            <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
+                                <div class="single-portfolio">
+                                    <div class="single-portfolio-img">
 
-					@foreach (var item in Model.PopularMovies.results.Skip(3).Take(12))
-					{
-						<div class="col-lg-3 col-md-4 col-sm-6 soon popular born">
-							<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
-							<div class="single-portfolio">
-								<div class="single-portfolio-img">
+                                        <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
+                                            <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" style="border-radius: 15px;" />
 
-					<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
-									<img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
+                                            <a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
 
-									<a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
+                                                <i class="icofont icofont-ui-play"></i>
 
-										<i class="icofont icofont-ui-play"></i>
+                                            </a>
+                                        </a>
+                                    </div>
+                                    <div class="portfolio-content">
+                                        <h2 id="senoh">@item.Title</h2>
+                                        <div class="review">
+                                            <div class="author-review">
+                                                @for (int i = 0; i < ((item.VoteAverage == 10) ? (item.VoteAverage / 2) : (item.VoteAverage / 2) + 1); i++)
+                                                {
+                                                    <i class="icofont icofont-star"></i>
+                                                }
 
-									</a>
-						</a>
-								</div>
-								<div class="portfolio-content">
-									<h2 id="senoh">@item.Title</h2>
-									<div class="review">
-										<div class="author-review">
-											@for (int i = 0; i < ((item.VoteAverage == 10) ? (item.VoteAverage / 2) : (item.VoteAverage / 2) + 1); i++)
-											{
-												<i class="icofont icofont-star"></i>
-											}
+                                            </div>
+                                            <h5>@item.VoteCount voters</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
 
-										</div>
-										<h5>@item.VoteCount voters</h5>
-									</div>
-								</div>
-							</div>
-							</a>
-						</div>
-
-					}
-					@foreach (var item in Model.TopRatedMovies.results.Take(12))
-					{
-						<div class="col-lg-3 col-md-4 col-sm-6 top" style="display:none">
-							<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
-						<div class="col-lg-3 col-md-4 col-sm-6 top" style="
+                    }
+                    @foreach (var item in Model.TopRatedMovies.results.Take(12))
+                    {
+                        <div class="col-lg-3 col-md-4 col-sm-6 top" style="display:none">
+                            <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
+                                <div class="col-lg-3 col-md-4 col-sm-6 top" style="
     display: none;
 ">
-							<div class="single-portfolio">
-								<div class="single-portfolio-img">
-									<img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
+                                    <div class="single-portfolio">
+                                        <div class="single-portfolio-img">
+                                            <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" style="border-radius: 15px;"/>
 
-									<a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
+                                            <a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
 
-										<i class="icofont icofont-ui-play"></i>
+                                                <i class="icofont icofont-ui-play"></i>
 
-									</a>
-								</div>
-								<div class="portfolio-content">
-									<h2 id="senoh">@item.Title</h2>
-									<div class="review">
-										<div class="author-review">
-											@for (int i = 0; i < ((item.VoteAverage == 10) ? (item.VoteAverage / 2) : (item.VoteAverage / 2) + 1); i++)
-											{
-												<i class="icofont icofont-star"></i>
-											}
+                                            </a>
+                                        </div>
+                                        <div class="portfolio-content">
+                                            <h2 id="senoh">@item.Title</h2>
+                                            <div class="review">
+                                                <div class="author-review">
+                                                    @for (int i = 0; i < ((item.VoteAverage == 10) ? (item.VoteAverage / 2) : (item.VoteAverage / 2) + 1); i++)
+                                                    {
+                                                        <i class="icofont icofont-star"></i>
+                                                    }
 
-										</div>
-										<h5>@item.VoteCount voters</h5>
-									</div>
-								</div>
-							</div>
-							</a>
-						</div>
+                                                </div>
+                                                <h5>@item.VoteCount voters</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </a>
+                        </div>
 
-					}
-					@foreach (var item in Model.TrendingMoviesOfWeek.results.Take(12))
-					{
-						<div class="col-lg-3 col-md-4 col-sm-6 released" style="display:none">
-							<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
-							<div class="single-portfolio">
-								<div class="single-portfolio-img">
-									<img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
+                    }
+                    @foreach (var item in Model.TrendingMoviesOfWeek.results.Take(12))
+                    {
+                        <div class="col-lg-3 col-md-4 col-sm-6 released" style="display:none">
+                            <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
+                                <div class="single-portfolio">
+                                    <div class="single-portfolio-img">
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" style="border-radius: 15px;"/>
 
-									<a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
+                                        <a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
 
-										<i class="icofont icofont-ui-play"></i>
+                                            <i class="icofont icofont-ui-play"></i>
 
-									</a>
-								</div>
-								<div class="portfolio-content">
-									<h2 id="senoh">@item.Title</h2>
-									<div class="review">
-										<div class="author-review">
-											@for (int i = 0; i < ((item.VoteAverage == 10) ? (item.VoteAverage / 2) : (item.VoteAverage / 2) + 1); i++)
-											{
-												<i class="icofont icofont-star"></i>
-											}
+                                        </a>
+                                    </div>
+                                    <div class="portfolio-content">
+                                        <h2 id="senoh">@item.Title</h2>
+                                        <div class="review">
+                                            <div class="author-review">
+                                                @for (int i = 0; i < ((item.VoteAverage == 10) ? (item.VoteAverage / 2) : (item.VoteAverage / 2) + 1); i++)
+                                                {
+                                                    <i class="icofont icofont-star"></i>
+                                                }
 
-										</div>
-										<h5>@item.VoteCount voters</h5>
-									</div>
-								</div>
-							</div>
-							</a>
-						</div>
+                                            </div>
+                                            <h5>@item.VoteCount voters</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
 
-					}
-					@foreach (var item in Model.TrendingMoviesOfDay.results.Take(12))
-					{
-						<div class="col-lg-3 col-md-4 col-sm-6 TrendingDay" style="display:none">
-							<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
-							<div class="single-portfolio">
-								<div class="single-portfolio-img">
-									<img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
+                    }
+                    @foreach (var item in Model.TrendingMoviesOfDay.results.Take(12))
+                    {
+                        <div class="col-lg-3 col-md-4 col-sm-6 TrendingDay" style="display:none">
+                            <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
+                                <div class="single-portfolio">
+                                    <div class="single-portfolio-img">
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" style="border-radius: 30px;"/>
 
-									<a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
+                                        <a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
 
-										<i class="icofont icofont-ui-play"></i>
+                                            <i class="icofont icofont-ui-play"></i>
 
-									</a>
-								</div>
-								<div class="portfolio-content">
-									<h2 id="senoh">@item.Title</h2>
-									<div class="review">
-										<div class="author-review">
-											@for (int i = 0; i < ((item.VoteAverage == 10) ? (item.VoteAverage / 2) : (item.VoteAverage / 2) + 1); i++)
-											{
-												<i class="icofont icofont-star"></i>
-											}
+                                        </a>
+                                    </div>
+                                    <div class="portfolio-content">
+                                        <h2 id="senoh">@item.Title</h2>
+                                        <div class="review">
+                                            <div class="author-review">
+                                                @for (int i = 0; i < ((item.VoteAverage == 10) ? (item.VoteAverage / 2) : (item.VoteAverage / 2) + 1); i++)
+                                                {
+                                                    <i class="icofont icofont-star"></i>
+                                                }
 
-										</div>
-										<h5>@item.VoteCount voters</h5>
-									</div>
-								</div>
-							</div>
-							</a>
-						</div>
+                                            </div>
+                                            <h5>@item.VoteCount voters</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
 
-					}
+                    }
 
-				</div>
-			</div>
-		</div>
-	</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section><!-- movie section end -->
 <!-- video section start -->
 <!--4-->
 <section class="portfolio-area pt-60">
-	<div class="container">
-		<div class="row ">
-			<div class="col-lg-6 text-center text-lg-left">
-				<div class="section-title" id="4444">
-					<h1><i class="icofont icofont-movie"></i> Casts </h1>
-				</div>
-			</div>
-			<div class="portfolio-menu">
-				<ul>
-					<li data-filter=".popular" class="active">Popular</li>
-					<li data-filter=".born">Born today</li>
-				</ul>
-			</div>
-		</div>
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-6 text-center text-lg-left">
+                <div class="section-title" id="4444">
+                    <h1><i class="icofont icofont-movie"></i> Casts </h1>
+                </div>
+            </div>
+            <div class="portfolio-menu">
+                <ul>
+                    <li data-filter=".popular" class="active">Popular</li>
+                    <li data-filter=".born">Born today</li>
+                </ul>
+            </div>
+        </div>
 
-	<hr />
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="row portfolio-item">
-				@foreach (var cast in Model.PopularPeople.results.Take(6).OrderByDescending(n => n.Popularity))
-				{
+        <hr />
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row portfolio-item">
+                    @foreach (var cast in Model.PopularPeople.results.Take(8).OrderByDescending(n => n.Popularity))
+                    {
 
-						<div class="col-lg-3 col-md-4 col-sm-6 popular soon TrendingDay released top">
-							<a asp-controller="CastDetails" asp-action="Index" asp-route-id="@cast.Id">
-						<div class="single-portfolio">
-							<div class="single-portfolio-img" id="oadAction">
-								<img id="radiusprofile" src="http://image.tmdb.org/t/p/w500/@cast.ProfilePath" alt="portfolio" @*style="
-								 padding-left: 25px;
-								 "*@ />
-							</div>
-							<div class="portfolio-content">
-								<h2 id="senoh">@cast.Name</h2>
-								<div class="review">
-									<h4>@cast.Popularity Popularity</h4>
-								</div>
-							</div>
-						</div>
-							</a>
-					</div>
-				}
-			</div>
-		</div>
-	</div>
-		</div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 popular soon TrendingDay released top">
+                            <a asp-controller="CastDetails" asp-action="Index" asp-route-id="@cast.Id">
+                                <div class="single-portfolio">
+                                    <div class="single-portfolio-img" id="oadAction">
+                                        <img id="radiusprofile" src="http://image.tmdb.org/t/p/w500/@cast.ProfilePath" alt="portfolio"  style="border-radius: 210px;"/>
+                                    </div>
+                                    <div class="portfolio-content">
+                                        <h2 id="senoh">@cast.Name</h2>
+                                        <div class="review">
+                                            <h4>@cast.Popularity Popularity</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
 </section><!-- portfolio section end -->
 <section class="video ptb-90">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="section-title pb-20">
-					<h1><i class="icofont icofont-film"></i> best Trailers & Videos</h1>
-				</div>
-			</div>
-		</div>
-		<hr />
-		<div class="row">
-			<div class="col-md-9">
-				<div class="video-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title pb-20">
+                    <h1><i class="icofont icofont-film"></i> best Trailers & Videos</h1>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-9">
+                <div class="video-area">
 
-					<img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[6].PosterPath" alt="video" style="
+                    <img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[6].PosterPath" alt="video" style="
     margin-left: 20%;
 " />
-					<a href="https://www.youtube.com/watch?v=@Model.PopularMovies.results.ToArray()[6].Key" class="popup-youtube">
-						<i class="icofont icofont-ui-play"></i>
-					</a>
-					<div class="video-text">
-						<h2>@Model.PopularMovies.results.ToArray()[6].Title</h2>
-						<div class="review">
-							<div class="author-review">
-								<i class="icofont icofont-star"></i>
-								<i class="icofont icofont-star"></i>
-								<i class="icofont icofont-star"></i>
-								<i class="icofont icofont-star"></i>
-								<i class="icofont icofont-star"></i>
-							</div>
-							<h4>@Model.PopularMovies.results.ToArray()[6].VoteAverage</h4>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="row">
+                    <a href="https://www.youtube.com/watch?v=@Model.PopularMovies.results.ToArray()[6].Key" class="popup-youtube">
+                        <i class="icofont icofont-ui-play"></i>
+                    </a>
+                    <div class="video-text">
+                        <h2>@Model.PopularMovies.results.ToArray()[6].Title</h2>
+                        <div class="review">
+                            <div class="author-review">
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                                <i class="icofont icofont-star"></i>
+                            </div>
+                            <h4>@Model.PopularMovies.results.ToArray()[6].VoteAverage</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
 
 
-					<div class="col-md-12 col-sm-6">
-						<div class="video-area">
-							<img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[4].PosterPath" alt="video" style="
+                    <div class="col-md-12 col-sm-6">
+                        <div class="video-area">
+                            <img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[4].PosterPath" alt="video" style="
     margin-bottom: -24px;
 " />
-							<a href="https://www.youtube.com/watch?v=@Model.PopularMovies.results.ToArray()[4].Key" class="popup-youtube">
-								<i class="icofont icofont-ui-play"></i>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-12 col-sm-6">
-						<div class="video-area" style="
+                            <a href="https://www.youtube.com/watch?v=@Model.PopularMovies.results.ToArray()[4].Key" class="popup-youtube">
+                                <i class="icofont icofont-ui-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-6">
+                        <div class="video-area" style="
     border-top: -38px;
     padding-top: -75px;
     margin-top: 5px;
 ">
-							<img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[5].PosterPath" alt="video" />
-							<a href="https://www.youtube.com/watch?v=@Model.PopularMovies.results.ToArray()[5].Key" class="popup-youtube">
-								<i class="icofont icofont-ui-play"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                            <img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[5].PosterPath" alt="video" />
+                            <a href="https://www.youtube.com/watch?v=@Model.PopularMovies.results.ToArray()[5].Key" class="popup-youtube">
+                                <i class="icofont icofont-ui-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section><!-- video section end -->
 <!-- news section start -->
 <section class="news">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-					    <div class="section-title pb-20">
-							<h1><i class="icofont icofont-coffee-cup"></i> Latest News</h1>
-						</div>
-					</div>
-				</div>
-				<hr />
-			</div>
-			<div class="news-slide-area">
-				<div class="news-slider">
-					<div class="single-news">
-						<div class="news-bg-1"></div>
-						<div class="news-date">
-							<h2><span>NOV</span> 25</h2>
-							<h1>2017</h1>
-						</div>
-						<div class="news-content">
-							<h2>The Witch Queen</h2>
-							<p>Witch Queen is a tall woman with a slim build. She has pink hair, which is pulled up under her hat, and teal eyes.</p>
-						</div>
-						<a href="#">Read More</a>
-					</div>
-					<div class="single-news">
-						<div class="news-bg-2"></div>
-						<div class="news-date">
-							<h2><span>NOV</span> 25</h2>
-							<h1>2017</h1>
-						</div>
-						<div class="news-content">
-							<h2>The Witch Queen</h2>
-							<p>Witch Queen is a tall woman with a slim build. She has pink hair, which is pulled up under her hat, and teal eyes.</p>
-						</div>
-						<a href="#">Read More</a>
-					</div>
-					<div class="single-news">
-						<div class="news-bg-3"></div>
-						<div class="news-date">
-							<h2><span>NOV</span> 25</h2>
-							<h1>2017</h1>
-						</div>
-						<div class="news-content">
-							<h2>The Witch Queen</h2>
-							<p>Witch Queen is a tall woman with a slim build. She has pink hair, which is pulled up under her hat, and teal eyes.</p>
-						</div>
-						<a href="#">Read More</a>
-					</div>
-				</div>
-				<div class="news-thumb">
-					<div class="news-next">
-						<div class="single-news">
-							<div class="news-bg-3"></div>
-							<div class="news-date">
-								<h2><span>NOV</span> 25</h2>
-								<h1>2017</h1>
-							</div>
-							<div class="news-content">
-								<h2>The Witch Queen</h2>
-								<p>Witch Queen is a tall woman with a slim build. She has pink hair, which is pulled up under her hat, and teal eyes.</p>
-							</div>
-							<a href="#">Read More</a>
-						</div>
-					</div>
-					<div class="news-prev">
-						<div class="single-news">
-							<div class="news-bg-2"></div>
-							<div class="news-date">
-								<h2><span>NOV</span> 25</h2>
-								<h1>2017</h1>
-							</div>
-							<div class="news-content">
-								<h2>The Witch Queen</h2>
-								<p>Witch Queen is a tall woman with a slim build. She has pink hair, which is pulled up under her hat, and teal eyes.</p>
-							</div>
-							<a href="#">Read More</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section><!-- news section end -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title pb-20">
+                    <h1><i class="icofont icofont-coffee-cup"></i> Latest News</h1>
+                </div>
+            </div>
+        </div>
+        <hr />
+    </div>
+    <div class="news-slide-area">
+        <div class="news-slider">
+            <div class="single-news">
+                <div class="news-bg-1"></div>
+                <div class="news-date">
+                    <h2><span>NOV</span> 25</h2>
+                    <h1>2017</h1>
+                </div>
+                <div class="news-content">
+                    <h2>The Witch Queen</h2>
+                    <p>Witch Queen is a tall woman with a slim build. She has pink hair, which is pulled up under her hat, and teal eyes.</p>
+                </div>
+                <a href="#">Read More</a>
+            </div>
+            <div class="single-news">
+                <div class="news-bg-2"></div>
+                <div class="news-date">
+                    <h2><span>NOV</span> 25</h2>
+                    <h1>2017</h1>
+                </div>
+                <div class="news-content">
+                    <h2>The Witch Queen</h2>
+                    <p>Witch Queen is a tall woman with a slim build. She has pink hair, which is pulled up under her hat, and teal eyes.</p>
+                </div>
+                <a href="#">Read More</a>
+            </div>
+            <div class="single-news">
+                <div class="news-bg-3"></div>
+                <div class="news-date">
+                    <h2><span>NOV</span> 25</h2>
+                    <h1>2017</h1>
+                </div>
+                <div class="news-content">
+                    <h2>The Witch Queen</h2>
+                    <p>Witch Queen is a tall woman with a slim build. She has pink hair, which is pulled up under her hat, and teal eyes.</p>
+                </div>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+        <div class="news-thumb">
+            <div class="news-next">
+                <div class="single-news">
+                    <div class="news-bg-3"></div>
+                    <div class="news-date">
+                        <h2><span>NOV</span> 25</h2>
+                        <h1>2017</h1>
+                    </div>
+                    <div class="news-content">
+                        <h2>The Witch Queen</h2>
+                        <p>Witch Queen is a tall woman with a slim build. She has pink hair, which is pulled up under her hat, and teal eyes.</p>
+                    </div>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="news-prev">
+                <div class="single-news">
+                    <div class="news-bg-2"></div>
+                    <div class="news-date">
+                        <h2><span>NOV</span> 25</h2>
+                        <h1>2017</h1>
+                    </div>
+                    <div class="news-content">
+                        <h2>The Witch Queen</h2>
+                        <p>Witch Queen is a tall woman with a slim build. She has pink hair, which is pulled up under her hat, and teal eyes.</p>
+                    </div>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- news section end -->
