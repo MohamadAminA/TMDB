@@ -167,7 +167,8 @@
 
                                                 
                                                     <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
-                                                    <a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
+
+                                                    <a id="you" onclick="GetId(@item.Id)" class="popup-youtube">
                                                         <i class="icofont icofont-ui-play"></i>
                                                     </a>
                                                  
@@ -255,3 +256,16 @@
         </div>
         </div>
     </section><!-- details area end -->
+    <script>
+    function GetId(Id){
+        $.ajax({
+            type: "GET",
+            url: '/api/Api/GetOneVideoKey?id=' + Id,
+            success: function (response) {
+                document.getElementById("you").setAttribute("href", response);
+            }
+                
+        });
+    
+    }
+    </script>
