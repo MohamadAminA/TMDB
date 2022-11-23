@@ -35,7 +35,24 @@
             white-space: nowrap;
         }
         body {
-            background: linear-gradient(45deg, black, gray,black);
+            background: linear-gradient(45deg, #030810, #0e2237,#080b11);
+        }
+        .col-lg-12 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+            background-color: #03092b78;
+            border-radius: 15px;
+            box-shadow: rgba(18, 11, 247, 0.4) 5px 5px, rgba(21, 6, 204, 0.3) 10px 10px, rgba(23, 7, 138, 0.2) 15px 15px, rgba(19, 2, 100, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+            padding-bottom: 20px;
+        }
+        hr {
+            margin-bottom: 8px;
+            border-top: 1px solid #ddd;
+        }
+        .portfolio-menu li.active::before, .portfolio-menu li:hover::before {
+            background: #313deb;
         }
     </style>
 	@RenderSection("Header",false)
