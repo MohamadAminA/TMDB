@@ -44,7 +44,7 @@ namespace IMDB.Controllers
             return View(model);
         }
         [HttpPost]
-        public async Task<IActionResult> Index(MovieDetailsViewModel model)
+        public async Task<IActionResult> GetReview(MovieDetailsViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -63,7 +63,8 @@ namespace IMDB.Controllers
                 ReplyParent = model.ReplayParent
             };
             await _review.AddReview(review);
-            return View(model);
+            await _review.SaveChanges();
+            return RedirectToAction("Index", "MovieDetails",new { id = model.Movie.Id });
         }
     }
 }

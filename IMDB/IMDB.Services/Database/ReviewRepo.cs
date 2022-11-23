@@ -26,5 +26,9 @@ namespace IMDB.Services.Database
             await _context.Reviews.AddAsync(rev);
             return rev.Id;
         }
+        public async Task SaveChanges()
+        {
+            await _context.SaveChangesAsync();
+        }
     }
 }
