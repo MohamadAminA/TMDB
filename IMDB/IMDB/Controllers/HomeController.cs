@@ -37,23 +37,23 @@ namespace IMDB.Controllers
                 model.TrendingMoviesOfDay = await _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Day);
                 foreach (MovieDTO.Movie movie in model.PopularMovies.results)
                 {
-                    movie.Key = (await _movie.GetVideoById(movie.Id)).Results.FirstOrDefault()?.Key;
+                    movie.Key = (await _movie.GetVideoById(movie.Id)).Results.LastOrDefault()?.Key;
                 }
-                foreach (MovieDTO.Movie movie in model.TopRatedMovies.results)
-                {
-                    movie.Key = (await _movie.GetVideoById(movie.Id)).Results.FirstOrDefault()?.Key;
-                }
+                //foreach (MovieDTO.Movie movie in model.TopRatedMovies.results)
+                //{
+                //    movie.Key = (await _movie.GetVideoById(movie.Id)).Results.FirstOrDefault()?.Key;
+                //}
 
-                model.LatestMovie.Key = (await _movie.GetVideoById(model.LatestMovie.Id)).Results.FirstOrDefault()?.Key;
+                //model.LatestMovie.Key = (await _movie.GetVideoById(model.LatestMovie.Id)).Results.FirstOrDefault()?.Key;
 
-                foreach (MovieDTO.Movie movie in model.TrendingMoviesOfWeek.results)
-                {
-                    movie.Key = (await _movie.GetVideoById(movie.Id)).Results.FirstOrDefault()?.Key;
-                }
-                foreach (MovieDTO.Movie movie in model.TrendingMoviesOfDay.results)
-                {
-                    movie.Key = (await _movie.GetVideoById(movie.Id)).Results.FirstOrDefault()?.Key;
-                }
+                //foreach (MovieDTO.Movie movie in model.TrendingMoviesOfWeek.results)
+                //{
+                //    movie.Key = (await _movie.GetVideoById(movie.Id)).Results.FirstOrDefault()?.Key;
+                //}
+                //foreach (MovieDTO.Movie movie in model.TrendingMoviesOfDay.results)
+                //{
+                //    movie.Key = (await _movie.GetVideoById(movie.Id)).Results.FirstOrDefault()?.Key;
+                //}
                 return View(model);
             }
             catch (System.Net.Http.HttpRequestException)

@@ -23,18 +23,18 @@ namespace IMDB.Controllers
             model.Credits = await _movie.GetMovieCreditsById(id);
             model.Reviews = await _movie.GetReviewsOfMovieById(id);
             model.SimilarMovie = await _movie.SimilarMovies(id);
-            model.Movie.Key = (await _movie.GetVideoById(id)).Results[0]?.Key;
+            model.Movie.Key = (await _movie.GetVideoById(id)).Results.LastOrDefault()?.Key;
             foreach (var input in model.SimilarMovie.results)
             {
                 try
                 {
-                    input.Key = (await _movie.GetVideoById(input.Id)).Results[0]?.Key;
+                    input.Key = (await _movie.GetVideoById(input.Id)).Results.LastOrDefault()?.Key;
                 }
                 catch (Exception)
                 {
                     input.Key = "aaa";
                 }
-                }
+            }
             return View(model);
         }
     }
