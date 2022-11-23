@@ -29,7 +29,7 @@
 }
 @model MovieDetailsViewModel
 <!DOCTYPE HTML>
-<html lang="zxx">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -65,6 +65,11 @@
         body {
             background: linear-gradient(45deg, black, gray,black);
         }
+        .col-lg-12 {
+            
+            padding-bottom: 31px;
+        }
+        
     </style>
 </head>
 <body>
@@ -461,7 +466,7 @@
                                         TagLine:
                                     </div>
                                     <div class="transformers-right">
-                                      <br />
+                                     
                                         @Model.Movie.Tagline
                                     </div>
                                 </li>
