@@ -345,12 +345,15 @@ namespace IMDB.Services.Api
 
         }
 
-        public async Task<APIListResult<Movie>> SearchMovies(string txt, int page = 1)
+        public async Task<APIListResult<Movie>> SearchMovies(string txt,int releaseDate = 0, int page = 1)
         {
             HttpClient httpClient = new HttpClient();
-
-
             string path = $"https://api.themoviedb.org/3/search/movie?{api_key}&query={txt}&language=en-US&page={page}&include_adult=false";
+
+            if (releaseDate != 0) 
+            {
+                path += $"&year={releaseDate}";
+            }
 
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));

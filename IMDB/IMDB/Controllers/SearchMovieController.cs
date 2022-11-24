@@ -11,7 +11,7 @@ namespace IMDB.Controllers
             _movie = movie;
         }
 
-        public IActionResult Index(string searchText,int page = 1,string searchType = "Movies")
+        public IActionResult Index(string searchText,int releasDate,int page = 1)
         {
             var model = _movie.SearchMovies(searchText, page);
             return View(model);

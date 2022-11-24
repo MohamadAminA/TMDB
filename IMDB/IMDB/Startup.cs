@@ -51,9 +51,14 @@ namespace IMDB
                     ServiceLifetime.Transient
             );
             #endregion
-       
+
+            #region Add Services to asp core
             services.AddTransient<IMovie, MovieRepo>();
             services.AddTransient<IUser, UserRepo>();
+            services.AddTransient<ReviewRepo, ReviewRepo>();
+
+            #endregion
+
 
 
             #region DataBase Context
