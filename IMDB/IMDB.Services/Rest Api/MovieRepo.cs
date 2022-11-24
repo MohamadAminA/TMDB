@@ -25,7 +25,7 @@ namespace IMDB.Services.Api
     public class MovieRepo : IMovie
     {
         private const string key = "646f26e9bfd4f042f28a7160726dd239";
-     
+       
         private readonly string api_key = $"api_key={key}";
         private readonly IUser _user;
 

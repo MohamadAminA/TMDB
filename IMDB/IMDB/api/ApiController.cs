@@ -19,9 +19,7 @@ namespace IMDB.api
         }
         public async Task<IActionResult> getOneVideoKey(int id)
         {
-            var videos = await _movie.GetVideoById(id);
-
-            return Ok(videos.Results.LastOrDefault().Key);
+            return Ok((await _movie.GetVideoById(id)).Results.LastOrDefault().Key);
         }
     }
 }
