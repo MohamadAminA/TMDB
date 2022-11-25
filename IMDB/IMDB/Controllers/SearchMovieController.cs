@@ -13,7 +13,7 @@ namespace IMDB.Controllers
 
         public IActionResult Index(string searchText,int releasDate,int page = 1)
         {
-            var model = _movie.SearchMovies(searchText, page);
+            var model = _movie.SearchMovies(searchText,releasDate, page);
             return View(model);
         }
     }

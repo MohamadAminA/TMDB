@@ -68,7 +68,11 @@
                         </div>
                         <div class="slide-trailor">
                             <h3>Watch Trailer</h3>
-                                <a class="theme-btn theme-btn2" href="@movie.Key"><i class="icofont icofont-play"></i> Trailer</a>
+                                <div onclick="GetId(@movie.Id)" id="div">
+                                    <a id="@movie.Id" class="popup-youtube theme-btn theme-btn2">
+                                         Trailer
+                                    </a>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -239,11 +243,11 @@
 
                                         <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
 
-                                        <a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
-
-                                            <i class="icofont icofont-ui-play"></i>
-
-                                        </a>
+                                        <div onclick="GetId(@item.Id)" id="div">
+                                            <a id="@item.Id" class="popup-youtube">
+                                                <i class="icofont icofont-ui-play"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                     <div class="portfolio-content">
                                         <h2 id="senoh">@item.Title</h2>
@@ -271,12 +275,11 @@
                                     <div class="single-portfolio-img">
 
                                         <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" style="border-radius: 15px;" />
-                                        @*
-                                            <a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
-
+                                        <div onclick="GetId(@item.Id)" id="div">
+                                            <a id="@item.Id" class="popup-youtube">
                                                 <i class="icofont icofont-ui-play"></i>
-
-                                            </a>*@
+                                            </a>
+                                        </div>
                                     </div>
                                     <div class="portfolio-content">
                                         <h2 id="senoh">@item.Title</h2>
@@ -302,12 +305,11 @@
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img">
                                         <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" style="border-radius: 15px;" />
-                                        @*
-                                            <a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
-
+                                        <div onclick="GetId(@item.Id)" id="div">
+                                            <a id="@item.Id" class="popup-youtube">
                                                 <i class="icofont icofont-ui-play"></i>
-
-                                            </a>*@
+                                            </a>
+                                        </div>
                                     </div>
                                     <div class="portfolio-content">
                                         <h2 id="senoh">@item.Title</h2>
@@ -334,12 +336,11 @@
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img">
                                         <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" style="border-radius: 30px;" />
-                                        @*
-                                            <a href="https://www.youtube.com/watch?v=@item.Key" class="popup-youtube">
-
-                                                    <i class="icofont icofont-ui-play"></i>
-
-                                                </a>*@
+                                        <div onclick="GetId(@item.Id)" id="div">
+                                            <a id="@item.Id" class="popup-youtube">
+                                                <i class="icofont icofont-ui-play"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                     <div class="portfolio-content">
                                         <h2 id="senoh">@item.Title</h2>
@@ -416,7 +417,7 @@
         <div class="row">
 
             <div class="section-title pb-20">
-                <h1><i class="icofont icofont-film"></i> best Trailers & Videos</h1>
+                <h1><i class="icofont icofont-film"></i> Latest Trailers & Videos</h1>
             </div>
 
         </div>
@@ -425,14 +426,16 @@
             <div class="col-md-9">
                 <div class="video-area">
 
-                    <img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[6].PosterPath" alt="video" style="
+                    <img src="http://image.tmdb.org/t/p/w500/@Model.LatestMovie.PosterPath" alt="video" style="
     margin-left: 20%;
 " />
-                    <a href="https://www.youtube.com/watch?v=@Model.PopularMovies.results.ToArray()[6].Key" class="popup-youtube">
-                        <i class="icofont icofont-ui-play"></i>
-                    </a>
+                    <div onclick="GetId(@Model.LatestMovie.Id)" id="div">
+                        <a id="@Model.LatestMovie.Id" class="popup-youtube">
+                            <i class="icofont icofont-ui-play"></i>
+                        </a>
+                    </div>
                     <div class="video-text">
-                        <h2>@Model.PopularMovies.results.ToArray()[6].Title</h2>
+                        <h2>@Model.LatestMovie.Title</h2>
                         <div class="review">
                             <div class="author-review">
                                 <i class="icofont icofont-star"></i>
@@ -441,7 +444,7 @@
                                 <i class="icofont icofont-star"></i>
                                 <i class="icofont icofont-star"></i>
                             </div>
-                            <h4>@Model.PopularMovies.results.ToArray()[6].VoteAverage</h4>
+                            <h4>@Model.LatestMovie.VoteAverage</h4>
                         </div>
                     </div>
                 </div>
@@ -455,9 +458,11 @@
                             <img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[4].PosterPath" alt="video" style="
     margin-bottom: -24px;
 " />
-                            <a href="https://www.youtube.com/watch?v=@Model.PopularMovies.results.ToArray()[4].Key" class="popup-youtube">
-                                <i class="icofont icofont-ui-play"></i>
-                            </a>
+                                                                           <div onclick="GetId(@Model.TrendingMoviesOfWeek.results.LastOrDefault().Id)" id="div">
+                                <a id="@Model.TrendingMoviesOfWeek.results.LastOrDefault().Id" class="popup-youtube">
+                                                        <i class="icofont icofont-ui-play"></i>
+                                                    </a>
+                                                    </div>
                         </div>
                     </div>
                     <div class="col-md-12 col-sm-6">
@@ -467,9 +472,11 @@
     margin-top: 5px;
 ">
                             <img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[5].PosterPath" alt="video" />
-                            <a href="https://www.youtube.com/watch?v=@Model.PopularMovies.results.ToArray()[5].Key" class="popup-youtube">
-                                <i class="icofont icofont-ui-play"></i>
-                            </a>
+                            <div onclick="GetId(@Model.TrendingMoviesOfDay.results.LastOrDefault().Id)" id="div">
+                                <a id="@Model.TrendingMoviesOfDay.results.LastOrDefault().Id" class="popup-youtube">
+                                    <i class="icofont icofont-ui-play"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

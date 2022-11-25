@@ -25,24 +25,26 @@ namespace IMDB.Controllers
             MovieDetailsViewModel model = new MovieDetailsViewModel();
             model.Movie = await _movie.GetMovieById(id);
             model.Credits = await _movie.GetMovieCreditsById(id);
+            
             model.Reviews = await _review.GetByMovieId(id);
+            
             model.SimilarMovie = await _movie.SimilarMovies(id);
-            model.Movie.Key = (await _movie.GetVideoById(id)).Results.LastOrDefault()?.Key;
-            foreach (var input in model.SimilarMovie.results)
-            {
-                try
-                {
-                    input.Key = (await _movie.GetVideoById(input.Id)).Results.LastOrDefault()?.Key;
-                }
-                catch (Exception)
-                {
-                    input.Key = "aaa";
-                }
-            }
+            //model.Movie.Key = (await _movie.GetVideoById(id)).Results.LastOrDefault()?.Key;
+            //foreach (var input in model.SimilarMovie.results)
+            //{
+            //    try
+            //    {
+            //        input.Key = (await _movie.GetVideoById(input.Id)).Results.LastOrDefault()?.Key;
+            //    }
+            //    catch (Exception)
+            //    {
+            //        input.Key = "aaa";
+            //    }
+            //}
             return View(model);
         }
         [HttpPost]
-        public async Task<IActionResult> Index(MovieDetailsViewModel model)
+        public async Task<IActionResult> GetReview(MovieDetailsViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -61,7 +63,8 @@ namespace IMDB.Controllers
                 ReplyParent = model.ReplayParent
             };
             await _review.AddReview(review);
-            return View(model);
+            await _review.SaveChanges();
+            return RedirectToAction("Index", "MovieDetails",new { id = model.Movie.Id });
         }
     }
 }

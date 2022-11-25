@@ -207,7 +207,21 @@
 	<script src="/assets/js/isotope.pkgd.min.js"></script>
 	<!-- main JS -->
 	<script src="/assets/js/main.js"></script>
+	
+	<script>
+     function GetId(Id){
+        $.ajax({
+            type: "GET",
+            url: '/api/Api/GetOneVideoKey?id=' + Id,
+            success: function (response) {
+                console.log(response);
+                document.getElementById(Id).setAttribute("href", response);
+                document.getElementById(Id).click()
+            }
+        });
+    }
 
+    </script>
 	@RenderSection("Footer",false)
 </body>
 
