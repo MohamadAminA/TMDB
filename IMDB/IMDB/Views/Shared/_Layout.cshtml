@@ -105,152 +105,166 @@
 	@RenderSection("Header",false)
 </head>
 <body>
-	<!-- Page loader -->
-	<div id="preloader"></div>
-	<!-- header section start -->
-	<header class="header">
-		<div class="container">
-			<div class="header-area">
-				<div class="logo">
-					<a class="sc-iqHYGH hSaKRS imdb-header__logo-link" id="home_img_holder" asp-controller="Home" asp-action="Index" aria-label="Home"><svg id="home_img" class="ipc-logo" xmlns="http://www.w3.org/2000/svg" width="64" height="32" viewBox="0 0 64 32" version="1.1"><g fill="#F5C518"><rect x="0" y="0" width="100%" height="100%" rx="4"></rect></g><g transform="translate(8.000000, 7.000000)" fill="#000000" fill-rule="nonzero"><polygon points="0 18 5 18 5 0 0 0"></polygon><path d="M15.6725178,0 L14.5534833,8.40846934 L13.8582008,3.83502426 C13.65661,2.37009263 13.4632474,1.09175121 13.278113,0 L7,0 L7,18 L11.2416347,18 L11.2580911,6.11380679 L13.0436094,18 L16.0633571,18 L17.7583653,5.8517865 L17.7707076,18 L22,18 L22,0 L15.6725178,0 Z"></path><path d="M24,18 L24,0 L31.8045586,0 C33.5693522,0 35,1.41994415 35,3.17660424 L35,14.8233958 C35,16.5777858 33.5716617,18 31.8045586,18 L24,18 Z M29.8322479,3.2395236 C29.6339219,3.13233348 29.2545158,3.08072342 28.7026524,3.08072342 L28.7026524,14.8914865 C29.4312846,14.8914865 29.8796736,14.7604764 30.0478195,14.4865461 C30.2159654,14.2165858 30.3021941,13.486105 30.3021941,12.2871637 L30.3021941,5.3078959 C30.3021941,4.49404499 30.272014,3.97397442 30.2159654,3.74371416 C30.1599168,3.5134539 30.0348852,3.34671372 29.8322479,3.2395236 Z"></path><path d="M44.4299079,4.50685823 L44.749518,4.50685823 C46.5447098,4.50685823 48,5.91267586 48,7.64486762 L48,14.8619906 C48,16.5950653 46.5451816,18 44.749518,18 L44.4299079,18 C43.3314617,18 42.3602746,17.4736618 41.7718697,16.6682739 L41.4838962,17.7687785 L37,17.7687785 L37,0 L41.7843263,0 L41.7843263,5.78053556 C42.4024982,5.01015739 43.3551514,4.50685823 44.4299079,4.50685823 Z M43.4055679,13.2842155 L43.4055679,9.01907814 C43.4055679,8.31433946 43.3603268,7.85185468 43.2660746,7.63896485 C43.1718224,7.42607505 42.7955881,7.2893916 42.5316822,7.2893916 C42.267776,7.2893916 41.8607934,7.40047379 41.7816216,7.58767002 L41.7816216,9.01907814 L41.7816216,13.4207851 L41.7816216,14.8074788 C41.8721037,15.0130276 42.2602358,15.1274059 42.5316822,15.1274059 C42.8031285,15.1274059 43.1982131,15.0166981 43.281155,14.8074788 C43.3640968,14.5982595 43.4055679,14.0880581 43.4055679,13.2842155 Z"></path></g></svg></a>
-				</div>
-				<div class="header-right">
-					<form action="#">
-						<select>
-							<option value="Movies">Movies</option>
-							<option value="Movies">Casts</option>
-							<option value="Movies">Genre</option>
-						</select>
-						<input type="text" />
-						<button><i class="icofont icofont-search"></i></button>
-					</form>
+    <!-- Page loader -->
+    <div id="preloader"></div>
+    <!-- header section start -->
+    <header class="header">
+        <div class="container">
+            <div class="header-area">
+                <div class="logo">
+                    <a class="sc-iqHYGH hSaKRS imdb-header__logo-link" id="home_img_holder" asp-controller="Home" asp-action="Index" aria-label="Home"><svg id="home_img" class="ipc-logo" xmlns="http://www.w3.org/2000/svg" width="64" height="32" viewBox="0 0 64 32" version="1.1"><g fill="#F5C518"><rect x="0" y="0" width="100%" height="100%" rx="4"></rect></g><g transform="translate(8.000000, 7.000000)" fill="#000000" fill-rule="nonzero"><polygon points="0 18 5 18 5 0 0 0"></polygon><path d="M15.6725178,0 L14.5534833,8.40846934 L13.8582008,3.83502426 C13.65661,2.37009263 13.4632474,1.09175121 13.278113,0 L7,0 L7,18 L11.2416347,18 L11.2580911,6.11380679 L13.0436094,18 L16.0633571,18 L17.7583653,5.8517865 L17.7707076,18 L22,18 L22,0 L15.6725178,0 Z"></path><path d="M24,18 L24,0 L31.8045586,0 C33.5693522,0 35,1.41994415 35,3.17660424 L35,14.8233958 C35,16.5777858 33.5716617,18 31.8045586,18 L24,18 Z M29.8322479,3.2395236 C29.6339219,3.13233348 29.2545158,3.08072342 28.7026524,3.08072342 L28.7026524,14.8914865 C29.4312846,14.8914865 29.8796736,14.7604764 30.0478195,14.4865461 C30.2159654,14.2165858 30.3021941,13.486105 30.3021941,12.2871637 L30.3021941,5.3078959 C30.3021941,4.49404499 30.272014,3.97397442 30.2159654,3.74371416 C30.1599168,3.5134539 30.0348852,3.34671372 29.8322479,3.2395236 Z"></path><path d="M44.4299079,4.50685823 L44.749518,4.50685823 C46.5447098,4.50685823 48,5.91267586 48,7.64486762 L48,14.8619906 C48,16.5950653 46.5451816,18 44.749518,18 L44.4299079,18 C43.3314617,18 42.3602746,17.4736618 41.7718697,16.6682739 L41.4838962,17.7687785 L37,17.7687785 L37,0 L41.7843263,0 L41.7843263,5.78053556 C42.4024982,5.01015739 43.3551514,4.50685823 44.4299079,4.50685823 Z M43.4055679,13.2842155 L43.4055679,9.01907814 C43.4055679,8.31433946 43.3603268,7.85185468 43.2660746,7.63896485 C43.1718224,7.42607505 42.7955881,7.2893916 42.5316822,7.2893916 C42.267776,7.2893916 41.8607934,7.40047379 41.7816216,7.58767002 L41.7816216,9.01907814 L41.7816216,13.4207851 L41.7816216,14.8074788 C41.8721037,15.0130276 42.2602358,15.1274059 42.5316822,15.1274059 C42.8031285,15.1274059 43.1982131,15.0166981 43.281155,14.8074788 C43.3640968,14.5982595 43.4055679,14.0880581 43.4055679,13.2842155 Z"></path></g></svg></a>
+                </div>
+                <div class="header-right">
+                    <form action="#">
+                        <select>
+                            <option value="Movies">Movies</option>
+                            <option value="Movies">Casts</option>
+                            <option value="Movies">Genre</option>
+                        </select>
+                        <input type="text" />
+                        <button><i class="icofont icofont-search"></i></button>
+                    </form>
 
-					<ul>
-						@if (User.Identity.IsAuthenticated)
-						{
+                    <ul>
+                        @if (User.Identity.IsAuthenticated)
+                        {
 
-							<li>
-								<a asp-area="" asp-controller="Profile" asp-action="Index" style="margin-left: 25px;">Welcome @(Html.Raw(User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.GivenName).Value)) !</a>
-							</li>
-							<li>
-								<a href="/Logout">Exit</a>
-							</li>
-						}
-						else
-						{
-							<li><a class="theme-btn" asp-controller="SignIn" asp-action="Index" style="margin-left: 48px;">Login</a></li>
-							<li><a asp-controller="SignUp" asp-action="Index">signUp</a></li>
+                            <li>
+                                <a asp-area="" asp-controller="Profile" asp-action="Index" style="margin-left: 25px;">Welcome @(Html.Raw(User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.GivenName).Value)) !</a>
+                            </li>
+                            <li>
+                                <a href="/Logout">Exit</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li><a class="theme-btn" asp-controller="SignIn" asp-action="Index" style="margin-left: 48px;">Login</a></li>
+                            <li><a asp-controller="SignUp" asp-action="Index">signUp</a></li>
 
-						}
+                        }
 
 
-					</ul>
-				</div>
-				<div class="menu-area">
-					<div class="responsive-menu"></div>
-					<div class="mainmenu">
-						<ul id="primary-menu">
-							<li><a class="active" href="index-2.html">Home</a></li>
-							<li><a class="login-popup" href="#">CelebritiesList</a></li>
-							<li><a href="/MovieDetails/Index/882598">Movie Details</a></li>
-							<li>
-								<a href="#">Movies <i class="icofont icofont-simple-down"></i></a>
-								<ul>
-									<li><a href="#">Popular Movies</a></li>
-									<li><a href="#">Top Movies</a></li>
-								</ul>
-							</li>
+                    </ul>
+                </div>
+                <div class="menu-area">
+                    <div class="responsive-menu"></div>
+                    <div class="mainmenu">
+                        <ul id="primary-menu">
+                            <li><a class="active" href="index-2.html">Home</a></li>
+                            <li><a class="login-popup" href="#">CelebritiesList</a></li>
+                            <li><a href="/MovieDetails/Index/882598">Movie Details</a></li>
+                            <li>
+                                <a href="#">Movies <i class="icofont icofont-simple-down"></i></a>
+                                <ul>
+                                    <li><a href="#">Popular Movies</a></li>
+                                    <li><a href="#">Top Movies</a></li>
+                                </ul>
+                            </li>
 
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-	@RenderBody()
+    @RenderBody()
 
-	<!-- footer section start -->
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-sm-6">
-					<div class="widget">
-						<img src="assets/img/logo.png" alt="about" />
-						<p>7th Harley Place, London W1G 8LZ United Kingdom</p>
-						<h6><span>Call us: </span>(+880) 111 222 3456</h6>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="widget">
-						<h4>Legal</h4>
-						<ul>
-							<li><a href="#">Terms of Use</a></li>
-							<li><a href="#">Privacy Policy</a></li>
-							<li><a href="#">Security</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="widget">
-						<h4>Account</h4>
-						<ul>
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Watchlist</a></li>
-							<li><a href="#">Collections</a></li>
-							<li><a href="#">User Guide</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="widget">
-						<h4>Newsletter</h4>
-						<p>Subscribe to our newsletter system now to get latest news from us.</p>
-						<form action="#">
-							<input type="text" placeholder="Enter your email.." />
-							<button>SUBSCRIBE NOW</button>
-						</form>
-					</div>
-				</div>
-			</div>
-			<hr />
-		</div>
-		<div class="copyright">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6 text-center text-lg-left">
-						<div class="copyright-content">
-							<p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
-						</div>
-					</div>
-					<div class="col-lg-6 text-center text-lg-right">
-						<div class="copyright-content">
-							<a href="#" class="scrollToTop">
-								Back to top<i class="icofont icofont-arrow-up"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer><!-- footer section end -->
-	<!-- jquery main JS -->
-	<script src="/assets/js/jquery.min.js"></script>
-	<!-- Bootstrap JS -->
-	<script src="/assets/js/bootstrap.min.js"></script>
-	<!-- Slick nav JS -->
-	<script src="/assets/js/jquery.slicknav.min.js"></script>
-	<!-- owl carousel JS -->
-	<script src="/assets/js/owl.carousel.min.js"></script>
-	<!-- Popup JS -->
-	<script src="/assets/js/jquery.magnific-popup.min.js"></script>
-	<!-- Isotope JS -->
-	<script src="/assets/js/isotope.pkgd.min.js"></script>
-	<!-- main JS -->
-	<script src="/assets/js/main.js"></script>
-	
-	<script>
+    <!-- footer section start -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="widget">
+                        <img src="assets/img/logo.png" alt="about" />
+                        <p>7th Harley Place, London W1G 8LZ United Kingdom</p>
+                        <h6><span>Call us: </span>(+880) 111 222 3456</h6>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="widget">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Security</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="widget">
+                        <h4>Account</h4>
+                        <ul>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Watchlist</a></li>
+                            <li><a href="#">Collections</a></li>
+                            <li><a href="#">User Guide</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="widget">
+                        <h4>Newsletter</h4>
+                        <p>Subscribe to our newsletter system now to get latest news from us.</p>
+                        <form action="#">
+                            <input type="text" placeholder="Enter your email.." />
+                            <button>SUBSCRIBE NOW</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <hr />
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 text-center text-lg-left">
+                        <div class="copyright-content">
+                            <p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center text-lg-right">
+                        <div class="copyright-content">
+                            <a href="#" class="scrollToTop">
+                                Back to top<i class="icofont icofont-arrow-up"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer><!-- footer section end -->
+    <!-- jquery main JS -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <!-- Slick nav JS -->
+    <script src="/assets/js/jquery.slicknav.min.js"></script>
+    <!-- owl carousel JS -->
+    <script src="/assets/js/owl.carousel.min.js"></script>
+    <!-- Popup JS -->
+    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- Isotope JS -->
+    <script src="/assets/js/isotope.pkgd.min.js"></script>
+    <!-- main JS -->
+    <script src="/assets/js/main.js"></script>
+
+    <script>
+        let vid;
+        function showeMovie(numberVideo) {
+            let out = vid + "," + numberVideo;
+            $.ajax({
+                type: "GET",
+                url: '/api/Api/Getone?id=' + out,
+
+                success: function (response) {
+                    document.getElementById("showeovie").setAttribute("href", "https://www.youtube.com/embed/" + response);
+                    document.getElementById("showeovie").click();
+                }
+            });
+        }
         function GetId(Id) {
+            vid = Id;
             document.getElementById("hid").click();
 
             const a = document.getElementById("del");
@@ -265,83 +279,59 @@
             s.setAttribute("id", "second");
             h.appendChild(f);
             h.appendChild(s);
-
-            //document.getElementById("del").remove();
-            //const list = document.getElementById("ListVideo");
-
-            //const dive0 = document.createElement("div");
-            //dive0.setAttribute("id", "del");
-            //list.appendChild(dive0);
-
-            //const dive1 = document.createElement("div");
-            //dive1.setAttribute("id", "first");
-            //dive1.setAttribute("class", "col - lg - 12 col - md - 12");
-            //dive0.appendChild(dive1);
-            //const dive2 = document.createElement("div");
-            //dive2.setAttribute("id", "second");
-            //dive2.setAttribute("class", "col - lg - 12 col - md - 12");
-            //dive0.appendChild(dive2);
-
             $.ajax({
                 type: "GET",
                 url: '/api/Api/GetOneVideoKey?id=' + Id,
                 success: function (response) {
+                    let path = response;
+                    const Array = path.split(",");
+                    console.log(Array.length);
+                    const fir = document.getElementById("first");
+                    const div3 = document.createElement("div");
+                    div3.setAttribute("class", "ssssss")
+                    fir.appendChild(div3);
+                    const para = document.createElement("iframe");
+                    para.setAttribute("src", "https://www.youtube.com/embed/" + Array[Array.length - 2]);
+                    para.setAttribute("id", "fie");
+                    div3.appendChild(para);
+                    document.getElementById("vi" + "0").setAttribute("style", "display: flex; background: #ff000000; border-radius: 8px; border: 1px solid #ff000000; position: fixed; height: 53px; left: 796px; top: 250px; width: 78px; z-index: 1000;");
 
-                    let text = "?";
-                    let counter = 0;
-                    let path = "";
-                    let vidcounter = 0;
+
+
+                    let coun = 2;;
+
                     do {
+                        const sec = document.getElementById("second");
+                        const para2 = document.createElement("iframe");
+                        if ((Array.length - coun) > 0) {
+                            para2.setAttribute("src", "https://www.youtube.com/embed/" + Array[(Array.length - coun) - 1]);
+                            para2.setAttribute("id", "sec");
+                            sec.appendChild(para2);
 
-                        if (response[counter] == null) {
-                            break;
-                        }
-                        if (vidcounter > 6) {
-                            break;
-                        }
-                        if (response[counter] == ",") {
-                            if (vidcounter != 0) {
-                                    const sec = document.getElementById("second");
-                                    const para2 = document.createElement("iframe");
-                                para2.setAttribute("src", "https://www.youtube.com/embed/" + path);
-                                para2.setAttribute("id", "sec");
-                                //           para2.setAttribute("style", "width: 61%; border: none; height: 248px; margin-left: 19%;");
-                                sec.appendChild(para2);
-                                vidcounter += 1;
-                                path = "";
+                            if (coun == 1) {
+                                document.getElementById("vi" + coun).setAttribute("style", "display: flex; background: #ff000000; border-radius: 8px; border: 1px solid #ff000000; position: fixed; height: 53px; left: 529px; top: 461px; width: 78px; z-index: 1000;");
+                            } if (coun == 2) {
+                                document.getElementById("vi" + coun).setAttribute("style", "display: flex; background: #ff000000; border-radius: 8px; border: 1px solid #ff000000; position: fixed; height: 53px; left: 798px; top: 461px; width: 78px; z-index: 1000;");
+                            } if (coun == 3) {
+                                document.getElementById("vi" + coun).setAttribute("style", "display: flex; background: #ff000000; border-radius: 8px; border: 1px solid #ff000000; position: fixed; height: 53px; left: 1076px; top: 461px; width: 78px; z-index: 1000;");
+                            } if (coun == 4) {
+                                document.getElementById("vi" + coun).setAttribute("style", "display: flex; background: #ff000000; border-radius: 8px; border: 1px solid #ff000000; position: fixed; height: 53px; left: 529px; top: 622px; width: 78px; z-index: 1000;");
+                            } if (coun == 5) {
+                                document.getElementById("vi" + coun).setAttribute("style", "display: flex; background: #ff000000; border-radius: 8px; border: 1px solid #ff000000; position: fixed; height: 53px; left: 798px; top: 622px; width: 78px; z-index: 1000;");
+                            } if (coun == 6) {
+                                document.getElementById("vi" + coun).setAttribute("style", "display: flex; background: #ff000000; border-radius: 8px; border: 1px solid #ff000000; position: fixed; height: 53px; left: 1076px; top: 622px; width: 78px; z-index: 1000;");
                             }
-                            if (vidcounter == 0) {
-                                const fir = document.getElementById("first");
-                                const div3 = document.createElement("div");
-                                div3.setAttribute("class" , "ssssss")
-                                fir.appendChild(div3);
-                                const para = document.createElement("iframe");
-                                para.setAttribute("src", "https://www.youtube.com/embed/" + path);
-                                para.setAttribute("id", "fie");
-                                div3.appendChild(para);
-                                vidcounter += 1;
-                                path = "";
-                            }
-
-                        } else {
-                            path += response[counter];
                         }
-                        counter += 1;
-                    }
-                    while (response[counter] != text);
-
-                    //document.getElementById(Id).setAttribute("href", response);
-                    //document.getElementById(Id).click()
-
+                        coun++;
+                    } while (coun < 7)
 
                 }
             });
 
         }
-
-
     </script>
-	@RenderSection("Footer",false)
+
+    @RenderSection("Footer", false)
 </body>
 
 </html>

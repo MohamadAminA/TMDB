@@ -25,11 +25,19 @@ namespace IMDB.api
             {
                 sendPath += path.Key + ",";
             }
-            sendPath += "?";
             return Ok(sendPath);
             //  return sendPath ;
             // return Ok("https://www.youtube.com/embed/"+(_movie.GetVideoById(id).Result).Results.LastOrDefault()?.Key);
         }
+        [HttpGet("Getone")]
+        public IActionResult Getone(String id)
+        {
+            String[] Array = id.Split(',');
+
+            return Ok((_movie.GetVideoById(int.Parse(Array[0])).Result).Results[int.Parse(Array[1])]?.Key);
+
+        }
+
 
     }
 }
