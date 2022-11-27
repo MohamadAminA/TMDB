@@ -20,7 +20,16 @@ namespace IMDB.api
         [HttpGet("GetOneVideoKey")]
         public IActionResult GetOneVideoKey(int id)
         {
-            return Ok("https://www.youtube.com/watch?v=" + (_movie.GetVideoById(id).Result).Results.LastOrDefault()?.Key);
+            var sendPath = "";
+            foreach (var path in (_movie.GetVideoById(id).Result).Results)
+            {
+                sendPath += path.Key + ",";
+            }
+            sendPath += "?";
+            return Ok(sendPath);
+            //  return sendPath ;
+            // return Ok("https://www.youtube.com/embed/"+(_movie.GetVideoById(id).Result).Results.LastOrDefault()?.Key);
         }
+
     }
 }

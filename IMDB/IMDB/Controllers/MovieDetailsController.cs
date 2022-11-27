@@ -26,7 +26,7 @@ namespace IMDB.Controllers
             model.Movie = await _movie.GetMovieById(id);
             model.Credits = await _movie.GetMovieCreditsById(id);
             
-            model.Reviews = await _review.GetByMovieId(id);
+  //          model.Reviews = await _review.GetByMovieId(id);
             
             model.SimilarMovie = await _movie.SimilarMovies(id);
             //model.Movie.Key = (await _movie.GetVideoById(id)).Results.LastOrDefault()?.Key;

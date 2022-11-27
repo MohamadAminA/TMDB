@@ -60,6 +60,47 @@
         #DONTSHADOW {
             box-shadow: rgba(244, 244, 244, 0) 5px 5px, rgba(21, 6, 204, 0) 10px 10px, rgba(23, 7, 138, 0) 15px 15px, rgba(19, 2, 100, 0) 20px 20px, rgba(240, 46, 170, 0) 25px 25px;
         }
+        .login-box {
+            max-width: 884px;
+            background: #031831cf;
+            position: relative;
+            color: #03090e;
+            margin: 200px auto 0;
+            padding: 40px 25px 25px;
+            border-radius: 20px;
+        }
+
+        .login-area {
+            position: fixed;
+            top: -152px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: none;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            z-index: 99;
+            padding: 0 15px;
+        }
+
+        #fie {
+            width: 60%;
+            border: none;
+            height: 248px;
+            margin-left: 19%;
+            box-shadow: rgba(18, 11, 247, 0.4) 5px 5px, rgba(21, 6, 204, 0.3) 10px 10px, rgba(23, 7, 138, 0.2) 15px 15px, rgba(19, 2, 100, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+        }
+
+        .login-box {
+            max-height: 90%;
+        }
+
+        #sec {
+            margin-left: 7px;
+            width: 32%;
+            margin-top: 4px;
+        }
+
     </style>
 	@RenderSection("Header",false)
 </head>
@@ -110,7 +151,7 @@
 					<div class="mainmenu">
 						<ul id="primary-menu">
 							<li><a class="active" href="index-2.html">Home</a></li>
-							<li><a href="#">CelebritiesList</a></li>
+							<li><a class="login-popup" href="#">CelebritiesList</a></li>
 							<li><a href="/MovieDetails/Index/882598">Movie Details</a></li>
 							<li>
 								<a href="#">Movies <i class="icofont icofont-simple-down"></i></a>
@@ -209,17 +250,95 @@
 	<script src="/assets/js/main.js"></script>
 	
 	<script>
-     function GetId(Id){
-        $.ajax({
-            type: "GET",
-            url: '/api/Api/GetOneVideoKey?id=' + Id,
-            success: function (response) {
-                console.log(response);
-                document.getElementById(Id).setAttribute("href", response);
-                document.getElementById(Id).click()
-            }
-        });
-    }
+        function GetId(Id) {
+            document.getElementById("hid").click();
+
+            const a = document.getElementById("del");
+            a.remove;
+            const d = document.getElementById("ListVideo");
+            const h = document.createElement("div");
+            h.setAttribute("id", "del");
+            d.appendChild(h);
+            const f = document.createElement("div");
+            f.setAttribute("id", "first");
+            const s = document.createElement("div");
+            s.setAttribute("id", "second");
+            a.appendChild(f);
+            a.appendChild(s);
+
+            //document.getElementById("del").remove();
+            //const list = document.getElementById("ListVideo");
+
+            //const dive0 = document.createElement("div");
+            //dive0.setAttribute("id", "del");
+            //list.appendChild(dive0);
+
+            //const dive1 = document.createElement("div");
+            //dive1.setAttribute("id", "first");
+            //dive1.setAttribute("class", "col - lg - 12 col - md - 12");
+            //dive0.appendChild(dive1);
+            //const dive2 = document.createElement("div");
+            //dive2.setAttribute("id", "second");
+            //dive2.setAttribute("class", "col - lg - 12 col - md - 12");
+            //dive0.appendChild(dive2);
+
+            $.ajax({
+                type: "GET",
+                url: '/api/Api/GetOneVideoKey?id=' + Id,
+                success: function (response) {
+
+                    let text = "?";
+                    let counter = 0;
+                    let path = "";
+                    let vidcounter = 0;
+                    do {
+
+                        if (response[counter] == null) {
+                            break;
+                        }
+                        if (vidcounter > 6) {
+                            break;
+                        }
+                        if (response[counter] == ",") {
+                            if (vidcounter != 0) {
+                                    const sec = document.getElementById("second");
+                                    const para2 = document.createElement("iframe");
+                                para2.setAttribute("src", "https://www.youtube.com/embed/" + path);
+                                para2.setAttribute("id", "sec");
+                                //           para2.setAttribute("style", "width: 61%; border: none; height: 248px; margin-left: 19%;");
+                                sec.appendChild(para2);
+                                vidcounter += 1;
+                                path = "";
+                            }
+                            if (vidcounter == 0) {
+                                const fir = document.getElementById("first");
+                                const div3 = document.createElement("div");
+                                div3.setAttribute("class" , "ssssss")
+                                fir.appendChild(div3);
+                                const para = document.createElement("iframe");
+                                para.setAttribute("src", "https://www.youtube.com/embed/" + path);
+                                para.setAttribute("id", "fie");
+                                div3.appendChild(para);
+                                vidcounter += 1;
+                                path = "";
+                            }
+
+                        } else {
+                            path += response[counter];
+                        }
+                        counter += 1;
+                    }
+                    while (response[counter] != text);
+
+                    //document.getElementById(Id).setAttribute("href", response);
+                    //document.getElementById(Id).click()
+
+
+                }
+            });
+
+        }
+
 
     </script>
 	@RenderSection("Footer",false)

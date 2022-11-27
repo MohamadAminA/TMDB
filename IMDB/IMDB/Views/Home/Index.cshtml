@@ -13,87 +13,98 @@
 
 
 <section class="hero-area" id="home">
+    <div class="login-area" style="display: none;">
+        <div class="login-box" id="ListVideo">
+            <a href="#"><i class="icofont icofont-close"></i></a>
+            <h2 style="color:white">List video</h2>
+            <hr />
+            <div id="del">
+
+            </div>
+        </div>
+    </div>
+    <a id="hid" class="login-popup"></a>
     <div class="container">
         <div class="hero-area-slider">
 
             @foreach (var movie in @Model.PopularMovies.results.Take(3))
-           {
-                           <div class="row hero-area-slide">
-                <div class="col-lg-6 col-md-5">
+            {
+                <div class="row hero-area-slide">
+                    <div class="col-lg-6 col-md-5">
                         <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@movie.Id">
 
-                        <div class="hero-area-content">
+                            <div class="hero-area-content">
 
-                            <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@movie.PosterPath" alt="about" />
-                        </div>
-                    </a>
+                                <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@movie.PosterPath" alt="about" />
+                            </div>
+                        </a>
 
-                </div>
-                <div class="col-lg-6 col-md-7">
-                    <div class="hero-area-content pr-50">
-                        <h2>@movie.Title</h2>
-                        <div class="review">
-                            <div class="author-review">
+                    </div>
+                    <div class="col-lg-6 col-md-7">
+                        <div class="hero-area-content pr-50">
+                            <h2>@movie.Title</h2>
+                            <div class="review">
+                                <div class="author-review">
                                     @for (int i = 0; i < ((movie.VoteAverage % 2 == 0) ? (movie.VoteAverage / 2) : (movie.VoteAverage / 2) + 1); i++)
-                                                {
-                                                    <i class="icofont icofont-star"></i>
-                                                }
-                            </div>
+                                    {
+                                        <i class="icofont icofont-star"></i>
+                                    }
+                                </div>
                                 <h4>@movie.VoteAverage Score</h4>
-                        </div>
+                            </div>
                             <p>@movie.Overview</p>
-                        <h3>Cast:</h3>
-                        <div class="slide-cast">
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast1.png" alt="about" />
+                            <h3>Cast:</h3>
+                            <div class="slide-cast">
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast1.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast3.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast4.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast5.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast6.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast">
+                                    <img src="assets/img/cast/cast7.png" alt="about" />
+                                </div>
+                                <div class="single-slide-cast text-center">
+                                    5+
+                                </div>
                             </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast3.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast4.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast5.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast6.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="assets/img/cast/cast7.png" alt="about" />
-                            </div>
-                            <div class="single-slide-cast text-center">
-                                5+
-                            </div>
-                        </div>
-                        <div class="slide-trailor">
-                            <h3>Watch Trailer</h3>
+                            <div class="slide-trailor">
+                                <h3>Watch Trailer</h3>
                                 <div onclick="GetId(@movie.Id)" id="div">
                                     <a id="@movie.Id" class="popup-youtube theme-btn theme-btn2">
-                                         Trailer
+                                        Trailer
                                     </a>
                                 </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-           }
-           
+            }
+
         </div>
 
         <div class="hero-area-thumb">
             <div class="thumb-prev">
                 <div class="row hero-area-slide">
 
-                        <div class="col-lg-6">
-                            <div class="hero-area-content">
-                                <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@Model.PopularMovies.results[1].Id">
+                    <div class="col-lg-6">
+                        <div class="hero-area-content">
+                            <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@Model.PopularMovies.results[1].Id">
 
-                                    <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results[1].PosterPath" alt="about" />
-                                </a>
+                                <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results[1].PosterPath" alt="about" />
+                            </a>
 
-                            </div>
                         </div>
+                    </div>
                     <div class="col-lg-6">
                         <div class="hero-area-content pr-50">
                             <h2>@Model.PopularMovies.results[1].Title</h2>
@@ -146,15 +157,15 @@
             <div class="thumb-next">
                 <div class="row hero-area-slide">
 
-                        <div class="col-lg-6">
-                            <div class="hero-area-content">
-                                <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@Model.PopularMovies.results[1].Id">
+                    <div class="col-lg-6">
+                        <div class="hero-area-content">
+                            <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@Model.PopularMovies.results[1].Id">
 
-                                    <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results[1].PosterPath" alt="about" />
-                                </a>
+                                <img id="imgeRad" src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results[1].PosterPath" alt="about" />
+                            </a>
 
-                            </div>
                         </div>
+                    </div>
                     <div class="col-lg-6">
                         <div class="hero-area-content pr-50">
                             <h2>The Deer God</h2>
