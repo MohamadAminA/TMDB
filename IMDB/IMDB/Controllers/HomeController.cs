@@ -31,7 +31,6 @@ namespace IMDB.Controllers
 
                 model.PopularMovies = await _movie.GetPopularMovies(1);
                 model.TopRatedMovies = await _movie.GetTopRatedMovies(1);
-                model.LatestMovie = await _movie.GetLatestMovies();
                 model.PopularPeople = await _movie.GetPopularPeople();
                 model.TrendingMoviesOfWeek = await _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Week);
                 model.TrendingMoviesOfDay = await _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Day);
