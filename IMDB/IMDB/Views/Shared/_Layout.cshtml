@@ -116,28 +116,31 @@
     <div id="preloader"></div>
     <!-- header section start -->
     <header class="header">
-        <div id="c0" onclick="clo()" class="login-area" style="display: none;">
+        <div id="c0" class="login-area" style="display: none;">
+            <div onclick="clo()" style="width: 100%; height: 100%; position: absolute;"></div>
+          
             <div class="login-box" id="ListVideo" style="margin-top: 16%;">
-           <div>
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol id="line" class="carousel-indicators">
-                 
-                    </ol>
-                    <div id="carousel" class="carousel-inner">
+                <div>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carouselk">
+                      
+                        <div id="carousel" class="carousel-inner">
 
+                        </div>
                     </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <a style="height: 79px;margin-top: 29%;background-color: #9890c157;" class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <a style="height: 79px;margin-top: 29%;background-color: #9890c157;" class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
             </div>
         </div>
+
+
+
         <div class="container">
             <div class="header-area">
                 <div class="logo">
@@ -301,7 +304,8 @@
                     g.setAttribute("class", "carousel-indicators");
                     r.appendChild(g);
                     r.appendChild(d);
-                    
+                   
+
                    
 
                     const carousel = document.getElementById('carousel');
@@ -318,8 +322,11 @@
                     li.setAttribute("data-target", "#carouselExampleIndicators");
                     li.setAttribute("data-slide-to", Array.length);
                     li.setAttribute("class", "active");
+                    li.setAttribute("data-slide-to","0")
                     f.appendChild(li);
-                    let counter = 1; 
+                    let counter = 1;
+
+                    
                     do {
                         const div2 = document.createElement("div");
                         div2.setAttribute('class', 'carousel-item');
@@ -333,9 +340,11 @@
                         const lid = document.createElement("li");
                         lid.setAttribute("data-target", "#carouselExampleIndicators");
                         lid.setAttribute("data-slide-to", Array.length - counter);
+                        lid.setAttribute("data-slide-to", counter)
+
                         fd.appendChild(lid);
                         counter++;
-                    } while ((Array.length - counter) != 0)
+                    } while ((Array.length - counter) != -1)
                 }
             });
         }
