@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMDbLib.Objects.Countries;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.People;
 using TMDbLib.Objects.Reviews;
@@ -43,7 +44,7 @@ namespace Infrastructure
         /// <param name="userId">Current Loged in User id</param>
         /// <param name="rate"></param>
         /// <returns></returns>
-        public Task< bool> RateMovie(int movieId, int userId, double rate,string SessionId);
+        public Task< bool> RateMovie(int movieId, double rate,string SessionId);
 
         /// <summary>
         /// returns All Genres
@@ -76,5 +77,12 @@ namespace Infrastructure
         public Task< APIListResult<Movie>> GetTrendingMovies(MediaType mediaType, TimeWindow period, int page = 1);
 
         public Task< Person> GetPersonDetailes(int person_id);
+        public Task<APIListResult<Movie>> RatedMoviesBySession(string session,int page = 1);
+        public Task<APIListResult<Movie>> DiscoverMovie(DiscoverFilterMovie filter);
+
+        public Task<List<Country>> Countries();
+
+        public Task<string> TemporaryRequestToken();
+        public Task<string> CreateSession(string requestToken);
     }
 }

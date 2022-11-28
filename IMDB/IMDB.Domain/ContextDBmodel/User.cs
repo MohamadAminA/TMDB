@@ -25,6 +25,7 @@ namespace IMDB.DataLayer.Model
         [EmailAddress]
         public string Email { get; set; }
         public long? Phone { get; set; }
+        public string Session { get; set; }
     }
     
 }
