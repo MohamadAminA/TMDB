@@ -10,6 +10,9 @@ using Newtonsoft.Json;
 using Infrastructure;
 using IMDB.Domain.CardViewModel;
 using IMDB.Domain.DTOs;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
+using IMDB.DataLayer.Model;
 
 namespace IMDB.Controllers
 {
@@ -17,10 +20,15 @@ namespace IMDB.Controllers
     {
         private readonly IMovie _movie;
         private readonly IUser _user;
-        public HomeController(IMovie movie, IUser user)
+        private readonly IMemoryCache _cache;
+        private readonly MemoryCacheEntryOptions _cacheOption;
+        
+        public HomeController(IMovie movie, IUser user, IMemoryCache cache)
         {
             _movie = movie;
             _user = user;
+            _cache = cache;
+            _cacheOption = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromHours(1));
         }
 
         public async Task<IActionResult> Index()
@@ -29,11 +37,53 @@ namespace IMDB.Controllers
             {
                 HomeViewModel model = new HomeViewModel();
 
-                model.PopularMovies = await _movie.GetPopularMovies(1);
-                model.TopRatedMovies = await _movie.GetTopRatedMovies(1);
-                model.PopularPeople = await _movie.GetPopularPeople();
-                model.TrendingMoviesOfWeek = await _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Week);
-                model.TrendingMoviesOfDay = await _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Day);
+                model.PopularMovies = await _cache.GetOrCreateAsync("PopularMovies", async options =>
+                {
+                    options.SetOptions(_cacheOption);
+                    var getmovies = await _movie.GetPopularMovies(1);
+                    options.SetValue(getmovies);
+                    return getmovies;
+                });
+
+                model.TopRatedMovies = await _cache.GetOrCreateAsync("TopRatedMovies", async options =>
+                {
+                    options.SetOptions(_cacheOption);
+                    var getmovies = await _movie.GetTopRatedMovies(1);
+                    options.SetValue(getmovies);
+                    return getmovies;
+                });
+
+                model.PopularPeople = await _cache.GetOrCreateAsync("PopularPeople", async options =>
+                {
+                    options.SetOptions(_cacheOption);
+                    var getmovies = await _movie.GetPopularPeople();
+                    options.SetValue(getmovies);
+                    return getmovies;
+                });
+
+
+                model.TrendingMoviesOfWeek = await _cache.GetOrCreateAsync("TrendingMoviesOfWeek", async options =>
+                {
+                    options.SetOptions(_cacheOption);
+                    var getmovies = await _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Week);
+                    options.SetValue(getmovies);
+                    return getmovies;
+                });
+
+
+                model.TrendingMoviesOfDay = await _cache.GetOrCreateAsync("TrendingMoviesOfDay", async options =>
+                {
+                    options.SetOptions(_cacheOption);
+                    var getmovies = await _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Day);
+                    options.SetValue(getmovies);
+                    return getmovies;
+                });
+
+                //model.PopularMovies = await _movie.GetPopularMovies(1);
+                //model.TopRatedMovies = await _movie.GetTopRatedMovies(1);
+                //model.PopularPeople = await _movie.GetPopularPeople();
+                //model.TrendingMoviesOfWeek = await _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Week);
+                //model.TrendingMoviesOfDay = await _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Day);
                 return View(model);
             }
             catch (System.Net.Http.HttpRequestException)

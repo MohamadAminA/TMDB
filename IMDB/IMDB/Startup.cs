@@ -59,7 +59,10 @@ namespace IMDB
 
             #endregion
 
-
+            #region Caching
+            services.AddResponseCaching();
+            services.AddMemoryCache();
+            #endregion
 
             #region DataBase Context
 
