@@ -136,7 +136,7 @@
 					</div>
 				</div>
 			</div>
-			<a href="https://www.youtube.com/watch?v=@Model.Movie.Key" class="theme-btn popup-youtube"> Trailer </a>
+			<a class="theme-btn popup-youtube"> Details </a>
 		</div>
 	</div>
 </section><!-- transformers area end -->
@@ -162,7 +162,7 @@
 						</div>
 						<hr />
 						<div class="row portfolio-item">
-							@foreach (var item in Model.SimilarMovie.results.Take(12))
+							@foreach (var item in Model.SimilarMovie.results.Take(20))
 							{
 								<div class="col-lg-3 col-md-4 col-sm-6">
 									<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">

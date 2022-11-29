@@ -235,7 +235,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="row portfolio-item">
-                    @foreach (var item in Model.PopularMovies.results.Skip(8).Take(12))
+                    @foreach (var item in Model.PopularMovies.results.Skip(3).Take(16))
                     {
                         <div id="f1" class="col-lg-3 col-md-4 col-sm-6 soon popular born">
                             <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
@@ -268,7 +268,7 @@
                         </div>
 
                     }
-                    @foreach (var item in Model.TopRatedMovies.results.Take(12))
+                    @foreach (var item in Model.TopRatedMovies.results.Take(20))
                     {
                         <div class="col-lg-3 col-md-4 col-sm-6 toprated">
                             <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
@@ -299,7 +299,7 @@
                             </a>
                         </div>
                     }
-                    @foreach (var item in Model.TrendingMoviesOfWeek.results.Take(12))
+                    @foreach (var item in Model.TrendingMoviesOfWeek.results.Take(20))
                     {
                         <div class="col-lg-3 col-md-4 col-sm-6 released" style="display:none">
                             <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
@@ -330,7 +330,7 @@
                         </div>
 
                     }
-                    @foreach (var item in Model.TrendingMoviesOfDay.results.Take(12))
+                    @foreach (var item in Model.TrendingMoviesOfDay.results.Take(20))
                     {
                         <div class="col-lg-3 col-md-4 col-sm-6 TrendingDay" style="display:none">
                             <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
@@ -389,7 +389,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="row portfolio-item">
-                    @foreach (var cast in Model.PopularPeople.results.Take(8).OrderByDescending(n => n.Popularity))
+                    @foreach (var cast in Model.PopularPeople.results.Take(20).OrderByDescending(n => n.Popularity))
                     {
 
                         <div class="col-lg-3 col-md-4 col-sm-6 popular soon TrendingDay released toprated">

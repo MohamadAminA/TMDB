@@ -1,5 +1,8 @@
-﻿using Infrastructure;
+﻿using System.Threading.Tasks;
+using IMDB.Domain.CardViewModel;
+using Infrastructure;
 using Microsoft.AspNetCore.Mvc;
+using static IMDB.Domain.DTOs.MovieDTO;
 
 namespace IMDB.Controllers
 {
@@ -10,11 +13,20 @@ namespace IMDB.Controllers
         {
             _movie = movie;
         }
-        [HttpPost]
-        public IActionResult Index(string searchText)
+        public async Task<IActionResult> Index(DiscoverFilterMovie filter)
         {
-            var model = _movie.SearchMovies(searchText,0);
+            var model = new SearchViewModel();
+            model.Movies = await _movie.DiscoverMovie(filter);
+            model.Filter = filter;
             return View(model);
+        }
+        [HttpPost("Search")]
+        public async Task<IActionResult> Search(string query,int date)
+        {
+            var model = new SearchViewModel();
+            model.Movies = await _movie.SearchMovies(query,date);
+            model.Filter = new DiscoverFilterMovie();
+            return View("Index",model);
         }
     }
 }

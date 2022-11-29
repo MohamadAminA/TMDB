@@ -1,15 +1,5 @@
-﻿@using IMDB.Domain.CardViewModel;
-@using IMDB.Domain.CardViewModel
-@using Infrastructure
-@using System;
-@using System.Collections.Generic;
-@using System.IO;
-@using static System.Net.Mime.MediaTypeNames;
-@using static IMDB.Domain.DTOs.ApiDTO;
-@using static IMDB.Domain.DTOs.MovieDTO;
-@using IMDB.Services.Api;
-
-@model Movie
+﻿@using IMDB.Domain.CardViewModel
+@model SearchViewModel
 @section Header{
 
     <style>
@@ -39,7 +29,7 @@
     </style>
 }
 <!-- breadcrumb area start -->
-<section class="breadcrumb-area">
+@*<section class="breadcrumb-area">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -172,7 +162,7 @@
     </div>
     <hr />
     <div class="row portfolio-item">
-        @*@foreach (var item in Model.SimilarMovie.results.Take(12))
+        @foreach (var item in Model.SimilarMovie.results.Take(12))
             {
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
@@ -205,7 +195,7 @@
                         </div>
                     </a>
                 </div>
-            }*@
+            }
 
     </div>
 </div>
@@ -214,7 +204,7 @@
     <h2>Leave a Reply</h2>
     <form asp-controller="MovieDetails" asp-action="GetReview">
         <div class="row">-->
-@*<div class="col-lg-4">
+<div class="col-lg-4">
         <div class="select-container">
             <input type="text" placeholder="Name" />
             <i class="icofont icofont-ui-user"></i>
@@ -231,8 +221,8 @@
             <input type="text" placeholder="Phone" />
             <i class="icofont icofont-phone"></i>
         </div>
-    </div>*@
-@*if (User.Identity.IsAuthenticated)
+    </div>
+if (User.Identity.IsAuthenticated)
     {
         <div class="col-lg-12">
             <div class="textarea-container">
@@ -242,7 +232,7 @@
         </div>
         <div class="details-comment">
             <input type="submit" class="theme-btn theme-btn2" value="Post Comment" />-->
-            <!--@*<p>You may use these HTML tags and attributes: You may use these HTML tags and attributes: You may use these HTML tags and attributes: </p>*@-->
+            <!--<p>You may use these HTML tags and attributes: You may use these HTML tags and attributes: You may use these HTML tags and attributes: </p>-->
 <!--</div>
 }
 else
@@ -254,7 +244,7 @@ else
 
     </form>
 </div>-->
-@* <div class="details-thumb">
+ <div class="details-thumb">
     <div class="details-thumb-prev">
     <div class="thumb-icon">
     <i class="icofont icofont-simple-left"></i>
@@ -273,10 +263,10 @@ else
     <i class="icofont icofont-simple-right"></i>
     </div>
     </div>
-    </div>*@
+    </div>
 </div>
 
 </div>
 </div>
 </div>
-</section><!-- details area end -->
+</section><!-- details area end -->*@

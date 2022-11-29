@@ -31,7 +31,6 @@ namespace IMDB.Controllers
 				ModelState.AddModelError("password", "Username is already registered");
 				return View(model);
 			}
-			var session = await _movie.CreateSession();
 			_user.AddUser(new User()
 			{
 				Name = model.UserName,
@@ -40,6 +39,5 @@ namespace IMDB.Controllers
 			}) ;
             return RedirectToAction("Index","SignIn");
         }
-
     }
 }
