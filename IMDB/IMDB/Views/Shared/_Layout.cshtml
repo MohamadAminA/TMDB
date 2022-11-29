@@ -121,9 +121,8 @@
           
             <div class="login-box" id="ListVideo" style="margin-top: 16%;">
                 <div>
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                        <ol id="line" class="carousel-indicators">
-                        </ol>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carouselk">
+                      
                         <div id="carousel" class="carousel-inner">
 
                         </div>
@@ -305,7 +304,8 @@
                     g.setAttribute("class", "carousel-indicators");
                     r.appendChild(g);
                     r.appendChild(d);
-                    
+                   
+
                    
 
                     const carousel = document.getElementById('carousel');
@@ -322,8 +322,11 @@
                     li.setAttribute("data-target", "#carouselExampleIndicators");
                     li.setAttribute("data-slide-to", Array.length);
                     li.setAttribute("class", "active");
+                    li.setAttribute("data-slide-to","0")
                     f.appendChild(li);
-                    let counter = 1; 
+                    let counter = 1;
+
+                    
                     do {
                         const div2 = document.createElement("div");
                         div2.setAttribute('class', 'carousel-item');
@@ -337,6 +340,8 @@
                         const lid = document.createElement("li");
                         lid.setAttribute("data-target", "#carouselExampleIndicators");
                         lid.setAttribute("data-slide-to", Array.length - counter);
+                        lid.setAttribute("data-slide-to", counter)
+
                         fd.appendChild(lid);
                         counter++;
                     } while ((Array.length - counter) != -1)
