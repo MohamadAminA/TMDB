@@ -1,5 +1,6 @@
 ﻿using System;
 using IMDB.DataLayer.Model;
+using IMDB.Domain.CardViewModel;
 using Infrastructure;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -17,8 +18,10 @@ namespace IMDB.Controllers
         
         public IActionResult Index()
         {
-            User user = _user.GetUserById(Int32.Parse(User.Identity.Name));
-            return View(user);
+            ProfileViewModel model = new ProfileViewModel();
+            model.User = _user.GetUserById(Int32.Parse(User.Identity.Name));
+            model.WatchList = new System.Collections.Generic.List<Domain.DTOs.MovieDTO.Movie>();
+            return View(model);
         }
     }
 }
