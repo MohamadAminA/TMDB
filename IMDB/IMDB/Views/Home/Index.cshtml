@@ -427,16 +427,16 @@
             <div class="col-md-9">
                 <div class="video-area">
 
-                    <img src="http://image.tmdb.org/t/p/w500/@Model.LatestMovie.PosterPath" alt="video" style="
+                    <img src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.LastOrDefault().PosterPath" alt="video" style="
     margin-left: 20%;
 " />
-                    <div onclick="GetId(@Model.LatestMovie.Id)" id="div">
-                        <a id="@Model.LatestMovie.Id" class="popup-youtube">
+                    <div onclick="GetId(@Model.TopRatedMovies.results.LastOrDefault().Id)" id="div">
+                        <a id="@Model.TopRatedMovies.results.LastOrDefault().Id" class="popup-youtube">
                             <i class="icofont icofont-ui-play"></i>
                         </a>
                     </div>
                     <div class="video-text">
-                        <h2>@Model.LatestMovie.Title</h2>
+                        <h2>@Model.TopRatedMovies.results.LastOrDefault().Title</h2>
                         <div class="review">
                             <div class="author-review">
                                 <i class="icofont icofont-star"></i>
@@ -445,7 +445,7 @@
                                 <i class="icofont icofont-star"></i>
                                 <i class="icofont icofont-star"></i>
                             </div>
-                            <h4>@Model.LatestMovie.VoteAverage</h4>
+                            <h4>@Model.TopRatedMovies.results.LastOrDefault().VoteAverage</h4>
                         </div>
                     </div>
                 </div>
