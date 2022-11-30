@@ -21,8 +21,8 @@ namespace IMDB.DataLayer.Model
 
         #region Relations
         public User User { get; set; }
-        [InverseProperty("MovieReview")]
-        public List<MovieReview> Replys { get; set; }
+        [InverseProperty("Id")]
+        public List<MovieReview> Replys { get; set; } 
         #endregion
     }
 }
