@@ -15,6 +15,7 @@ namespace IMDB.Controllers
         public async Task<IActionResult> Index(int id)
         {
             var details = await _movie.GetPersonDetailes(id);
+            
             return View(details);
         }
     }

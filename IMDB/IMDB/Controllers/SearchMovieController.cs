@@ -16,7 +16,7 @@ namespace IMDB.Controllers
         public async Task<IActionResult> Index(DiscoverFilterMovie filter)
         {
             var model = new SearchViewModel();
-            model.Movies = await _movie.DiscoverMovie(filter);
+            model.Movies = await _movie.DiscoverMovie(filter.);
             model.Filter = filter;
             return View(model);
         }
