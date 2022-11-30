@@ -31,13 +31,12 @@ namespace IMDB.Controllers
 				ModelState.AddModelError("password", "Username is already registered");
 				return View(model);
 			}
-			var session = await _movie.CreateSession(await _movie.TemporaryRequestToken());
+			var session = await _movie.CreateSession();
 			_user.AddUser(new User()
 			{
 				Name = model.UserName,
 				Password = model.Password,
-				RegisterDate = DateTime.Now,
-				Session = session
+				RegisterDate = DateTime.Now
 			}) ;
             return RedirectToAction("Index","SignIn");
         }

@@ -118,11 +118,11 @@
     <header class="header" style="position: fixed; background: linear-gradient(180deg, rgb(12, 0, 68) 0%, rgba(1, 1, 47, 0.88) 35%, rgba(6, 10, 15, 0) 100%); height: 202px;">
         <div id="c0" class="login-area" style="display: none;">
             <div onclick="clo()" style="width: 100%; height: 100%; position: absolute;"></div>
-          
+
             <div class="login-box" id="ListVideo" style="margin-top: 16%;">
                 <div>
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carouselk">
-                      
+
                         <div id="carousel" class="hero-area-content">
 
                         </div>
@@ -154,7 +154,7 @@
                             <option value="Movies">Genre</option>
                         </select>
                         <input type="text" />
-                        <a asp-controller="SearchMovie" asp-action="Index" ><i class="icofont icofont-search" style="right: 32%; position: absolute; top: 16%;"></i></a>
+                        <a asp-controller="SearchMovie" asp-action="Index" asp-route-searchText="smile"><i class="icofont icofont-search" style="right: 32%; position: absolute; top: 16%;"></i></a>
                     </form>
 
                     <ul>
