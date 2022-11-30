@@ -115,7 +115,7 @@
     <!-- Page loader -->
     <div id="preloader"></div>
     <!-- header section start -->
-    <header class="header" style="position: fixed; background: linear-gradient(180deg, rgb(12, 0, 68) 0%, rgba(1, 1, 47, 0.88) 35%, rgba(6, 10, 15, 0) 100%); height: 202px;">
+    <header class="header" style="position: absolute; background: linear-gradient(180deg, rgb(12, 0, 68) 0%, rgba(1, 1, 47, 0.88) 35%, rgba(6, 10, 15, 0) 100%); height: 202px;">
         <div id="c0" class="login-area" style="display: none;">
             <div onclick="clo()" style="width: 100%; height: 100%; position: absolute;"></div>
 
@@ -301,7 +301,7 @@
                 type: "GET",
                 url: '/api/Api/GetOneVideoKey?id=' + Id,
                 success: function (response) {
-                    const Array = response.split(",");
+                    const Array = response.split('*');
                     const r = document.getElementById("carouselExampleIndicators");
                     const d = document.createElement("div");
                     d.setAttribute("id", "carousel");
@@ -322,7 +322,7 @@
                     const img = document.createElement("iframe");
                     img.setAttribute('class', "d-block w-100");
                     img.setAttribute('style', "height: 500px;");
-                    img.setAttribute('src', "https://www.youtube.com/embed/"+ Array[Array.length-1]);
+                    img.setAttribute('src', "https://www.youtube.com/embed/"+ Array[Array.length-2]);
                     div.appendChild(img);
                     const f = document.getElementById("line");
                     const li = document.createElement("li");
@@ -331,17 +331,17 @@
                     li.setAttribute("class", "active");
                     li.setAttribute("data-slide-to","0")
                     f.appendChild(li);
-                    let counter = 1;
+                    let counter = 2;
 
                     
-                    do {
+                    while ((Array.length - counter - 1) >= 0) {
                         const div2 = document.createElement("div");
                         div2.setAttribute('class', 'carousel-item');
                         carousel.appendChild(div2);
                         const img2 = document.createElement("iframe");
                         img2.setAttribute('class', "d-block w-100");
                         img2.setAttribute('style', "height: 500px;");
-                        img2.setAttribute('src', "https://www.youtube.com/embed/" + Array[Array.length - 1 - counter]);
+                        img2.setAttribute('src', "https://www.youtube.com/embed/" + Array[Array.length - counter-1]);
                         div2.appendChild(img2);
                         const fd = document.getElementById("line");
                         const lid = document.createElement("li");
@@ -351,7 +351,7 @@
 
                         fd.appendChild(lid);
                         counter++;
-                    } while ((Array.length - 1 - counter) != -1)
+                    } 
                 }
             });
         }
