@@ -9,6 +9,7 @@ using TMDbLib.Objects.Movies;
 using TMDbLib.Objects.Reviews;
 using TMDbLib.Objects.Search;
 using Newtonsoft.Json;
+using TMDbLib.Objects.Discover;
 
 namespace IMDB.Domain.DTOs
 {
@@ -21,6 +22,26 @@ namespace IMDB.Domain.DTOs
             public List<T> results { get; set; }
             public int total_pages { get; set; }
             public int total_results { get; set; }
+        }
+
+        public class DiscoverFilterMovie
+        {
+            public int Page { get; set; } = 1; 
+            public string Region { get; set; }
+            public DiscoverMovieSortBy? SortBy { get; set; }
+            public bool IncludeAdult { get; set; }
+            public DateTime? ReleaseDateFrom { get; set; }
+            public DateTime? ReleaseDateTo { get; set; }
+            public ReleaseDateType? ReleaseType { get; set; }
+            public int? VoteCountFrom { get; set; }
+            public int? VoteCountTo { get; set; }
+            public double? VoteAverageFrom { get; set; }
+            public double? VoteAverageTo { get; set; }
+            public List<int> People { get; set; }
+            public List<int> Genres { get; set; }
+            public int? TimeFrom { get; set; }
+            public int? TimeTo { get; set; }
+
         }
 
         public class Movie

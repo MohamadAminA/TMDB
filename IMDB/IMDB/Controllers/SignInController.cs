@@ -36,20 +36,7 @@ namespace IMDB.Controllers
             var user = _user.GetUserByName(model.UserName);
             if (user != null && !string.IsNullOrWhiteSpace(user.Password) && model.Password == user.Password)
             {
-                #region Set Cookie for Session
-                if (string.IsNullOrEmpty(this.Request.Cookies["SessionId"]))
-                {
-                    var newSession = _movie.CreateSession().Result;
-                    Response.Cookies.Append("SessionId", newSession.GuestSessionId, new CookieOptions
-                    {
-                        HttpOnly = false,
-                        Path = Request.PathBase.HasValue ? this.Request.PathBase.ToString() : "/",
-                        Secure = Request.IsHttps,
-                        Expires = newSession.ExpiresAt
-                    });
-                }
-                #endregion
-                UserAuthentication(user.Id, user.Name, model.RememberMe);
+                UserAuthentication(user.Id, user.Name,user.Session, model.RememberMe);
             }
             else
             {
@@ -58,12 +45,13 @@ namespace IMDB.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
-        private List<Claim> UserAuthentication(int id, string userName, bool isRememberMe = false)
+        private List<Claim> UserAuthentication(int id, string userName,string session, bool isRememberMe = false)
         {
             var claims = new List<Claim>()
             {
                 new System.Security.Claims.Claim(ClaimTypes.Name,id.ToString()),
-                new System.Security.Claims.Claim(ClaimTypes.GivenName,userName)
+                new System.Security.Claims.Claim(ClaimTypes.GivenName,userName),
+                new System.Security.Claims.Claim(ClaimTypes.NameIdentifier,session)
             };
             ClaimsIdentity identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             var principle = new ClaimsPrincipal(identity);

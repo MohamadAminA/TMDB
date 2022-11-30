@@ -13,6 +13,8 @@ using IMDB.Domain.DTOs;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using IMDB.DataLayer.Model;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Http;
 
 namespace IMDB.Controllers
 {
@@ -35,13 +37,14 @@ namespace IMDB.Controllers
         {
             try
             {
+                
                 HomeViewModel model = new HomeViewModel();
 
                 model.PopularMovies = await _cache.GetOrCreateAsync("PopularMovies", async options =>
                 {
                     options.SetOptions(_cacheOption);
                     var getmovies = await _movie.GetPopularMovies(1);
-                    options.SetValue(getmovies);
+                    if(getmovies!=null)options.SetValue(getmovies);
                     return getmovies;
                 });
 
@@ -49,7 +52,7 @@ namespace IMDB.Controllers
                 {
                     options.SetOptions(_cacheOption);
                     var getmovies = await _movie.GetTopRatedMovies(1);
-                    options.SetValue(getmovies);
+                    if (getmovies != null) options.SetValue(getmovies);
                     return getmovies;
                 });
 
@@ -57,7 +60,7 @@ namespace IMDB.Controllers
                 {
                     options.SetOptions(_cacheOption);
                     var getmovies = await _movie.GetPopularPeople();
-                    options.SetValue(getmovies);
+                    if (getmovies != null) options.SetValue(getmovies);
                     return getmovies;
                 });
 
@@ -66,7 +69,7 @@ namespace IMDB.Controllers
                 {
                     options.SetOptions(_cacheOption);
                     var getmovies = await _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Week);
-                    options.SetValue(getmovies);
+                    if (getmovies != null) options.SetValue(getmovies);
                     return getmovies;
                 });
 
@@ -75,7 +78,7 @@ namespace IMDB.Controllers
                 {
                     options.SetOptions(_cacheOption);
                     var getmovies = await _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Day);
-                    options.SetValue(getmovies);
+                    if (getmovies != null) options.SetValue(getmovies);
                     return getmovies;
                 });
 

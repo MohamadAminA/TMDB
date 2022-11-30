@@ -8,9 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using IMDB.Domain.DTOs;
 using Infrastructure;
+using Microsoft.Extensions.Caching.Memory;
 using Newtonsoft.Json;
 using TMDbLib.Objects;
 using TMDbLib.Objects.Authentication;
+using TMDbLib.Objects.Countries;
 using TMDbLib.Objects.General;
 using TMDbLib.Objects.Genres;
 using TMDbLib.Objects.People;
@@ -28,10 +30,14 @@ namespace IMDB.Services.Api
        
         private readonly string api_key = $"api_key={key}";
         private readonly IUser _user;
+        private readonly IMemoryCache _cache;
+        private readonly MemoryCacheEntryOptions _cacheOption;
 
-        public MovieRepo(IUser user)
+        public MovieRepo(IUser user, IMemoryCache cache)
         {
-            _user = user;   
+            _user = user;
+            _cache = cache;
+            _cacheOption = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromDays(1));
         }
         public MovieRepo()
         {
@@ -41,7 +47,7 @@ namespace IMDB.Services.Api
             HttpClient httpClient = new HttpClient();
 
 
-            string path = $"https://api.themoviedb.org/3/genre/movie/list?{api_key}&language=en-US";
+            string path = $"https://api.themoviedb.org/3/genre/movie/list?{api_key}";
                          
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
@@ -55,9 +61,34 @@ namespace IMDB.Services.Api
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                var Respons = Newtonsoft.Json.JsonConvert.DeserializeObject<TMDbLib.Objects.Genres.GenreContainer>(strContent);
+                var Respons = JsonConvert.DeserializeObject<TMDbLib.Objects.Genres.GenreContainer>(strContent);
                 return Respons;
             }
+            return null;
+        }
+
+        public async Task<APIListResult<Movie>> RatedMoviesBySession(string session, int page = 1)
+        {
+                HttpClient httpClient = new HttpClient();
+
+                string path = $"https://api.themoviedb.org/3/account/0/rated/movies?{api_key}&session_id={session}&sort_by=created_at.desc&page={page}";
+
+                httpClient.DefaultRequestHeaders.Accept.Add(
+                    new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = await httpClient.GetAsync(path);
+                if (response.IsSuccessStatusCode)
+                {
+                    var res = await response.Content.ReadAsStreamAsync();
+
+                    using Stream receiveStream = res;
+                    using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                    string strContent = readStream.ReadToEnd();
+
+                    var Respons = JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
+                    return Respons;
+                }
+            
             return null;
         }
 
@@ -81,7 +112,7 @@ namespace IMDB.Services.Api
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                Movie movie = Newtonsoft.Json.JsonConvert.DeserializeObject<Movie>(strContent);
+                Movie movie = JsonConvert.DeserializeObject<Movie>(strContent);
                 return movie;
             }
             return null;
@@ -108,7 +139,7 @@ namespace IMDB.Services.Api
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                var Credits = Newtonsoft.Json.JsonConvert.DeserializeObject<TMDbLib.Objects.Movies.Credits>(strContent);
+                var Credits = JsonConvert.DeserializeObject<TMDbLib.Objects.Movies.Credits>(strContent);
                 return Credits;
             }
             
@@ -135,7 +166,7 @@ namespace IMDB.Services.Api
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                APIListResult<Review> movieReview = Newtonsoft.Json.JsonConvert.DeserializeObject<APIListResult<Review>>(strContent);
+                APIListResult<Review> movieReview = JsonConvert.DeserializeObject<APIListResult<Review>>(strContent);
                 return movieReview;
             }
             return null;
@@ -155,7 +186,7 @@ namespace IMDB.Services.Api
                 using Stream receiveStream = res;
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
-                trailers = Newtonsoft.Json.JsonConvert.DeserializeObject<TrailersResult>(strContent);
+                trailers = JsonConvert.DeserializeObject<TrailersResult>(strContent);
                 return trailers;
             }
             return null;
@@ -181,7 +212,7 @@ namespace IMDB.Services.Api
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                APIListResult<Movie> popMovies = Newtonsoft.Json.JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
+                APIListResult<Movie> popMovies = JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
                 return popMovies;
             }
             return null;
@@ -207,7 +238,7 @@ namespace IMDB.Services.Api
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                APIListResult<Movie> popMovies = Newtonsoft.Json.JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
+                APIListResult<Movie> popMovies = JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
                 return popMovies;
             }
             return null;
@@ -234,7 +265,7 @@ namespace IMDB.Services.Api
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                APIListResult<Person> popPeople = Newtonsoft.Json.JsonConvert.DeserializeObject<APIListResult<Person>>(strContent);
+                APIListResult<Person> popPeople = JsonConvert.DeserializeObject<APIListResult<Person>>(strContent);
                 
                 return popPeople;
             }
@@ -261,11 +292,48 @@ namespace IMDB.Services.Api
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                Movie popMovies = Newtonsoft.Json.JsonConvert.DeserializeObject<Movie>(strContent);
+                Movie popMovies = JsonConvert.DeserializeObject<Movie>(strContent);
                 return popMovies;
             }
             return null;
         }
+
+        public async Task<string> TemporaryRequestToken()
+        {
+
+            string token = await _cache.GetOrCreateAsync("token", async options =>
+            {
+                HttpClient httpClient = new HttpClient();
+
+
+                string path = $"https://api.themoviedb.org/3/authentication/token/new?{api_key}";
+
+                httpClient.DefaultRequestHeaders.Accept.Add(
+                    new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = await httpClient.GetAsync(path);
+                if (response.IsSuccessStatusCode)
+                {
+                    var res = await response.Content.ReadAsStreamAsync();
+
+                    using Stream receiveStream = res;
+                    using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                    string strContent = readStream.ReadToEnd();
+
+                    var resualt = JsonConvert.DeserializeObject<TMDbLib.Objects.Authentication.Token>(strContent);
+
+                    if (resualt.Success)
+                    {
+                        options.SetOptions(new MemoryCacheEntryOptions().SetSlidingExpiration(new TimeSpan((resualt.ExpiresAt - DateTime.UtcNow).Ticks)));
+                        options.SetValue(resualt);
+                        return resualt.RequestToken;
+                    }
+                }
+                return null;
+            });
+            return token;
+        }
+
 
         public async Task<APIListResult<Movie>> GetTopRatedMovies(int page = 1)
         {
@@ -287,17 +355,16 @@ namespace IMDB.Services.Api
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                APIListResult<Movie> popMovies = Newtonsoft.Json.JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
+                APIListResult<Movie> popMovies = JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
                 return popMovies;
             }
             return null;
         }
 
-        public async Task<bool> RateMovie(int movieId,int userId, double rate,string SessionId)
+        public async Task<bool> RateMovie(int movieId, double rate,string SessionId)
         {
             try
             {
-                var user = _user.GetUserById(userId);
                 HttpClient httpClient = new HttpClient();
 
 
@@ -332,7 +399,7 @@ namespace IMDB.Services.Api
                     using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                     string strContent = readStream.ReadToEnd();
 
-                    var respons = Newtonsoft.Json.JsonConvert.DeserializeObject<ApiResponse>(strContent);
+                    var respons = JsonConvert.DeserializeObject<ApiResponse>(strContent);
                     throw new Exception(respons.status_message);
                 }
                 else
@@ -344,6 +411,53 @@ namespace IMDB.Services.Api
             }
 
         }
+
+
+        public async Task<string> CreateSession(string requestToken)
+        {
+                HttpClient httpClient = new HttpClient();
+
+
+                string path = $"https://api.themoviedb.org/3/authentication/session/new?{api_key}";
+
+                #region Request Body
+                var requestData = new Dictionary<string, string>
+                {
+                    {
+                  "request_token", requestToken
+                }
+                };
+
+                var request = new HttpRequestMessage()
+                {
+                    RequestUri = new Uri(path),
+                    Method = HttpMethod.Post,
+                    Content = new FormUrlEncodedContent(requestData)
+                };
+                #endregion
+
+
+                httpClient.DefaultRequestHeaders.Accept.Add(
+                    new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = await httpClient.SendAsync(request);
+                if (response.IsSuccessStatusCode)
+                {
+                    var res = await response.Content.ReadAsStreamAsync();
+
+                    using Stream receiveStream = res;
+                    using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                    string strContent = readStream.ReadToEnd();
+
+                    var respons = JsonConvert.DeserializeObject<UserSession>(strContent);
+                    if (respons.Success)
+                        return respons.SessionId;
+                }
+                
+                return null;
+
+        }
+
 
         public async Task<APIListResult<Movie>> SearchMovies(string txt,int releaseDate = 0, int page = 1)
         {
@@ -367,7 +481,7 @@ namespace IMDB.Services.Api
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                var movie = Newtonsoft.Json.JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
+                var movie = JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
                 return movie;
             }
             return null;
@@ -392,7 +506,7 @@ namespace IMDB.Services.Api
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                var person = Newtonsoft.Json.JsonConvert.DeserializeObject<Person>(strContent);
+                var person = JsonConvert.DeserializeObject<Person>(strContent);
                 return person;
             }
             return null;
@@ -417,7 +531,49 @@ namespace IMDB.Services.Api
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                var movie = Newtonsoft.Json.JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
+                var movie = JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
+                return movie;
+            }
+            return null;
+        }
+
+        public async Task<APIListResult<Movie>> DiscoverMovie(DiscoverFilterMovie filter)
+        {
+            HttpClient httpClient = new HttpClient();
+
+
+            StringBuilder path = new StringBuilder($"https://api.themoviedb.org/3/discover/movie?{api_key}&region={filter.Region}&sort_by={filter.SortBy}&include_adult={filter.IncludeAdult}&page={filter.Page}&primary_release_date.gte={filter.ReleaseDateFrom?.ToString("YYYY-MM-DD")}&primary_release_date.lte={filter.ReleaseDateTo?.ToString("YYYY-MM-DD")}&with_release_type={filter.ReleaseType}&vote_count.gte={filter.VoteCountFrom}&vote_count.lte={filter.VoteCountTo}&vote_average.gte={filter.VoteAverageFrom}&vote_average.lte={filter.VoteAverageTo}&with_runtime.gte={filter.TimeFrom}&with_runtime.lte={filter.TimeTo}");
+            if(filter.People!=null&& filter.People.Count != 0)
+            {
+                path.Append("&with_people=");
+                foreach (var person in filter.People)
+                {
+                    path.Append(person);
+                    path.Append(",");
+                }
+            }
+            if (filter.Genres != null && filter.Genres.Count != 0)
+            {
+                path.Append("&with_genres=");
+                foreach (var genre in filter.Genres)
+                {
+                    path.Append(genre);
+                    path.Append(",");
+                }
+            }
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+            HttpResponseMessage response = await httpClient.GetAsync(path.ToString());
+            if (response.IsSuccessStatusCode)
+            {
+                var res = await response.Content.ReadAsStreamAsync();
+
+                using Stream receiveStream = res;
+                using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                string strContent = readStream.ReadToEnd();
+
+                var movie = JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
                 return movie;
             }
             return null;
@@ -444,7 +600,7 @@ namespace IMDB.Services.Api
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                var respons = Newtonsoft.Json.JsonConvert.DeserializeObject<TMDbLib.Objects.Authentication.GuestSession>(strContent);
+                var respons = JsonConvert.DeserializeObject<TMDbLib.Objects.Authentication.GuestSession>(strContent);
                 return respons;
             }
 
@@ -452,33 +608,41 @@ namespace IMDB.Services.Api
 
         }
 
+        public async Task<List<Country>> Countries()
+        {
+            
+            List<Country> AllCountries = await _cache.GetOrCreateAsync("Countries", async options =>
+            {
+                HttpClient httpClient = new HttpClient();
 
-        //        public void test()
-        //        {
-        //            var client = new HttpClient();
 
-        //            var requestData = new Dictionary<string, string>
-        //{
-        //    {
-        //  "value", "8.5"
-        //}
-        //};
+                string path = $"https://api.themoviedb.org/3/configuration/countries?{api_key}";
 
-        //            var request = new HttpRequestMessage()
-        //            {
-        //                RequestUri = new Uri($"https://api.themoviedb.org/3/authentication/token/new?api_key={api_key}"),
-        //                Method = HttpMethod.Get,
-        //                Content = new FormUrlEncodedContent(requestData)
-        //            };
-        //            //request.Headers.Add("Token", ""); // Add or modify headers
+                httpClient.DefaultRequestHeaders.Accept.Add(
+                    new MediaTypeWithQualityHeaderValue("application/json"));
 
-        //            var response = client.SendAsync(request);
+                HttpResponseMessage response = await httpClient.GetAsync(path);
+                if (response.IsSuccessStatusCode)
+                {
+                    var res = await response.Content.ReadAsStreamAsync();
 
-        //            // To read the response as string
-        //            var responseString = await response.Content.ReadAsStringAsync();
+                    using Stream receiveStream = res;
+                    using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                    string strContent = readStream.ReadToEnd();
 
-        //            // To read the response as json
-        //            //var responseJson = await response.Content.ReadAsStringAsync<ResponseObject>();
-        //        }
+                    var countries = JsonConvert.DeserializeObject<List<Country>>(strContent);
+                    options.SetOptions(_cacheOption);
+                    options.SetValue(countries);
+                    return countries;
+                }
+                return null;
+            });
+           
+            return AllCountries;
+        }
+
+        
+
+
     }
 }
