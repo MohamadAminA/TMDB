@@ -237,7 +237,7 @@
                 <div class="row portfolio-item">
                     @foreach (var item in Model.PopularMovies.results.Skip(8).Take(12))
                     {
-                        <div class="col-lg-3 col-md-4 col-sm-6 soon popular born">
+                        <div id="f1" class="col-lg-3 col-md-4 col-sm-6 soon popular born">
                             <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img">
