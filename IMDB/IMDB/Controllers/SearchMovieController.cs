@@ -10,11 +10,11 @@ namespace IMDB.Controllers
         {
             _movie = movie;
         }
-
-        public IActionResult Index(string searchText,int releasDate,int page = 1)
+        [HttpPost]
+        public IActionResult Index()
         {
-            var model = _movie.SearchMovies(searchText,releasDate, page);
-            return View(model);
+         //   var model = _movie.SearchMovies(searchText,2019, 1);
+            return View();
         }
     }
 }
