@@ -320,6 +320,13 @@
                     div.setAttribute('class', 'carousel-item active');
                     carousel.appendChild(div);
                     const img = document.createElement("iframe");
+                       
+                    img.setAttribute('frameborder', "0");
+                    img.setAttribute('allowfullscreen' ,"true")
+                    img.setAttribute('allow', "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+                    img.setAttribute('style', "height: 500px;");
+                    
+               //     img.setAttribute('allowfullscreen');
                     img.setAttribute('class', "d-block w-100");
                     img.setAttribute('style', "height: 500px;");
                     img.setAttribute('src', "https://www.youtube.com/embed/"+ Array[Array.length-2]);
@@ -339,6 +346,10 @@
                         div2.setAttribute('class', 'carousel-item');
                         carousel.appendChild(div2);
                         const img2 = document.createElement("iframe");
+                        img.setAttribute('frameborder', "0");
+                        img.setAttribute('allowfullscreen', "true")
+                        img.setAttribute('allow', "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+                        img.setAttribute('style', "height: 500px;");
                         img2.setAttribute('class', "d-block w-100");
                         img2.setAttribute('style', "height: 500px;");
                         img2.setAttribute('src', "https://www.youtube.com/embed/" + Array[Array.length - counter-1]);
