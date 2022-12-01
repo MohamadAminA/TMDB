@@ -37,6 +37,7 @@ namespace IMDB.Controllers
         {
             try
             {
+                //_movie.GetReviewsOfMovieById();
                 
                 HomeViewModel model = new HomeViewModel();
 
