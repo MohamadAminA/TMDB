@@ -42,7 +42,7 @@ namespace IMDB.Controllers
             {
                 ModelState.AddModelError("Password", "نام کاربری یا رمز اشتباه می باشد");
                 return View(model);
-            }
+            }  
             return RedirectToAction("Index", "Home");
         }
         private List<Claim> UserAuthentication(int id, string userName, bool isRememberMe = false)
@@ -50,8 +50,8 @@ namespace IMDB.Controllers
             var claims = new List<Claim>()
             {
                 new System.Security.Claims.Claim(ClaimTypes.Name,id.ToString()),
-                new System.Security.Claims.Claim(ClaimTypes.GivenName,userName),
-             };
+                new System.Security.Claims.Claim(ClaimTypes.GivenName,userName)
+            };
             ClaimsIdentity identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             var principle = new ClaimsPrincipal(identity);
             var properties = new AuthenticationProperties()
