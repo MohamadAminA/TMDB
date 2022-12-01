@@ -2,272 +2,377 @@
 @model MovieDetailsViewModel
 @section Header{
 
-	<style>
-		.li {
-			margin: 10px;
-		}
+    <style>
+        .li {
+            margin: 10px;
+        }
 
-		.col-lg-12 {
-			-webkit-box-flex: 0;
-			-ms-flex: 0 0 100%;
-			flex: 0 0 100%;
-			max-width: 100%;
-			background-color: #03092b78;
-			border-radius: 15px;
-			box-shadow: rgba(18, 11, 247, 0.4) 5px 5px, rgba(21, 6, 204, 0.3) 10px 10px, rgba(23, 7, 138, 0.2) 15px 15px, rgba(19, 2, 100, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
-			padding-bottom: 20px;
-		}
+        .col-lg-12 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+            background-color: #03092b78;
+            border-radius: 15px;
+            box-shadow: rgba(18, 11, 247, 0.4) 5px 5px, rgba(21, 6, 204, 0.3) 10px 10px, rgba(23, 7, 138, 0.2) 15px 15px, rgba(19, 2, 100, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+            padding-bottom: 20px;
+        }
 
-		hr {
-			margin-bottom: 8px;
-			border-top: 1px solid #ddd;
-		}
+        hr {
+            margin-bottom: 8px;
+            border-top: 1px solid #ddd;
+        }
 
-		.portfolio-menu li.active::before, .portfolio-menu li:hover::before {
-			background: #313deb;
-		}
-	</style>
+        .portfolio-menu li.active::before, .portfolio-menu li:hover::before {
+            background: #313deb;
+        }
+    </style>
 }
-	<!-- breadcrumb area start -->
-	<section class="breadcrumb-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="breadcrumb-area-content">
-						<h1>@Model.Movie.Title</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section><!-- breadcrumb area end -->
-	<!-- transformers area start -->
-	<section class="transformers-area">
-		<div class="container">
-			<div class="transformers-box">
-				<div class="row flexbox-center">
-					<div class="col-lg-5 text-lg-left text-center">
-						<div class="transformers-content">
-							<div onclick="GetId(@Model.Movie.Id)" id="div">
-								<a id="@Model.Movie.Id" class="popup-youtube">
-									<img src="http://image.tmdb.org/t/p/w500/@Model.Movie.PosterPath" alt="about" />
+<!-- breadcrumb area start -->
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12" style="box-shadow: rgba(18, 11, 247, 0) 5px 5px, rgba(21, 6, 204, 0) 10px 10px, rgba(23, 7, 138, 0) 15px 15px, rgba(19, 2, 100, 0) 20px 20px, rgba(240, 46, 170, 0) 25px 25px; ">
+                <div class="breadcrumb-area-content">
+                    <h1>@Model.Movie.Title</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- breadcrumb area end -->
+<!-- transformers area start -->
+<section class="transformers-area">
+    <div class="container">
+        <div class="transformers-box">
+            <div class="row flexbox-center">
+                <div class="col-lg-5 text-lg-left text-center">
+                    <div class="transformers-content">
+                        <div onclick="GetId(@Model.Movie.Id)" id="div">
+                            <a id="@Model.Movie.Id" class="popup-youtube">
+                                <img src="http://image.tmdb.org/t/p/w500/@Model.Movie.PosterPath" alt="about" />
 
-									<i class="icofont icofont-ui-play"></i>
+                                <i class="icofont icofont-ui-play"></i>
 
-								</a>
-							</div>
-
-
-
-						</div>
-
-					</div>
-					<div class="col-lg-7">
-						<div class="transformers-content" style="font-size: 30px;">
-							<h1>
-								<strong>
-									@Model.Movie.OriginalTitle
-								</strong>
-							</h1>
-							<ul>
-
-								<li>
-									<div class="transformers-left">
-										Status:
-									</div>
-									<div class="transformers-right">
-										@Model.Movie.Status
-									</div>
-								</li>
-								<li>
-									<div class="transformers-left">
-										Gener:
-									</div>
-								@foreach (var item in Model.Movie.Genres)
-								{
-									<div class="transformers-right" style="padding:0 10px">
-										@item.Name ,
-									</div>
-								}
-							</li>
-							<li>
-								<div class="transformers-left">
-									Release Date:
-								</div>
-								<div class="transformers-right">
-									@Model.Movie.ReleaseDate.Value.Year
-								</div>
-							</li>
-
-							<li>
-								<div class="transformers-left">
-									VoteAverage:
-								</div>
-								<div class="author-review">
-									@Model.Movie.VoteAverage
-									@for (int i = 0; i < ((Model.Movie.VoteAverage == 10) ? (Model.Movie.VoteAverage / 2) : (Model.Movie.VoteAverage / 2) + 1); i++)
-									{
-										<i class="icofont icofont-star"></i>
-									}
-
-								</div>
-							</li>
-							<li>
-								<div class="transformers-left">
-									VoteCount:
-								</div>
-								<div class="author-review">
-									@Model.Movie.VoteCount
+                            </a>
+                        </div>
 
 
-								</div>
-							</li>
-							<li>
-								<div class="transformers-left">
-									TagLine:
-								</div>
-								<div class="transformers-right">
-									<h5>
-										@Model.Movie.Tagline
-									</h5>
-								</div>
-							</li>
 
-						</ul>
-					</div>
-				</div>
-			</div>
-			<a href="https://www.youtube.com/watch?v=@Model.Movie.Key" class="theme-btn popup-youtube"> Trailer </a>
-		</div>
-	</div>
+                    </div>
+
+                </div>
+                <div class="col-lg-7">
+                    <div class="transformers-content" style="font-size: 30px;">
+                        <h1>
+                            <strong>
+                                @Model.Movie.OriginalTitle
+                            </strong>
+                        </h1>
+                        <ul>
+
+                            <li>
+                                <div class="transformers-left">
+                                    Status:
+                                </div>
+                                <div class="transformers-right">
+                                    @Model.Movie.Status
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transformers-left">
+                                    Gener:
+                                </div>
+                                @foreach (var item in Model.Movie.Genres)
+                                {
+                                    <div class="transformers-right" style="padding:0 10px">
+                                        @item.Name ,
+                                    </div>
+                                }
+                            </li>
+                            <li>
+                                <div class="transformers-left">
+                                    Release Date:
+                                </div>
+                                <div class="transformers-right">
+                                    @Model.Movie.ReleaseDate.Value.Year
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="transformers-left">
+                                    VoteAverage:
+                                </div>
+                                <div class="author-review">
+                                    @Model.Movie.VoteAverage
+                                    @for (int i = 0; i < ((Model.Movie.VoteAverage == 10) ? (Model.Movie.VoteAverage / 2) : (Model.Movie.VoteAverage / 2) + 1); i++)
+                                    {
+                                        <i class="icofont icofont-star"></i>
+                                    }
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transformers-left">
+                                    VoteCount:
+                                </div>
+                                <div class="author-review">
+                                    @Model.Movie.VoteCount
+
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transformers-left">
+                                    TagLine:
+                                </div>
+                                <div class="transformers-right">
+                                    <h5>
+                                        @Model.Movie.Tagline
+                                    </h5>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/watch?v=@Model.Movie.Key" class="theme-btn popup-youtube"> Trailer </a>
+        </div>
+    </div>
 </section><!-- transformers area end -->
 <!-- details area start -->
 <section class="details-area">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="details-content">
-					<div class="details-overview">
-						<h2>Overview</h2>
-						<p style="
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12" style="box-shadow: rgba(18, 11, 247, 0) 5px 5px, rgba(21, 6, 204, 0) 10px 10px, rgba(23, 7, 138, 0) 15px 15px, rgba(19, 2, 100, 0) 20px 20px, rgba(240, 46, 170, 0) 25px 25px; ">
+                <div class="details-content">
+                    <div class="details-overview">
+                        <h2>Overview</h2>
+                        <p style="
     font-size: 22px;
 ">@Model.Movie.Overview</p>
-					</div>
-					<div class="col-lg-12" style="margin-bottom:11px">
-						<div class="col-lg-6 text-center text-lg-left" style="
+</div>
+<div class="col-lg-12" style="margin-bottom:11px">
+    <div class="col-lg-6 text-center text-lg-left" style="
     margin-bottom: 8px;
 ">
-							<div class="section-title">
-								<h1><i class="icofont icofont-movie"></i>The similar Movie </h1>
-							</div>
-						</div>
-						<hr />
-						<div class="row portfolio-item">
-							@foreach (var item in Model.SimilarMovie.results.Take(12))
-							{
-								<div class="col-lg-3 col-md-4 col-sm-6">
-									<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
-										<div class="single-portfolio">
-											<div class="single-portfolio-img">
+        <div class="section-title">
+            <h1><i class="icofont icofont-movie"></i>The similar Movie </h1>
+        </div>
+    </div>
+    <div class="row portfolio-item">
+        @foreach (var item in Model.SimilarMovie.results.Take(12))
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
+                    <div class="single-portfolio">
+                        <div class="single-portfolio-img">
 
 
-												<img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
-												<div onclick="GetId(@item.Id)" id="div">
-													<a id="@item.Id" class="popup-youtube">
-														<i class="icofont icofont-ui-play"></i>
-													</a>
-												</div>
+                            <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
+                            <div onclick="GetId(@item.Id)" id="div">
+                                <a id="@item.Id" class="popup-youtube">
+                                    <i class="icofont icofont-ui-play"></i>
+                                </a>
+                            </div>
 
 
-											</div>
-											<div class="portfolio-content">
-												<h2 id="senoh">@item.Title</h2>
-												<div class="review">
-													<div class="author-review">
-														@for (int i = 0; i < ((item.VoteAverage == 10) ? (item.VoteAverage / 2) : (item.VoteAverage / 2) + 1); i++)
-														{
-															<i class="icofont icofont-star"></i>
-														}
+                        </div>
+                        <div class="portfolio-content">
+                            <h2 id="senoh">@item.Title</h2>
+                            <div class="review">
+                                <div class="author-review">
+                                    @for (int i = 0; i < ((item.VoteAverage == 10) ? (item.VoteAverage / 2) : (item.VoteAverage / 2) + 1); i++)
+                                    {
+                                        <i class="icofont icofont-star"></i>
+                                    }
 
-													</div>
-													<h5>@item.VoteCount voters</h5>
-												</div>
-											</div>
-										</div>
-									</a>
-								</div>
-							}
+                                </div>
+                                <h5>@item.VoteCount voters</h5>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
 
-						</div>
-					</div>
-					<hr />
-					<div class="details-reply">
-						<h2>Leave a Reply</h2>
-						<form asp-controller="MovieDetails" asp-action="GetReview">
-							<div class="row">
-								@*<div class="col-lg-4">
-									<div class="select-container">
-										<input type="text" placeholder="Name" />
-										<i class="icofont icofont-ui-user"></i>
-									</div>
-								</div>
-								<div class="col-lg-4">
-									<div class="select-container">
-										<input type="text" placeholder="Email" />
-										<i class="icofont icofont-envelope"></i>
-									</div>
-								</div>
-								<div class="col-lg-4">
-									<div class="select-container">
-										<input type="text" placeholder="Phone" />
-										<i class="icofont icofont-phone"></i>
-									</div>
-								</div>*@
-								@if(User.Identity.IsAuthenticated){
-									<div class="col-lg-12">
-										<div class="textarea-container">
-											<textarea asp-for="ReviewContent" placeholder="Type Here Message"></textarea>
-											<button><i class="icofont icofont-send-mail"></i></button>
-										</div>
-									</div>
-									<div class="details-comment">
-										<input type="submit" class="theme-btn theme-btn2" value="Post Comment" />
-										@*<p>You may use these HTML tags and attributes: You may use these HTML tags and attributes: You may use these HTML tags and attributes: </p>*@
-									</div>
-								}
-								else{
-									
-								}
-								
-							</div>
-							<input type="hidden" asp-for="Movie.Id"/>
+    </div>
+</div>
+<div class="details-reply">
+    <h2>Leave a Reply</h2>
+    @{int counter = 0;
+        int counter2 = 0;
+        int counter3 = 0;
+        int counter4 = 0;}
+    @foreach (var riv in Model.Reviews)
+    {
+        if (counter > 20)
+        {
+            break;
+        }
+        if (riv.ReplyParent == null)
+        {
+            <a onclick="rep(@riv.Id)">
+                <p style="font-size: 22px; padding-left: 15px; background-color: #353842; margin-bottom: 0px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv.User.Name :</p>
+                <hr />
+                <p style="font-size: 22px; padding-left: 15px; background-color: #353842; margin-bottom: 7px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv.Content</p>
+            </a>
+            foreach (var riv2 in Model.Reviews)
+            {
+                if (riv2.ReplyParent == riv.Id)
+                {
+                    <a onclick="rep(@riv2.Id)">
+                        <p style="font-size: 22px; padding-left: 15px; background-color: #353842; margin-bottom: 0px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv.User.Name :</p>
+                        <hr />
 
-						</form>
-					</div>
+                        <p style="font-size: 22px; padding-left: 15px; background-color: #082da8; margin-bottom: 7px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv2.Content</p>
+                    </a>
+                    foreach (var riv3 in Model.Reviews)
+                    {
+                        if (riv3.ReplyParent == riv2.Id)
+                        {
+                            <a onclick="rep(@riv3.Id)">
+                                <p style="font-size: 22px; padding-left: 15px; background-color: #353842; margin-bottom: 0px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv.User.Name :</p>
+                                <hr />
+
+                                <p style="font-size: 22px; padding-left: 15px; background-color: #0b37ca; margin-bottom: 7px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv3.Content</p>
+                            </a>
+                            foreach (var riv4 in Model.Reviews)
+                            {
+                                if (riv4.ReplyParent == riv3.Id)
+                                {
+                                    <a onclick="rep(@riv4.Id)">
+                                        <p style="font-size: 22px; padding-left: 15px; background-color: #353842; margin-bottom: 0px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv.User.Name :</p>
+                                        <hr />
+
+                                        <p style="font-size: 22px; padding-left: 15px; background-color: #082da8; margin-bottom: 7px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv4.Content</p>
+                                    </a>
+                                    counter4++;
+                                }
+                            }
+                            counter3++;
+                        }
+                    }
+                    counter2++;
+                }
+            }
+            counter++;
+        }
+
+    }
+    <form id="forNon" style="position:fixed; display : none ;" asp-controller="MovieDetails" asp-action="GetReview">
+        <div onclick="cloo()" style="width: 600%; height: 600%; position: absolute;top: 0;left: 0;z-index: 99;margin-left: -110%;margin-top: -110%;"></div>
+        <div class="row" style="z-index: 1000;">
 
 
-					@* <div class="details-thumb">
-					<div class="details-thumb-prev">
-					<div class="thumb-icon">
-					<i class="icofont icofont-simple-left"></i>
-					</div>
-					<div class="thumb-text">
-					<h4>Previous Post</h4>
-					<p>Standard Post With Gallery</p>
-					</div>
-					</div>
-					<div class="details-thumb-next">
-					<div class="thumb-text">
-					<h4>Next Post</h4>
-					<p>Standard Post With Preview Image</p>
-					</div>
-					<div class="thumb-icon">
-					<i class="icofont icofont-simple-right"></i>
-					</div>
-					</div>
-					</div>*@
-				</div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="col-lg-12">
+                    <div class="textarea-container">
+                        <textarea asp-for="ReviewContent" placeholder="Type Here Message"></textarea>
+                        <button><i class="icofont icofont-send-mail"></i></button>
+                    </div>
+                </div>
+                <div class="details-comment" style="margin-top: 6%;margin-left: 37%;">
+                    <input type="submit" class="theme-btn theme-btn2" value="Post Comment" />
+                    @*<p>You may use these HTML tags and attributes: You may use these HTML tags and attributes: You may use these HTML tags and attributes: </p>*@
+                </div>
+            }
 
-			</div>
-		</div>
-	</div>
+
+        </div>
+        <input type="hidden" asp-for="Movie.Id" />
+        <input id="rept" type="hidden" asp-for="ReplayParent" value="" />
+
+    </form>
+</div>
+
+<form asp-controller="MovieDetails" asp-action="GetReview">
+    <div class="row">
+        @*<div class="col-lg-4">
+                <div class="select-container">
+                    <input type="text" placeholder="Name" />
+                    <i class="icofont icofont-ui-user"></i>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="select-container">
+                    <input type="text" placeholder="Email" />
+                    <i class="icofont icofont-envelope"></i>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="select-container">
+                    <input type="text" placeholder="Phone" />
+                    <i class="icofont icofont-phone"></i>
+                </div>
+            </div>*@
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="col-lg-12">
+                <div class="textarea-container">
+                    <textarea asp-for="ReviewContent" placeholder="Type Here Message"></textarea>
+                    <button><i class="icofont icofont-send-mail"></i></button>
+                </div>
+            </div>
+            <div class="details-comment" style="margin-top: 3%;margin-left: 86%;">
+                <input type="submit" class="theme-btn theme-btn2" value="Post Comment" />
+                @*<p>You may use these HTML tags and attributes: You may use these HTML tags and attributes: You may use these HTML tags and attributes: </p>*@
+            </div>
+        }
+        else
+        {
+
+        }
+
+    </div>
+    <input type="hidden" asp-for="Movie.Id" />
+
+</form>
+</div>
+
+
+@* <div class="details-thumb">
+    <div class="details-thumb-prev">
+    <div class="thumb-icon">
+    <i class="icofont icofont-simple-left"></i>
+    </div>
+    <div class="thumb-text">
+    <h4>Previous Post</h4>
+    <p>Standard Post With Gallery</p>
+    </div>
+    </div>
+    <div class="details-thumb-next">
+    <div class="thumb-text">
+    <h4>Next Post</h4>
+    <p>Standard Post With Preview Image</p>
+    </div>
+    <div class="thumb-icon">
+    <i class="icofont icofont-simple-right"></i>
+    </div>
+    </div>
+    </div>*@
+</div>
+
+</div>
+<p>@Model.Movie.Id</p>
+</div>
+
 </section><!-- details area end -->
+<script>
+    function cloo() {
+        document.getElementById("forNon").setAttribute("style", "display :none ;");
+    }
+    function rep(Id) {
+        //   document.getElementById("forNon").removeChild();
+        const o = document.getElementById("forNon");
+        o.setAttribute("style", "display :flex;position: fixed;z-index: 1;top: 231px;left: 34%;");
+        const t = document.createElement("input");
+        t.setAttribute("type", "hidden");
+        //t.setAttribute("name", "ReplayParent");
+        //t.setAttribute("asp-for", Id);
+        t.setAttribute("asp-for", "Movie.Id");
+        o.appendChild(t);
+        document.getElementById("rept").setAttribute("value", Id);
+    }
+</script>

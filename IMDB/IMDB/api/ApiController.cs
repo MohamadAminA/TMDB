@@ -23,7 +23,7 @@ namespace IMDB.api
             var sendPath = "";
             foreach (var path in (_movie.GetVideoById(id).Result).Results)
             {
-                sendPath += path.Key + ",";
+                sendPath += path.Key + '*';
             }
             return Ok(sendPath);
             //  return sendPath ;
@@ -32,7 +32,7 @@ namespace IMDB.api
         [HttpGet("Getone")]
         public IActionResult Getone(String id)
         {
-            String[] Array = id.Split(',');
+            String[] Array = id.Split('*');
 
             return Ok((_movie.GetVideoById(int.Parse(Array[0])).Result).Results[int.Parse(Array[1])]?.Key);
 
