@@ -15,17 +15,18 @@ using Microsoft.Extensions.Caching.Memory;
 using IMDB.DataLayer.Model;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
+using IMDB.Services.Database;
 
 namespace IMDB.Controllers
 {
     public class HomeController : Controller
     {
         private readonly IMovie _movie;
-        private readonly IUser _user;
+        private readonly ReviewRepo _user;
         private readonly IMemoryCache _cache;
         private readonly MemoryCacheEntryOptions _cacheOption;
         
-        public HomeController(IMovie movie, IUser user, IMemoryCache cache)
+        public HomeController(IMovie movie, ReviewRepo user, IMemoryCache cache)
         {
             _movie = movie;
             _user = user;
@@ -37,7 +38,7 @@ namespace IMDB.Controllers
         {
             try
             {
-                //_movie.GetReviewsOfMovieById();
+                var temp = await _user.GetByMovieId(882598);
                 
                 HomeViewModel model = new HomeViewModel();
 

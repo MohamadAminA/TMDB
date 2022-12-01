@@ -210,7 +210,7 @@
         {
             break;
         }
-        if (riv.ReplyParent == null)
+        if (riv.ReplayParent == null)
         {
             <a onclick="rep(@riv.Id)">
                 <p style="font-size: 22px; padding-left: 15px; background-color: #353842; margin-bottom: 0px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv.User.Name :</p>
@@ -219,7 +219,7 @@
             </a>
             foreach (var riv2 in Model.Reviews)
             {
-                if (riv2.ReplyParent == riv.Id)
+                if (riv2.ReplayParent == riv.Id)
                 {
                     <a onclick="rep(@riv2.Id)">
                         <p style="font-size: 22px; padding-left: 15px; background-color: #353842; margin-bottom: 0px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv.User.Name :</p>
@@ -229,7 +229,7 @@
                     </a>
                     foreach (var riv3 in Model.Reviews)
                     {
-                        if (riv3.ReplyParent == riv2.Id)
+                        if (riv3.ReplayParent == riv2.Id)
                         {
                             <a onclick="rep(@riv3.Id)">
                                 <p style="font-size: 22px; padding-left: 15px; background-color: #353842; margin-bottom: 0px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv.User.Name :</p>
@@ -239,7 +239,7 @@
                             </a>
                             foreach (var riv4 in Model.Reviews)
                             {
-                                if (riv4.ReplyParent == riv3.Id)
+                                if (riv4.ReplayParent == riv3.Id)
                                 {
                                     <a onclick="rep(@riv4.Id)">
                                         <p style="font-size: 22px; padding-left: 15px; background-color: #353842; margin-bottom: 0px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv.User.Name :</p>

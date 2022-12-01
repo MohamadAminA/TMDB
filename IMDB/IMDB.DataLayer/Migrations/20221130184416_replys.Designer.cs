@@ -4,14 +4,16 @@ using IMDB.DataLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace IMDB.DataLayer.Migrations
 {
     [DbContext(typeof(ContextDB))]
-    partial class ContextDBModelSnapshot : ModelSnapshot
+    [Migration("20221130184416_replys")]
+    partial class replys
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -83,6 +85,9 @@ namespace IMDB.DataLayer.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("ReplayParent")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ReplyParent")
                         .HasColumnType("int");
 
                     b.Property<int>("UserId")

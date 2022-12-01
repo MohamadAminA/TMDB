@@ -17,11 +17,15 @@ namespace IMDB.DataLayer.Model
         public string Content { get; set; }
         public DateTime CreatedAt { get; set; }
         public int MovieId { get; set; }
-        public int? ReplyParent { get; set; }
+        public int? ReplayParent { get; set; }
 
         #region Relations
         public User User { get; set; }
-        [InverseProperty("Id")]
+
+        [ForeignKey("ReplayParent")]
+        public MovieReview Parent { get; set; }
+
+        [InverseProperty("Parent")]
         public List<MovieReview> Replys { get; set; } 
         #endregion
     }

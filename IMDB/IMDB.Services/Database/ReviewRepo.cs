@@ -18,7 +18,7 @@ namespace IMDB.Services.Database
         }
         public async Task<List<MovieReview>> GetByMovieId(int movieId)
         {
-           return await _context.Reviews.Include(n=>n.Replys).Include(n=>n.User).Where(n=>n.MovieId == movieId).ToListAsync();
+           return await _context.Reviews.Include(n=>n.User).Where(n=>n.MovieId == movieId).ToListAsync();
         }
         public async Task<int> AddReview(MovieReview rev)
         {

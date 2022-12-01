@@ -72,7 +72,7 @@ namespace IMDB.Controllers
                 MovieId = model.Movie.Id,
                 Content = model.ReviewContent,
                 UserId = Int32.Parse(User.Identity.Name),
-                ReplyParent = model.ReplayParent
+                ReplayParent = model.ReplayParent
             };
             await _review.AddReview(review);
             await _review.SaveChanges();
