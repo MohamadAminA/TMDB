@@ -18,5 +18,9 @@ namespace IMDB.DataLayer
         public DbSet<MovieReview> Reviews { get; set; }
 
         public DbSet<WatchList> WatchLists { get; set; }
+
+        public DbSet<FavouriteMovie> FavouriteMovies { get; set; }
+
+        public DbSet<FavouriteList> FavouriteLists { get; set; }
     }
 }

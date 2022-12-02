@@ -1,4 +1,5 @@
-﻿using Infrastructure;
+﻿using IMDB.Services.Database;
+using Infrastructure;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,10 +14,14 @@ namespace IMDB.api
     public class ApiController : ControllerBase
     {
         private readonly IMovie _movie;
-        public ApiController(IMovie movie)
+        public MovieListRepo _list { get; set; }
+
+        public ApiController(IMovie movie, MovieListRepo list)
         {
             _movie = movie;
+            _list = list;
         }
+
         [HttpGet("GetOneVideoKey")]
         public IActionResult GetOneVideoKey(int id)
         {
@@ -38,6 +43,26 @@ namespace IMDB.api
 
         }
 
+        [HttpGet("AddMovieToList")]
+        public async Task<IActionResult> AddMovieToList(string listId,string movieId)
+        {
+            await _list.AddMovieToList(int.Parse(listId),int.Parse(movieId));
+            return Ok();
+
+        }
+        [HttpGet("AddMovieToWatchList")]
+        public async Task<IActionResult> AddMovieToWatchList(string movieId)
+        {
+            if (!User.Identity.IsAuthenticated)
+                return RedirectToActionPermanent("Index","SignIn");
+            await _list.AddToWatchList(new DataLayer.Model.WatchList()
+            {
+                MovieId = int.Parse(movieId),
+                UserId = int.Parse(User.Identity.Name)
+            });
+            return Ok();
+
+        }
 
     }
 }

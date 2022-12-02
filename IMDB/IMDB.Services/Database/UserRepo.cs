@@ -28,7 +28,7 @@ namespace IMDB.Services.Database
         {
             try
             {
-                _context.Users.Remove(GetUserById(id));
+                _context.Users.Remove(GetUserById(id).Result);
                 return true;
             }
             catch (Exception)
@@ -50,9 +50,9 @@ namespace IMDB.Services.Database
             }
         }
 
-        public User GetUserById(int id)
+        public async Task<User> GetUserById(int id)
         {
-            return _context.Users.Find(id);
+            return await _context.Users.FindAsync(id);
         }
 
         public User GetUserByName(string name)
