@@ -84,11 +84,6 @@ namespace IMDB.Controllers
                     return getmovies;
                 });
 
-                //model.PopularMovies = await _movie.GetPopularMovies(1);
-                //model.TopRatedMovies = await _movie.GetTopRatedMovies(1);
-                //model.PopularPeople = await _movie.GetPopularPeople();
-                //model.TrendingMoviesOfWeek = await _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Week);
-                //model.TrendingMoviesOfDay = await _movie.GetTrendingMovies(TMDbLib.Objects.General.MediaType.Movie, TMDbLib.Objects.Trending.TimeWindow.Day);
                 return View(model);
             }
             catch (System.Net.Http.HttpRequestException)

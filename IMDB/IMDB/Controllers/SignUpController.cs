@@ -35,7 +35,9 @@ namespace IMDB.Controllers
 			{
 				Name = model.UserName,
 				Password = model.Password,
-				RegisterDate = DateTime.Now
+				RegisterDate = DateTime.Now,
+				Email = model.Email,
+				Phone = model.Phone
 			}) ;
             return RedirectToAction("Index","SignIn");
         }

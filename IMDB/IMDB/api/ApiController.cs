@@ -61,7 +61,6 @@ namespace IMDB.api
                 UserId = int.Parse(User.Identity.Name)
             });
             return Ok();
-
         }
 
     }

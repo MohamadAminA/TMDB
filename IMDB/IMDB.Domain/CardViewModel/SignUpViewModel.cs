@@ -23,5 +23,10 @@ namespace IMDB.Domain.CardViewModel
         [Required(ErrorMessage = "enter Enter the {0}")]
         public string RepeatPassword { get; set; }
 
+        public long Phone { get; set; }
+
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+
     }
 }

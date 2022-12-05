@@ -30,15 +30,24 @@
 
     <div class="login">
         <form asp-controller="Signup" asp-action="Index">
-            <input class="input-group" type="text" placeholder="UserName" asp-for="UserName"style="margin-bottom:10px" ;><br>
+            <input class="input-group" type="text" placeholder="* User Name" asp-for="UserName"style="margin-bottom:10px" ;><br>
             <span asp-validation-for="UserName" id="sdfaa"></span><br />
 
-            <input type="password" placeholder="password" asp-for="Password"><br />
+            <input type="text" placeholder="Phone" asp-for="Phone"><br />
+            <span asp-validation-for="Phone" id="sdfaa"></span><br />
+           
+
+            <input type="text" placeholder="Email" asp-for="Email"><br />
+            <span asp-validation-for="Email" id="sdfaa"></span><br />
+           
+            <input type="password" placeholder="* Password" asp-for="Password"><br />
             <span asp-validation-for="Password" id="sdfaa"></span><br />
 
-            <input type="password" placeholder="RepeatPassword" asp-for="RepeatPassword"><br />
+            <input type="password" placeholder="* Repeat Password" asp-for="RepeatPassword"><br />
             <span asp-validation-for="RepeatPassword" id="sdfaa"></span><br />
             <input type="submit" value="Enter">
+
+
 
         </form>
     </div>

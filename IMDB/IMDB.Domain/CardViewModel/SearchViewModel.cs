@@ -11,6 +11,12 @@ namespace IMDB.Domain.CardViewModel
     {
         public APIListResult<Movie> Movies { get; set; }
         public DiscoverFilterMovie Filter { get; set; }
+        public SearchMovie Search { get; set; }
+    }
 
+    public class SearchMovie
+    {
+        public string SearchTitle { get; set; }
+        public int ReleaseDate { get; set; }
     }
 }

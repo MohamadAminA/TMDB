@@ -242,7 +242,7 @@
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img">
 
-                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w185/@item.PosterPath" alt="portfolio" />
 
                                         <div onclick="GetId(@item.Id)" id="div">
                                             <a id="@item.Id" class="popup-youtube">
@@ -275,7 +275,7 @@
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img">
 
-                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" style="border-radius: 15px;" />
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w185/@item.PosterPath" alt="portfolio" style="border-radius: 15px;" />
                                         <div onclick="GetId(@item.Id)" id="div">
                                             <a id="@item.Id" class="popup-youtube">
                                                 <i class="icofont icofont-ui-play"></i>
@@ -305,7 +305,7 @@
                             <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img">
-                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" style="border-radius: 15px;" />
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w185/@item.PosterPath" alt="portfolio" style="border-radius: 15px;" />
                                         <div onclick="GetId(@item.Id)" id="div">
                                             <a id="@item.Id" class="popup-youtube">
                                                 <i class="icofont icofont-ui-play"></i>
@@ -336,7 +336,7 @@
                             <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img">
-                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" style="border-radius: 30px;" />
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w185/@item.PosterPath" alt="portfolio" style="border-radius: 30px;" />
                                         <div onclick="GetId(@item.Id)" id="div">
                                             <a id="@item.Id" class="popup-youtube">
                                                 <i class="icofont icofont-ui-play"></i>
@@ -396,7 +396,7 @@
                             <a asp-controller="PersonDetails" asp-action="Index" asp-route-id="@cast.Id">
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img" id="oadAction">
-                                        <img id="radiusprofile" src="http://image.tmdb.org/t/p/w500/@cast.ProfilePath" alt="portfolio" style="border-radius: 210px;" />
+                                        <img id="radiusprofile" src="http://image.tmdb.org/t/p/w185/@cast.ProfilePath" alt="portfolio" style="border-radius: 210px;" />
                                     </div>
                                     <div class="portfolio-content">
                                         <h2 id="senoh">@cast.Name</h2>
@@ -427,11 +427,9 @@
             <div class="col-md-9">
                 <div class="video-area">
 
-                    <img src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.LastOrDefault().PosterPath" alt="video" style="
-    margin-left: 20%;
-" />
-                    <div onclick="GetId(@Model.TopRatedMovies.results.LastOrDefault().Id)" id="div">
-                        <a id="@Model.TopRatedMovies.results.LastOrDefault().Id" class="popup-youtube">
+                     <div onclick="GetId(@Model.TopRatedMovies.results.LastOrDefault().Id)" id="div">
+                    <img src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.LastOrDefault().PosterPath" alt="video" style="margin-left: 20%;" />
+                       <a id="@Model.TopRatedMovies.results.LastOrDefault().Id" class="popup-youtube">
                             <i class="icofont icofont-ui-play"></i>
                         </a>
                     </div>
@@ -456,10 +454,9 @@
 
                     <div class="col-md-12 col-sm-6">
                         <div class="video-area">
-                            <img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[4].PosterPath" alt="video" style="
-    margin-bottom: -24px;
-" />
+                         
                                                                            <div onclick="GetId(@Model.TrendingMoviesOfWeek.results.LastOrDefault().Id)" id="div">
+                                <img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[4].PosterPath" alt="video" style="margin-bottom: -24px;" />
                                 <a id="@Model.TrendingMoviesOfWeek.results.LastOrDefault().Id" class="popup-youtube">
                                                         <i class="icofont icofont-ui-play"></i>
                                                     </a>
@@ -467,13 +464,10 @@
                         </div>
                     </div>
                     <div class="col-md-12 col-sm-6">
-                        <div class="video-area" style="
-    border-top: -38px;
-    padding-top: -75px;
-    margin-top: 5px;
-">
-                            <img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[5].PosterPath" alt="video" />
+                        <div class="video-area" style="border-top: -38px;padding-top: -75px;margin-top: 5px;">
+                           
                             <div onclick="GetId(@Model.TrendingMoviesOfDay.results.LastOrDefault().Id)" id="div">
+                                <img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[5].PosterPath" alt="video" />
                                 <a id="@Model.TrendingMoviesOfDay.results.LastOrDefault().Id" class="popup-youtube">
                                     <i class="icofont icofont-ui-play"></i>
                                 </a>

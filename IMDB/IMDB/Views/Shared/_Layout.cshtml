@@ -149,16 +149,17 @@
                 <div class="header-right">
                     <form asp-controller="SearchMovie" asp-action="Search" method="post">
                         <input type="submit" value="search" />
+                        <input type="hidden" name="page" value="1" />
                         <select name="date" style="opacity:0.9;">
                             <option value="0">Release Date</option>
-                            @for (int i = 2022; i >1800; i--)
+                            @for (int i = 2022; i >1899; i--)
                             {
                                 <option value="@i">@i</option>
                             }
                             
                             
                         </select>
-                        <input type="text" name="query"/>
+                        <input  type="text" name="query"/>
                         @*<i class="icofont icofont-search" style="right: 32%; position: absolute; top: 16%;"></i>*@
                     </form>
 

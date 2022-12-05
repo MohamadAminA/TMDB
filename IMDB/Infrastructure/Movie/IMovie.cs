@@ -84,5 +84,7 @@ namespace Infrastructure
 
         public Task<string> TemporaryRequestToken();
         public Task<string> CreateSession(string requestToken);
+
+        public Task<MovieCredits> GetCreditsByPersonId(int person_id);
     }
 }

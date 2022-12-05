@@ -13,19 +13,28 @@ namespace IMDB.Controllers
         {
             _movie = movie;
         }
-        public async Task<IActionResult> Index(DiscoverFilterMovie filter)
+      
+        public async Task<IActionResult> Search(string query,int date, DiscoverFilterMovie filter, int page = 1)
         {
             var model = new SearchViewModel();
-            model.Movies = await _movie.DiscoverMovie(filter);
-            model.Filter = filter;
-            return View(model);
-        }
-        [HttpPost("Search")]
-        public async Task<IActionResult> Search(string query,int date)
-        {
-            var model = new SearchViewModel();
-            model.Movies = await _movie.SearchMovies(query,date);
-            model.Filter = new DiscoverFilterMovie();
+
+            if (!string.IsNullOrWhiteSpace(query))
+            {
+                var search = new SearchMovie()
+                {
+                    ReleaseDate = date,
+                    SearchTitle = query
+                };
+                model.Search = search;
+                model.Movies = await _movie.SearchMovies(query, date, page);
+            }
+            else
+            {
+                filter.Page = page;
+                model.Movies = await _movie.DiscoverMovie(filter);
+                model.Filter = filter;
+                model.Search = new SearchMovie();
+            }
             return View("Index",model);
         }
     }

@@ -118,6 +118,32 @@ namespace IMDB.Services.Api
             return null;
         }
 
+        public async Task<MovieCredits> GetCreditsByPersonId(int person_id)
+        {
+
+            HttpClient httpClient = new HttpClient();
+
+
+            string path = $"https://api.themoviedb.org/3/person/{person_id}/movie_credits?{api_key}&language=en-US";
+
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+            HttpResponseMessage response = await httpClient.GetAsync(path);
+            if (response.IsSuccessStatusCode)
+            {
+                var res = await response.Content.ReadAsStreamAsync();
+
+                using Stream receiveStream = res;
+                using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                string strContent = readStream.ReadToEnd();
+
+                var  result= JsonConvert.DeserializeObject<MovieCredits>(strContent);
+                return result;
+            }
+            return null;
+        }
+
 
         public async Task<TMDbLib.Objects.Movies.Credits> GetMovieCreditsById(int id)
         {

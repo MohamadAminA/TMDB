@@ -1,19 +1,239 @@
 ﻿@model TMDbLib.Objects.People.Person
 
-<ul>
-	<li>
-		<h1>
-			@Model.Name
-		</h1>
-	</li>
-	<li>
-		<h1>
-			@Model.Birthday
-		</h1>
-	</li>
-	<li>
-		<h1>
-			@Model.Biography
-		</h1>
-	</li>
-</ul>
+
+<!-- header section start -->
+<section class="breadcrumb-area">
+	<div class="container">
+	</div>
+</section><!-- breadcrumb area end -->
+<!-- transformers area start -->
+<section class="transformers-area">
+	<div class="container">
+		<div class="transformers-box">
+			<div class="row flexbox-center">
+				<div class="col-lg-5">
+					<img id="radiusImg" src="http://image.tmdb.org/t/p/original/@Model.ProfilePath" alt="portfolio" />
+				</div>
+				<div class="col-lg-7">
+					<div class="transformers-content mtr-30">
+						<h1>@Model.Name</h1>
+						<a href="#" class="theme-btn">Biography</a>
+						<ul>
+							<li>
+								<div class="transformers-left">
+									Gender:
+								</div>
+								<div class="transformers-right">
+									@Model.Gender.ToString()
+								</div>
+							</li>
+							<li>
+								<div class="transformers-left">
+									Birthday:
+								</div>
+								<div class="transformers-right">
+									@Model.Birthday
+								</div>
+							</li>
+							<li>
+								<div class="transformers-left">
+									Place Of Birth:
+								</div>
+								<div class="transformers-right">
+									@Model.PlaceOfBirth
+								</div>
+							</li>
+							@if (Model.Deathday.HasValue && !string.IsNullOrWhiteSpace(Model.Deathday.Value.ToShortDateString()))
+							{
+								<li>
+									<div class="transformers-left">
+										Deathday:
+									</div>
+									<div class="transformers-right">
+										@Model.Deathday.Value.ToShortDateString()
+									</div>
+								</li>
+							}
+
+							<li>
+								<div class="transformers-left">
+									Known For Department:
+								</div>
+								<div class="transformers-right">
+									@Model.KnownForDepartment
+								</div>
+							</li>
+							<li>
+								<div class="transformers-left">
+									Popularity:
+								</div>
+								<div class="transformers-right">
+									@Model.Popularity
+								</div>
+							</li>
+
+
+							<li>
+								<div class="transformers-left">
+									Follow:
+								</div>
+								<div class="transformers-right">
+									<a href="#"><i class="icofont icofont-social-facebook"></i></a>
+									<a href="#"><i class="icofont icofont-social-twitter"></i></a>
+									<a href="#"><i class="icofont icofont-social-google-plus"></i></a>
+									<a href="#"><i class="icofont icofont-youtube-play"></i></a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section><!-- transformers area end -->
+<!-- details area start -->
+<section class="details-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12" style="box-shadow: rgba(18, 11, 247, 0) 5px 5px, rgba(21, 6, 204, 0) 10px 10px, rgba(23, 7, 138, 0) 15px 15px, rgba(19, 2, 100, 0) 20px 20px, rgba(240, 46, 170, 0) 25px 25px; ">
+				<div class="details-content">
+					<div class="details-overview">
+						<h2>Biography</h2>
+						<p style="
+    font-size: 24px;
+">@Model.Biography</p>
+					</div>
+				</div>
+				</div>
+		</div>
+	</div>
+	</section>
+@if (Model.MovieCredits != null && Model.MovieCredits.Cast.Count != 0)
+{
+
+	<section class="portfolio-area pt-60">
+    <div class="container">
+        <div class="row flexbox-center">
+            <div class="col-lg-6 text-center text-lg-left">
+                <div class="section-title">
+                    <h1><i class="icofont icofont-movie"></i>Cast</h1>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="portfolio-menu">
+                    <ul>
+                        @*<li data-filter="*" class="active">Latest</li>*@
+ 
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row portfolio-item">
+                    @foreach (var item in Model.MovieCredits.Cast)
+                    {
+                        <div id="f1" class="col-lg-3 col-md-4 col-sm-6 soon popular born">
+                            <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
+                                <div class="single-portfolio">
+                                    <div class="single-portfolio-img">
+
+                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w185/@item.PosterPath" alt="portfolio" />
+
+                                        <div onclick="GetId(@item.Id)" id="div">
+                                            <a id="@item.Id" class="popup-youtube">
+                                                <i class="icofont icofont-ui-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-content">
+                                        <h2 id="senoh">@item.Title</h2>
+                                        <div class="review">
+                                            <div class="author-review">
+
+													<h6>character : @item.Character </h6>
+												
+                                            </div><br/>
+												<p>@item.ReleaseDate?.ToString("yyyy-MM-dd")</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    }
+  
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- movie section end -->
+
+}
+
+@if (Model.MovieCredits != null && Model.MovieCredits.Crew.Count != 0)
+{
+	<section class="portfolio-area pt-60">
+		<div class="container">
+			<div class="row flexbox-center">
+				<div class="col-lg-6 text-center text-lg-left">
+					<div class="section-title">
+						<h1><i class="icofont icofont-movie"></i>Crew</h1>
+					</div>
+				</div>
+				<div class="col-lg-6 text-center text-lg-right">
+					<div class="portfolio-menu">
+						<ul>
+							@*<li data-filter="*" class="active">Latest</li>*@
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<hr />
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="row portfolio-item">
+						@foreach (var item in Model.MovieCredits.Crew)
+						{
+							<div id="f1" class="col-lg-3 col-md-4 col-sm-6 soon popular born">
+								<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
+									<div class="single-portfolio">
+										<div class="single-portfolio-img">
+
+											<img id="radiusImg" src="http://image.tmdb.org/t/p/w185/@item.PosterPath" alt="portfolio" />
+
+											<div onclick="GetId(@item.Id)" id="div">
+												<a id="@item.Id" class="popup-youtube">
+													<i class="icofont icofont-ui-play"></i>
+												</a>
+											</div>
+										</div>
+										<div class="portfolio-content">
+											<h2 id="senoh">@item.Title</h2>
+											<div class="review">
+												<div class="author-review">
+
+													<h6>Department : @item.Department</h6>
+
+												</div><br />
+												<p>@item.ReleaseDate?.ToString("yyyy-MM-dd")</p>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+
+						}
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- movie section end -->
+}

@@ -29,244 +29,136 @@
     </style>
 }
 <!-- breadcrumb area start -->
-@*<section class="breadcrumb-area">
+<section class="breadcrumb-area">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumb-area-content">
-                    <h1>@Model.Title</h1>
-                </div>
-            </div>
-        </div>
     </div>
 </section><!-- breadcrumb area end -->
-<!-- transformers area start -->
-<section class="transformers-area">
-    <div class="container">
-        <div class="transformers-box">
+    <section class="portfolio-area pt-60">
+        <div class="container">
+             <form asp-controller="SearchMovie" asp-action="Search">
+
+                <input type="hidden" asp-for="Movies.Page"/>
             <div class="row flexbox-center">
-                <div class="col-lg-5 text-lg-left text-center">
-                    <div class="transformers-content">
-                        <div onclick="GetId(@Model.Id)" id="div">
-                            <a id="@Model.Id" class="popup-youtube">
-                                <img src="http://image.tmdb.org/t/p/w500/@Model.PosterPath" alt="about" />
-
-                                <i class="icofont icofont-ui-play"></i>
-
-                            </a>
-                        </div>
-
-
-
+                <div class="col-lg-6 text-center text-lg-left">
+                    <div class="section-title">
+                        <h1><i class="icofont icofont-movie"></i>Best Resualts For You</h1>
                     </div>
-
                 </div>
-                <div class="col-lg-7">
-                    <div class="transformers-content" style="font-size: 30px;">
-                        <h1>
-                            <strong>
-                                @Model.OriginalTitle
-                            </strong>
-                        </h1>
-                        <ul>
-
-                            <li>
-                                <div class="transformers-left">
-                                    Status:
-                                </div>
-                                <div class="transformers-right">
-                                    @Model.Status
-                                </div>
-                            </li>
-                            <li>
-                                <div class="transformers-left">
-                                    Gener:
-                                </div>
-                                @foreach (var item in Model.Genres)
-                                {
-                                    <div class="transformers-right" style="padding:0 10px">
-                                        @item.Name ,
-                                    </div>
-                                }
-                            </li>
-                            <li>
-                                <div class="transformers-left">
-                                    Release Date:
-                                </div>
-                                <div class="transformers-right">
-                                    @Model.ReleaseDate.Value.Year
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="transformers-left">
-                                    VoteAverage:
-                                </div>
-                                <div class="author-review">
-                                    @Model.VoteAverage
-                                    @for (int i = 0; i < ((Model.VoteAverage == 10) ? (Model.VoteAverage / 2) : (Model.VoteAverage / 2) + 1); i++)
-                                    {
-                                        <i class="icofont icofont-star"></i>
-                                    }
-
-                                </div>
-                            </li>
-                            <li>
-                                <div class="transformers-left">
-                                    VoteCount:
-                                </div>
-                                <div class="author-review">
-                                    @Model.VoteCount
-
-
-                                </div>
-                            </li>
-                            <li>
-                                <div class="transformers-left">
-                                    TagLine:
-                                </div>
-                                <div class="transformers-right">
-                                    <h5>
-                                        @Model.Tagline
-                                    </h5>
-                                </div>
-                            </li>
-
-                        </ul>
+                @if (Model.Movies != null)
+                {
+                    <div class="col-lg-6 text-center text-lg-right">
+                        <div class="portfolio-menu">
+                            <ul>
+                                <li>@Model.Movies.total_results Resualt Found </li>
+                            </ul>
+                        </div>
                     </div>
+                }
+               
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row portfolio-item">
+                        @if(Model.Movies == null){
+                            <h1>No Movie Found</h1>
+                        }
+                        else
+                    @foreach (var item in Model.Movies?.results)
+                    {
+                            <div id="f1" class="col-lg-4 col-md-4 col-sm-6 ">
+                                <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
+                                    <div class="single-portfolio">
+                                        <div class="single-portfolio-img">
+
+                                            <img id="radiusImg" src="http://image.tmdb.org/t/p/w185/@item.PosterPath" alt="portfolio" />
+
+                                            <div onclick="GetId(@item.Id)" id="div">
+                                                <a id="@item.Id" class="popup-youtube">
+                                                    <i class="icofont icofont-ui-play"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="portfolio-content">
+                                            <h2 id="senoh">@item.Title</h2>
+                                            <div class="review">
+                                                <div class="author-review">
+                                                @for (int i = 0; i < ((item.VoteAverage / 2)); i++)
+                                                {
+                                                            <i class="icofont icofont-star"></i>
+                                                }
+                                                </div>
+                                                <h5>@item.VoteCount voters</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                    }
+ 
+
                 </div>
             </div>
-            <a href="https://www.youtube.com/watch?v=@Model.Key" class="theme-btn popup-youtube"> Trailer </a>
         </div>
-    </div>
-</section><!-- transformers area end -->
-<!-- details area start -->
-<section class="details-area">
-    <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="details-content">
-                    <div class="details-overview">
-                        <h2>Overview</h2>
-                        <p style="
-    font-size: 22px;
-">@Model.Overview</p>
-</div>
-<div class="col-lg-12" style="margin-bottom:11px">
-    <div class="col-lg-6 text-center text-lg-left" style="
-    margin-bottom: 8px;
-">
-        <div class="section-title">
-            <h1><i class="icofont icofont-movie"></i>The similar Movie </h1>
-        </div>
-    </div>
-    <hr />
-    <div class="row portfolio-item">
-        @foreach (var item in Model.SimilarMovie.results.Take(12))
+
+                @if (Model.Movies!=null&& Model.Movies.total_results / 20 > 1)
             {
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
-                        <div class="single-portfolio">
-                            <div class="single-portfolio-img">
+                <div class="col-sm-6">
+                    <div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
+                        <div class="btn-group">
+                            <ul class="pagination">
+                                @if (Model.Movies.Page > 1)
+                                {
 
+                                    <li>
+                                            <button asp-route-page="@(Model.Movies.Page-1)" class="btn btn-outline btn-primary " type="submit">
+                                                <i class="icofont icofont-arrow-left"></i>
+                                        </button>
+                                    </li>
+                                }
+                                    @for (int i = (Model.Movies.Page == 1 || Model.Movies.Page == 2 || Model.Movies.Page == 3) ? 1 : Model.Movies.Page - 3; i < Model.Movies.Page + 3 && i <= Model.Movies.total_pages&&i<500; i++)
+                                {
+                                    <li>
+                                            <button type="submit" asp-route-page="@(i)" class="btn btn-sm @((i != Model.Movies.Page)?"btn-outline-primary":"disabled btn-primary")" >
+                                            @i
+                                        </button>
+                                    </li>
+                                    
+                                }
+                                    @if (Model.Movies.total_pages > Model.Movies.Page + 2 && Model.Movies.Page < 500)
+                                    {
+                                        
+                                        <li> . . . 
+                                        </li>
+                                        <li>
+                                            <button asp-route-page="@(Model.Movies.total_pages > 500?500:Model.Movies.total_pages)" class="btn btn-outline btn-primary" type="submit">
+                                                @(Model.Movies.total_pages > 500 ? 500 : Model.Movies.total_pages)
+                                            </button>
+                                        </li>
+                                    }
+                                    @if (Model.Movies.total_pages > Model.Movies.Page && Model.Movies.Page<500)
+                                {
 
-                                <img id="radiusImg" src="http://image.tmdb.org/t/p/w500/@item.PosterPath" alt="portfolio" />
-                                <div onclick="GetId(@item.Id)" id="div">
-                                    <a id="@item.Id" class="popup-youtube">
-                                        <i class="icofont icofont-ui-play"></i>
-                                    </a>
-                                </div>
+                                    <li>
+                                            <button asp-route-page="@(Model.Movies.Page+1)" class="btn btn-outline btn-primary" type="submit">
+                                                <i class="icofont icofont-arrow-right"></i>
+                                        </button>
+                                    </li>
+                                }
 
-
-                            </div>
-                            <div class="portfolio-content">
-                                <h2 id="senoh">@item.Title</h2>
-                                <div class="review">
-                                    <div class="author-review">
-                                        @for (int i = 0; i < ((item.VoteAverage == 10) ? (item.VoteAverage / 2) : (item.VoteAverage / 2) + 1); i++)
-                                        {
-                                            <i class="icofont icofont-star"></i>
-                                        }
-
-                                    </div>
-                                    <h5>@item.VoteCount voters</h5>
-                                </div>
-                            </div>
+                            </ul>
                         </div>
-                    </a>
+                    </div>
                 </div>
-            }
+                }
 
-    </div>
-</div>
-<hr />
-<!--<div class="details-reply">
-    <h2>Leave a Reply</h2>
-    <form asp-controller="MovieDetails" asp-action="GetReview">
-        <div class="row">-->
-<div class="col-lg-4">
-        <div class="select-container">
-            <input type="text" placeholder="Name" />
-            <i class="icofont icofont-ui-user"></i>
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="select-container">
-            <input type="text" placeholder="Email" />
-            <i class="icofont icofont-envelope"></i>
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="select-container">
-            <input type="text" placeholder="Phone" />
-            <i class="icofont icofont-phone"></i>
-        </div>
-    </div>
-if (User.Identity.IsAuthenticated)
-    {
-        <div class="col-lg-12">
-            <div class="textarea-container">
-                <textarea asp-for="ReviewContent" placeholder="Type Here Message"></textarea>
-                <button><i class="icofont icofont-send-mail"></i></button>
-            </div>
-        </div>
-        <div class="details-comment">
-            <input type="submit" class="theme-btn theme-btn2" value="Post Comment" />-->
-            <!--<p>You may use these HTML tags and attributes: You may use these HTML tags and attributes: You may use these HTML tags and attributes: </p>-->
-<!--</div>
-}
-else
-{
+                <input type="hidden" name="query" value="@Model.Search?.SearchTitle" />
 
-}-->
-<!--</div>
-        <input type="hidden" asp-for="Movie.Id" />
-
-    </form>
-</div>-->
- <div class="details-thumb">
-    <div class="details-thumb-prev">
-    <div class="thumb-icon">
-    <i class="icofont icofont-simple-left"></i>
+                <input type="hidden" name="date" value="@Model.Search?.ReleaseDate" />
+            
+        </div>
+</form>
     </div>
-    <div class="thumb-text">
-    <h4>Previous Post</h4>
-    <p>Standard Post With Gallery</p>
-    </div>
-    </div>
-    <div class="details-thumb-next">
-    <div class="thumb-text">
-    <h4>Next Post</h4>
-    <p>Standard Post With Preview Image</p>
-    </div>
-    <div class="thumb-icon">
-    <i class="icofont icofont-simple-right"></i>
-    </div>
-    </div>
-    </div>
-</div>
-
-</div>
-</div>
-</div>
-</section><!-- details area end -->*@
+</section><!-- movie section end -->
