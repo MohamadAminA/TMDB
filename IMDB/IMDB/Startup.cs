@@ -46,7 +46,7 @@ namespace IMDB
            #region DataBase Context
             services.AddDbContext<ContextDB>(options =>
                 options.UseSqlServer(
-                    "Data Source=.;Initial Catalog=IMDB_DB;Integrated Security=true;MultipleActiveResultSets=true;",
+                    "Data Source=DESKTOP-0QSKDOG;Initial Catalog=IMDB_DB;Integrated Security=true;MultipleActiveResultSets=true;",
                     //"Data Source=.;Initial Catalog=IMDB_DB;Integrated Security=true;MultipleActiveResultSets=true;",
                     b => b.MigrationsAssembly("IMDB.DataLayer")),
                     ServiceLifetime.Transient
