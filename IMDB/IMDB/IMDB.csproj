@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DatabaseTSV\DatabaseTSV.csproj" />
     <ProjectReference Include="..\IMDB.DataLayer\IMDB.DataLayer.csproj" />
     <ProjectReference Include="..\IMDB.Domain\IMDB.Domain.csproj" />
     <ProjectReference Include="..\IMDB.Services\IMDB.Services.csproj" />

@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IMDB.Services", "IMDB.Servi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{619E8D28-28ED-47AB-8091-AED2B780C2FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseTSV", "DatabaseTSV\DatabaseTSV.csproj", "{D0F5F4F1-54CA-40D2-A3A6-69CFF3296991}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseTSV", "DatabaseTSV\DatabaseTSV.csproj", "{C5179CC9-269A-4C0E-A465-8C47FB38A9F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{619E8D28-28ED-47AB-8091-AED2B780C2FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{619E8D28-28ED-47AB-8091-AED2B780C2FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{619E8D28-28ED-47AB-8091-AED2B780C2FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D0F5F4F1-54CA-40D2-A3A6-69CFF3296991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0F5F4F1-54CA-40D2-A3A6-69CFF3296991}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0F5F4F1-54CA-40D2-A3A6-69CFF3296991}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D0F5F4F1-54CA-40D2-A3A6-69CFF3296991}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5179CC9-269A-4C0E-A465-8C47FB38A9F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5179CC9-269A-4C0E-A465-8C47FB38A9F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5179CC9-269A-4C0E-A465-8C47FB38A9F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5179CC9-269A-4C0E-A465-8C47FB38A9F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
