@@ -1,0 +1,1776 @@
+tconst	ordering	nconst	category	job	characters
+tt0012349	10	nm0088471	actor	\N	["His Assistant"]
+tt0012349	1	nm0000122	actor	\N	["A Tramp"]
+tt0012349	2	nm0701012	actress	\N	["The Woman"]
+tt0012349	3	nm0001067	actor	\N	["The Child"]
+tt0012349	4	nm0588033	actor	\N	["The Man"]
+tt0012349	5	nm0042317	actor	\N	["Car Thief","Man in Shelter"]
+tt0012349	6	nm0047800	actress	\N	["Bride"]
+tt0012349	7	nm0048798	actress	\N	["Slum Nurse"]
+tt0012349	8	nm0074788	actor	\N	["Professor Guido","Night Shelter Keeper"]
+tt0012349	9	nm0080930	actor	\N	["Orphan Asylum Driver"]
+tt0015324	10	nm0504380	cinematographer	\N	\N
+tt0015324	1	nm0000036	actor	\N	["Projectionist","Sherlock, Jr."]
+tt0015324	2	nm0570230	actress	\N	["The Girl"]
+tt0015324	3	nm0444172	actor	\N	["The Girl's Father","Man on Film Screen"]
+tt0015324	4	nm0175068	actor	\N	["The Hired Man","The Butler"]
+tt0015324	5	nm0369841	writer	story	\N
+tt0015324	6	nm0593477	writer	story	\N
+tt0015324	7	nm0115669	writer	story	\N
+tt0015324	8	nm3816287	composer	\N	\N
+tt0015324	9	nm0396327	cinematographer	\N	\N
+tt0015864	10	nm1027682	actor	\N	["Eskimo Child"]
+tt0015864	1	nm0000122	actor	\N	["The Lone Prospector"]
+tt0015864	2	nm0841501	actor	\N	["Big Jim McKay"]
+tt0015864	3	nm0615306	actor	\N	["Black Larsen"]
+tt0015864	4	nm0074788	actor	\N	["Hank Curtis"]
+tt0015864	5	nm0675356	composer	\N	\N
+tt0015864	6	nm0005906	cinematographer	\N	\N
+tt0015864	7	nm0906618	actor	\N	["Jack Cameron"]
+tt0015864	8	nm0354913	actress	\N	["Georgia"]
+tt0015864	9	nm1033900	actor	\N	["Man in Dance Hall"]
+tt0017136	10	nm2111404	composer	\N	\N
+tt0017136	1	nm0375609	actress	\N	["Maria","Maschinenmensch","The Machine Man"]
+tt0017136	2	nm0002154	actor	\N	["Johann (Joh) Fredersen"]
+tt0017136	3	nm0297054	actor	\N	["Freder Fredersen - Joh Fredersens Sohn"]
+tt0017136	4	nm0459030	actor	\N	["Erfinder C.A. Rotwang","The Inventor"]
+tt0017136	5	nm0000485	director	\N	\N
+tt0017136	6	nm0902376	writer	screenplay	\N
+tt0017136	7	nm0690143	producer	producer	\N
+tt0017136	8	nm3017782	composer	\N	\N
+tt0017136	9	nm0923118	composer	\N	\N
+tt0017925	10	nm1193626	composer	\N	\N
+tt0017925	1	nm0000036	actor	\N	["Johnnie Gray"]
+tt0017925	2	nm0533045	actress	\N	["Annabelle Lee"]
+tt0017925	3	nm0147070	actor	\N	["Captain Anderson"]
+tt0017925	4	nm0267650	actor	\N	["General Thatcher"]
+tt0017925	5	nm0115669	director	\N	\N
+tt0017925	6	nm0090213	writer	adapted by	\N
+tt0017925	7	nm0807667	writer	adapted by	\N
+tt0017925	8	nm0685904	writer	book "Daring and Suffering: a History of the Great Railroad Adventure"	\N
+tt0017925	9	nm0809548	writer	\N	\N
+tt0031381	10	nm0308177	writer	contributing writer	\N
+tt0031381	1	nm0000022	actor	\N	["Rhett Butler - Visitor from Charleston"]
+tt0031381	2	nm0000046	actress	\N	["Scarlett - Their Daughter"]
+tt0031381	3	nm0593775	actor	\N	["Gerald O'Hara"]
+tt0031381	4	nm0641966	actress	\N	["Ellen - His Wife"]
+tt0031381	5	nm0281808	director	\N	\N
+tt0031381	6	nm0002030	director	\N	\N
+tt0031381	7	nm0939992	director	\N	\N
+tt0031381	8	nm0593565	writer	story of the Old South "Gone with the Wind"	\N
+tt0031381	9	nm0397608	writer	screen play by	\N
+tt0031679	10	nm0907900	cinematographer	director of photography	\N
+tt0031679	1	nm0000071	actor	\N	["Jefferson Smith"]
+tt0031679	2	nm0000795	actress	\N	["Saunders"]
+tt0031679	3	nm0001647	actor	\N	["Senator Joseph Paine"]
+tt0031679	4	nm0036427	actor	\N	["Jim Taylor"]
+tt0031679	5	nm0001008	director	\N	\N
+tt0031679	6	nm0118227	writer	screen play	\N
+tt0031679	7	nm0287931	writer	story	\N
+tt0031679	8	nm0175333	writer	contributor to screenplay construction and dialogue	\N
+tt0031679	9	nm0006323	composer	\N	\N
+tt0036775	1	nm0534045	actor	\N	["Walter Neff"]
+tt0036775	2	nm0001766	actress	\N	["Phyllis Dietrichson"]
+tt0036775	3	nm0000064	actor	\N	["Barton Keyes"]
+tt0036775	4	nm0056477	actor	\N	["Nino Zachetti"]
+tt0036775	5	nm0000697	director	\N	\N
+tt0036775	6	nm0151452	writer	screenplay	\N
+tt0036775	7	nm0128906	writer	from the novel by	\N
+tt0036775	8	nm0000067	composer	\N	\N
+tt0036775	9	nm0005870	cinematographer	director of photography	\N
+tt0040522	10	nm0290000	writer	screenplay	\N
+tt0040522	1	nm0536009	actor	\N	["Antonio"]
+tt0040522	2	nm0821543	actor	\N	["Bruno"]
+tt0040522	3	nm0136794	actress	\N	["Maria"]
+tt0040522	4	nm0022821	actress	\N	["The Charitable Lady"]
+tt0040522	5	nm0001120	director	\N	\N
+tt0040522	6	nm0953790	writer	story	\N
+tt0040522	7	nm0059030	writer	novel	\N
+tt0040522	8	nm0080755	writer	screenplay	\N
+tt0040522	9	nm0147599	writer	screenplay	\N
+tt0040897	10	nm0548929	editor	\N	\N
+tt0040897	1	nm0000007	actor	\N	["Fred C. Dobbs"]
+tt0040897	2	nm0404158	actor	\N	["Howard"]
+tt0040897	3	nm0392529	actor	\N	["Curtin"]
+tt0040897	4	nm0071636	actor	\N	["Cody"]
+tt0040897	5	nm0001379	director	\N	\N
+tt0040897	6	nm0871252	writer	based on the novel by	\N
+tt0040897	7	nm0087533	producer	producer	\N
+tt0040897	8	nm0000070	composer	\N	\N
+tt0040897	9	nm0005792	cinematographer	director of photography	\N
+tt0041959	1	nm0000080	actor	\N	["Harry Lime"]
+tt0041959	2	nm0001072	actor	\N	["Holly Martins"]
+tt0041959	3	nm0885098	actress	\N	["Anna Schmidt"]
+tt0041959	4	nm0002145	actor	\N	["Maj. Calloway"]
+tt0041959	5	nm0715346	director	\N	\N
+tt0041959	6	nm0001294	writer	by	\N
+tt0041959	7	nm0466099	writer	story	\N
+tt0041959	8	nm0005761	cinematographer	\N	\N
+tt0041959	9	nm0353091	editor	\N	\N
+tt0042192	10	nm0572492	editor	\N	\N
+tt0042192	1	nm0000012	actress	\N	["Margo"]
+tt0042192	2	nm0000879	actress	\N	["Eve"]
+tt0042192	3	nm0001695	actor	\N	["Addison DeWitt"]
+tt0042192	4	nm0002141	actress	\N	["Karen"]
+tt0042192	5	nm0000581	director	\N	\N
+tt0042192	6	nm0650581	writer	story "The Wisdom of Eve"	\N
+tt0042192	7	nm0953123	producer	producer	\N
+tt0042192	8	nm0000055	composer	\N	\N
+tt0042192	9	nm0005762	cinematographer	director of photography	\N
+tt0042876	10	nm0594335	cinematographer	\N	\N
+tt0042876	1	nm0001536	actor	\N	["Tajômaru"]
+tt0042876	2	nm0477553	actress	\N	["Masako Kanazawa"]
+tt0042876	3	nm0605270	actor	\N	["Takehiro Kanazawa"]
+tt0042876	4	nm0793766	actor	\N	["Woodcutter"]
+tt0042876	5	nm0000041	director	\N	\N
+tt0042876	6	nm0015611	writer	stories Rashomon and In a Grove	\N
+tt0042876	7	nm0368074	writer	screenplay	\N
+tt0042876	8	nm0423122	producer	producer	\N
+tt0042876	9	nm0370593	composer	\N	\N
+tt0044741	10	nm0620014	cinematographer	\N	\N
+tt0044741	1	nm0793766	actor	\N	["Kanji Watanabe"]
+tt0044741	2	nm0437520	actor	\N	["Mitsuo Watanabe, Kanji's son"]
+tt0044741	3	nm0385443	actor	\N	["Kimura"]
+tt0044741	4	nm0848984	actor	\N	["Sakai"]
+tt0044741	5	nm0000041	director	\N	\N
+tt0044741	6	nm0368074	writer	written by	\N
+tt0044741	7	nm0644823	writer	written by	\N
+tt0044741	8	nm0609404	producer	producer	\N
+tt0044741	9	nm0370593	composer	\N	\N
+tt0046268	10	nm0346537	editor	\N	\N
+tt0046268	1	nm0598971	actor	\N	["Mario Livi"]
+tt0046268	2	nm0889024	actor	\N	["M. Jo"]
+tt0046268	3	nm0886870	actor	\N	["Bimba"]
+tt0046268	4	nm0525793	actor	\N	["Luigi"]
+tt0046268	5	nm0167241	director	\N	\N
+tt0046268	6	nm1064118	writer	from the novel by	\N
+tt0046268	7	nm0350823	writer	adaptation and dialogue	\N
+tt0046268	8	nm0005952	composer	\N	\N
+tt0046268	9	nm0005901	cinematographer	\N	\N
+tt0046912	1	nm0001537	actor	\N	["Tony Wendice"]
+tt0046912	2	nm0000038	actress	\N	["Margot Wendice"]
+tt0046912	3	nm0191950	actor	\N	["Mark Halliday"]
+tt0046912	4	nm0002369	actor	\N	["Chief Inspector Hubbard"]
+tt0046912	5	nm0000033	director	\N	\N
+tt0046912	6	nm0461425	writer	screen play by	\N
+tt0046912	7	nm0006323	composer	\N	\N
+tt0046912	8	nm0122079	cinematographer	director of photography	\N
+tt0046912	9	nm0270458	editor	film editor	\N
+tt0047296	10	nm0077086	composer	\N	\N
+tt0047296	1	nm0000008	actor	\N	["Terry Malloy"]
+tt0047296	2	nm0001500	actor	\N	["Father Barry"]
+tt0047296	3	nm0002011	actor	\N	["Johnny Friendly"]
+tt0047296	4	nm0001768	actor	\N	["Charley Malloy"]
+tt0047296	5	nm0001415	director	\N	\N
+tt0047296	6	nm0775977	writer	screenplay	\N
+tt0047296	7	nm0425711	writer	suggested by articles by	\N
+tt0047296	8	nm0802563	writer	\N	\N
+tt0047296	9	nm0818545	producer	producer	\N
+tt0050212	10	nm0002185	composer	\N	\N
+tt0050212	1	nm0000034	actor	\N	["Shears"]
+tt0050212	2	nm0000027	actor	\N	["Colonel Nicholson"]
+tt0050212	3	nm0370144	actor	\N	["Major Warden"]
+tt0050212	4	nm0370564	actor	\N	["Colonel Saito"]
+tt0050212	5	nm0000180	director	\N	\N
+tt0050212	6	nm0099541	writer	novel "Le pont de la rivière Kwaï"	\N
+tt0050212	7	nm0286025	writer	screenplay	\N
+tt0050212	8	nm0933858	writer	screenplay	\N
+tt0050212	9	nm0818545	producer	producer	\N
+tt0050976	10	nm0526456	production_designer	\N	\N
+tt0050976	1	nm0001884	actor	\N	["Antonius Block"]
+tt0050976	2	nm0085038	actor	\N	["Jöns, squire"]
+tt0050976	3	nm0252345	actor	\N	["Death"]
+tt0050976	4	nm0691555	actor	\N	["Jof","Joseph"]
+tt0050976	5	nm0000005	director	\N	\N
+tt0050976	6	nm0252321	producer	producer	\N
+tt0050976	7	nm0635059	composer	\N	\N
+tt0050976	8	nm0005705	cinematographer	\N	\N
+tt0050976	9	nm0906307	editor	\N	\N
+tt0050986	1	nm0803705	actor	\N	["Dr. Eberhard Isak Borg"]
+tt0050986	2	nm0000761	actress	\N	["Sara","Hitchhiker"]
+tt0050986	3	nm0862026	actress	\N	["Marianne Borg"]
+tt0050986	4	nm0085038	actor	\N	["Dr. Evald Borg"]
+tt0050986	5	nm0000005	director	\N	\N
+tt0050986	6	nm0635059	composer	\N	\N
+tt0050986	7	nm0005705	cinematographer	\N	\N
+tt0050986	8	nm0741013	editor	\N	\N
+tt0050986	9	nm0349023	production_designer	\N	\N
+tt0052618	10	nm0067103	writer	contributing writer	\N
+tt0052618	1	nm0000032	actor	\N	["Judah Ben-Hur"]
+tt0052618	2	nm0370144	actor	\N	["Quintus Arrius"]
+tt0052618	3	nm0000963	actor	\N	["Messala"]
+tt0052618	4	nm0361823	actress	\N	["Esther"]
+tt0052618	5	nm0943758	director	\N	\N
+tt0052618	6	nm0908753	writer	A Tale of Christ	\N
+tt0052618	7	nm0876562	writer	screen play by	\N
+tt0052618	8	nm0000683	writer	contributing writer	\N
+tt0052618	9	nm0027173	writer	contributing writer	\N
+tt0053291	10	nm0485702	cinematographer	director of photography	\N
+tt0053291	1	nm0000054	actress	\N	["Sugar Kane Kowalczyk"]
+tt0053291	2	nm0000348	actor	\N	["Joe","Josephine","Shell Oil Junior"]
+tt0053291	3	nm0000493	actor	\N	["Jerry","Daphne"]
+tt0053291	4	nm0706368	actor	\N	["Spats Colombo"]
+tt0053291	5	nm0000697	director	\N	\N
+tt0053291	6	nm0224634	writer	screenplay	\N
+tt0053291	7	nm0858329	writer	suggested by a story by	\N
+tt0053291	8	nm0517615	writer	suggested by a story by	\N
+tt0053291	9	nm0006037	composer	\N	\N
+tt0053604	1	nm0000493	actor	\N	["C.C. Baxter"]
+tt0053604	2	nm0000511	actress	\N	["Fran Kubelik"]
+tt0053604	3	nm0534045	actor	\N	["Jeff D. Sheldrake"]
+tt0053604	4	nm0001827	actor	\N	["Joe Dobisch"]
+tt0053604	5	nm0000697	director	\N	\N
+tt0053604	6	nm0224634	writer	written by	\N
+tt0053604	7	nm0006037	composer	\N	\N
+tt0053604	8	nm0005766	cinematographer	director of photography	\N
+tt0053604	9	nm0541721	editor	film editor	\N
+tt0055031	10	nm0461772	editor	film editor	\N
+tt0055031	1	nm0000075	actor	\N	["Chief Judge Dan Haywood"]
+tt0055031	2	nm0000044	actor	\N	["Dr. Ernst Janning"]
+tt0055031	3	nm0001847	actor	\N	["Col. Tad Lawson"]
+tt0055031	4	nm0000017	actress	\N	["Mrs. Bertholt"]
+tt0055031	5	nm0006452	director	\N	\N
+tt0055031	6	nm0542631	writer	written by	\N
+tt0055031	7	nm0001050	writer	\N	\N
+tt0055031	8	nm0006104	composer	\N	\N
+tt0055031	9	nm0005768	cinematographer	\N	\N
+tt0055630	10	nm0613499	production_designer	\N	\N
+tt0055630	1	nm0001536	actor	\N	["Sanjuro Kuwabatake","The Samurai"]
+tt0055630	2	nm0867391	actor	\N	["Gonji - Tavern Keeper"]
+tt0055630	3	nm0619938	actor	\N	["Unosuke - Gunfighter"]
+tt0055630	4	nm0875362	actress	\N	["Nui"]
+tt0055630	5	nm0000041	director	\N	\N
+tt0055630	6	nm0452878	writer	screenplay	\N
+tt0055630	7	nm0849083	producer	producer	\N
+tt0055630	8	nm0766496	composer	\N	\N
+tt0055630	9	nm0594335	cinematographer	\N	\N
+tt0056592	10	nm0005737	cinematographer	director of photography	\N
+tt0056592	1	nm0000060	actor	\N	["Atticus Finch"]
+tt0056592	2	nm0576345	actor	\N	["Dill Harris"]
+tt0056592	3	nm0653942	actor	\N	["Sheriff Heck Tate"]
+tt0056592	4	nm0614677	actress	\N	["Maudie Atkinson"]
+tt0056592	5	nm0612322	director	\N	\N
+tt0056592	6	nm0497369	writer	based on her novel "To Kill a Mockingbird"	\N
+tt0056592	7	nm0285210	writer	screenplay by	\N
+tt0056592	8	nm0001587	producer	producer	\N
+tt0056592	9	nm0000930	composer	\N	\N
+tt0057115	10	nm0005701	cinematographer	director of photography	\N
+tt0057115	1	nm0000537	actor	\N	["Hilts 'The Cooler King'"]
+tt0057115	2	nm0001258	actor	\N	["Hendley 'The Scrounger'"]
+tt0057115	3	nm0000277	actor	\N	["Bartlett 'Big X'"]
+tt0057115	4	nm0000314	actor	\N	["Danny 'Tunnel King'"]
+tt0057115	5	nm0836328	director	\N	\N
+tt0057115	6	nm0108595	writer	based on the book by	\N
+tt0057115	7	nm0165412	writer	screen play by	\N
+tt0057115	8	nm0122446	writer	screen play by	\N
+tt0057115	9	nm0000930	composer	\N	\N
+tt0059578	10	nm0223964	writer	\N	\N
+tt0059578	1	nm0000142	actor	\N	["Monco"]
+tt0059578	2	nm0001812	actor	\N	["Col. Douglas Mortimer"]
+tt0059578	3	nm0002231	actor	\N	["El Indio (The Indian)"]
+tt0059578	4	nm0472756	actress	\N	["Mary - Hotel Manager's Beautiful Wife"]
+tt0059578	5	nm0001466	director	\N	\N
+tt0059578	6	nm0607694	writer	scenario	\N
+tt0059578	7	nm0898812	writer	screenplay	\N
+tt0059578	8	nm0006872	writer	\N	\N
+tt0059578	9	nm0217258	writer	original treatment	\N
+tt0066921	1	nm0000532	actor	\N	["Alex"]
+tt0066921	2	nm0535861	actor	\N	["Mr Alexander"]
+tt0066921	3	nm0060988	actor	\N	["Chief Guard"]
+tt0066921	4	nm0165049	actor	\N	["Dim"]
+tt0066921	5	nm0000040	director	\N	\N
+tt0066921	6	nm0121256	writer	novel	\N
+tt0066921	7	nm0005633	cinematographer	\N	\N
+tt0066921	8	nm0124833	editor	\N	\N
+tt0066921	9	nm0058045	production_designer	\N	\N
+tt0070735	10	nm0005892	cinematographer	director of photography	\N
+tt0070735	1	nm0000056	actor	\N	["Henry Gondorff"]
+tt0070735	2	nm0000602	actor	\N	["Johnny Hooker"]
+tt0070735	3	nm0001727	actor	\N	["Doyle Lonnegan"]
+tt0070735	4	nm0001164	actor	\N	["Lt. Wm. Snyder"]
+tt0070735	5	nm0001351	director	\N	\N
+tt0070735	6	nm0911486	writer	written by	\N
+tt0070735	7	nm0082300	producer	producer	\N
+tt0070735	8	nm0680539	producer	producer	\N
+tt0070735	9	nm0680635	producer	producer	\N
+tt0071315	10	nm0642714	editor	film editor	\N
+tt0071315	1	nm0000197	actor	\N	["J.J. Gittes"]
+tt0071315	2	nm0001159	actress	\N	["Evelyn Mulwray"]
+tt0071315	3	nm0001379	actor	\N	["Noah Cross"]
+tt0071315	4	nm0520164	actor	\N	["Escobar"]
+tt0071315	5	nm0000591	director	\N	\N
+tt0071315	6	nm0001801	writer	written by	\N
+tt0071315	7	nm0263172	producer	producer	\N
+tt0071315	8	nm0000025	composer	\N	\N
+tt0071315	9	nm0002166	cinematographer	director of photography	\N
+tt0071853	10	nm0066055	cinematographer	\N	\N
+tt0477348	7	nm0565092	writer	novel	\N
+tt0071853	1	nm0001037	actor	\N	["King Arthur","Voice of God","Middle Head"]
+tt0071853	2	nm0000092	actor	\N	["Second Swallow-Savvy Guard","The Black Knight","Peasant 3"]
+tt0071853	3	nm0001385	actor	\N	["Dead Collector","Peasant 1","Sir Robin the Not-Quite-So-Brave-as-Sir Launcelot"]
+tt0071853	4	nm0000416	actor	\N	["Patsy","Green Knight","Old Man from Scene 24 (Bridgekeeper)"]
+tt0071853	5	nm0001402	director	\N	\N
+tt0071853	6	nm0001589	writer	written by	\N
+tt0071853	7	nm0540627	writer	\N	\N
+tt0071853	8	nm0286926	producer	producer	\N
+tt0071853	9	nm0925214	producer	producer	\N
+tt0072684	1	nm0641939	actor	\N	["Barry Lyndon"]
+tt0072684	2	nm0001943	actress	\N	["Lady Honoria Lyndon"]
+tt0072684	3	nm0535861	actor	\N	["The Chevalier du Balibari"]
+tt0072684	4	nm0473228	actor	\N	["Capt. Potzdorf"]
+tt0072684	5	nm0000040	director	\N	\N
+tt0072684	6	nm0856842	writer	novel "The Memoirs of Barry Lyndon, Esq."	\N
+tt0072684	7	nm0005633	cinematographer	\N	\N
+tt0072684	8	nm0493339	editor	\N	\N
+tt0072684	9	nm0010553	production_designer	\N	\N
+tt0075314	10	nm0152469	cinematographer	director of photography	\N
+tt0075314	1	nm0000134	actor	\N	["Travis Bickle"]
+tt0075314	2	nm0000149	actress	\N	["Iris"]
+tt0075314	3	nm0001732	actress	\N	["Betsy"]
+tt0075314	4	nm0000983	actor	\N	["Tom"]
+tt0075314	5	nm0000217	director	\N	\N
+tt0075314	6	nm0001707	writer	written by	\N
+tt0075314	7	nm0680539	producer	producer	\N
+tt0075314	8	nm0680635	producer	producer	\N
+tt0075314	9	nm0002136	composer	\N	\N
+tt0077416	10	nm0678911	producer	producer	\N
+tt0077416	1	nm0000134	actor	\N	["Michael"]
+tt0077416	2	nm0000686	actor	\N	["Nick"]
+tt0077416	3	nm0001030	actor	\N	["Stan"]
+tt0077416	4	nm0001698	actor	\N	["Steven"]
+tt0077416	5	nm0001047	director	\N	\N
+tt0077416	6	nm0913346	writer	story	\N
+tt0077416	7	nm0307311	writer	story	\N
+tt0077416	8	nm0714793	writer	story	\N
+tt0077416	9	nm0214303	producer	producer	\N
+tt0080678	10	nm0762674	producer	producer	\N
+tt0080678	1	nm0000164	actor	\N	["Dr. Frederick Treves"]
+tt0080678	2	nm0000457	actor	\N	["John Merrick"]
+tt0080678	3	nm0000843	actress	\N	["Mrs. Kendal"]
+tt0080678	4	nm0000024	actor	\N	["Carr Gomm"]
+tt0080678	5	nm0000186	director	\N	\N
+tt0080678	6	nm0212246	writer	screenplay	\N
+tt0080678	7	nm0075015	writer	screenplay	\N
+tt0080678	8	nm0872375	writer	book "The Elephant Man and Other Reminiscences"	\N
+tt0080678	9	nm0598744	writer	in part on the book "The Elephant Man: A Study in Human Dignity"	\N
+tt0081398	10	nm0552731	writer	screenplay	\N
+tt0081398	1	nm0000134	actor	\N	["Jake La Motta"]
+tt0081398	2	nm0001550	actress	\N	["Vickie La Motta"]
+tt0081398	3	nm0000582	actor	\N	["Joey"]
+tt0081398	4	nm0898634	actor	\N	["Salvy"]
+tt0081398	5	nm0000217	director	\N	\N
+tt0081398	6	nm0483766	writer	based on the book by	\N
+tt0081398	7	nm0141734	writer	with	\N
+tt0081398	8	nm0678014	writer	with	\N
+tt0081398	9	nm0001707	writer	screenplay	\N
+tt0083658	10	nm0006331	composer	\N	\N
+tt0083658	1	nm0000148	actor	\N	["Deckard"]
+tt0083658	2	nm0000442	actor	\N	["Batty"]
+tt0083658	3	nm0000707	actress	\N	["Rachael"]
+tt0083658	4	nm0001579	actor	\N	["Gaff"]
+tt0083658	5	nm0000631	director	\N	\N
+tt0083658	6	nm0266684	writer	screenplay	\N
+tt0083658	7	nm0672459	writer	screenplay	\N
+tt0083658	8	nm0001140	writer	novel "Do Androids Dream of Electric Sheep?"	\N
+tt0083658	9	nm0214303	producer	producer	\N
+tt0084787	10	nm0001553	composer	\N	\N
+tt0084787	1	nm0000621	actor	\N	["MacReady"]
+tt0084787	2	nm0000979	actor	\N	["Dr. Blair"]
+tt0084787	3	nm0202966	actor	\N	["Childs"]
+tt0084787	4	nm0557956	actor	\N	["Clark"]
+tt0084787	5	nm0000118	director	\N	\N
+tt0084787	6	nm0484111	writer	screenplay	\N
+tt0084787	7	nm0132168	writer	story	\N
+tt0084787	8	nm0287759	producer	producer	\N
+tt0084787	9	nm0877274	producer	producer	\N
+tt0086250	10	nm0106840	producer	producer	\N
+tt0086250	1	nm0000199	actor	\N	["Tony Montana"]
+tt0086250	2	nm0000201	actress	\N	["Elvira"]
+tt0086250	3	nm0000874	actor	\N	["Manny Ribera"]
+tt0086250	4	nm0001512	actress	\N	["Gina"]
+tt0086250	5	nm0000361	director	\N	\N
+tt0086250	6	nm0000231	writer	screenplay by	\N
+tt0086250	7	nm0001328	writer	\N	\N
+tt0086250	8	nm0372942	writer	\N	\N
+tt0086250	9	nm0870660	writer	based on the novel by	\N
+tt0089881	10	nm0797889	producer	producer	\N
+tt0089881	1	nm0619938	actor	\N	["Lord Hidetora Ichimonji"]
+tt0089881	2	nm0855417	actor	\N	["Taro Takatora Ichimonji"]
+tt0089881	3	nm0628704	actor	\N	["Jiro Masatora Ichimonji"]
+tt0089881	4	nm0753480	actor	\N	["Saburo Naotora Ichimonji"]
+tt0089881	5	nm0000041	director	\N	\N
+tt0089881	6	nm0644823	writer	screenplay	\N
+tt0089881	7	nm0406836	writer	screenplay	\N
+tt0089881	8	nm0000636	writer	play "King Lear"	\N
+tt0089881	9	nm0361683	producer	producer	\N
+tt0093058	8	nm0473588	composer	\N	\N
+tt0093058	10	nm0402950	editor	\N	\N
+tt0093058	1	nm0000546	actor	\N	["Pvt. Joker"]
+tt0093058	2	nm0000388	actor	\N	["Gny. Sgt. Hartman"]
+tt0093058	3	nm0000352	actor	\N	["Pvt. Pyle"]
+tt0093058	4	nm0000284	actor	\N	["Animal Mother"]
+tt0093058	5	nm0000040	director	\N	\N
+tt0093058	6	nm0380282	writer	screenplay by	\N
+tt0093058	7	nm0368007	writer	screenplay by	\N
+tt0093058	9	nm0005801	cinematographer	\N	\N
+tt0095016	10	nm0005428	producer	producer	\N
+tt0095016	1	nm0000246	actor	\N	["John McClane"]
+tt0095016	2	nm0000614	actor	\N	["Hans Gruber"]
+tt0095016	3	nm0000889	actress	\N	["Holly Gennaro McClane"]
+tt0095016	4	nm0001817	actor	\N	["Sgt. Al Powell"]
+tt0095016	5	nm0001532	director	\N	\N
+tt0095016	6	nm0861636	writer	based on the novel by	\N
+tt0095016	7	nm0835732	writer	screenplay by	\N
+tt0095016	8	nm0211823	writer	screenplay by	\N
+tt0095016	9	nm0330379	producer	producer	\N
+tt0096283	10	nm0794174	cinematographer	\N	\N
+tt0096283	1	nm0847054	actor	\N	["Totoro"]
+tt0096283	2	nm0383022	actress	\N	["Satsuki"]
+tt0096283	3	nm0757076	actress	\N	["Mei"]
+tt0096283	4	nm0411790	actor	\N	["Tatsuo Kusakabe"]
+tt0096283	5	nm0594503	director	\N	\N
+tt0096283	6	nm0361701	producer	producer	\N
+tt0096283	7	nm1566098	producer	producer	\N
+tt0096283	8	nm0386749	composer	\N	\N
+tt0096283	9	nm1147210	cinematographer	\N	\N
+tt0097576	10	nm0915226	producer	producer	\N
+tt0097576	1	nm0000148	actor	\N	["Indiana Jones"]
+tt0097576	2	nm0000125	actor	\N	["Professor Henry Jones"]
+tt0097576	3	nm0233145	actress	\N	["Elsa"]
+tt0097576	4	nm0001186	actor	\N	["Marcus Brody"]
+tt0097576	5	nm0000229	director	\N	\N
+tt0097576	6	nm0090151	writer	screenplay	\N
+tt0097576	7	nm0000184	writer	story	\N
+tt0097576	8	nm0583675	writer	story	\N
+tt0097576	9	nm0442241	writer	characters	\N
+tt0105695	1	nm0000142	actor	\N	["Bill Munny"]
+tt0105695	2	nm0000432	actor	\N	["Little Bill Daggett"]
+tt0105695	3	nm0000151	actor	\N	["Ned Logan"]
+tt0105695	4	nm0001321	actor	\N	["English Bob"]
+tt0105695	5	nm0672459	writer	written by	\N
+tt0105695	6	nm0006215	composer	\N	\N
+tt0105695	7	nm0005726	cinematographer	director of photography	\N
+tt0105695	8	nm0185088	editor	\N	\N
+tt0105695	9	nm0120317	production_designer	\N	\N
+tt0107207	10	nm0357421	editor	\N	\N
+tt0107207	1	nm0000358	actor	\N	["Gerry Conlon"]
+tt0107207	2	nm0000592	actor	\N	["Giuseppe Conlon"]
+tt0107207	3	nm0188949	actress	\N	["Girl in Pub"]
+tt0107207	4	nm2535022	actor	\N	["Guildford Soldier"]
+tt0107207	5	nm0006487	director	\N	\N
+tt0107207	6	nm0174840	writer	autobiographical book "Proved Innocent"	\N
+tt0107207	7	nm0313623	writer	screenplay	\N
+tt0107207	8	nm0002303	composer	\N	\N
+tt0107207	9	nm0084695	cinematographer	director of photography	\N
+tt0107290	10	nm0002354	composer	\N	\N
+tt0107290	1	nm0000554	actor	\N	["Grant"]
+tt0107290	2	nm0000368	actress	\N	["Ellie"]
+tt0107290	3	nm0000156	actor	\N	["Malcolm"]
+tt0107290	4	nm0000277	actor	\N	["Hammond"]
+tt0107290	5	nm0000229	director	\N	\N
+tt0107290	6	nm0000341	writer	novel	\N
+tt0107290	7	nm0462895	writer	screenplay	\N
+tt0107290	8	nm0005086	producer	producer	\N
+tt0107290	9	nm0596520	producer	producer	\N
+tt0112471	10	nm0010471	editor	\N	\N
+tt0112471	1	nm0000160	actor	\N	["Jesse"]
+tt0112471	2	nm0000365	actress	\N	["Céline"]
+tt0112471	3	nm0248600	actress	\N	["Wife on Train"]
+tt0112471	4	nm0702541	actor	\N	["Husband on Train"]
+tt0112471	5	nm0000500	director	\N	\N
+tt0112471	6	nm0471811	writer	written by	\N
+tt0112471	7	nm0908323	producer	producer	\N
+tt0112471	8	nm0295947	composer	\N	\N
+tt0112471	9	nm0199679	cinematographer	director of photography	\N
+tt0112641	10	nm0274721	production_designer	\N	\N
+tt0112641	1	nm0000134	actor	\N	["Sam 'Ace' Rothstein"]
+tt0112641	2	nm0000232	actress	\N	["Ginger McKenna"]
+tt0112641	3	nm0000582	actor	\N	["Nicky Santoro"]
+tt0112641	4	nm0000249	actor	\N	["Lester Diamond"]
+tt0112641	5	nm0000217	director	\N	\N
+tt0112641	6	nm0683380	writer	book	\N
+tt0112641	7	nm0208381	producer	producer	\N
+tt0112641	8	nm0724744	cinematographer	director of photography	\N
+tt0112641	9	nm0774817	editor	\N	\N
+tt0113277	10	nm0325549	editor	\N	\N
+tt0113277	1	nm0000199	actor	\N	["Lt. Vincent Hanna"]
+tt0113277	2	nm0000134	actor	\N	["Neil McCauley"]
+tt0113277	3	nm0000174	actor	\N	["Chris Shiherlis"]
+tt0113277	4	nm0000685	actor	\N	["Nate"]
+tt0113277	5	nm0000520	director	\N	\N
+tt0113277	6	nm0513165	producer	producer	\N
+tt0113277	7	nm0006106	composer	\N	\N
+tt0113277	8	nm0005883	cinematographer	director of photography	\N
+tt0113277	9	nm0117779	editor	\N	\N
+tt0116282	1	nm0000513	actor	\N	["Jerry Lundegaard"]
+tt0116282	2	nm0000531	actress	\N	["Marge Gunderson"]
+tt0116282	3	nm0000114	actor	\N	["Carl Showalter"]
+tt0116282	4	nm0001780	actor	\N	["Gaear Grimsrud"]
+tt0116282	5	nm0001054	director	\N	\N
+tt0116282	6	nm0001053	director	\N	\N
+tt0116282	7	nm0001980	composer	\N	\N
+tt0116282	8	nm0005683	cinematographer	director of photography	\N
+tt0116282	9	nm0374511	production_designer	\N	\N
+tt0117951	10	nm0386227	editor	\N	\N
+tt0117951	1	nm0000191	actor	\N	["Renton"]
+tt0117951	2	nm0001971	actor	\N	["Spud"]
+tt0117951	3	nm0001538	actor	\N	["Sick Boy"]
+tt0117951	4	nm0571727	actor	\N	["Tommy"]
+tt0117951	5	nm0000965	director	\N	\N
+tt0117951	6	nm0920543	writer	based on the novel by	\N
+tt0117951	7	nm0388076	writer	screenplay	\N
+tt0117951	8	nm0531602	producer	producer	\N
+tt0117951	9	nm0005909	cinematographer	director of photography	\N
+tt0118849	10	nm0368359	editor	\N	\N
+tt0118849	1	nm0619870	actor	\N	["Ali's Father"]
+tt0118849	2	nm0268488	actor	\N	["Ali"]
+tt0118849	3	nm0781245	actress	\N	["Zahra"]
+tt0118849	4	nm0415412	actress	\N	["Roya"]
+tt0118849	5	nm0006498	director	\N	\N
+tt0118849	6	nm0260556	producer	producer	\N
+tt0118849	7	nm0260557	producer	producer	\N
+tt0118849	8	nm0415663	composer	\N	\N
+tt0118849	9	nm0539342	cinematographer	\N	\N
+tt0119488	10	nm0000025	composer	\N	\N
+tt0119488	1	nm0000228	actor	\N	["Jack Vincennes"]
+tt0119488	2	nm0000128	actor	\N	["Bud White"]
+tt0119488	3	nm0001602	actor	\N	["Ed Exley"]
+tt0119488	4	nm0000107	actress	\N	["Lynn Bracken"]
+tt0119488	5	nm0000436	director	\N	\N
+tt0119488	6	nm0255278	writer	based on the novel by	\N
+tt0119488	7	nm0001338	writer	screenplay by	\N
+tt0119488	8	nm0586969	producer	producer	\N
+tt0119488	9	nm0622296	producer	producer	\N
+tt0120382	10	nm0902129	composer	\N	\N
+tt0120382	1	nm0000120	actor	\N	["Truman Burbank"]
+tt0120382	2	nm0000438	actor	\N	["Christof"]
+tt0120382	3	nm0001473	actress	\N	["Meryl Burbank","Hannah Gill"]
+tt0120382	4	nm0001187	actor	\N	["Marlon"]
+tt0120382	5	nm0001837	director	\N	\N
+tt0120382	6	nm0629272	writer	written by	\N
+tt0120382	7	nm0271026	producer	producer	\N
+tt0120382	8	nm0748784	producer	producer	\N
+tt0120382	9	nm0775443	producer	producer	\N
+tt0120735	10	nm0398167	editor	\N	\N
+tt0120735	1	nm0002076	actor	\N	["Tom"]
+tt0120735	2	nm0002077	actor	\N	["Soap"]
+tt0120735	3	nm0602941	actor	\N	["Eddy"]
+tt0120735	4	nm0005458	actor	\N	["Bacon"]
+tt0120735	5	nm0005363	director	\N	\N
+tt0120735	6	nm0891216	producer	producer	\N
+tt0120735	7	nm0400542	composer	\N	\N
+tt0120735	8	nm0614373	composer	\N	\N
+tt0120735	9	nm0362165	cinematographer	director of photography	\N
+tt0167404	10	nm0005714	cinematographer	director of photography	\N
+tt0167404	1	nm0000246	actor	\N	["Malcolm Crowe"]
+tt0167404	2	nm0005286	actor	\N	["Cole Sear"]
+tt0167404	3	nm0001057	actress	\N	["Lynn Sear"]
+tt0167404	4	nm0931404	actress	\N	["Anna Crowe"]
+tt0167404	5	nm0796117	director	\N	\N
+tt0167404	6	nm0005086	producer	producer	\N
+tt0167404	7	nm0550881	producer	producer	\N
+tt0167404	8	nm0578814	producer	producer	\N
+tt0167404	9	nm0006133	composer	\N	\N
+tt0208092	10	nm0524829	production_designer	\N	\N
+tt0208092	1	nm0005458	actor	\N	["Turkish"]
+tt0208092	2	nm0000093	actor	\N	["Mickey O'Neil"]
+tt0208092	3	nm0334318	actor	\N	["Tommy"]
+tt0208092	4	nm0005068	actor	\N	["Bullet-Tooth Tony"]
+tt0208092	5	nm0005363	director	\N	\N
+tt0208092	6	nm0891216	producer	producer	\N
+tt0208092	7	nm0614373	composer	\N	\N
+tt0208092	8	nm0362165	cinematographer	director of photography	\N
+tt0208092	9	nm1154184	editor	\N	\N
+tt0211915	10	nm0773685	editor	\N	\N
+tt0211915	1	nm0851582	actress	\N	["Amélie Poulain"]
+tt0211915	2	nm0440913	actor	\N	["Nino Quincampoix"]
+tt0211915	3	nm0749363	actor	\N	["Raphaël Poulain"]
+tt0211915	4	nm0186677	actress	\N	["Amandine Poulain"]
+tt0211915	5	nm0000466	director	\N	\N
+tt0211915	6	nm0491011	writer	scenario	\N
+tt0211915	7	nm0652226	producer	producer	\N
+tt0211915	8	nm0862961	composer	\N	\N
+tt0211915	9	nm0216632	cinematographer	\N	\N
+tt0264464	10	nm0002354	composer	\N	\N
+tt0264464	1	nm0000138	actor	\N	["Frank Abagnale Jr."]
+tt0264464	2	nm0000158	actor	\N	["Carl Hanratty"]
+tt0264464	3	nm0000686	actor	\N	["Frank Abagnale"]
+tt0264464	4	nm0000640	actor	\N	["Roger Strong"]
+tt0264464	5	nm0000229	director	\N	\N
+tt0264464	6	nm0622288	writer	screenplay	\N
+tt0264464	7	nm0007646	writer	book "Catch Me If You Can: The Amazing True Story of the Youngest and Most Daring Con Man in the History of Fun and Profit"	\N
+tt0264464	8	nm1127221	writer	book "Catch Me If You Can: The Amazing True Story of the Youngest and Most Daring Con Man in the History of Fun and Profit"	\N
+tt0264464	9	nm0662748	producer	producer	\N
+tt0266543	10	nm0002353	composer	\N	\N
+tt0266543	1	nm0000983	actor	\N	["Marlin"]
+tt0266543	2	nm0001122	actress	\N	["Dory"]
+tt0266543	3	nm1071252	actor	\N	["Nemo"]
+tt0266543	4	nm0000353	actor	\N	["Gill"]
+tt0266543	5	nm0004056	director	\N	\N
+tt0266543	6	nm0881279	director	co-director	\N
+tt0266543	7	nm0677037	writer	screenplay by	\N
+tt0266543	8	nm0721675	writer	screenplay by	\N
+tt0266543	9	nm0910237	producer	producer	\N
+tt0266697	10	nm0849222	production_designer	\N	\N
+tt0266697	1	nm0000235	actress	\N	["The Bride"]
+tt0266697	2	nm0001016	actor	\N	["Bill"]
+tt0266697	3	nm0000435	actress	\N	["Elle Driver"]
+tt0266697	4	nm0000514	actor	\N	["Budd"]
+tt0266697	5	nm0000233	director	\N	\N
+tt0266697	6	nm0004744	producer	producer	\N
+tt0266697	7	nm0753526	composer	\N	\N
+tt0266697	8	nm0724744	cinematographer	director of photography	\N
+tt0266697	9	nm0579673	editor	\N	\N
+tt0268978	10	nm0005683	cinematographer	director of photography	\N
+tt0268978	1	nm0000128	actor	\N	["John Nash"]
+tt0268978	2	nm0000438	actor	\N	["Parcher"]
+tt0268978	3	nm0000124	actress	\N	["Alicia Nash"]
+tt0268978	4	nm0001626	actor	\N	["Dr. Rosen"]
+tt0268978	5	nm0000165	director	\N	\N
+tt0268978	6	nm0326040	writer	written by	\N
+tt0268978	7	nm0621586	writer	book	\N
+tt0268978	8	nm0004976	producer	producer	\N
+tt0268978	9	nm0000035	composer	\N	\N
+tt0347149	10	nm0386749	composer	\N	\N
+tt0347149	1	nm0047962	actress	\N	["Sofî"]
+tt0347149	2	nm0454120	actor	\N	["Hauru"]
+tt0347149	3	nm0309107	actor	\N	["Karushifâ"]
+tt0347149	4	nm0594271	actor	\N	["Arechi no Majo"]
+tt0347149	5	nm0594503	director	\N	\N
+tt0347149	6	nm1168510	writer	novel "Howl's Moving Castle"	\N
+tt0347149	7	nm0218760	producer	producer	\N
+tt0347149	8	nm1566098	producer	producer	\N
+tt0347149	9	nm0840699	producer	producer	\N
+tt0353969	10	nm1396406	producer	producer	\N
+tt0353969	1	nm0814280	actor	\N	["Detective Park Doo-man"]
+tt0353969	2	nm1235292	actor	\N	["Detective Seo Tae-yoon"]
+tt0353969	3	nm1323287	actor	\N	["Detective Cho Yong-koo"]
+tt0353969	4	nm1138201	actor	\N	["Sergeant Shin Dong-chul"]
+tt0353969	5	nm0094435	director	\N	\N
+tt0353969	6	nm1323286	writer	play	\N
+tt0353969	7	nm1646563	writer	writer	\N
+tt0353969	8	nm0149223	producer	producer	\N
+tt0353969	9	nm0453617	producer	producer	\N
+tt0363163	10	nm0951598	composer	\N	\N
+tt0363163	1	nm0004486	actor	\N	["Adolf Hitler"]
+tt0363163	2	nm0487884	actress	\N	["Traudl Junge"]
+tt0363163	3	nm0559890	actor	\N	["Joseph Goebbels"]
+tt0363163	4	nm0477810	actress	\N	["Eva Braun"]
+tt0363163	5	nm0386570	director	\N	\N
+tt0363163	6	nm0251536	writer	written by	\N
+tt0363163	7	nm0275264	writer	based on the book "Der Untergang: Hitler und das Ende des Dritten Reiches" by	\N
+tt0363163	8	nm0432622	writer	based on the book "Bis zur letzten Stunde" by	\N
+tt0363163	9	nm0612199	writer	based on the book "Bis zur letzten Stunde" by	\N
+tt0372784	10	nm0746273	producer	producer	\N
+tt0372784	1	nm0000288	actor	\N	["Bruce Wayne","Batman"]
+tt0372784	2	nm0000323	actor	\N	["Alfred"]
+tt0372784	3	nm0913822	actor	\N	["Ra's Al Ghul"]
+tt0372784	4	nm0000553	actor	\N	["Ducard"]
+tt0372784	5	nm0634240	director	\N	\N
+tt0372784	6	nm0004170	writer	characters	\N
+tt0372784	7	nm0275286	writer	story	\N
+tt0372784	8	nm0290581	producer	producer	\N
+tt0372784	9	nm0650038	producer	producer	\N
+tt0405159	10	nm0185088	editor	\N	\N
+tt0405159	1	nm0005476	actress	\N	["Maggie Fitzgerald"]
+tt0405159	2	nm0000142	actor	\N	["Frankie Dunn"]
+tt0405159	3	nm0000151	actor	\N	["Eddie Scrap-Iron Dupris"]
+tt0405159	4	nm0059431	actor	\N	["Danger Barch"]
+tt0405159	5	nm0353673	writer	screenplay	\N
+tt0405159	6	nm0101801	writer	stories from Rope Burns	\N
+tt0405159	7	nm0742347	producer	producer	\N
+tt0405159	8	nm0748665	producer	producer	\N
+tt0405159	9	nm0827869	cinematographer	director of photography	\N
+tt0434409	10	nm0650038	producer	producer	\N
+tt0434409	1	nm0915989	actor	\N	["V"]
+tt0434409	2	nm0000204	actress	\N	["Evey"]
+tt0434409	3	nm0001291	actor	\N	["Dominic"]
+tt0434409	4	nm0001653	actor	\N	["Finch"]
+tt0434409	5	nm0574625	director	\N	\N
+tt0434409	6	nm0905152	writer	screenplay	\N
+tt0434409	7	nm0905154	writer	screenplay	\N
+tt0434409	8	nm2331222	writer	graphic novel art	\N
+tt0434409	9	nm0384294	producer	producer	\N
+tt0457430	10	nm0622782	composer	\N	\N
+tt0457430	1	nm1419440	actress	\N	["Ofelia"]
+tt0457430	2	nm0317725	actress	\N	["Carmen"]
+tt0457430	3	nm0530365	actor	\N	["Vidal"]
+tt0457430	4	nm0893941	actress	\N	["Mercedes"]
+tt0457430	5	nm0868219	director	\N	\N
+tt0457430	6	nm1973308	producer	producer	\N
+tt0457430	7	nm0190859	producer	producer	\N
+tt0457430	8	nm0622838	producer	producer	\N
+tt0457430	9	nm0868872	producer	producer	\N
+tt0469494	10	nm0005696	cinematographer	director of photography	\N
+tt0469494	1	nm0000358	actor	\N	["Daniel Plainview"]
+tt0469494	2	nm0200452	actor	\N	["Paul Sunday","Eli Sunday"]
+tt0469494	3	nm0001354	actor	\N	["Fletcher"]
+tt0469494	4	nm2872491	actor	\N	["Silver Assay Worker"]
+tt0469494	5	nm0000759	director	\N	\N
+tt0469494	6	nm0801737	writer	novel "Oil!"	\N
+tt0469494	7	nm0526917	producer	producer	\N
+tt0469494	8	nm0783280	producer	producer	\N
+tt0469494	9	nm0339351	composer	\N	\N
+tt0477348	10	nm0005683	cinematographer	director of photography	\N
+tt0477348	1	nm0000169	actor	\N	["Ed Tom Bell"]
+tt0477348	2	nm0000849	actor	\N	["Anton Chigurh"]
+tt0477348	3	nm0000982	actor	\N	["Llewelyn Moss"]
+tt0477348	4	nm0000437	actor	\N	["Carson Wells"]
+tt0477348	5	nm0001053	director	\N	\N
+tt0477348	6	nm0001054	director	\N	\N
+tt0477348	8	nm0748784	producer	producer	\N
+tt0477348	9	nm0001980	composer	\N	\N
+tt0986264	10	nm0080289	editor	\N	\N
+tt0986264	1	nm2594301	actor	\N	["Ishaan Awasthi"]
+tt0986264	2	nm0451148	actor	\N	["Ram Shankar Nikumbh"]
+tt0986264	3	nm1538116	actress	\N	["Maya Awasthi"]
+tt0986264	4	nm1479650	actor	\N	["Nandkishore Awasthi"]
+tt0986264	5	nm1244760	director	\N	\N
+tt0986264	6	nm0536708	composer	\N	\N
+tt0986264	7	nm0523415	composer	\N	\N
+tt0986264	8	nm0251416	composer	\N	\N
+tt0986264	9	nm1146016	cinematographer	\N	\N
+tt0993846	10	nm0863374	producer	producer	\N
+tt0993846	1	nm0000138	actor	\N	["Jordan Belfort"]
+tt0993846	2	nm1706767	actor	\N	["Donnie Azoff"]
+tt0993846	3	nm3053338	actress	\N	["Naomi Lapaglia"]
+tt0993846	4	nm0000190	actor	\N	["Mark Hanna"]
+tt0993846	5	nm0000217	director	\N	\N
+tt0993846	6	nm1010540	writer	screenplay	\N
+tt0993846	7	nm0067789	writer	book	\N
+tt0993846	8	nm4265383	producer	producer	\N
+tt0993846	9	nm2110175	producer	producer	\N
+tt10272386	10	nm0661406	producer	producer	\N
+tt10272386	1	nm0000164	actor	\N	["Anthony"]
+tt10272386	2	nm1469236	actress	\N	["Anne"]
+tt10272386	3	nm0309693	actor	\N	["The Man"]
+tt10272386	4	nm0931404	actress	\N	["The Woman"]
+tt10272386	5	nm1725469	director	\N	\N
+tt10272386	6	nm0358960	writer	screenplay by	\N
+tt10272386	7	nm0136260	producer	producer	\N
+tt10272386	8	nm10663088	producer	producer	\N
+tt10272386	9	nm0515201	producer	producer	\N
+tt1049413	10	nm0634530	editor	film editor	\N
+tt1049413	1	nm0000799	actor	\N	["Carl Fredricksen"]
+tt1049413	2	nm2973712	actor	\N	["Russell"]
+tt1049413	3	nm0001652	actor	\N	["Construction Foreman Tom"]
+tt1049413	4	nm0001626	actor	\N	["Charles Muntz"]
+tt1049413	5	nm0230032	director	\N	\N
+tt1049413	6	nm0677037	director	co-director	\N
+tt1049413	7	nm0565336	writer	story by	\N
+tt1049413	8	nm0729304	producer	producer	\N
+tt1049413	9	nm0315974	composer	\N	\N
+tt10872600	10	nm0270559	producer	producer	\N
+tt10872600	1	nm4043618	actor	\N	["Peter Parker","Spider-Man"]
+tt10872600	2	nm3918035	actress	\N	["MJ"]
+tt10872600	3	nm1212722	actor	\N	["Doctor Strange"]
+tt10872600	4	nm8188622	actor	\N	["Ned Leeds"]
+tt10872600	5	nm1218281	director	\N	\N
+tt10872600	6	nm0571344	writer	written by	\N
+tt10872600	7	nm1273099	writer	written by	\N
+tt10872600	8	nm0498278	writer	based on the Marvel comic book by	\N
+tt10872600	9	nm0228492	writer	based on the Marvel comic book by	\N
+tt1130884	10	nm1103781	producer	producer	\N
+tt1130884	1	nm0000138	actor	\N	["Teddy Daniels"]
+tt1130884	2	nm0607865	actress	\N	["Rachel 1"]
+tt1130884	3	nm0749263	actor	\N	["Chuck Aule"]
+tt1130884	4	nm0001426	actor	\N	["Dr. Cawley"]
+tt1130884	5	nm0000217	director	\N	\N
+tt1130884	6	nm0436164	writer	screenplay	\N
+tt1130884	7	nm1212331	writer	novel	\N
+tt1130884	8	nm1329482	producer	producer	\N
+tt1130884	9	nm0005219	producer	producer	\N
+tt0022100	1	nm0000048	actor	\N	"[""Hans Beckert""]"
+tt0022100	2	nm0927145	actress	\N	"[""Frau Beckmann""]"
+tt0022100	3	nm0484737	actress	\N	"[""Elsie Beckmann""]"
+tt0022100	4	nm0921532	actor	\N	"[""Inspector Karl Lohmann""]"
+tt0022100	5	nm0000485	director	\N	\N
+tt0022100	6	nm0902376	writer	script	\N
+tt0022100	7	nm0414825	writer	article	\N
+tt0022100	8	nm0005922	cinematographer	\N	\N
+tt0022100	9	nm0266239	editor	\N	\N
+tt0033467	10	nm0005904	cinematographer	\N	\N
+tt0033467	1	nm0000080	actor	\N	"[""Kane""]"
+tt0033467	2	nm0001072	actor	\N	"[""Jedediah Leland"",""Screening Room Reporter""]"
+tt0033467	3	nm0173827	actress	\N	"[""Susan Alexander Kane""]"
+tt0033467	4	nm0001547	actress	\N	"[""Mary Kane""]"
+tt0033467	5	nm0542534	writer	original screen play	\N
+tt0033467	6	nm0002144	writer	contributing writer	\N
+tt0033467	7	nm0219670	writer	contributing writer	\N
+tt0033467	8	nm0448809	writer	contributing writer	\N
+tt0033467	9	nm0002136	composer	\N	\N
+tt0045152	10	nm0269751	editor	\N	\N
+tt0045152	1	nm0000037	actor	\N	"[""Don Lockwood""]"
+tt0045152	2	nm0640307	actor	\N	"[""Cosmo Brown""]"
+tt0045152	3	nm0001666	actress	\N	"[""Kathy Selden""]"
+tt0045152	4	nm0353405	actress	\N	"[""Lina Lamont""]"
+tt0045152	5	nm0002045	director	\N	\N
+tt0045152	6	nm0173679	writer	story by	\N
+tt0045152	7	nm0337582	writer	story by	\N
+tt0045152	8	nm0006085	producer	producer	\N
+tt0045152	9	nm0005849	cinematographer	director of photography	\N
+tt0052357	10	nm0027173	writer	contributing writer	\N
+tt0052357	1	nm0000071	actor	\N	"[""John 'Scottie' Ferguson""]"
+tt0052357	2	nm0001571	actress	\N	"[""Madeleine Elster"",""Judy Barton""]"
+tt0052357	3	nm0000895	actress	\N	"[""Marjorie 'Midge' Wood""]"
+tt0052357	4	nm0375738	actor	\N	"[""Gavin Elster""]"
+tt0052357	5	nm0000033	director	\N	\N
+tt0052357	6	nm0178785	writer	screenplay by	\N
+tt0052357	7	nm0853138	writer	screenplay by	\N
+tt0052357	8	nm0092267	writer	"based on the novel ""D'Entre Les Morts"" by"	\N
+tt0052357	9	nm0092268	writer	"based on the novel ""D'Entre Les Morts"" by"	\N
+tt0053125	10	nm0102327	production_designer	\N	\N
+tt0053125	1	nm0000026	actor	\N	"[""Roger Thornhill""]"
+tt0053125	2	nm0001693	actress	\N	"[""Eve Kendall""]"
+tt0053125	3	nm0000051	actor	\N	"[""Phillip Vandamm""]"
+tt0053125	4	nm0484829	actress	\N	"[""Clara Thornhill""]"
+tt0053125	5	nm0000033	director	\N	\N
+tt0053125	6	nm0499626	writer	written by	\N
+tt0053125	7	nm0002136	composer	\N	\N
+tt0053125	8	nm0122079	cinematographer	director of photography	\N
+tt0053125	9	nm0866462	editor	film editor	\N
+tt0056172	10	nm0002875	cinematographer	director of photography	\N
+tt0056172	1	nm0000564	actor	\N	"[""Lawrence""]"
+tt0056172	2	nm0000027	actor	\N	"[""Prince Faisal""]"
+tt0056172	3	nm0000063	actor	\N	"[""Auda Abu Tayi""]"
+tt0056172	4	nm0370144	actor	\N	"[""General Edmund Allenby""]"
+tt0056172	5	nm0000180	director	\N	\N
+tt0056172	6	nm0004122	writer	screenplay by	\N
+tt0056172	7	nm0933858	writer	screenplay by	\N
+tt0056172	8	nm0818545	producer	producer	\N
+tt0056172	9	nm0003574	composer	\N	\N
+tt0062622	10	nm0486127	production_designer	\N	\N
+tt0062622	1	nm0001158	actor	\N	"[""Dr. Dave Bowman""]"
+tt0062622	2	nm0516972	actor	\N	"[""Dr. Frank Poole""]"
+tt0062622	3	nm0843213	actor	\N	"[""Dr. Heywood R. Floyd""]"
+tt0062622	4	nm0725220	actor	\N	"[""Moon-Watcher""]"
+tt0062622	5	nm0000040	director	\N	\N
+tt0062622	6	nm0002009	writer	screenplay by	\N
+tt0062622	7	nm0005910	cinematographer	director of photography	\N
+tt0062622	8	nm0522487	editor	film editor	\N
+tt0062622	9	nm0033658	production_designer	\N	\N
+tt0086190	10	nm0002354	composer	\N	\N
+tt0086190	1	nm0000434	actor	\N	"[""Luke Skywalker""]"
+tt0086190	2	nm0000148	actor	\N	"[""Han Solo""]"
+tt0086190	3	nm0000402	actress	\N	"[""Princess Leia""]"
+tt0086190	4	nm0001850	actor	\N	"[""Lando Calrissian""]"
+tt0086190	5	nm0549658	director	\N	\N
+tt0086190	6	nm0001410	writer	screenplay by	\N
+tt0086190	7	nm0000184	writer	screenplay by	\N
+tt0086190	8	nm0443599	producer	producer	\N
+tt0086190	9	nm0564768	producer	producer	\N
+tt0087843	10	nm0033490	writer	screenplay by	\N
+tt0087843	1	nm0000134	actor	\N	"[""Noodles""]"
+tt0087843	2	nm0000249	actor	\N	"[""Max""]"
+tt0087843	3	nm0001527	actress	\N	"[""Deborah""]"
+tt0087843	4	nm0001852	actor	\N	"[""Jimmy O'Donnell""]"
+tt0087843	5	nm0001466	director	\N	\N
+tt0087843	6	nm0340580	writer	"based on novel ""The Hoods"" by"	\N
+tt0087843	7	nm0073053	writer	screenplay by	\N
+tt0087843	8	nm0207401	writer	screenplay by	\N
+tt0087843	9	nm0575804	writer	screenplay by	\N
+tt0105236	10	nm0913300	production_designer	\N	\N
+tt0105236	1	nm0000172	actor	\N	"[""Mr. White"",""Larry""]"
+tt0105236	2	nm0000619	actor	\N	"[""Mr. Orange"",""Freddy""]"
+tt0105236	3	nm0000514	actor	\N	"[""Mr. Blonde"",""Vic""]"
+tt0105236	4	nm0001606	actor	\N	"[""Nice Guy Eddie""]"
+tt0105236	5	nm0000233	director	\N	\N
+tt0105236	6	nm0000812	writer	background radio dialogue written by	\N
+tt0105236	7	nm0004744	producer	producer	\N
+tt0105236	8	nm0782900	cinematographer	\N	\N
+tt0105236	9	nm0579673	editor	\N	\N
+tt0114709	10	nm0169505	writer	screenplay by	\N
+tt0114709	1	nm0000158	actor	\N	"[""Woody""]"
+tt0114709	2	nm0000741	actor	\N	"[""Buzz Lightyear""]"
+tt0114709	3	nm0725543	actor	\N	"[""Mr. Potato Head""]"
+tt0114709	4	nm0001815	actor	\N	"[""Slinky Dog""]"
+tt0114709	5	nm0005124	director	\N	\N
+tt0114709	6	nm0230032	writer	original story by	\N
+tt0114709	7	nm0004056	writer	original story by	\N
+tt0114709	8	nm0710020	writer	original story by	\N
+tt0114709	9	nm0923736	writer	screenplay by	\N
+tt0119217	10	nm0829681	production_designer	\N	\N
+tt0119217	1	nm0000245	actor	\N	"[""Sean""]"
+tt0119217	2	nm0000354	actor	\N	"[""Will""]"
+tt0119217	3	nm0000255	actor	\N	"[""Chuckie""]"
+tt0119217	4	nm0001745	actor	\N	"[""Lambeau""]"
+tt0119217	5	nm0001814	director	\N	\N
+tt0119217	6	nm0004744	producer	producer	\N
+tt0119217	7	nm0000384	composer	\N	\N
+tt0119217	8	nm0260389	cinematographer	director of photography	\N
+tt0119217	9	nm0768817	editor	\N	\N
+tt0180093	10	nm0508732	cinematographer	director of photography	\N
+tt0180093	1	nm0000995	actress	\N	"[""Sara Goldfarb""]"
+tt0180093	2	nm0001467	actor	\N	"[""Harry Goldfarb""]"
+tt0180093	3	nm0000124	actress	\N	"[""Marion Silver""]"
+tt0180093	4	nm0005541	actor	\N	"[""Tyrone C. Love""]"
+tt0180093	5	nm0004716	director	\N	\N
+tt0180093	6	nm0782968	writer	based on the book by	\N
+tt0180093	7	nm0914615	producer	producer	\N
+tt0180093	8	nm0922279	producer	producer	\N
+tt0180093	9	nm0543739	composer	\N	\N
+tt0338013	10	nm0109726	composer	\N	\N
+tt0338013	1	nm0000120	actor	\N	"[""Joel Barish""]"
+tt0338013	2	nm0000701	actress	\N	"[""Clementine Kruczynski""]"
+tt0338013	3	nm0929489	actor	\N	"[""Dr. Mierzwiak""]"
+tt0338013	4	nm0004423	actor	\N	"[""Train Conductor""]"
+tt0338013	5	nm0327273	director	\N	\N
+tt0338013	6	nm0442109	writer	story	\N
+tt0338013	7	nm1410028	writer	story	\N
+tt0338013	8	nm0106835	producer	producer	\N
+tt0338013	9	nm0326512	producer	producer	\N
+tt0361748	1	nm0000093	actor	\N	"[""Lt. Aldo Raine""]"
+tt0361748	2	nm1208167	actress	\N	"[""Bridget von Hammersmark""]"
+tt0361748	3	nm0744834	actor	\N	"[""Sgt. Donny Donowitz""]"
+tt0361748	4	nm0491259	actress	\N	"[""Shosanna""]"
+tt0361748	5	nm0000233	director	\N	\N
+tt0361748	6	nm0004744	producer	producer	\N
+tt0361748	7	nm0724744	cinematographer	director of photography	\N
+tt0361748	8	nm0579673	editor	\N	\N
+tt0361748	9	nm0913300	production_designer	\N	\N
+tt0435761	10	nm0005271	composer	\N	\N
+tt0435761	1	nm0000158	actor	\N	"[""Woody""]"
+tt0435761	2	nm0000741	actor	\N	"[""Buzz Lightyear""]"
+tt0435761	3	nm0000349	actress	\N	"[""Jessie""]"
+tt0435761	4	nm0000885	actor	\N	"[""Lotso""]"
+tt0435761	5	nm0881279	director	\N	\N
+tt0435761	6	nm0005124	writer	story by	\N
+tt0435761	7	nm0004056	writer	story by	\N
+tt0435761	8	nm1578335	writer	screenplay by	\N
+tt0435761	9	nm0026565	producer	producer	\N
+tt2106476	10	nm1401820	cinematographer	\N	\N
+tt2106476	1	nm0586568	actor	\N	"[""Lucas""]"
+tt2106476	2	nm0488917	actor	\N	"[""Theo""]"
+tt2106476	3	nm5038871	actress	\N	"[""Klara""]"
+tt2106476	4	nm5039026	actor	\N	"[""Marcus""]"
+tt2106476	5	nm0899121	director	\N	\N
+tt2106476	6	nm2105585	writer	screenplay	\N
+tt2106476	7	nm1011849	producer	producer	\N
+tt2106476	8	nm0442337	producer	producer	\N
+tt2106476	9	nm0250813	composer	\N	\N
+tt0032553	10	nm0354916	actress	\N	"[""Madame Napaloni""]"
+tt0032553	1	nm0000122	actor	\N	"[""Hynkel - Dictator of Tomania"",""A Jewish Barber""]"
+tt0032553	2	nm0002104	actress	\N	"[""Hannah""]"
+tt0032553	3	nm0642988	actor	\N	"[""Napaloni - Dictator of Bacteria""]"
+tt0032553	4	nm0306786	actor	\N	"[""Schultz""]"
+tt0032553	5	nm0835365	cinematographer	director of photography	\N
+tt0032553	6	nm0005906	cinematographer	director of photography	\N
+tt0032553	7	nm0630119	editor	film editor	\N
+tt0032553	8	nm0199787	actor	\N	"[""Garbitsch""]"
+tt0032553	9	nm0317970	actor	\N	"[""Herring""]"
+tt0043014	10	nm0772834	editor	\N	\N
+tt0043014	1	nm0000034	actor	\N	"[""Joe Gillis""]"
+tt0043014	2	nm0841797	actress	\N	"[""Norma Desmond""]"
+tt0043014	3	nm0002233	actor	\N	"[""Max Von Mayerling""]"
+tt0043014	4	nm0647970	actress	\N	"[""Betty Schaefer""]"
+tt0043014	5	nm0000697	director	\N	\N
+tt0043014	6	nm0102818	writer	written by	\N
+tt0043014	7	nm0551261	writer	written by	\N
+tt0043014	8	nm0000077	composer	\N	\N
+tt0043014	9	nm0005870	cinematographer	director of photography	\N
+tt0050825	10	nm0006086	composer	\N	\N
+tt0050825	1	nm0000018	actor	\N	"[""Col. Dax""]"
+tt0050825	2	nm0576127	actor	\N	"[""Cpl. Philippe Paris""]"
+tt0050825	3	nm0579663	actor	\N	"[""Gen. George Broulard""]"
+tt0050825	4	nm0534317	actor	\N	"[""Gen. Paul Mireau""]"
+tt0050825	5	nm0000040	director	\N	\N
+tt0050825	6	nm0932229	writer	screenplay	\N
+tt0050825	7	nm0860292	writer	screenplay	\N
+tt0050825	8	nm0167767	writer	"based on the novel ""Paths of Glory"" by"	\N
+tt0050825	9	nm0364805	producer	producer	\N
+tt0051201	10	nm0540338	composer	\N	\N
+tt0051201	1	nm0000061	actor	\N	"[""Leonard Vole""]"
+tt0051201	2	nm0000017	actress	\N	"[""Christine""]"
+tt0051201	3	nm0001452	actor	\N	"[""Sir Wilfrid Robarts""]"
+tt0051201	4	nm0006471	actress	\N	"[""Miss Plimsoll""]"
+tt0051201	5	nm0000697	director	\N	\N
+tt0051201	6	nm0002005	writer	in Agatha Christie's international stage success	\N
+tt0051201	7	nm0475823	writer	screen play	\N
+tt0051201	8	nm0546140	writer	adaptation	\N
+tt0051201	9	nm0394967	producer	producer	\N
+tt0057012	10	nm0367431	editor	film editor	\N
+tt0057012	1	nm0000634	actor	\N	"[""Group Capt. Lionel Mandrake"",""President Merkin Muffley"",""Dr. Strangelove""]"
+tt0057012	2	nm0001715	actor	\N	"[""Gen. 'Buck' Turgidson""]"
+tt0057012	3	nm0001330	actor	\N	"[""Brig. Gen. Jack D. Ripper""]"
+tt0057012	4	nm0943978	actor	\N	"[""Col. 'Bat' Guano""]"
+tt0057012	5	nm0000040	director	\N	\N
+tt0057012	6	nm0816143	writer	screenplay	\N
+tt0057012	7	nm0313570	writer	screenplay	\N
+tt0057012	8	nm0006145	composer	\N	\N
+tt0057012	9	nm0852405	cinematographer	director of photography	\N
+tt0057565	10	nm0849083	producer	producer	\N
+tt0057565	1	nm0001536	actor	\N	"[""Kingo Gondo""]"
+tt0057565	2	nm0755403	actor	\N	"[""Aoki - the Chauffeur""]"
+tt0057565	3	nm0619938	actor	\N	"[""Chief Detective Tokura""]"
+tt0057565	4	nm0434593	actress	\N	"[""Reiko Gondo""]"
+tt0057565	5	nm0000041	director	\N	\N
+tt0057565	6	nm0644823	writer	screenplay	\N
+tt0057565	7	nm0452878	writer	screenplay	\N
+tt0057565	8	nm0386750	writer	screenplay	\N
+tt0057565	9	nm0402805	writer	"novel ""Kingu no minoshirokin"""	\N
+tt0081505	10	nm0005633	cinematographer	\N	\N
+tt0081505	1	nm0000197	actor	\N	"[""Jack Torrance""]"
+tt0081505	2	nm0001167	actress	\N	"[""Wendy Torrance""]"
+tt0081505	3	nm0515950	actor	\N	"[""Danny Torrance""]"
+tt0081505	4	nm0001079	actor	\N	"[""Dick Hallorann""]"
+tt0081505	5	nm0000040	director	\N	\N
+tt0081505	6	nm0000175	writer	based upon the novel by	\N
+tt0081505	7	nm0424956	writer	screenplay by	\N
+tt0081505	8	nm0137793	composer	\N	\N
+tt0081505	9	nm0253844	composer	\N	\N
+tt0082096	10	nm0005911	cinematographer	director of photography	\N
+tt0082096	1	nm0001638	actor	\N	"[""Capt.-Lt. Henrich Lehmann-Willenbrock - Der Alte""]"
+tt0082096	2	nm0344963	actor	\N	"[""Lt. Werner - Correspondent""]"
+tt0082096	3	nm0921044	actor	\N	"[""Chief Engineer Fritz Grade - Der Leitende-Der LI""]"
+tt0082096	4	nm0071059	actor	\N	"[""1st Lieutenant - Number One-1WO""]"
+tt0082096	5	nm0000583	director	\N	\N
+tt0082096	6	nm0118164	writer	based on the novel by	\N
+tt0082096	7	nm0007156	producer	producer	\N
+tt0082096	8	nm0737582	producer	producer	\N
+tt0082096	9	nm0006041	composer	score composer	\N
+tt0082971	10	nm0002354	composer	\N	\N
+tt0082971	1	nm0000148	actor	\N	"[""Indy""]"
+tt0082971	2	nm0000261	actress	\N	"[""Marion""]"
+tt0082971	3	nm0293550	actor	\N	"[""Belloq""]"
+tt0082971	4	nm0722636	actor	\N	"[""Sallah""]"
+tt0082971	5	nm0000229	director	\N	\N
+tt0082971	6	nm0001410	writer	screenplay by	\N
+tt0082971	7	nm0000184	writer	story by	\N
+tt0082971	8	nm0442241	writer	story by	\N
+tt0082971	9	nm0550881	producer	producer	\N
+tt0086879	10	nm0151434	editor	\N	\N
+tt0086879	1	nm0000719	actor	\N	"[""Antonio Salieri""]"
+tt0086879	2	nm0001371	actor	\N	"[""Wolfgang Amadeus Mozart""]"
+tt0086879	3	nm0000931	actress	\N	"[""Constanze Mozart""]"
+tt0086879	4	nm0234541	actor	\N	"[""Leopold Mozart""]"
+tt0086879	5	nm0001232	director	\N	\N
+tt0086879	6	nm0787323	writer	original stage play	\N
+tt0086879	7	nm0537004	writer	\N	\N
+tt0086879	8	nm0951763	producer	producer	\N
+tt0086879	9	nm0005816	cinematographer	director of photography	\N
+tt0090605	10	nm0005036	producer	producer	\N
+tt0090605	1	nm0000244	actress	\N	"[""Ripley""]"
+tt0090605	2	nm0000299	actor	\N	"[""Corporal Hicks""]"
+tt0090605	3	nm0001343	actress	\N	"[""Newt""]"
+tt0090605	4	nm0001663	actor	\N	"[""Burke""]"
+tt0090605	5	nm0000116	director	\N	\N
+tt0090605	6	nm0318429	writer	story by	\N
+tt0090605	7	nm0001353	writer	story by	\N
+tt0090605	8	nm0639321	writer	based on characters created by	\N
+tt0090605	9	nm0795953	writer	based on characters created by	\N
+tt0091251	10	nm0678202	production_designer	\N	\N
+tt0091251	1	nm0470385	actor	\N	"[""Flyora Gayshun""]"
+tt0091251	2	nm0592500	actress	\N	"[""Glasha""]"
+tt0091251	3	nm0490708	actor	\N	"[""Kosach""]"
+tt0091251	4	nm0046575	actor	\N	"[""Rubezh""]"
+tt0091251	5	nm0459552	director	\N	\N
+tt0091251	6	nm0010696	writer	story	\N
+tt0091251	7	nm0945897	composer	\N	\N
+tt0091251	8	nm0734870	cinematographer	\N	\N
+tt0091251	9	nm0069483	editor	\N	\N
+tt0112573	10	nm0742475	editor	\N	\N
+tt0112573	1	nm0000154	actor	\N	"[""William Wallace""]"
+tt0112573	2	nm0000521	actress	\N	"[""Princess Isabelle""]"
+tt0112573	3	nm0001526	actor	\N	"[""Longshanks - King Edward I""]"
+tt0112573	4	nm0005171	actor	\N	"[""Robert the Bruce""]"
+tt0112573	5	nm0908824	writer	written by	\N
+tt0112573	6	nm0202704	producer	producer	\N
+tt0112573	7	nm0480440	producer	producer	\N
+tt0112573	8	nm0000035	composer	\N	\N
+tt0112573	9	nm0001799	cinematographer	director of photography	\N
+tt0119698	10	nm0786707	editor	\N	\N
+tt0119698	1	nm0559444	actor	\N	"[""Ashitaka""]"
+tt0119698	2	nm0410942	actress	\N	"[""San"",""Mononoke-Hime"",""Kaya""]"
+tt0119698	3	nm0849100	actress	\N	"[""Eboshi-gozen""]"
+tt0119698	4	nm0001082	actor	\N	"[""Ashitaka""]"
+tt0119698	5	nm0594503	director	\N	\N
+tt0119698	6	nm0301274	writer	adapted by: English version	\N
+tt0119698	7	nm0840699	producer	producer	\N
+tt0119698	8	nm0386749	composer	\N	\N
+tt0119698	9	nm0645777	cinematographer	\N	\N
+tt0169547	10	nm0005734	cinematographer	director of photography	\N
+tt0169547	1	nm0000228	actor	\N	"[""Lester Burnham""]"
+tt0169547	2	nm0000906	actress	\N	"[""Carolyn Burnham""]"
+tt0169547	3	nm0000301	actress	\N	"[""Jane Burnham""]"
+tt0169547	4	nm0004747	actor	\N	"[""Ricky Fitts""]"
+tt0169547	5	nm0005222	director	\N	\N
+tt0169547	6	nm0050332	writer	written by	\N
+tt0169547	7	nm0169260	producer	producer	\N
+tt0169547	8	nm0423134	producer	producer	\N
+tt0169547	9	nm0002353	composer	\N	\N
+tt0209144	10	nm0002892	cinematographer	director of photography	\N
+tt0209144	1	nm0001602	actor	\N	"[""Leonard""]"
+tt0209144	2	nm0005251	actress	\N	"[""Natalie""]"
+tt0209144	3	nm0001592	actor	\N	"[""Teddy""]"
+tt0209144	4	nm0095478	actor	\N	"[""Burt""]"
+tt0209144	5	nm0634240	director	\N	\N
+tt0209144	6	nm0634300	writer	"short story ""Memento Mori"""	\N
+tt0209144	7	nm0865189	producer	producer	\N
+tt0209144	8	nm0865297	producer	producer	\N
+tt0209144	9	nm0432382	composer	\N	\N
+tt0364569	10	nm0997224	producer	producer	\N
+tt0364569	1	nm0158856	actor	\N	"[""Dae-su Oh""]"
+tt0364569	2	nm0949167	actor	\N	"[""Woo-jin Lee""]"
+tt0364569	3	nm1367246	actress	\N	"[""Mi-do""]"
+tt0364569	4	nm1366028	actor	\N	"[""Mr. Han""]"
+tt0364569	5	nm0661791	director	\N	\N
+tt0364569	6	nm1628380	writer	manga	\N
+tt0364569	7	nm2057405	writer	manga	\N
+tt0364569	8	nm1367409	writer	screenplay	\N
+tt0364569	9	nm1369364	writer	screenplay	\N
+tt0405094	10	nm0091686	cinematographer	\N	\N
+tt0405094	1	nm0618057	actor	\N	"[""Hauptmann Gerd Wiesler""]"
+tt0405094	2	nm0311476	actress	\N	"[""Christa-Maria Sieland""]"
+tt0405094	3	nm0462407	actor	\N	"[""Georg Dreyman""]"
+tt0405094	4	nm0876300	actor	\N	"[""Oberstleutnant Anton Grubitz""]"
+tt0405094	5	nm0003697	director	\N	\N
+tt0405094	6	nm0073875	producer	producer	\N
+tt0405094	7	nm0927270	producer	producer	\N
+tt0405094	8	nm1098869	composer	\N	\N
+tt0405094	9	nm0001189	composer	\N	\N
+tt0910970	10	nm0742276	cinematographer	director of photography: live action	\N
+tt0910970	1	nm0123785	actor	\N	"[""WALL·E"",""M-O""]"
+tt0910970	2	nm2264184	actress	\N	"[""EVE""]"
+tt0910970	3	nm0307531	actor	\N	"[""Captain""]"
+tt0910970	4	nm0929609	actor	\N	"[""Shelby Forthright - BNL CEO""]"
+tt0910970	5	nm0004056	director	\N	\N
+tt0910970	6	nm0230032	writer	original story by	\N
+tt0910970	7	nm0714114	writer	screenplay by	\N
+tt0910970	8	nm0606640	producer	producer	\N
+tt0910970	9	nm0002353	composer	\N	\N
+tt1187043	10	nm3760517	composer	\N	\N
+tt1187043	1	nm0451148	actor	\N	"[""Ranchoddas Shamaldas Chanchad (Rancho)"",""Phunsukh Wangdu""]"
+tt1187043	2	nm0534856	actor	\N	"[""Farhan Qureshi""]"
+tt1187043	3	nm1587175	actress	\N	"[""Mona Sahastrabuddhe""]"
+tt1187043	4	nm0430817	actor	\N	"[""Raju Rastogi""]"
+tt1187043	5	nm0386246	director	\N	\N
+tt1187043	6	nm0430785	writer	screenplay	\N
+tt1187043	7	nm0006765	writer	screenplay associate	\N
+tt1187043	8	nm2746459	writer	"novel ""Five Point Someone"""	\N
+tt1187043	9	nm0596240	composer	\N	\N
+tt1345836	10	nm0858799	producer	producer	\N
+tt1345836	1	nm0000288	actor	\N	"[""Bruce Wayne"",""Batman""]"
+tt1345836	2	nm0362766	actor	\N	"[""Bane""]"
+tt1345836	3	nm0004266	actress	\N	"[""Selina""]"
+tt1345836	4	nm0000198	actor	\N	"[""Commissioner Gordon""]"
+tt1345836	5	nm0634240	director	\N	\N
+tt1345836	6	nm0634300	writer	screenplay	\N
+tt1345836	7	nm0275286	writer	story	\N
+tt1345836	8	nm0004170	writer	characters	\N
+tt1345836	9	nm0746273	producer	producer	\N
+tt1745960	10	nm0472567	writer	screenplay by	\N
+tt1745960	1	nm0000129	actor	\N	"[""Capt. Pete 'Maverick' Mitchell""]"
+tt1745960	2	nm0000124	actress	\N	"[""Penny Benjamin""]"
+tt1745960	3	nm1886602	actor	\N	"[""Lt. Bradley 'Rooster' Bradshaw""]"
+tt1745960	4	nm0000174	actor	\N	"[""Adm. Tom 'Iceman' Kazansky""]"
+tt1745960	5	nm2676052	director	\N	\N
+tt1745960	6	nm0143596	writer	based on characters created by	\N
+tt1745960	7	nm0258390	writer	based on characters created by	\N
+tt1745960	8	nm0185976	writer	story by	\N
+tt1745960	9	nm1098479	writer	story by	\N
+tt1853728	10	nm0711235	editor	\N	\N
+tt1853728	1	nm0004937	actor	\N	"[""Django""]"
+tt1853728	2	nm0910607	actor	\N	"[""Dr. King Schultz""]"
+tt1853728	3	nm0000138	actor	\N	"[""Calvin Candie""]"
+tt1853728	4	nm0913488	actress	\N	"[""Broomhilda von Shaft""]"
+tt1853728	5	nm0000233	director	\N	\N
+tt1853728	6	nm0399737	producer	producer	\N
+tt1853728	7	nm0767894	producer	producer	\N
+tt1853728	8	nm0792049	producer	producer	\N
+tt1853728	9	nm0724744	cinematographer	director of photography	\N
+tt2380307	10	nm0315974	composer	\N	\N
+tt2380307	1	nm5645519	actor	\N	"[""Miguel""]"
+tt2380307	2	nm0305558	actor	\N	"[""Héctor""]"
+tt2380307	3	nm0000973	actor	\N	"[""Ernesto de la Cruz""]"
+tt2380307	4	nm0005513	actress	\N	"[""Mamá Imelda""]"
+tt2380307	5	nm0881279	director	\N	\N
+tt2380307	6	nm2937122	director	co-director	\N
+tt2380307	7	nm0441735	writer	original story by	\N
+tt2380307	8	nm0017690	writer	original story by	\N
+tt2380307	9	nm0026565	producer	producer	\N
+tt4154756	10	nm0456158	writer	based on the Marvel comics by	\N
+tt4154756	1	nm0000375	actor	\N	"[""Tony Stark"",""Iron Man""]"
+tt4154756	2	nm1165110	actor	\N	"[""Thor""]"
+tt4154756	3	nm0749263	actor	\N	"[""Bruce Banner"",""Hulk""]"
+tt4154756	4	nm0262635	actor	\N	"[""Steve Rogers"",""Captain America""]"
+tt4154756	5	nm0751577	director	\N	\N
+tt4154756	6	nm0751648	director	\N	\N
+tt4154756	7	nm1321655	writer	screenplay by	\N
+tt4154756	8	nm1321656	writer	screenplay by	\N
+tt4154756	9	nm0498278	writer	based on the Marvel comics by	\N
+tt4154796	10	nm0456158	writer	based on the Marvel comics by	\N
+tt4154796	1	nm0000375	actor	\N	"[""Tony Stark"",""Iron Man""]"
+tt4154796	2	nm0262635	actor	\N	"[""Steve Rogers"",""Captain America""]"
+tt4154796	3	nm0749263	actor	\N	"[""Bruce Banner"",""Hulk""]"
+tt4154796	4	nm1165110	actor	\N	"[""Thor""]"
+tt4154796	5	nm0751577	director	\N	\N
+tt4154796	6	nm0751648	director	\N	\N
+tt4154796	7	nm1321655	writer	screenplay by	\N
+tt4154796	8	nm1321656	writer	screenplay by	\N
+tt4154796	9	nm0498278	writer	based on the Marvel comics by	\N
+tt4633694	10	nm0588087	producer	producer	\N
+tt4633694	1	nm4271336	actor	\N	"[""Miles Morales""]"
+tt4633694	2	nm2159926	actor	\N	"[""Peter B. Parker""]"
+tt4633694	3	nm2794962	actress	\N	"[""Gwen Stacy""]"
+tt4633694	4	nm0991810	actor	\N	"[""Uncle Aaron""]"
+tt4633694	5	nm2130108	director	\N	\N
+tt4633694	6	nm0709056	director	\N	\N
+tt4633694	7	nm0745247	director	\N	\N
+tt4633694	8	nm0520488	writer	screenplay by	\N
+tt4633694	9	nm0032696	producer	producer	\N
+tt5311514	10	nm8823532	producer	producer	\N
+tt5311514	1	nm1126340	actor	\N	"[""Taki Tachibana""]"
+tt5311514	2	nm4759838	actress	\N	"[""Mitsuha Miyamizu""]"
+tt5311514	3	nm6954008	actor	\N	"[""Katsuhiko Teshigawara""]"
+tt5311514	4	nm2976492	actress	\N	"[""Sayaka Natori""]"
+tt5311514	5	nm1396121	director	\N	\N
+tt5311514	6	nm1038805	writer	english script	\N
+tt5311514	7	nm5147232	producer	producer	\N
+tt5311514	8	nm3356206	producer	chief executive producer	\N
+tt5311514	9	nm2929057	producer	producer	\N
+tt7286456	10	nm0177896	producer	producer	\N
+tt7286456	1	nm0001618	actor	\N	"[""Arthur Fleck""]"
+tt7286456	2	nm0000134	actor	\N	"[""Murray Franklin""]"
+tt7286456	3	nm5939164	actress	\N	"[""Sophie Dumond""]"
+tt7286456	4	nm0175814	actress	\N	"[""Penny Fleck""]"
+tt7286456	5	nm0680846	director	\N	\N
+tt7286456	6	nm0798788	writer	written by	\N
+tt7286456	7	nm0004170	writer	based on characters created by	\N
+tt7286456	8	nm0277730	writer	based on characters created by	\N
+tt7286456	9	nm1047603	writer	based on characters created by	\N
+tt8267604	10	nm4752699	producer	executive producer: KNM Films	\N
+tt8267604	1	nm9862858	actor	\N	"[""Zain""]"
+tt8267604	2	nm9862859	actress	\N	"[""Rahil""]"
+tt8267604	3	nm9862860	actor	\N	"[""Yonas""]"
+tt8267604	4	nm10201625	actress	\N	"[""Souad""]"
+tt8267604	5	nm1701024	director	\N	\N
+tt8267604	6	nm2764802	writer	screenplay	\N
+tt8267604	7	nm9878616	writer	screenplay	\N
+tt8267604	8	nm2759610	writer	in collaboration with	\N
+tt8267604	9	nm1848588	writer	in collaboration with	\N
+tt0021749	1	nm0000122	actor	\N	"[""A Tramp""]"
+tt0021749	2	nm0156039	actress	\N	"[""A Blind Girl""]"
+tt0021749	3	nm5681967	actress	\N	"[""The Blind Girl's Grandmother""]"
+tt0021749	4	nm0616729	actor	\N	"[""An Eccentric Millionaire""]"
+tt0021749	5	nm0139714	writer	\N	\N
+tt0021749	6	nm0188357	writer	\N	\N
+tt0021749	7	nm0689661	cinematographer	\N	\N
+tt0021749	8	nm0005906	cinematographer	\N	\N
+tt0027977	10	nm0305087	actor	\N	"[""President of the Electro Steel Corp.""]"
+tt0027977	1	nm0000122	actor	\N	"[""A Factory Worker""]"
+tt0027977	2	nm0002104	actress	\N	"[""A Gamin""]"
+tt0027977	3	nm0074788	actor	\N	"[""Cafe Proprietor""]"
+tt0027977	4	nm0761866	actor	\N	"[""Big Bill""]"
+tt0027977	5	nm0005806	cinematographer	\N	\N
+tt0027977	6	nm0005906	cinematographer	\N	\N
+tt0027977	7	nm0174682	actor	\N	"[""Mechanic""]"
+tt0027977	8	nm0003424	actor	\N	"[""Burglar""]"
+tt0027977	9	nm0090008	actor	\N	"[""Gamin's Father""]"
+tt0034583	10	nm0019706	writer	play	\N
+tt0034583	1	nm0000007	actor	\N	"[""Rick Blaine""]"
+tt0034583	2	nm0000006	actress	\N	"[""Ilsa Lund""]"
+tt0034583	3	nm0002134	actor	\N	"[""Victor Laszlo""]"
+tt0034583	4	nm0001647	actor	\N	"[""Captain Louis Renault""]"
+tt0034583	5	nm0002031	director	\N	\N
+tt0034583	6	nm0258493	writer	screenplay	\N
+tt0034583	7	nm0258525	writer	screenplay	\N
+tt0034583	8	nm0462321	writer	screenplay	\N
+tt0034583	9	nm0122417	writer	play	\N
+tt0047396	10	nm0866462	editor	\N	\N
+tt0047396	1	nm0000071	actor	\N	"[""L.B. Jefferies""]"
+tt0047396	2	nm0000038	actress	\N	"[""Lisa Fremont""]"
+tt0047396	3	nm0179819	actor	\N	"[""Tom Doyle""]"
+tt0047396	4	nm0728812	actress	\N	"[""Stella""]"
+tt0047396	5	nm0000033	director	\N	\N
+tt0047396	6	nm0371088	writer	screenplay	\N
+tt0047396	7	nm0941280	writer	short story	\N
+tt0047396	8	nm0000077	composer	\N	\N
+tt0047396	9	nm0122079	cinematographer	director of photography	\N
+tt0054215	10	nm0866462	editor	\N	\N
+tt0054215	1	nm0000578	actor	\N	"[""Norman Bates""]"
+tt0054215	2	nm0001463	actress	\N	"[""Marion Crane""]"
+tt0054215	3	nm0587256	actress	\N	"[""Lila Crane""]"
+tt0054215	4	nm0001260	actor	\N	"[""Sam Loomis""]"
+tt0054215	5	nm0000033	director	\N	\N
+tt0054215	6	nm0825010	writer	screenplay by	\N
+tt0054215	7	nm0088645	writer	based on the novel by	\N
+tt0054215	8	nm0002136	composer	\N	\N
+tt0054215	9	nm0005852	cinematographer	director of photography	\N
+tt0064116	10	nm0001553	composer	\N	\N
+tt0064116	1	nm0000020	actor	\N	"[""Frank""]"
+tt0064116	2	nm0000314	actor	\N	"[""Harmonica""]"
+tt0064116	3	nm0001012	actress	\N	"[""Jill McBain""]"
+tt0064116	4	nm0001673	actor	\N	"[""Manuel 'Cheyenne' Gutiérrez""]"
+tt0064116	5	nm0001466	director	\N	\N
+tt0064116	6	nm0006872	writer	screenplay by	\N
+tt0064116	7	nm0000783	writer	from a story by	\N
+tt0064116	8	nm0000934	writer	from a story by	\N
+tt0064116	9	nm0607694	producer	producer	\N
+tt0078748	10	nm0001353	producer	producer	\N
+tt0078748	1	nm0000244	actress	\N	"[""Ripley""]"
+tt0078748	2	nm0000643	actor	\N	"[""Dallas""]"
+tt0078748	3	nm0000457	actor	\N	"[""Kane""]"
+tt0078748	4	nm0001021	actress	\N	"[""Lambert""]"
+tt0078748	5	nm0000631	director	\N	\N
+tt0078748	6	nm0639321	writer	screenplay by	\N
+tt0078748	7	nm0795953	writer	story by	\N
+tt0078748	8	nm0140826	producer	producer	\N
+tt0078748	9	nm0318429	producer	producer	\N
+tt0078788	10	nm0178874	composer	\N	\N
+tt0078788	1	nm0000640	actor	\N	"[""Captain Benjamin L. Willard""]"
+tt0078788	2	nm0000008	actor	\N	"[""Colonel Walter E. Kurtz""]"
+tt0078788	3	nm0000380	actor	\N	"[""Lieutenant Colonel Bill Kilgore""]"
+tt0078788	4	nm0002078	actor	\N	"[""Jay 'Chef' Hicks""]"
+tt0078788	5	nm0000338	director	\N	\N
+tt0078788	6	nm0587518	writer	written by	\N
+tt0078788	7	nm0380282	writer	narration	\N
+tt0078788	8	nm0175676	writer	"novella ""Heart of Darkness"""	\N
+tt0078788	9	nm0041447	producer	producer	\N
+tt0088763	10	nm0004637	editor	\N	\N
+tt0088763	1	nm0000150	actor	\N	"[""Marty McFly""]"
+tt0088763	2	nm0000502	actor	\N	"[""Dr. Emmett Brown""]"
+tt0088763	3	nm0000670	actress	\N	"[""Lorraine Baines""]"
+tt0088763	4	nm0000417	actor	\N	"[""George McFly""]"
+tt0088763	5	nm0000709	director	\N	\N
+tt0088763	6	nm0301826	writer	written by	\N
+tt0088763	7	nm0134635	producer	producer	\N
+tt0088763	8	nm0006293	composer	\N	\N
+tt0088763	9	nm0005678	cinematographer	director of photography	\N
+tt0095327	10	nm0786707	editor	\N	\N
+tt0095327	1	nm0851302	actor	\N	"[""Seita""]"
+tt0095327	2	nm0794186	actress	\N	"[""Setsuko""]"
+tt0095327	3	nm0945312	actress	\N	"[""Aunt""]"
+tt0095327	4	nm0794002	actress	\N	"[""Mother""]"
+tt0095327	5	nm0847223	director	\N	\N
+tt0095327	6	nm0636435	writer	novel	\N
+tt0095327	7	nm0361701	producer	producer	\N
+tt0095327	8	nm2197915	composer	\N	\N
+tt0095327	9	nm0468710	cinematographer	director of photography	\N
+tt0095765	10	nm0005721	cinematographer	\N	\N
+tt0095765	1	nm0634159	actor	\N	"[""Alfredo""]"
+tt0095765	2	nm0134073	actor	\N	"[""Spaccafico""]"
+tt0095765	3	nm0041066	actress	\N	"[""Maria Di Vita - Younger""]"
+tt0095765	4	nm0199774	actress	\N	"[""Anna""]"
+tt0095765	5	nm0868153	director	\N	\N
+tt0095765	6	nm0660031	writer	collaborating writer	\N
+tt0095765	7	nm0188053	producer	producer	\N
+tt0095765	8	nm0738603	producer	producer	\N
+tt0095765	9	nm0001553	composer	\N	\N
+tt0110357	10	nm0560329	writer	story	\N
+tt0110357	1	nm0000111	actor	\N	"[""Simba""]"
+tt0110357	2	nm0000460	actor	\N	"[""Scar""]"
+tt0110357	3	nm0000469	actor	\N	"[""Mufasa""]"
+tt0110357	4	nm0000155	actress	\N	"[""Shenzi""]"
+tt0110357	5	nm0021249	director	\N	\N
+tt0110357	6	nm0591450	director	\N	\N
+tt0110357	7	nm0575293	writer	screenplay by	\N
+tt0110357	8	nm0731271	writer	screenplay by	\N
+tt0110357	9	nm0941314	writer	screenplay by	\N
+tt0110413	1	nm0000606	actor	\N	"[""Leon""]"
+tt0110413	2	nm0000198	actor	\N	"[""Stansfield""]"
+tt0110413	3	nm0000204	actress	\N	"[""Mathilda""]"
+tt0110413	4	nm0000732	actor	\N	"[""Tony""]"
+tt0110413	5	nm0000108	director	\N	\N
+tt0110413	6	nm0785385	composer	\N	\N
+tt0110413	7	nm0005636	cinematographer	director of photography	\N
+tt0110413	8	nm0484981	editor	\N	\N
+tt0110413	9	nm0917942	production_designer	\N	\N
+tt0114814	10	nm0191896	production_designer	\N	\N
+tt0114814	1	nm0000228	actor	\N	"[""Verbal""]"
+tt0114814	2	nm0000321	actor	\N	"[""Keaton""]"
+tt0114814	3	nm0001590	actor	\N	"[""Dave Kujan""]"
+tt0114814	4	nm0000286	actor	\N	"[""McManus""]"
+tt0114814	5	nm0001741	director	\N	\N
+tt0114814	6	nm0003160	writer	written by	\N
+tt0114814	7	nm0568120	producer	producer	\N
+tt0114814	8	nm0653211	composer	\N	\N
+tt0114814	9	nm0005875	cinematographer	director of photography	\N
+tt0120586	10	nm0374189	editor	\N	\N
+tt0120586	1	nm0001570	actor	\N	"[""Derek""]"
+tt0120586	2	nm0000411	actor	\N	"[""Danny""]"
+tt0120586	3	nm0000350	actress	\N	"[""Doris""]"
+tt0120586	4	nm0000497	actress	\N	"[""Davina""]"
+tt0120586	5	nm0443411	director	\N	\N
+tt0120586	6	nm0571346	writer	written by	\N
+tt0120586	7	nm0554204	producer	producer	\N
+tt0120586	8	nm0006050	composer	\N	\N
+tt0120586	9	nm0338513	editor	\N	\N
+tt0172495	10	nm0926824	producer	producer	\N
+tt0172495	1	nm0000128	actor	\N	"[""Maximus""]"
+tt0172495	2	nm0001618	actor	\N	"[""Commodus""]"
+tt0172495	3	nm0001567	actress	\N	"[""Lucilla""]"
+tt0172495	4	nm0001657	actor	\N	"[""Proximo""]"
+tt0172495	5	nm0000631	director	\N	\N
+tt0172495	6	nm0291905	writer	story	\N
+tt0172495	7	nm0517589	writer	screenplay	\N
+tt0172495	8	nm0629933	writer	screenplay	\N
+tt0172495	9	nm0527322	producer	producer	\N
+tt0253474	10	nm0004384	composer	\N	\N
+tt0253474	1	nm0004778	actor	\N	"[""Wladyslaw Szpilman""]"
+tt0253474	2	nm0470981	actor	\N	"[""Captain Wilm Hosenfeld""]"
+tt0253474	3	nm0277975	actor	\N	"[""Father""]"
+tt0253474	4	nm0288976	actress	\N	"[""Dorota""]"
+tt0253474	5	nm0000591	director	\N	\N
+tt0253474	6	nm0367838	writer	screenplay by	\N
+tt0253474	7	nm0844262	writer	based on the book by	\N
+tt0253474	8	nm0071452	producer	producer	\N
+tt0253474	9	nm0764963	producer	producer	\N
+tt0407887	10	nm0454752	producer	producer	\N
+tt0407887	1	nm0000138	actor	\N	"[""Billy""]"
+tt0407887	2	nm0000354	actor	\N	"[""Colin""]"
+tt0407887	3	nm0000197	actor	\N	"[""Costello""]"
+tt0407887	4	nm0000242	actor	\N	"[""Dignam""]"
+tt0407887	5	nm0000217	director	\N	\N
+tt0407887	6	nm1184258	writer	screenplay	\N
+tt0407887	7	nm0538320	writer	\N	\N
+tt0407887	8	nm0159039	writer	\N	\N
+tt0407887	9	nm0340522	producer	producer	\N
+tt0482571	10	nm0432382	composer	\N	\N
+tt0482571	1	nm0000288	actor	\N	"[""Alfred Borden""]"
+tt0482571	2	nm0413168	actor	\N	"[""Robert Angier""]"
+tt0482571	3	nm0424060	actress	\N	"[""Olivia Wenscombe""]"
+tt0482571	4	nm0000323	actor	\N	"[""Cutter""]"
+tt0482571	5	nm0634240	director	\N	\N
+tt0482571	6	nm0634300	writer	screenplay	\N
+tt0482571	7	nm1793993	writer	novel	\N
+tt0482571	8	nm0753083	producer	producer	\N
+tt0482571	9	nm0858799	producer	producer	\N
+tt1675434	10	nm1133525	producer	producer	\N
+tt1675434	1	nm0167388	actor	\N	"[""Philippe""]"
+tt1675434	2	nm1082477	actor	\N	"[""Driss""]"
+tt1675434	3	nm0494504	actress	\N	"[""Yvonne""]"
+tt1675434	4	nm1109153	actress	\N	"[""Magalie""]"
+tt1675434	5	nm0619923	director	\N	\N
+tt1675434	6	nm0865918	director	\N	\N
+tt1675434	7	nm4778840	writer	adapted from his autobiographical tale Le Second Souffle	\N
+tt1675434	8	nm1457753	producer	producer	\N
+tt1675434	9	nm1552771	producer	producer	\N
+tt2582802	10	nm3225654	composer	\N	\N
+tt2582802	1	nm1886602	actor	\N	"[""Andrew""]"
+tt2582802	2	nm0799777	actor	\N	"[""Fletcher""]"
+tt2582802	3	nm2552034	actress	\N	"[""Nicole""]"
+tt2582802	4	nm0001663	actor	\N	"[""Jim Neimann""]"
+tt2582802	5	nm3227090	director	\N	\N
+tt2582802	6	nm0089658	producer	producer	\N
+tt2582802	7	nm2615685	producer	producer	\N
+tt2582802	8	nm0484123	producer	producer	\N
+tt2582802	9	nm1490949	producer	producer	\N
+tt6751668	10	nm0393240	cinematographer	\N	\N
+tt6751668	1	nm0814280	actor	\N	"[""Ki Taek""]"
+tt6751668	2	nm1310525	actor	\N	"[""Dong Ik""]"
+tt6751668	3	nm1856097	actress	\N	"[""Yeon Kyo""]"
+tt6751668	4	nm6079248	actor	\N	"[""Ki Woo""]"
+tt6751668	5	nm0094435	director	\N	\N
+tt6751668	6	nm8243301	writer	screenplay by	\N
+tt6751668	7	nm10113618	producer	producer	\N
+tt6751668	8	nm11306825	producer	producer	\N
+tt6751668	9	nm8885840	composer	\N	\N
+tt0038650	10	nm0933858	writer	contributor to screenplay	\N
+tt0038650	1	nm0000071	actor	\N	"[""George Bailey""]"
+tt0038650	2	nm0001656	actress	\N	"[""Mary Hatch""]"
+tt0038650	3	nm0000859	actor	\N	"[""Mr. Potter""]"
+tt0038650	4	nm0593775	actor	\N	"[""Uncle Billy""]"
+tt0038650	5	nm0001008	director	\N	\N
+tt0038650	6	nm0329304	writer	screenplay by	\N
+tt0038650	7	nm0352443	writer	screenplay by	\N
+tt0038650	8	nm0842485	writer	additional scenes	\N
+tt0038650	9	nm0827821	writer	based on a story by	\N
+tt0047478	10	nm0620014	cinematographer	\N	\N
+tt0047478	1	nm0001536	actor	\N	"[""Kikuchiyo""]"
+tt0047478	2	nm0793766	actor	\N	"[""Kambei Shimada""]"
+tt0047478	3	nm0875477	actress	\N	"[""Shino""]"
+tt0047478	4	nm0793616	actress	\N	"[""Wife""]"
+tt0047478	5	nm0000041	director	\N	\N
+tt0047478	6	nm0368074	writer	screenplay by	\N
+tt0047478	7	nm0644823	writer	screenplay by	\N
+tt0047478	8	nm0609404	producer	producer	\N
+tt0047478	9	nm0370593	composer	\N	\N
+tt0056058	10	nm0590799	cinematographer	\N	\N
+tt0056058	1	nm0619938	actor	\N	"[""Hanshiro Tsugumo""]"
+tt0056058	2	nm0410968	actor	\N	"[""Motome Chijiiwa""]"
+tt0056058	3	nm0412615	actress	\N	"[""Miho Tsugumo""]"
+tt0056058	4	nm0848533	actor	\N	"[""Hikokuro Omodaka""]"
+tt0056058	5	nm0462030	director	\N	\N
+tt0056058	6	nm0847668	writer	"novel ""Ibun rônin ki"""	\N
+tt0056058	7	nm0368074	writer	screenplay	\N
+tt0056058	8	nm0396106	producer	producer	\N
+tt0056058	9	nm0006316	composer	\N	\N
+tt0076759	10	nm0156816	editor	film editor	\N
+tt0076759	1	nm0000434	actor	\N	"[""Luke Skywalker""]"
+tt0076759	2	nm0000148	actor	\N	"[""Han Solo""]"
+tt0076759	3	nm0000402	actress	\N	"[""Princess Leia Organa""]"
+tt0076759	4	nm0000027	actor	\N	"[""Ben Obi-Wan Kenobi""]"
+tt0076759	5	nm0000184	director	\N	\N
+tt0076759	6	nm0476030	producer	producer	\N
+tt0076759	7	nm0564768	producer	producer	\N
+tt0076759	8	nm0002354	composer	\N	\N
+tt0076759	9	nm0852405	cinematographer	director of photography	\N
+tt0102926	10	nm0882588	producer	producer	\N
+tt0102926	1	nm0000149	actress	\N	"[""Clarice Starling""]"
+tt0102926	2	nm0000164	actor	\N	"[""Dr. Hannibal Lecter""]"
+tt0102926	3	nm0095029	actor	\N	"[""FBI Instructor""]"
+tt0102926	4	nm0501435	actress	\N	"[""Ardelia Mapp""]"
+tt0102926	5	nm0001129	director	\N	\N
+tt0102926	6	nm0365383	writer	based on the novel by	\N
+tt0102926	7	nm0848217	writer	screenplay by	\N
+tt0102926	8	nm0102508	producer	producer	\N
+tt0102926	9	nm0768324	producer	producer	\N
+tt0103064	10	nm0233827	editor	\N	\N
+tt0103064	1	nm0000216	actor	\N	"[""The Terminator""]"
+tt0103064	2	nm0000157	actress	\N	"[""Sarah Connor""]"
+tt0103064	3	nm0000411	actor	\N	"[""John Connor""]"
+tt0103064	4	nm0001598	actor	\N	"[""T-1000""]"
+tt0103064	5	nm0000116	director	\N	\N
+tt0103064	6	nm0936537	writer	written by	\N
+tt0103064	7	nm0006075	composer	\N	\N
+tt0103064	8	nm0004229	cinematographer	director of photography	\N
+tt0103064	9	nm0119322	editor	\N	\N
+tt0114369	10	nm0290358	editor	\N	\N
+tt0114369	1	nm0000151	actor	\N	"[""Somerset""]"
+tt0114369	2	nm0000093	actor	\N	"[""Mills""]"
+tt0114369	3	nm0000228	actor	\N	"[""John Doe""]"
+tt0114369	4	nm0001825	actor	\N	"[""Dead Man at 1st Crime Scene""]"
+tt0114369	5	nm0000399	director	\N	\N
+tt0114369	6	nm0138287	producer	producer	\N
+tt0114369	7	nm0465745	producer	producer	\N
+tt0114369	8	nm0006290	composer	\N	\N
+tt0114369	9	nm0451787	cinematographer	director of photography	\N
+tt0118799	10	nm0005686	cinematographer	director of photography	\N
+tt0118799	1	nm0000905	actor	\N	"[""Guido""]"
+tt0118799	2	nm0000971	actress	\N	"[""Dora""]"
+tt0118799	3	nm0134493	actor	\N	"[""Giosué""]"
+tt0118799	4	nm0243842	actor	\N	"[""Zio""]"
+tt0118799	5	nm0148437	writer	story by	\N
+tt0118799	6	nm0105346	producer	producer	\N
+tt0118799	7	nm0001897	producer	producer	\N
+tt0118799	8	nm0274754	producer	producer	\N
+tt0118799	9	nm0003607	composer	\N	\N
+tt0120689	10	nm0290358	editor	\N	\N
+tt0120689	1	nm0000158	actor	\N	"[""Paul Edgecomb""]"
+tt0120689	2	nm0003817	actor	\N	"[""John Coffey""]"
+tt0120689	3	nm0001556	actor	\N	"[""Brutus 'Brutal' Howell""]"
+tt0120689	4	nm0001372	actress	\N	"[""Jan Edgecomb""]"
+tt0120689	5	nm0001104	director	\N	\N
+tt0120689	6	nm0000175	writer	novel	\N
+tt0120689	7	nm0883603	producer	producer	\N
+tt0120689	8	nm0002353	composer	\N	\N
+tt0120689	9	nm0005897	cinematographer	director of photography	\N
+tt0120815	10	nm0002354	composer	\N	\N
+tt0120815	1	nm0000158	actor	\N	"[""Captain Miller""]"
+tt0120815	2	nm0000354	actor	\N	"[""Private Ryan""]"
+tt0120815	3	nm0001744	actor	\N	"[""Sergeant Horvath""]"
+tt0120815	4	nm0122653	actor	\N	"[""Private Reiben""]"
+tt0120815	5	nm0000229	director	\N	\N
+tt0120815	6	nm0734441	writer	written by	\N
+tt0120815	7	nm0117290	producer	producer	\N
+tt0120815	8	nm0330428	producer	producer	\N
+tt0120815	9	nm0506013	producer	producer	\N
+tt0245429	10	nm0645777	cinematographer	\N	\N
+tt0245429	1	nm0153738	actress	\N	"[""Chihiro""]"
+tt0245429	2	nm0687189	actress	\N	"[""Yubaba"",""Zeniba""]"
+tt0245429	3	nm0997115	actor	\N	"[""Haku""]"
+tt0245429	4	nm0383708	actress	\N	"[""Chihiro Ogino"",""Sen""]"
+tt0245429	5	nm0594503	director	\N	\N
+tt0245429	6	nm0259689	producer	producer	\N
+tt0245429	7	nm0005124	producer	producer	\N
+tt0245429	8	nm0840699	producer	producer	\N
+tt0245429	9	nm0386749	composer	\N	\N
+tt0317248	10	nm0708723	producer	producer	\N
+tt0317248	1	nm1179105	actor	\N	"[""Buscapé - Rocket""]"
+tt0317248	2	nm1129884	actor	\N	"[""Zé Pequeno - Li'l Zé""]"
+tt0317248	3	nm0618690	actor	\N	"[""Sandro Cenoura - Carrot""]"
+tt0317248	4	nm1249574	actor	\N	"[""Bené - Benny""]"
+tt0317248	5	nm0576987	director	\N	\N
+tt0317248	6	nm0526199	director	co-director	\N
+tt0317248	7	nm0513130	writer	novel	\N
+tt0317248	8	nm1130251	writer	screenplay	\N
+tt0317248	9	nm0053070	producer	producer	\N
+tt0816692	10	nm0887227	cinematographer	director of photography	\N
+tt0816692	1	nm0000190	actor	\N	"[""Cooper""]"
+tt0816692	2	nm0004266	actress	\N	"[""Brand""]"
+tt0816692	3	nm1567113	actress	\N	"[""Murph""]"
+tt0816692	4	nm3237775	actress	\N	"[""Murph (10 Yrs.)""]"
+tt0816692	5	nm0634240	director	\N	\N
+tt0816692	6	nm0634300	writer	written by	\N
+tt0816692	7	nm0643553	producer	producer	\N
+tt0816692	8	nm0858799	producer	producer	\N
+tt0816692	9	nm0001877	composer	\N	\N
+tt0073486	10	nm0000140	producer	producer	\N
+tt0073486	1	nm0000197	actor	\N	"[""R.P. McMurphy""]"
+tt0073486	2	nm0001221	actress	\N	"[""Nurse Ratched""]"
+tt0073486	3	nm0077720	actor	\N	"[""Ellis""]"
+tt0073486	4	nm0110480	actor	\N	"[""Col. Matterson""]"
+tt0073486	5	nm0001232	director	\N	\N
+tt0073486	6	nm0369142	writer	screenplay	\N
+tt0073486	7	nm0325743	writer	screenplay	\N
+tt0073486	8	nm0450181	writer	based on the novel by	\N
+tt0073486	9	nm0913670	writer	"the play version: ""One Flew Over the Cuckoo's Nest"" by"	\N
+tt0080684	10	nm0564768	producer	producer	\N
+tt0080684	1	nm0000434	actor	\N	"[""Luke Skywalker""]"
+tt0080684	2	nm0000148	actor	\N	"[""Han Solo""]"
+tt0080684	3	nm0000402	actress	\N	"[""Princess Leia""]"
+tt0080684	4	nm0001850	actor	\N	"[""Lando Calrissian""]"
+tt0080684	5	nm0449984	director	\N	\N
+tt0080684	6	nm0102824	writer	screenplay by	\N
+tt0080684	7	nm0001410	writer	screenplay by	\N
+tt0080684	8	nm0000184	writer	story by	\N
+tt0080684	9	nm0476030	producer	producer	\N
+tt0099685	10	nm0774817	editor	film editor	\N
+tt0099685	1	nm0000134	actor	\N	"[""James Conway""]"
+tt0099685	2	nm0000501	actor	\N	"[""Henry Hill""]"
+tt0099685	3	nm0000582	actor	\N	"[""Tommy DeVito""]"
+tt0099685	4	nm0000966	actress	\N	"[""Karen Hill""]"
+tt0099685	5	nm0000217	director	\N	\N
+tt0099685	6	nm0683380	writer	"book ""Wiseguy"""	\N
+tt0099685	7	nm0005563	producer	producer	\N
+tt0099685	8	nm0000841	cinematographer	director of photography	\N
+tt0099685	9	nm0477158	editor	film editor	\N
+tt0133093	10	nm0821205	editor	\N	\N
+tt0133093	1	nm0000206	actor	\N	"[""Neo""]"
+tt0133093	2	nm0000401	actor	\N	"[""Morpheus""]"
+tt0133093	3	nm0005251	actress	\N	"[""Trinity""]"
+tt0133093	4	nm0915989	actor	\N	"[""Agent Smith""]"
+tt0133093	5	nm0905154	director	\N	\N
+tt0133093	6	nm0905152	director	\N	\N
+tt0133093	7	nm0005428	producer	producer	\N
+tt0133093	8	nm0204485	composer	\N	\N
+tt0133093	9	nm0691084	cinematographer	director of photography	\N
+tt0060196	10	nm0001553	composer	\N	\N
+tt0060196	1	nm0000142	actor	\N	"[""Blondie""]"
+tt0060196	2	nm0908919	actor	\N	"[""Tuco""]"
+tt0060196	3	nm0001812	actor	\N	"[""Sentenza"",""Angel Eyes""]"
+tt0060196	4	nm0321294	actor	\N	"[""Alcoholic Union Captain""]"
+tt0060196	5	nm0001466	director	\N	\N
+tt0060196	6	nm0898812	writer	story	\N
+tt0060196	7	nm0408488	writer	screenplay	\N
+tt0060196	8	nm0769249	writer	screenplay	\N
+tt0060196	9	nm0342090	producer	producer	\N
+tt0109830	10	nm0005494	producer	producer	\N
+tt0109830	1	nm0000158	actor	\N	"[""Forrest Gump""]"
+tt0109830	2	nm0000705	actress	\N	"[""Jenny Curran""]"
+tt0109830	3	nm0000641	actor	\N	"[""Lieutenant Dan Taylor""]"
+tt0109830	4	nm0000398	actress	\N	"[""Mrs. Gump""]"
+tt0109830	5	nm0000709	director	\N	\N
+tt0109830	6	nm0343165	writer	novel	\N
+tt0109830	7	nm0744839	writer	screenplay	\N
+tt0109830	8	nm0277704	producer	producer	\N
+tt0109830	9	nm0823330	producer	producer	\N
+tt0120737	10	nm0761744	producer	producer	\N
+tt0120737	1	nm0000704	actor	\N	"[""Frodo""]"
+tt0120737	2	nm0005212	actor	\N	"[""Gandalf""]"
+tt0120737	3	nm0089217	actor	\N	"[""Legolas""]"
+tt0120737	4	nm0000293	actor	\N	"[""Boromir""]"
+tt0120737	5	nm0001392	director	\N	\N
+tt0120737	6	nm0866058	writer	"novel ""The Fellowship of the Ring"""	\N
+tt0120737	7	nm0909638	writer	screenplay	\N
+tt0120737	8	nm0101991	writer	screenplay	\N
+tt0120737	9	nm0651614	producer	producer	\N
+tt0137523	10	nm0513165	producer	producer	\N
+tt0137523	1	nm0000093	actor	\N	"[""Tyler Durden""]"
+tt0137523	2	nm0001570	actor	\N	"[""Narrator""]"
+tt0137523	3	nm0001533	actor	\N	"[""Robert Paulsen""]"
+tt0137523	4	nm0340260	actor	\N	"[""Richard Chesler (Regional Manager)""]"
+tt0137523	5	nm0000399	director	\N	\N
+tt0137523	6	nm0657333	writer	based on the novel by	\N
+tt0137523	7	nm0880243	writer	screenplay by	\N
+tt0137523	8	nm0068501	producer	producer	\N
+tt0137523	9	nm0149556	producer	producer	\N
+tt0167261	10	nm8662749	producer	producer	\N
+tt0167261	1	nm0000704	actor	\N	"[""Frodo""]"
+tt0167261	2	nm0005212	actor	\N	"[""Gandalf""]"
+tt0167261	3	nm0001557	actor	\N	"[""Aragorn""]"
+tt0167261	4	nm0089217	actor	\N	"[""Legolas""]"
+tt0167261	5	nm0001392	director	\N	\N
+tt0167261	6	nm0866058	writer	"novel ""The Two Towers"""	\N
+tt0167261	7	nm0909638	writer	screenplay	\N
+tt0167261	8	nm0101991	writer	screenplay	\N
+tt0167261	9	nm0801728	writer	screenplay	\N
+tt1375666	10	nm0245596	production_designer	\N	\N
+tt1375666	1	nm0000138	actor	\N	"[""Cobb""]"
+tt1375666	2	nm0330687	actor	\N	"[""Arthur""]"
+tt1375666	3	nm0680983	actor	\N	"[""Ariadne""]"
+tt1375666	4	nm0913822	actor	\N	"[""Saito""]"
+tt1375666	5	nm0634240	director	\N	\N
+tt1375666	6	nm0858799	producer	producer	\N
+tt1375666	7	nm0001877	composer	\N	\N
+tt1375666	8	nm0002892	cinematographer	director of photography	\N
+tt1375666	9	nm0809059	editor	\N	\N
+tt0110912	10	nm0913300	production_designer	\N	\N
+tt0110912	1	nm0000237	actor	\N	"[""Vincent Vega""]"
+tt0110912	2	nm0000235	actress	\N	"[""Mia Wallace""]"
+tt0110912	3	nm0000168	actor	\N	"[""Jules Winnfield""]"
+tt0110912	4	nm0000246	actor	\N	"[""Butch Coolidge""]"
+tt0110912	5	nm0000233	director	\N	\N
+tt0110912	6	nm0000812	writer	stories by	\N
+tt0110912	7	nm0004744	producer	producer	\N
+tt0110912	8	nm0782900	cinematographer	\N	\N
+tt0110912	9	nm0579673	editor	\N	\N
+tt0050083	1	nm0000020	actor	\N	"[""Juror 8""]"
+tt0050083	2	nm0002011	actor	\N	"[""Juror 3""]"
+tt0050083	3	nm0000842	actor	\N	"[""Juror 1""]"
+tt0050083	4	nm0275835	actor	\N	"[""Juror 2""]"
+tt0050083	5	nm0001486	director	\N	\N
+tt0050083	6	nm0741627	writer	"teleplay ""Twelve Angry Men"""	\N
+tt0050083	7	nm0006132	composer	\N	\N
+tt0050083	8	nm0442100	cinematographer	director of photography	\N
+tt0050083	9	nm0503594	editor	\N	\N
+tt0071562	10	nm0548943	editor	\N	\N
+tt0071562	1	nm0000199	actor	\N	"[""Michael""]"
+tt0071562	2	nm0000134	actor	\N	"[""Vito Corleone""]"
+tt0071562	3	nm0000380	actor	\N	"[""Tom Hagen""]"
+tt0071562	4	nm0000473	actress	\N	"[""Kay""]"
+tt0071562	5	nm0000338	director	\N	\N
+tt0071562	6	nm0701374	writer	screenplay by	\N
+tt0071562	7	nm0000065	composer	\N	\N
+tt0071562	8	nm0932336	cinematographer	director of photography	\N
+tt0071562	9	nm0539794	editor	\N	\N
+tt0108052	10	nm0002354	composer	\N	\N
+tt0108052	1	nm0000553	actor	\N	"[""Oskar Schindler""]"
+tt0108052	2	nm0000146	actor	\N	"[""Amon Goeth""]"
+tt0108052	3	nm0001426	actor	\N	"[""Itzhak Stern""]"
+tt0108052	4	nm0328751	actress	\N	"[""Emilie Schindler""]"
+tt0108052	5	nm0000229	director	\N	\N
+tt0108052	6	nm0447745	writer	book	\N
+tt0108052	7	nm0001873	writer	screenplay	\N
+tt0108052	8	nm0527322	producer	producer	\N
+tt0108052	9	nm0596520	producer	producer	\N
+tt0167260	10	nm0651614	producer	producer	\N
+tt0167260	1	nm0000704	actor	\N	"[""Frodo""]"
+tt0167260	2	nm0001557	actor	\N	"[""Aragorn""]"
+tt0167260	3	nm0005212	actor	\N	"[""Gandalf""]"
+tt0167260	4	nm0089217	actor	\N	"[""Legolas""]"
+tt0167260	5	nm0001392	director	\N	\N
+tt0167260	6	nm0866058	writer	"novel ""The Return of the King"""	\N
+tt0167260	7	nm0909638	writer	screenplay	\N
+tt0167260	8	nm0101991	writer	screenplay	\N
+tt0167260	9	nm8662749	producer	producer	\N
+tt0468569	10	nm0746273	producer	producer	\N
+tt0468569	1	nm0000288	actor	\N	"[""Bruce Wayne"",""Batman""]"
+tt0468569	2	nm0005132	actor	\N	"[""Joker""]"
+tt0468569	3	nm0001173	actor	\N	"[""Harvey Dent""]"
+tt0468569	4	nm0000323	actor	\N	"[""Alfred""]"
+tt0468569	5	nm0634240	director	\N	\N
+tt0468569	6	nm0634300	writer	screenplay	\N
+tt0468569	7	nm0275286	writer	story	\N
+tt0468569	8	nm0004170	writer	characters	\N
+tt0468569	9	nm0650038	producer	producer	\N
+tt0068646	10	nm0722000	editor	\N	\N
+tt0068646	1	nm0000008	actor	\N	"[""Don Vito Corleone""]"
+tt0068646	2	nm0000199	actor	\N	"[""Michael Corleone""]"
+tt0068646	3	nm0001001	actor	\N	"[""Sonny Corleone""]"
+tt0068646	4	nm0000473	actress	\N	"[""Kay Adams""]"
+tt0068646	5	nm0000338	director	\N	\N
+tt0068646	6	nm0701374	writer	screenplay by	\N
+tt0068646	7	nm0748665	producer	producer	\N
+tt0068646	8	nm0000065	composer	\N	\N
+tt0068646	9	nm0932336	cinematographer	director of photography	\N
+tt0111161	10	nm0290358	editor	\N	\N
+tt0111161	1	nm0000209	actor	\N	"[""Andy Dufresne""]"
+tt0111161	2	nm0000151	actor	\N	"[""Ellis Boyd 'Red' Redding""]"
+tt0111161	3	nm0348409	actor	\N	"[""Warden Norton""]"
+tt0111161	4	nm0006669	actor	\N	"[""Heywood""]"
+tt0111161	5	nm0001104	director	\N	\N
+tt0111161	6	nm0000175	writer	"based on the short novel ""Rita Hayworth and the Shawshank Redemption"" by"	\N
+tt0111161	7	nm0555550	producer	producer	\N
+tt0111161	8	nm0002353	composer	\N	\N
+tt0111161	9	nm0005683	cinematographer	director of photography	\N
