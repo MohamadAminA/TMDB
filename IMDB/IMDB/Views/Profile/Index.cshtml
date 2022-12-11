@@ -1,62 +1,110 @@
 ﻿@using IMDB.Domain.CardViewModel;
 @model ProfileViewModel ;
 
+@section header{
+    <style>
+        #forNonn {
+            display: flex;
+            width: 14%;
+            height: 0px;
+            margin-left: 39%;
+            margin-top: -1%;
+        }
+    </style>
+}
 <!-- header section start -->
 <section class="breadcrumb-area">
-	<div class="container">
-	</div>
+    <div class="container">
+    </div>
 </section><!-- breadcrumb area end -->
 <!-- transformers area start -->
+
+<form id="forNonn" style="position:fixed; display : none ;" asp-controller="Profile" asp-action="AddMovieList">
+    <div onclick="claoo()" style="width: 600%; height: 600%; position: absolute;top: 0;left: 0;z-index: 99;margin-left: -110%;margin-top: -110%;"></div>
+    <div class="row" style="z-index: 1000;">
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="col-lg-12">
+                <div class="textarea-container">
+                    <label>enter your List name</label>
+                    <input name="Title" placeholder="Type Here Message" style="background-color : #08142e;" />
+                </div>
+            </div>
+            <div class="details-comment" style="margin-top: 6%;margin-left: 37%;">
+                <input type="submit" class="theme-btn theme-btn2" value="ok" style="padding: 9px 31px;" />
+                @*<p>You may use these HTML tags and attributes: You may use these HTML tags and attributes: You may use these HTML tags and attributes: </p>*@
+            </div>
+        }
+
+
+    </div>
+
+</form>
+
 <section class="transformers-area">
-	<div class="container">
-		<div class="transformers-box">
-			<div class="row flexbox-center">
-				<div class="col-lg-7">
-					<div class="transformers-content mtr-30">
-						<h1>@Model.User.Name</h1>
-						<a href="#" class="theme-btn">Biography</a>
-						<ul>
-							<li>
-								<div class="transformers-left">
-									RegisterDate:
-								</div>
-								<div class="transformers-right">
-									@Model.User.RegisterDate
-								</div>
-							</li>
-							<li>
-								<div class="transformers-left">
-									Phone:
-								</div>
-								<div class="transformers-right">
-									@Model.User.Phone
-								</div>
-							</li>
-							<li>
-								<div class="transformers-left">
-									Email:
-								</div>
-								<div class="transformers-right">
-									@Model.User.Email
-								</div>
-							</li>
-							
-							<li>
-								<div class="transformers-left">
-									Follow:
-								</div>
-								<div class="transformers-right">
-									<a href="#"><i class="icofont icofont-social-facebook"></i></a>
-									<a href="#"><i class="icofont icofont-social-twitter"></i></a>
-									<a href="#"><i class="icofont icofont-social-google-plus"></i></a>
-									<a href="#"><i class="icofont icofont-youtube-play"></i></a>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="transformers-box">
+            <div class="row flexbox-center">
+                <div class="col-lg-7">
+                    <div class="transformers-content mtr-30">
+                        <h1>@Model.User.Name</h1>
+                        <a href="#" class="theme-btn">Biography</a>
+                        <ul>
+                            <li>
+                                <div class="transformers-left">
+                                    RegisterDate:
+                                </div>
+                                <div class="transformers-right">
+                                    @Model.User.RegisterDate
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transformers-left">
+                                    Phone:
+                                </div>
+                                <div class="transformers-right">
+                                    @Model.User.Phone
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transformers-left">
+                                    Email:
+                                </div>
+                                <div class="transformers-right">
+                                    @Model.User.Email
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="transformers-left">
+                                    Follow:
+                                </div>
+                                <div class="transformers-right">
+                                    <a href="#"><i class="icofont icofont-social-facebook"></i></a>
+                                    <a href="#"><i class="icofont icofont-social-twitter"></i></a>
+                                    <a href="#"><i class="icofont icofont-social-google-plus"></i></a>
+                                    <a href="#"><i class="icofont icofont-youtube-play"></i></a>
+                                </div>
+                             
+                            </li>
+
+                        </ul>
+                        <div onclick="openo()">
+                            <a class="theme-btn" >Add List</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section><!-- transformers area end -->
 
+<script>
+    function claoo(){
+        document.getElementById("forNonn").setAttribute('style', 'display : none');
+    }
+    function openo() {
+        document.getElementById("forNonn").setAttribute('style', 'display : flex');
+    }
+</script>
