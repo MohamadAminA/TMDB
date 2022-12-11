@@ -28,6 +28,7 @@ namespace IMDB.DataLayer.Model
         public long? Phone { get; set; }
         #region Foreign Key
         public List<FavouriteList> FavouriteMovieLists { get; set; }
+        public List<MovieRate> Rates { get; set; }
         public WatchList WatchList { get; set; }
         #endregion
     }
@@ -65,4 +66,17 @@ namespace IMDB.DataLayer.Model
         public FavouriteList FavouriteList { get; set; }
         #endregion
     }
+    public class MovieRate
+    {
+        public int Id { get; set; }
+        public int MovieId { get; set; }
+        public int UserId { get; set; }
+        public int Rate { get; set; }
+        public DateTime CreatedAt { get; set; }
+
+        #region ForeignKeys Relation
+        public User User { get; set; }
+        #endregion
+    }
+
 }
