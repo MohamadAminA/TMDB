@@ -113,7 +113,7 @@
 </head>
 <body>
     <!-- Page loader -->
-    <div id="preloader"></div>
+@*    <div id="preloader"></div>*@
     <!-- header section start -->
     <header class="header" style="position: absolute; background: linear-gradient(180deg, rgb(12, 0, 68) 0%, rgba(1, 1, 47, 0.88) 35%, rgba(6, 10, 15, 0) 100%); height: 202px;">
         <div id="c0" class="login-area" style="display: none;">
@@ -121,7 +121,7 @@
 
             <div class="login-box" id="ListVideo" style="margin-top: 16%;">
                 <div>
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carouselk">
+                    <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carouselk">
 
                         <div id="carousel" class="hero-area-content">
 
@@ -291,7 +291,6 @@
 
     <script>
         function clo() {
-            console.log("lllllllllllllllll");
             document.getElementById("c0").setAttribute("style", "display: none; ");
             document.getElementById("carousel").remove();
             document.getElementById("line").remove();
@@ -358,7 +357,7 @@
                         const fd = document.getElementById("line");
                         const lid = document.createElement("li");
                         lid.setAttribute("data-target", "#carouselExampleIndicators");
-                        lid.setAttribute("data-slide-to", Array.length - 1 - counter);
+                        //lid.setAttribute("data-slide-to", Array.length - 1 - counter);
                         lid.setAttribute("data-slide-to", counter)
 
                         fd.appendChild(lid);

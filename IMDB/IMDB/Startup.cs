@@ -47,12 +47,14 @@ namespace IMDB
             services.AddDbContext<ContextDB>(options =>
                 options.UseSqlServer(
 
-                    //"Data Source=AMIN-LAPTOP\\SQLEXPRESS;Initial Catalog=IMDB_DB;Integrated Security=true;MultipleActiveResultSets=true;",
-                    "Data Source=DESKTOP-0QSKDOG;Initial Catalog=IMDB_DB;Integrated Security=true;MultipleActiveResultSets=true;",
+                    "Data Source=AMIN-LAPTOP\\SQLEXPRESS;Initial Catalog=IMDB_DB;Integrated Security=true;MultipleActiveResultSets=true;",
+                    //"Data Source=DESKTOP-0QSKDOG;Initial Catalog=IMDB_DB;Integrated Security=true;MultipleActiveResultSets=true;",
                     b => b.MigrationsAssembly("IMDB.DataLayer")),
                     ServiceLifetime.Transient
             );
             #endregion
+
+            services.AddSignalR();
 
             #region Add Services to asp core
             services.AddTransient<IMovie, MovieRepo>();
@@ -81,6 +83,7 @@ namespace IMDB
             else
             {
                 app.UseExceptionHandler("/Home/Error");
+                //app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles();
 
@@ -92,6 +95,13 @@ namespace IMDB
             #endregion
             
             app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "/ChatHub");
+            });
 
             app.UseEndpoints(endpoints =>
             {

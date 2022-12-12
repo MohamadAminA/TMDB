@@ -162,9 +162,9 @@
 	/*----------------------------
     START - Preloader
     ------------------------------ */
-	jQuery(window).load(function(){
-		jQuery("#preloader").fadeOut(500);
-	});
+	//jQuery(window).load(function(){
+	//	jQuery("#preloader").fadeOut(500);
+	//});
 	
 
 }(jQuery));

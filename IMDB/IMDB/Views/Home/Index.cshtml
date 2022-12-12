@@ -224,8 +224,8 @@
                     <ul>
                         @*<li data-filter="*" class="active">Latest</li>*@
                         <li data-filter=".soon" class="active" id="cli">Popular</li>
-                        <li data-filter=".toprated">Top Rated</li>
                         <li data-filter=".released">Trending Movies Of Week</li>
+                        <li data-filter=".to">Top Rated</li>
                         <li data-filter=".TrendingDay">Trending Movies Of Day</li>
                     </ul>
                 </div>
@@ -270,7 +270,7 @@
                     }
                     @foreach (var item in Model.TopRatedMovies.results.Take(20))
                     {
-                        <div class="col-lg-3 col-md-4 col-sm-6 toprated">
+                        <div class="col-lg-3 col-md-4 col-sm-6 to">
                             <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img">
@@ -380,7 +380,7 @@
             <div class="portfolio-menu">
                 <ul>
                     <li data-filter=".popular" class="active">Popular</li>
-                    <li data-filter=".born">Born today</li>
+                    @*<li data-filter=".born">Born today</li>*@
                 </ul>
             </div>
         </div>
@@ -392,7 +392,7 @@
                     @foreach (var cast in Model.PopularPeople.results.Take(20).OrderByDescending(n => n.Popularity))
                     {
 
-                        <div class="col-lg-3 col-md-4 col-sm-6 popular soon TrendingDay released toprated">
+                        <div class="col-lg-3 col-md-4 col-sm-6 popular soon TrendingDay released to">
                             <a asp-controller="PersonDetails" asp-action="Index" asp-route-id="@cast.Id">
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img" id="oadAction">

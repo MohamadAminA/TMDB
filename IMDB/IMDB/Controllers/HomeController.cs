@@ -33,7 +33,7 @@ namespace IMDB.Controllers
             _cache = cache;
             _cacheOption = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromHours(1));
         }
-
+        public async Task<IActionResult> Error() => View("Error");
         public async Task<IActionResult> Index()
         {
             try

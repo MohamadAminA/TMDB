@@ -1,0 +1,17 @@
+﻿#sender {
+    box-shadow: rgba(0, 0, 0,0.4) 2px 2px;
+    border: rgb(128, 128, 128,0.3) solid 1px;
+    padding:10px;
+    border-radius:10px;
+    margin:10px;
+    font:18px bold;
+
+}
+small{
+    color: rgba(128, 128, 128,0.6);
+    font:10px;
+}
+span{
+    font:smaller;
+    color:rgb(20, 0, 0);
+}
