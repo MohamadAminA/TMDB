@@ -37,6 +37,7 @@
 
         body {
             background: linear-gradient(45deg, #030810, #0e2237,#080b11);
+            color: #8fb1f4;
         }
 
         .col-lg-12 {
@@ -109,7 +110,7 @@
             margin-top: 4px;
         }
     </style>
-    @RenderSection("Header", false)
+    @await RenderSectionAsync("Header", false)
 </head>
 <body>
     <!-- Page loader -->
@@ -368,7 +369,8 @@
         }
     </script>
 
-    @RenderSection("Footer", false)
+    @await RenderSectionAsync("Footer", false)
+
 </body>
 
 </html>

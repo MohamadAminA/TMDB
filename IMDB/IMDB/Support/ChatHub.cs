@@ -9,6 +9,7 @@ namespace ChatRoom
 {
     public class ChatHub : Hub
     {
+        [HubMethodName("OnConnectedAsync")]
         public override async Task OnConnectedAsync()
         {
             var message = new Message()
@@ -20,6 +21,7 @@ namespace ChatRoom
             await Clients.Caller.SendAsync("ReciveMessage", message);
             await base.OnConnectedAsync();
         }
+        [HubMethodName("SendMessage")]
         public async Task SendMessage(string name,string text)
         {
             var message = new Message() 

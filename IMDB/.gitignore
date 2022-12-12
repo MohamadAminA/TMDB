@@ -432,3 +432,7 @@ $RECYCLE.BIN/
 !.vscode/launch.json
 !.vscode/extensions.json
 /BizApp/wwwroot/Scripts/BasicInformation/Index.js
+
+
+#Extra 
+.cache

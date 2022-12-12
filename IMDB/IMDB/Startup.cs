@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ChatRoom;
 using IMDB.DataLayer;
 using IMDB.Services.Api;
 using IMDB.Services.Database;
@@ -96,11 +97,10 @@ namespace IMDB
             
             app.UseAuthorization();
 
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "/ChatHub");
+                endpoints.MapHub<ChatHub>("/chathub");
             });
 
             app.UseEndpoints(endpoints =>

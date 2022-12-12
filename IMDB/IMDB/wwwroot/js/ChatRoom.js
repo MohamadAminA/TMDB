@@ -1,6 +1,6 @@
 ﻿document.addEventListener('DOMContentLoaded', ready);
 var name = '';
-var connection = new signalR.HubConnectionBuilder().withUrl('/ChatHub').build();
+var connection = new signalR.HubConnectionBuilder().withUrl('/chathub').build();
 
 connection.on('ReciveMessage', renderMessage);
 connection.onclose(function () {

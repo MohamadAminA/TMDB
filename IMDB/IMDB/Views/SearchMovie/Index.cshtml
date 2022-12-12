@@ -112,16 +112,16 @@
                                 @if (Model.Movies.Page > 1)
                                 {
 
-                                    <li>
-                                            <button asp-route-page="@(Model.Movies.Page-1)" class="btn btn-outline btn-primary " type="submit">
+                                        <li style="margin-top: 10%;margin-left: 2%;">
+                                            <button asp-route-page="@(Model.Movies.Page-1)" class="btn btn-outline btn-primary " type="submit" style="background-color: beige;">
                                                 <i class="icofont icofont-arrow-left"></i>
                                         </button>
                                     </li>
                                 }
                                     @for (int i = (Model.Movies.Page == 1 || Model.Movies.Page == 2 || Model.Movies.Page == 3) ? 1 : Model.Movies.Page - 3; i < Model.Movies.Page + 3 && i <= Model.Movies.total_pages&&i<500; i++)
                                 {
-                                    <li>
-                                            <button type="submit" asp-route-page="@(i)" class="btn btn-sm @((i != Model.Movies.Page)?"btn-outline-primary":"disabled btn-primary")" >
+                                        <li style="margin-top: 10%;margin-left: 2%;">
+                                            <button type="submit" asp-route-page="@(i)" class="btn btn-sm @((i != Model.Movies.Page)?"btn-outline-primary":"disabled btn-primary")" style="background-color: beige;  opacity: 4.65;color: #666;">
                                             @i
                                         </button>
                                     </li>
@@ -129,11 +129,12 @@
                                 }
                                     @if (Model.Movies.total_pages > Model.Movies.Page + 2 && Model.Movies.Page < 500)
                                     {
-                                        
-                                        <li> . . . 
+
+                                        <li style="width: 48px; margin-top: 10%;margin-left:2%;">
+                                            . . .
                                         </li>
-                                        <li>
-                                            <button asp-route-page="@(Model.Movies.total_pages > 500?500:Model.Movies.total_pages)" class="btn btn-outline btn-primary" type="submit">
+                                        <li style="margin-top: 10%;margin-left: 2%;">
+                                            <button style="background-color: beige;"  asp-route-page="@(Model.Movies.total_pages > 500?500:Model.Movies.total_pages)" class="btn btn-outline btn-primary" type="submit">
                                                 @(Model.Movies.total_pages > 500 ? 500 : Model.Movies.total_pages)
                                             </button>
                                         </li>
@@ -141,8 +142,8 @@
                                     @if (Model.Movies.total_pages > Model.Movies.Page && Model.Movies.Page<500)
                                 {
 
-                                    <li>
-                                            <button asp-route-page="@(Model.Movies.Page+1)" class="btn btn-outline btn-primary" type="submit">
+                                        <li style="margin-top: 10%;margin-left: 2%;">
+                                            <button style="background-color: beige;" asp-route-page="@(Model.Movies.Page+1)" class="btn btn-outline btn-primary" type="submit">
                                                 <i class="icofont icofont-arrow-right"></i>
                                         </button>
                                     </li>

@@ -1,17 +1,11 @@
 ﻿@using IMDB.Domain.CardViewModel
 @using Infrastructure
-@using System;
-@using System.Collections.Generic;
-@using System.IO;
 @using static System.Net.Mime.MediaTypeNames;
 @using static IMDB.Domain.DTOs.ApiDTO;
 @using static IMDB.Domain.DTOs.MovieDTO;
 @using IMDB.Services.Api;
 @inject IMovie movieRepo
 @model HomeViewModel
-
-
-
 <section class="hero-area" id="home">
     <div class="container">
         <div class="hero-area-slider">
@@ -46,22 +40,22 @@
                             <h3>Cast:</h3>
                             <div class="slide-cast">
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast1.png" alt="about" />
+                                    <img src="/assets/img/cast/cast1.png" alt="about" />
                                 </div>
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast3.png" alt="about" />
+                                    <img src="/assets/img/cast/cast3.png" alt="about" />
                                 </div>
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast4.png" alt="about" />
+                                    <img src="/assets/img/cast/cast4.png" alt="about" />
                                 </div>
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast5.png" alt="about" />
+                                    <img src="/assets/img/cast/cast5.png" alt="about" />
                                 </div>
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast6.png" alt="about" />
+                                    <img src="/assets/img/cast/cast6.png" alt="about" />
                                 </div>
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast7.png" alt="about" />
+                                    <img src="/assets/img/cast/cast7.png" alt="about" />
                                 </div>
                                 <div class="single-slide-cast text-center">
                                     5+
@@ -112,25 +106,25 @@
                             <h3>Cast:</h3>
                             <div class="slide-cast">
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast1.png" alt="about" />
+                                    <img src="/assets/img/cast/cast1.png" alt="about" />
                                 </div>
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast2.html" alt="about" />
+                                    <img src="/assets/img/cast/cast2.html" alt="about" />
                                 </div>
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast3.png" alt="about" />
+                                    <img src="/assets/img/cast/cast3.png" alt="about" />
                                 </div>
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast4.png" alt="about" />
+                                    <img src="/assets/img/cast/cast4.png" alt="about" />
                                 </div>
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast5.png" alt="about" />
+                                    <img src="/assets/img/cast/cast5.png" alt="about" />
                                 </div>
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast6.png" alt="about" />
+                                    <img src="/assets/img/cast/cast6.png" alt="about" />
                                 </div>
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast7.png" alt="about" />
+                                    <img src="/assets/img/cast/cast7.png" alt="about" />
                                 </div>
                                 <div class="single-slide-cast text-center">
                                     5+
@@ -173,25 +167,25 @@
                             <h3>Cast:</h3>
                             <div class="slide-cast">
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast1.png" alt="about" />
+                                    <img src="/assets/img/cast/cast1.png" alt="about" />
                                 </div>
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast2.html" alt="about" />
+                                    <img src="/assets/img/cast/cast2.html" alt="about" />
                                 </div>
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast3.png" alt="about" />
+                                    <img src="/assets/img/cast/cast3.png" alt="about" />
                                 </div>
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast4.png" alt="about" />
+                                    <img src="/assets/img/cast/cast4.png" alt="about" />
                                 </div>
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast5.png" alt="about" />
+                                    <img src="/assets/img/cast/cast5.png" alt="about" />
                                 </div>
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast6.png" alt="about" />
+                                    <img src="/assets/img/cast/cast6.png" alt="about" />
                                 </div>
                                 <div class="single-slide-cast">
-                                    <img src="assets/img/cast/cast7.png" alt="about" />
+                                    <img src="/assets/img/cast/cast7.png" alt="about" />
                                 </div>
                                 <div class="single-slide-cast text-center">
                                     5+
@@ -261,6 +255,7 @@
 
                                             </div>
                                             <h5>@item.VoteCount voters</h5>
+                                            <i id="ic" class='fas fa-bookmark' style='font-size:20px'></i>
                                         </div>
                                     </div>
                                 </div>
@@ -293,6 +288,7 @@
 
                                             </div>
                                             <h5>@item.VoteCount voters</h5>
+                                            <i id="ic" class='fas fa-bookmark' style='font-size:20px'></i>
                                         </div>
                                     </div>
                                 </div>
@@ -323,6 +319,7 @@
 
                                             </div>
                                             <h5>@item.VoteCount voters</h5>
+                                            <i id="ic" class='fas fa-bookmark' style='font-size:20px'></i>
                                         </div>
                                     </div>
                                 </div>
@@ -354,6 +351,7 @@
 
                                             </div>
                                             <h5>@item.VoteCount voters</h5>
+                                            <i id="ic" class='fas fa-bookmark' style='font-size:20px'></i>
                                         </div>
                                     </div>
                                 </div>
@@ -389,7 +387,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="row portfolio-item">
-                    @foreach (var cast in Model.PopularPeople.results.Take(20).OrderByDescending(n => n.Popularity))
+                    @foreach (var cast in Model.PopularPeople.results.Take(8).OrderByDescending(n => n.Popularity))
                     {
 
                         <div class="col-lg-3 col-md-4 col-sm-6 popular soon TrendingDay released to">
@@ -427,9 +425,9 @@
             <div class="col-md-9">
                 <div class="video-area">
 
-                     <div onclick="GetId(@Model.TopRatedMovies.results.LastOrDefault().Id)" id="div">
-                    <img src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.LastOrDefault().PosterPath" alt="video" style="margin-left: 20%;" />
-                       <a id="@Model.TopRatedMovies.results.LastOrDefault().Id" class="popup-youtube">
+                    <div onclick="GetId(@Model.TopRatedMovies.results.LastOrDefault().Id)" id="div">
+                        <img src="http://image.tmdb.org/t/p/w500/@Model.TopRatedMovies.results.LastOrDefault().PosterPath" alt="video" style="margin-left: 20%;" />
+                        <a id="@Model.TopRatedMovies.results.LastOrDefault().Id" class="popup-youtube">
                             <i class="icofont icofont-ui-play"></i>
                         </a>
                     </div>
@@ -454,18 +452,18 @@
 
                     <div class="col-md-12 col-sm-6">
                         <div class="video-area">
-                         
-                                                                           <div onclick="GetId(@Model.TrendingMoviesOfWeek.results.LastOrDefault().Id)" id="div">
+
+                            <div onclick="GetId(@Model.TrendingMoviesOfWeek.results.LastOrDefault().Id)" id="div">
                                 <img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[4].PosterPath" alt="video" style="margin-bottom: -24px;" />
                                 <a id="@Model.TrendingMoviesOfWeek.results.LastOrDefault().Id" class="popup-youtube">
-                                                        <i class="icofont icofont-ui-play"></i>
-                                                    </a>
-                                                    </div>
+                                    <i class="icofont icofont-ui-play"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-12 col-sm-6">
                         <div class="video-area" style="border-top: -38px;padding-top: -75px;margin-top: 5px;">
-                           
+
                             <div onclick="GetId(@Model.TrendingMoviesOfDay.results.LastOrDefault().Id)" id="div">
                                 <img src="http://image.tmdb.org/t/p/w500/@Model.PopularMovies.results.ToArray()[5].PosterPath" alt="video" />
                                 <a id="@Model.TrendingMoviesOfDay.results.LastOrDefault().Id" class="popup-youtube">
@@ -563,7 +561,7 @@
     </div>
 </section><!-- news section end -->
 <script>
- 
-    document.getElementById('cli').click ;
-    
+
+    document.getElementById('cli').click;
+
 </script>

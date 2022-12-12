@@ -36,6 +36,7 @@ namespace IMDB.Controllers
         public async Task<IActionResult> Error() => View("Error");
         public async Task<IActionResult> Index()
         {
+          //  DatabaseTSV.DatasetMoviePosterPath.SetPoster();
             try
             {
                 var temp = await _user.GetByMovieId(882598);
