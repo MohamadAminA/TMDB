@@ -101,7 +101,10 @@ namespace IMDB.Services.Database
         {
             return await _context.WatchLists.Where(n => n.UserId == userId).ToListAsync();
         }
-
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
+        }
 
 
     }

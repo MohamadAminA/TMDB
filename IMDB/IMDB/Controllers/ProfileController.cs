@@ -43,13 +43,14 @@ namespace IMDB.Controllers
             model.MovieLists = await _list.GetMovieListsById(userId);
             return View(model);
         }
-        [HttpPost]
+        [HttpPost]  
         public async Task<IActionResult> AddMovieList(string Title)
         {
             if (!User.Identity.IsAuthenticated)
                 return RedirectToActionPermanent("Index","SignIn");
             int userId = int.Parse(User.Identity.Name);
             await _list.AddFavouriteList(Title, userId);
+            
             return RedirectToAction("Index");
         }
     }

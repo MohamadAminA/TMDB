@@ -48,6 +48,7 @@ namespace IMDB.api
         public async Task<IActionResult> AddMovieToList(string listId, string movieId)
         {
             await _list.AddMovieToList(int.Parse(listId), int.Parse(movieId));
+            await _list.SaveChangesAsync();
             return Ok();
 
         }
@@ -55,6 +56,7 @@ namespace IMDB.api
         public async Task<IActionResult> RemoveMovieFromList(string listId, string movieId)
         {
             await _list.RemoveMovieFromList( int.Parse(movieId), int.Parse(listId));
+            await _list.SaveChangesAsync();
             return Ok();
 
         }
@@ -64,6 +66,7 @@ namespace IMDB.api
             if (!User.Identity.IsAuthenticated)
                 return RedirectToActionPermanent("Index", "SignIn");
             await _list.AddFavouriteList(Title, int.Parse(User.Identity.Name));
+            await _list.SaveChangesAsync();
             return Ok();
 
         }
@@ -73,6 +76,7 @@ namespace IMDB.api
             if (!User.Identity.IsAuthenticated)
                 return RedirectToActionPermanent("Index", "SignIn");
             await _list.RemoveList(int.Parse(ListId));
+            await _list.SaveChangesAsync();
             return Ok();
 
         }
@@ -99,6 +103,7 @@ namespace IMDB.api
                 MovieId = int.Parse(movieId),
                 UserId = int.Parse(User.Identity.Name)
             });
+            await _list.SaveChangesAsync();
             return Ok();
         }
         [HttpGet("RemoveMovieFromWatchList")]
@@ -107,6 +112,7 @@ namespace IMDB.api
             if (!User.Identity.IsAuthenticated)
                 return RedirectToActionPermanent("Index", "SignIn");
             await _list.RemoveFromWatchList(int.Parse(User.Identity.Name),int.Parse(movieId));
+            await _list.SaveChangesAsync();
             return Ok();
         }
         #endregion
@@ -118,6 +124,7 @@ namespace IMDB.api
             if (!User.Identity.IsAuthenticated)
                 return RedirectToActionPermanent("Index", "SignIn");
             await _list.AddRateMovie(int.Parse(User.Identity.Name), int.Parse(movieId),rate);
+            await _list.SaveChangesAsync();
             return Ok();
         }
         [HttpGet("RemoveRate")]
@@ -126,6 +133,7 @@ namespace IMDB.api
             if (!User.Identity.IsAuthenticated)
                 return RedirectToActionPermanent("Index", "SignIn");
             await _list.RemoveRateMovie(int.Parse(User.Identity.Name), int.Parse(movieId));
+            await _list.SaveChangesAsync();
             return Ok();
         }
         #endregion
