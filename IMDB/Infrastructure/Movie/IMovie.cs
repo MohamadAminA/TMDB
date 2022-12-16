@@ -87,6 +87,5 @@ namespace Infrastructure
 
         public Task<MovieCredits> GetCreditsByPersonId(int person_id);
 
-        Task SaveChangesAsync();
     }
 }
