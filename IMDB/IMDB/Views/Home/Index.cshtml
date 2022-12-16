@@ -228,7 +228,7 @@
         <hr />
         <div class="row">
             <div class="col-lg-12">
-                <div class="row portfolio-item">
+                <div  class="row portfolio-item">
                     @foreach (var item in Model.PopularMovies.results.Skip(3).Take(16))
                     {
                         <div id="f1" class="col-lg-3 col-md-4 col-sm-6 soon popular born">
@@ -265,7 +265,7 @@
                     }
                     @foreach (var item in Model.TopRatedMovies.results.Take(20))
                     {
-                        <div class="col-lg-3 col-md-4 col-sm-6 to">
+                        <div id="f2" class="col-lg-3 col-md-4 col-sm-6 to">
                             <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img">
@@ -297,7 +297,7 @@
                     }
                     @foreach (var item in Model.TrendingMoviesOfWeek.results.Take(20))
                     {
-                        <div class="col-lg-3 col-md-4 col-sm-6 released" style="display:none">
+                        <div id="f3" class="col-lg-3 col-md-4 col-sm-6 released" style="display:none">
                             <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img">
@@ -329,7 +329,7 @@
                     }
                     @foreach (var item in Model.TrendingMoviesOfDay.results.Take(20))
                     {
-                        <div class="col-lg-3 col-md-4 col-sm-6 TrendingDay" style="display:none">
+                        <div id="f4" class="col-lg-3 col-md-4 col-sm-6 TrendingDay" style="display:none">
                             <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img">
