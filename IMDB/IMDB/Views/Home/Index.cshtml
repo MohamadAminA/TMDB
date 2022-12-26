@@ -563,6 +563,25 @@
                     </div>
                     <a href="#">Read More</a>
                 </div>
+                <div onclick="claoo()" style="width: 600%; height: 600%; position: absolute;top: 0;left: 0;z-index: 99;margin-left: -110%;margin-top: -110%;"></div>
+    <div class="row" style="z-index: 1000;">
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="col-lg-12">
+                <div class="textarea-container">
+                    <label>enter your List name</label>
+                    <input name="Title" placeholder="Type Here Message" style="background-color : #08142e;" />
+                </div>
+            </div>
+            <div class="details-comment" style="margin-top: 6%;margin-left: 37%;">
+                <input type="submit" class="theme-btn theme-btn2" value="ok" style="padding: 9px 31px;" />
+                @*<p>You may use these HTML tags and attributes: You may use these HTML tags and attributes: You may use these HTML tags and attributes: </p>*@
+            </div>
+        }
+
+
+    </div>
 
             </div>
         </div>
