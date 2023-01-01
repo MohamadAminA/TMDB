@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using ChatRoom;
 using IMDB.DataLayer;
@@ -10,6 +11,7 @@ using Infrastructure;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,7 +32,12 @@ namespace IMDB
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
+            //services.Configure<ForwardedHeadersOptions>(options =>
+            //{
+            //    options.ForwardLimit = 2;
+            //    options.KnownProxies.Add(IPAddress.Parse("127.0.10.1"));
+            //    options.ForwardedForHeaderName = "X-Forwarded-For-My-Custom-Header-Name";
+            //});
             #region Authorization
             services.AddAuthentication(options =>
             {
@@ -77,6 +84,7 @@ namespace IMDB
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //app.UseForwardedHeaders();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -84,7 +92,6 @@ namespace IMDB
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                //app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles();
 
@@ -97,7 +104,13 @@ namespace IMDB
             
             app.UseAuthorization();
 
-
+            //app.MapWhen(ctx => ctx.Request.Path.StartsWithSegments("/"), builder => builder.RunProxy(new ProxyOptions
+            //{
+            //    Scheme = "https",
+            //    Host = "103.151.177.106",
+            //    Port = "80"
+            //}));
+            //https://free-proxy-list.net/
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapHub<ChatHub>("/chathub");
