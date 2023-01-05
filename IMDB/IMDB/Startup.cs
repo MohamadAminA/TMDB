@@ -51,12 +51,12 @@ namespace IMDB
             });
             #endregion
 
-           #region DataBase Context
+            #region DataBase Context
             services.AddDbContext<ContextDB>(options =>
                 options.UseSqlServer(
 
-                    //"Data Source=AMIN-LAPTOP\\SQLEXPRESS;Initial Catalog=IMDB_DB;Integrated Security=true;MultipleActiveResultSets=true;",
-                    "Data Source=DESKTOP-0QSKDOG;Initial Catalog=IMDB_DB;Integrated Security=true;MultipleActiveResultSets=true;",
+                    "Data Source=AMIN-LAPTOP\\SQLEXPRESS;Initial Catalog=IMDB_DB;Integrated Security=true;MultipleActiveResultSets=true;",
+                    //"Data Source=DESKTOP-0QSKDOG;Initial Catalog=IMDB_DB;Integrated Security=true;MultipleActiveResultSets=true;",
                     b => b.MigrationsAssembly("IMDB.DataLayer")),
                     ServiceLifetime.Transient
             );
@@ -77,7 +77,10 @@ namespace IMDB
             services.AddResponseCaching();
             services.AddMemoryCache();
             #endregion
-
+//            services.AddControllersWithViews()
+//    .AddNewtonsoftJson(options =>
+//    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+//);
 
         }
 
@@ -101,7 +104,7 @@ namespace IMDB
             app.UseAuthentication();
             app.UseAuthorization();
             #endregion
-            
+
             app.UseAuthorization();
 
             //app.MapWhen(ctx => ctx.Request.Path.StartsWithSegments("/"), builder => builder.RunProxy(new ProxyOptions

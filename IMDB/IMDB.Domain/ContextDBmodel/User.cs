@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using static IMDB.Domain.DTOs.MovieDTO;
 
@@ -51,6 +52,7 @@ namespace IMDB.DataLayer.Model
         public int UserId { get; set; }
 
         #region Foregin Key
+        //public List<Movie> Movies { get; set; }
         public User User { get; set; }
         public List<FavouriteMovie> FavouriteMovies { get; set; }
         #endregion
@@ -63,6 +65,7 @@ namespace IMDB.DataLayer.Model
         public int FavouriteListId { get; set; }
 
         #region MyRegion
+        [JsonIgnore]
         public FavouriteList FavouriteList { get; set; }
         #endregion
     }
