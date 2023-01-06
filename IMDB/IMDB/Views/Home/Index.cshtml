@@ -564,7 +564,20 @@
                     <a href="#">Read More</a>
                 </div>
             </div>
-           
+            <form id="forNonn" style=" z-index: 100;display: none ;width: 29%;height: 108px;margin-left: 33%;margin-top: 2%;" asp-controller="ApiController" asp-action="AddMovieToList">
+        <div onclick="claoo()" style="width: 600%; height: 600%; position: absolute;top: 0;left: 0;z-index: 99;margin-left: -110%;margin-top: -110%;"></div>
+                <div class="row" style="z-index: 1000;max-height: 1px;max-height: 1px;">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="col-lg-12" style="margin-top: 16px;max-width: 100%;margin-left: 33%;">
+                            <a href="/Api/AddMovieToList?1">like list </a>
+                            <a href="/Api/AddMovieToList?1">best list</a>
+                            <a href="/Api/AddMovieToList?1">bad list</a>
+                        </div>
+                    }
+                </div>
+            </form>
+
         </div>
     </div>
 </section><!-- news section end -->
@@ -587,12 +600,13 @@
     }
 
     function cll(intt) {
+        console.log("aaaaaaaaaaa")
          document.getElementById("forNonn").setAttribute('style', 'display : flex');
         $.ajax({
             type: "GET",
             url: '/api/Api/GetLists',
             success: function (response) {
-                console.log(response)
+                console.log(response[1])
             }
         })
     }
