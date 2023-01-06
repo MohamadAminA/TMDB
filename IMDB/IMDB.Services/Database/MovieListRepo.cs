@@ -81,15 +81,24 @@ namespace IMDB.Services.Database
 
         public async Task<int> AddRateMovie(int userId, int movieId, int rate)
         {
-            var Rate = new MovieRate()
+            var old = await _context.Rates.FirstOrDefaultAsync(n => n.MovieId == movieId && userId == n.UserId);
+            if (old != null)
             {
-                CreatedAt = DateTime.Now,
-                MovieId = movieId,
-                UserId = userId,
-                Rate = rate
-            };
-            await _context.Rates.AddAsync(Rate);
-            return Rate.Id;
+                old.Rate = rate;
+            }
+            else
+            {
+                old = new MovieRate()
+                {
+                    CreatedAt = DateTime.Now,
+                    MovieId = movieId,
+                    UserId = userId,
+                    Rate = rate
+                };
+                await _context.Rates.AddAsync(old);
+            }
+
+            return old.Id;
 
         }
         public async Task RemoveRateMovie(int userId, int movieId)
