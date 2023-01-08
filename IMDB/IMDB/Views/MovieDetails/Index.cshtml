@@ -1,4 +1,5 @@
 ﻿@using IMDB.Domain.CardViewModel;
+@using IMDB.Domain.DTOs
 @model MovieDetailsViewModel
 @section Header{
 
@@ -49,8 +50,7 @@
 						<div class="transformers-content">
 							<div onclick="GetId(@Model.Movie.Id)" id="div">
 								<a id="@Model.Movie.Id" class="popup-youtube">
-									<img src="http://image.tmdb.org/t/p/original/@Model.Movie.PosterPath" alt="about" />
-
+									<img id="radiusImg" src="@((string.IsNullOrEmpty(@Model.Movie.PosterPath)) ? "/img/DefultMovie.jpg" : "http://image.tmdb.org/t/p/original/" + @Model.Movie.PosterPath)" alt="portfolio" />
 									<i class="icofont icofont-ui-play"></i>
 
 								</a>
@@ -82,12 +82,14 @@
 									<div class="transformers-left">
 										Gener:
 									</div>
-								@foreach (var item in Model.Movie.Genres)
-								{
-									<div class="transformers-right" style="padding:0 10px">
-										@item.Name ,
-									</div>
-								}
+									<div class="row">
+									@foreach (var item in Model.Movie.Genres)
+									{
+										<div class="transformers-right col-lg-4 " style="margin:0px 20px 20px 20px ">
+											@item.Name
+										</div>
+									}
+								</div>
 							</li>
 							<li>
 								<div class="transformers-left">
@@ -104,7 +106,7 @@
 								</div>
 								<div class="author-review">
 									@Model.Movie.VoteAverage
-									@for (int i = 0; i < ((Model.Movie.VoteAverage == 10) ? (Model.Movie.VoteAverage / 2) : (Model.Movie.VoteAverage / 2) + 1); i++)
+									@for (int i = 1; i < Model.Movie.VoteAverage / 2 ; i++)
 									{
 										<i class="icofont icofont-star"></i>
 									}
@@ -157,10 +159,130 @@
 				<div class="details-content">
 					<div class="details-overview">
 						<h2>Overview</h2>
-						<p style="
-    font-size: 22px;
-">@Model.Movie.Overview</p>
+						<p style="font-size: 22px;">
+							@Model.Movie.Overview
+						</p>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section><!-- details area end -->
+<!-- details area start -->
+<section class="details-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12" style="box-shadow: rgba(18, 11, 247, 0) 5px 5px, rgba(21, 6, 204, 0) 10px 10px, rgba(23, 7, 138, 0) 15px 15px, rgba(19, 2, 100, 0) 20px 20px, rgba(240, 46, 170, 0) 25px 25px; ">
+				<div class="details-content">
+					<section class="portfolio-area pt-60">
+						<div class="container">
+							<div class="row flexbox-center">
+								<div class="col-lg-6 text-center text-lg-left">
+									<div class="section-title" id="4444">
+										<h1><i class="icofont icofont-movie"></i> Casts </h1>
+									</div>
+								</div>
+							</div>
+
+							<hr />
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="row portfolio-item">
+										@foreach (var cast in Model.Credits.Cast.Distinct(new CastEqualityComparer()).Take(20).OrderBy(n => n.Order))
+										{
+
+											<div class="col-lg-3 col-md-4 col-sm-6 ">
+												<a asp-controller="PersonDetails" asp-action="Index" asp-route-id="@cast.Id">
+													<div class="single-portfolio">
+														<div class="single-portfolio-img" id="oadAction">
+															<img id="radiusprofile" src="@((string.IsNullOrEmpty(cast.ProfilePath))?"/img/cast/defult.png":"http://image.tmdb.org/t/p/w185/"+@cast.ProfilePath)" alt="dont have profile" style="border-radius: 10%;" />
+														</div>
+														<div id="senoh" class="portfolio-content">
+															<h3 >@cast.Name</h3>
+
+															<div class="review">
+																<div class="author-review">
+
+																	<h6 id="senoh">character : @cast.Character </h6>
+
+																</div><br />
+																<p>@cast.Popularity Popularity</p>
+															</div>
+														</div>
+													</div>
+												</a>
+											</div>
+										}
+									</div>
+								</div>
+							</div>
+						</div>
+					</section><!-- portfolio section end -->
+				</div>
+			</div>
+		</div>
+	</div>
+</section><!-- details area end -->
+<!-- details area start -->
+<section class="details-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12" style="box-shadow: rgba(18, 11, 247, 0) 5px 5px, rgba(21, 6, 204, 0) 10px 10px, rgba(23, 7, 138, 0) 15px 15px, rgba(19, 2, 100, 0) 20px 20px, rgba(240, 46, 170, 0) 25px 25px; ">
+				<div class="details-content">
+					<section class="portfolio-area pt-60">
+						<div class="container">
+							<div class="row flexbox-center">
+								<div class="col-lg-6 text-center text-lg-left">
+									<div class="section-title" id="4444">
+										<h1><i class="icofont icofont-movie"></i> Crews </h1>
+									</div>
+								</div>
+							</div>
+
+							<hr />
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="row portfolio-item">
+										@foreach (var cast in Model.Credits.Crew.Distinct(new CrewEqualityComparer()).Take(20))
+										{
+
+											<div class="col-lg-3 col-md-4 col-sm-6">
+												<a asp-controller="PersonDetails" asp-action="Index" asp-route-id="@cast.Id">
+													<div class="single-portfolio">
+														<div class="single-portfolio-img" id="oadAction">
+															<img id="radiusprofile" src="@((string.IsNullOrEmpty(cast.ProfilePath))?"/img/cast/defult.png":"http://image.tmdb.org/t/p/w185/"+@cast.ProfilePath)" alt="dont have profile" style="border-radius: 10%;" />
+														</div>
+														<div class="portfolio-content">
+															<h2 id="senoh">@cast.Name</h2>
+															<div class="review">
+																<div id="senoh" class="author-review">
+
+																	<h6>Department : @cast.Department</h6>
+
+																</div><br />
+																<p>@cast.Popularity Popularity</p>
+															</div>
+														</div>
+													</div>
+												</a>
+											</div>
+										}
+									</div>
+								</div>
+							</div>
+						</div>
+					</section><!-- portfolio section end -->
+				</div>
+			</div>
+		</div>
+	</div>
+</section><!-- details area end -->
+<!-- details area start -->
+<section class="details-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12" style="box-shadow: rgba(18, 11, 247, 0) 5px 5px, rgba(21, 6, 204, 0) 10px 10px, rgba(23, 7, 138, 0) 15px 15px, rgba(19, 2, 100, 0) 20px 20px, rgba(240, 46, 170, 0) 25px 25px; ">
+				<div class="details-content">
 					<div class="col-lg-12" style="margin-bottom:11px">
 						<div class="col-lg-6 text-center text-lg-left" style="
     margin-bottom: 8px;
@@ -178,7 +300,7 @@
 											<div class="single-portfolio-img">
 
 
-												<img id="radiusImg" src="http://image.tmdb.org/t/p/w185/@item.PosterPath" alt="portfolio" />
+												<img id="radiusImg" src="@((string.IsNullOrEmpty(@item.PosterPath)) ? "/img/DefultMovie.jpg" : "http://image.tmdb.org/t/p/w185/" + @item.PosterPath)" alt="portfolio" />
 												<div onclick="GetId(@item.Id)" id="div">
 													<a id="@item.Id" class="popup-youtube">
 														<i class="icofont icofont-ui-play"></i>
@@ -191,7 +313,7 @@
 												<h2 id="senoh">@item.Title</h2>
 												<div class="review">
 													<div class="author-review">
-														@for (int i = 0; i < ((item.VoteAverage == 10) ? (item.VoteAverage / 2) : (item.VoteAverage / 2) + 1); i++)
+														@for (int i = 1; i < item.VoteAverage / 2; i++)
 														{
 															<i class="icofont icofont-star"></i>
 														}
@@ -207,6 +329,17 @@
 
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section><!-- details area end -->
+<!-- details area start -->
+<section class="details-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12" style="box-shadow: rgba(18, 11, 247, 0) 5px 5px, rgba(21, 6, 204, 0) 10px 10px, rgba(23, 7, 138, 0) 15px 15px, rgba(19, 2, 100, 0) 20px 20px, rgba(240, 46, 170, 0) 25px 25px; ">
+				<div class="details-content">
 					<div class="details-reply">
 						<h2>Leave a Reply</h2>
 						@{
@@ -385,37 +518,9 @@
 
 					</form>
 				</div>
-
-
-				@* <div class="details-thumb">
-				<div class="details-thumb-prev">
-				<div class="thumb-icon">
-				<i class="icofont icofont-simple-left"></i>
-				</div>
-				<div class="thumb-text">
-				<h4>Previous Post</h4>
-				<p>Standard Post With Gallery</p>
-				</div>
-				</div>
-				<div class="details-thumb-next">
-				<div class="thumb-text">
-				<h4>Next Post</h4>
-				<p>Standard Post With Preview Image</p>
-				</div>
-				<div class="thumb-icon">
-				<i class="icofont icofont-simple-right"></i>
-				</div>
-				</div>
-				</div>*@
 			</div>
-
 		</div>
-
-		@*
-		<p>@Model.Movie.Id</p>*@
-
 	</div>
-
 </section><!-- details area end -->
 <script>
 	function cloo() {

@@ -349,10 +349,8 @@ input::-webkit-input-placeholder {
     color: #eb315a;
 }
 .header-right form {
-    display: flex;
+    display: flex !important;
     max-width: 380px;
-    border: 1px solid #eee;
-    border-radius: 30px;
     margin-left: auto;
 }
 .header-right form button {
@@ -380,7 +378,8 @@ option {
 	color: #fff;
     border: none;
     margin: 0;
-    border-left: 1px solid #ddd;
+
+/*    border-left: 1px solid #ddd;*/
     margin-left: 20px;
 }
 
@@ -1316,6 +1315,7 @@ hr {
 #radiusImg {
     border-radius: 3%;
     height: 405px;
+    width: 100%;
 }
 
 #radiusprofile {
@@ -1335,3 +1335,12 @@ hr {
 #imgeRad {
     border-radius: 25px;
 }
+
+#search-btn {
+    margin-left: -100%;
+    border-left: 1px solid #eee;
+}
+    #search-btn:hover {
+        color: red;
+        transition: 1s;
+    }

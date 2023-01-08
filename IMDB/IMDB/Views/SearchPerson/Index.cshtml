@@ -111,7 +111,7 @@
 									{
 
 										<li style="margin-top: 10%;margin-left: 2%;">
-											<button asp-route-page="@(Model.Movies.Page-1)" class="btn btn-outline btn-primary " type="submit" >
+											<button asp-route-page="@(Model.Movies.Page-1)" class="btn btn-outline btn-primary " type="submit">
 												<i class="icofont icofont-arrow-left"></i>
 											</button>
 										</li>
@@ -119,7 +119,7 @@
 									@for (int i = (Model.Movies.Page == 1 || Model.Movies.Page == 2 || Model.Movies.Page == 3) ? 1 : Model.Movies.Page - 3; i < Model.Movies.Page + 3 && i <= Model.Movies.total_pages && i < 500; i++)
 									{
 										<li style="margin-top: 10%;margin-left: 2%;">
-											<button type="submit" asp-route-page="@(i)" class="btn btn-sm @((i != Model.Movies.Page)?"btn-outline-primary":"disabled btn-primary")" >
+											<button type="submit" asp-route-page="@(i)" class="btn btn-sm @((i != Model.Movies.Page)?"btn-outline-primary":"disabled btn-primary")">
 												@i
 											</button>
 										</li>
@@ -129,11 +129,11 @@
 									{
 
 										<li style=" margin-top: 10%;margin-left:2%;" class="text-nowrap">
-											 . . . 
+											. . .
 										</li>
 										<li style="margin-top: 10%;margin-left: 2%;">
-											
-											<button  asp-route-page="@(Model.Movies.total_pages > 500?500:Model.Movies.total_pages)" class="btn btn-outline btn-primary" type="submit">
+
+											<button asp-route-page="@(Model.Movies.total_pages > 500?500:Model.Movies.total_pages)" class="btn btn-outline btn-primary" type="submit">
 												@(Model.Movies.total_pages > 500 ? 500 : Model.Movies.total_pages)
 											</button>
 										</li>
@@ -142,7 +142,7 @@
 									{
 
 										<li style="margin-top: 10%;margin-left: 2%;">
-											<button  asp-route-page="@(Model.Movies.Page+1)" class="btn btn-outline btn-primary" type="submit">
+											<button asp-route-page="@(Model.Movies.Page+1)" class="btn btn-outline btn-primary" type="submit">
 												<i class="icofont icofont-arrow-right"></i>
 											</button>
 										</li>

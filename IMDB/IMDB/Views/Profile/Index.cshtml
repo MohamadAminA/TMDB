@@ -11,6 +11,14 @@
 			margin-left: 39%;
 			margin-top: -1%;
 		}
+
+		#modalup {
+			display: flex;
+			width: 14%;
+			height: 0px;
+			margin-left: 39%;
+			margin-top: -1%;
+		}
 	</style>
 }
 	<!-- header section start -->
@@ -28,8 +36,8 @@
 		{
 			<div class="col-lg-12">
 				<div class="textarea-container">
-					<label>enter your List name</label>
-					<input name="Title" placeholder="Type Here Message" style="background-color : #08142e;" />
+					<label>Add New Favourite List</label>
+					<input name="Title" placeholder="Type List Name" style="background-color : #08142e;" />
 				</div>
 			</div>
 			<div class="details-comment" style="margin-top: 6%;margin-left: 37%;">
@@ -37,6 +45,32 @@
 				@*<p>You may use these HTML tags and attributes: You may use these HTML tags and attributes: You may use these HTML tags and attributes: </p>*@
 			</div>
 		}
+
+
+
+	</div>
+
+</form>
+
+	<form id="modalup" style="position:fixed; display : none ;" asp-controller="api" asp-area="api" asp-action="UpdateList">
+		<div onclick="claoo()" style="width: 600%; height: 600%; position: absolute;top: 0;left: 0;z-index: 99;margin-left: -110%;margin-top: -110%;"></div>
+		<div class="row" style="z-index: 1000;">
+
+		@if (User.Identity.IsAuthenticated)
+		{
+			<div class="col-lg-12">
+				<div class="textarea-container">
+					<label>Add New Favourite List</label>
+					<input name="title" placeholder="Type List Name" style="background-color : #08142e;" />
+					<input id="val" type="hidden" name="id"  />
+				</div>
+			</div>
+			<div class="details-comment" style="margin-top: 6%;margin-left: 37%;">
+				<input type="submit" class="theme-btn theme-btn2" value="ok" style="padding: 9px 31px;" />
+				@*<p>You may use these HTML tags and attributes: You may use these HTML tags and attributes: You may use these HTML tags and attributes: </p>*@
+			</div>
+		}
+
 
 
 	</div>
@@ -114,109 +148,38 @@
 									<h1><i class="icofont icofont-movie"></i>Watch List</h1>
 								</div>
 							</div>
+							<hr />
 							<div class="row portfolio-item">
-								
-								@foreach (var item in Model.WatchList?.Take(30))
-								{
-									<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
-										<div class="single-portfolio">
-											<div class="single-portfolio-img">
-												<img id="radiusImg" src="http://image.tmdb.org/t/p/w185/@item.PosterPath" alt="portfolio" style="border-radius: 30px" />
 
-												<div onclick="GetId(@item.Id)" id="div">
-													<a id="@item.Id" class="popup-youtube">
-														<i class="icofont icofont-ui-play"></i>
-													</a>
+								@foreach (var item in Model.WatchList)
+								{
+									<div class="col-lg-3 col-md-4 col-sm-6">
+										<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
+											<div class="single-portfolio">
+												<div class="single-portfolio-img">
+													<img id="radiusImg" src="@((string.IsNullOrEmpty(@item.PosterPath)) ? "/img/DefultMovie.jpg" : "http://image.tmdb.org/t/p/w185/" + @item.PosterPath)" alt="portfolio" style="border-radius: 30px" />
+
+													<div onclick="GetId(@item.Id)" id="div">
+														<a id="@item.Id" class="popup-youtube">
+															<i class="icofont icofont-ui-play"></i>
+														</a>
+													</div>
+												</div>
+												<div class="portfolio-content">
+													<h2 id="senoh">@item.Title</h2>
+													<div class="review">
+														<h3>
+															<div class="author-review">
+																@item.VoteAverage
+															</div>
+														</h3>
+														<h5 style=" display: contents;">@item.VoteCount voters  </h5>
+														<svg id="sv+@item.Id" onclick="cll(@item.Id)" onmouseover="hov(@item.Id)" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive" viewBox="0 0 16 16"><path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" /></svg>
+														<svg id="sq+@item.Id" onclick="cll(@item.Id)" onmouseout="dow(@item.Id)" style="display:none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16"><path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" /></svg>
+													</div>
 												</div>
 											</div>
-											<div class="portfolio-content">
-												<h2 id="senoh">@item.Title</h2>
-												<div class="review">
-													<div class="author-review">
-														@for (int i = 0; i < ((item.VoteAverage == 10) ? (item.VoteAverage / 2) : (item.VoteAverage / 2) + 1); i++)
-														{
-															<i class="icofont icofont-star"></i>
-														}
-
-													</div>
-													<h5 style=" display: contents;">@item.VoteCount voters  </h5>
-													<svg id="sv+@item.Id" onclick="cll(@item.Id)" onmouseover="hov(@item.Id)" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive" viewBox="0 0 16 16"><path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" /></svg>
-													<svg id="sq+@item.Id" onclick="cll(@item.Id)" onmouseout="dow(@item.Id)" style="display:none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16"><path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" /></svg>
-												</div>
-											</div>
-										</div>
-									</a>
-								}
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</section><!-- details area end -->
-
-
-
-	<section class="details-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12" style="box-shadow: rgba(18, 11, 247, 0) 5px 5px, rgba(21, 6, 204, 0) 10px 10px, rgba(23, 7, 138, 0) 15px 15px, rgba(19, 2, 100, 0) 20px 20px, rgba(240, 46, 170, 0) 25px 25px; ">
-					<div class="details-content">
-						<div class="col-lg-12" style="margin-bottom:11px">
-							<div class="col-lg-6 text-center text-lg-left" style="
-    margin-bottom: 8px;
-">
-								<div class="section-title">
-									<h1><i class="icofont icofont-movie"></i>Favourite Lists</h1>
-								</div>
-							</div>
-							<div class="row portfolio-item">
-								@foreach (var list in Model.MovieLists.Take(10))
-								{
-									<div class="col-lg-12" style="margin-bottom:11px">
-										<div class="col-lg-6 text-center text-lg-left" style="
-    margin-bottom: 8px;
-">
-											<div class="section-title">
-												<h1><i class="icofont icofont-movie"></i>Favourite Lists</h1>
-											</div>
-										</div>
-										<div class="row portfolio-item">
-											@foreach (var movie in list.FavouriteMovies.Take(20))
-											{
-												var item = await _movie.GetMovieById(movie.Id);
-												
-												<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
-													<div class="single-portfolio">
-														<div class="single-portfolio-img">
-															<img id="radiusImg" src="http://image.tmdb.org/t/p/w185/@item.PosterPath" alt="portfolio" style="border-radius: 30px" />
-
-															<div onclick="GetId(@item.Id)" id="div">
-																<a id="@item.Id" class="popup-youtube">
-																	<i class="icofont icofont-ui-play"></i>
-																</a>
-															</div>
-														</div>
-														<div class="portfolio-content">
-															<h2 id="senoh">@item.Title</h2>
-															<div class="review">
-																<div class="author-review">
-																	@for (int i = 0; i < ((item.VoteAverage == 10) ? (item.VoteAverage / 2) : (item.VoteAverage / 2) + 1); i++)
-																	{
-																		<i class="icofont icofont-star"></i>
-																	}
-
-																</div>
-																<h5 style=" display: contents;">@item.VoteCount voters  </h5>
-																<svg id="sv+@item.Id" onclick="cll(@item.Id)" onmouseover="hov(@item.Id)" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive" viewBox="0 0 16 16"><path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" /></svg>
-																<svg id="sq+@item.Id" onclick="cll(@item.Id)" onmouseout="dow(@item.Id)" style="display:none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16"><path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" /></svg>
-															</div>
-														</div>
-													</div>
-												</a>
-											}
-										</div>
+										</a>
 									</div>
 								}
 							</div>
@@ -227,38 +190,101 @@
 		</div>
 
 	</section><!-- details area end -->
-
-
-	<form id="forNonn" style=" z-index: 100;display: flex ;width: 29%;height: 108px;margin-left: 33%;margin-top: 2%;" asp-controller="ApiController" asp-action="AddMovieToList">
-		<div onclick="claoo()"></div>
-		<div class="row" style="z-index: 1000;max-height: 1px;max-height: 1px;">
-
-			@if (User.Identity.IsAuthenticated)
-			{
-				<div class="col-lg-12" style="margin-top: 16px;max-width: 100%;margin-left: 33%;">
-
-					<a href="/Api">like list </a>
-					<a>best list</a>
-					<a>bad list</a>
+	@foreach (var list in Model.MovieLists.OrderByDescending(n => n.CreateDate))
+	{
+		<section class="portfolio-area pt-60">
+			<div class="container">
+				<div class="row flexbox-center">
+					<div class="col-lg-6 text-center text-lg-left">
+						<div class="section-title">
+							<h1><i class="icofont icofont-movie"></i>@list.Title <small onclick="openedit(@list.Id)" class="icofont icofont-edit"></small></h1>
+							
+						</div>
+					</div>
+					<div class="col-lg-6 text-center text-lg-right">
+						<div class="portfolio-menu">
+							<ul>
+								<li data-filter="*">@list.CreateDate.ToString("yyyy-MM-dd")</li>
+							</ul>
+						</div>
+					</div>
 				</div>
+				<hr />
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row portfolio-item">
+							@foreach (var item in list.Movies)
+							{
+								<div id="f1" class="col-lg-3 col-md-4 col-sm-6 ">
+									<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
+										<div class="single-portfolio">
+											<div class="single-portfolio-img">
 
-			}
+												<img id="radiusImg" src="@((string.IsNullOrEmpty(@item.PosterPath)) ? "/img/DefultMovie.jpg" : "http://image.tmdb.org/t/p/w185/" + @item.PosterPath)" alt="portfolio" />
 
+												<div onclick="GetId(@item.Id)" id="div">
+													<a id="@item.Id" class="popup-youtube">
+														<i class="icofont icofont-ui-play"></i>
+													</a>
+												</div>
+											</div>
+											<div class="portfolio-content">
+												<h3 id="senoh">@item.Title</h3>
+												<div class="review">
+													<h3>
+														<div class="author-review">
+															@item.VoteAverage
+														</div>
+													</h3>
+													<h5 style=" display: contents;"> @item.VoteCount voters </h5>
+													<svg id="sv+@item.Id" onclick="cll(@item.Id)" onmouseover="hov(@item.Id)" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive" viewBox="0 0 16 16"><path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" /></svg>
+													<svg id="sq+@item.Id" onclick="cll(@item.Id)" onmouseout="dow(@item.Id)" style="display:none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16"><path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" /></svg>
 
-		</div>
+												</div>
+											</div>
+										</div>
+									</a>
+								</div>
 
-	</form>
-	<div id="f4" class="col-lg-9 col-md-9 col-sm-9 TrendingDay" style="margin-left: 13% ; margin-top: 2%;">
-		@for (int q = 0; q < 4; q++)
-		{
-			<img id="radiusImg" src="http://image.tmdb.org/t/p/original/hBcY0fE9pfXzvVaY4GKarweriG2.jpg" alt="portfolio" style="border-radius: 30px;" />
-		}
+							}
+							@if(list.Movies==null||list.Movies.Count==0)
+							{
+								<span class="text-center" style="margin:0px 30%">There is no item in list yet<br />Add your first movie to this list by click on icon near movie</span>
+							}
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
+		<!-- movie section end -->
+		<!-- details area end -->
+	}
+
+	@*	<form id="forNonn" style=" z-index: 100;display: flex ;width: 29%;height: 108px;margin-left: 33%;margin-top: 2%;" asp-controller="ApiController" asp-action="AddMovieToList">
+	<div onclick="claoo()"></div>
+	<div class="row" style="z-index: 1000;max-height: 1px;max-height: 1px;">
+
+	@if (User.Identity.IsAuthenticated)
+	{
+	<div class="col-lg-12" style="margin-top: 16px;max-width: 100%;margin-left: 33%;">
+
+	<a href="/Api">like list </a>
+	<a>best list</a>
+	<a>bad list</a>
+	</div>
+
+	}
 
 
 	</div>
+
+	</form>*@
+	@*<div id="f4" class="col-lg-9 col-md-9 col-sm-9 TrendingDay" style="margin-left: 13% ; margin-top: 2%;">
+	@for (int q = 0; q < 4; q++)
+	{
+	<img id="radiusImg" src="http://image.tmdb.org/t/p/original/hBcY0fE9pfXzvVaY4GKarweriG2.jpg" alt="portfolio" style="border-radius: 30px;" />
+	}
+	</div>
+	*@
 </section><!-- transformers area end -->
-
-<script>
-
-</script>

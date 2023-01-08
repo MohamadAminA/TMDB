@@ -26,6 +26,8 @@ namespace IMDB.Controllers
 
             MovieDetailsViewModel model = new MovieDetailsViewModel();
             model.Movie = await _movie.GetMovieById(id);
+            if(model.Movie == null)
+                return RedirectToAction("Error", "Home");
             model.Credits = await _movie.GetMovieCreditsById(id);
             
             model.Reviews = await _review.GetByMovieId(id);

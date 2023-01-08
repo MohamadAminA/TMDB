@@ -70,6 +70,18 @@ namespace IMDB.api
             return Ok();
 
         }
+
+        [HttpGet("UpdateList")]
+        public async Task<IActionResult> UpdateList(string title,int id)
+        {
+            if (!User.Identity.IsAuthenticated)
+                return RedirectToActionPermanent("Index", "SignIn");
+            await _list.UpdateFavouriteList(title,id);
+            await _list.SaveChangesAsync();
+            return Ok();
+
+        }
+
         [HttpGet("RemovieList")]
         public async Task<IActionResult> RemovieList(string ListId)
         {
@@ -123,6 +135,10 @@ namespace IMDB.api
         {
             if (!User.Identity.IsAuthenticated)
                 return RedirectToActionPermanent("Index", "SignIn");
+            if(rate < 0)
+                rate = 0;
+            else if (rate > 10)
+                rate = 10;
             await _list.AddRateMovie(int.Parse(User.Identity.Name), int.Parse(movieId),rate);
             await _list.SaveChangesAsync();
             return Ok();

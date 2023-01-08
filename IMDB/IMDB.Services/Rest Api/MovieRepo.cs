@@ -6,8 +6,10 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using IMDB.DataLayer;
 using IMDB.Domain.DTOs;
 using Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Newtonsoft.Json;
 using TMDbLib.Objects;
@@ -30,14 +32,16 @@ namespace IMDB.Services.Api
         
         private readonly string api_key = $"api_key={key}";
         private readonly IUser _user;
+        private ContextDB _context { get; }
         private readonly IMemoryCache _cache;
         private readonly MemoryCacheEntryOptions _cacheOption;
 
-        public MovieRepo(IUser user, IMemoryCache cache)
+        public MovieRepo(IUser user, IMemoryCache cache, ContextDB context)
         {
             _user = user;
             _cache = cache;
             _cacheOption = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromDays(1));
+            _context = context;
         }
         public MovieRepo()
         {
@@ -113,6 +117,12 @@ namespace IMDB.Services.Api
                 string strContent = readStream.ReadToEnd();
 
                 Movie movie = JsonConvert.DeserializeObject<Movie>(strContent);
+                var rate = _context.Rates.Where(n => n.MovieId == id);
+                var countRate = await rate.CountAsync();
+                movie.VoteAverage = (movie.VoteAverage * movie.VoteCount + await rate.SumAsync(n => n.Rate)) / (countRate + movie.VoteCount);
+                movie.VoteAverage = double.Parse(movie.VoteAverage.ToString(".000"));
+
+                movie.VoteCount += countRate;
                 return movie;
             }
             return null;
@@ -239,11 +249,18 @@ namespace IMDB.Services.Api
                 string strContent = readStream.ReadToEnd();
 
                 APIListResult<Movie> popMovies = JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
+                foreach (var movie in popMovies.results)
+                {
+                    var rate = _context.Rates.Where(n => n.MovieId == movie.Id);
+                    var countRate = await rate.CountAsync();
+                    movie.VoteAverage = (movie.VoteAverage * movie.VoteCount + await rate.SumAsync(n => n.Rate)) / (countRate + movie.VoteCount);
+                    movie.VoteAverage = double.Parse(movie.VoteAverage.ToString(".000"));
+                    movie.VoteCount += countRate;
+                }
                 return popMovies;
             }
             return null;
         }
-
         public async Task<APIListResult<Movie>> GetTrendingMovies(MediaType mediaType , TimeWindow period,int page = 1)
         {
 
@@ -265,6 +282,14 @@ namespace IMDB.Services.Api
                 string strContent = readStream.ReadToEnd();
 
                 APIListResult<Movie> popMovies = JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
+                foreach (var movie in popMovies.results)
+                {
+                    var rate = _context.Rates.Where(n => n.MovieId == movie.Id);
+                    var countRate = await rate.CountAsync();
+                    movie.VoteAverage = (movie.VoteAverage * movie.VoteCount + await rate.SumAsync(n => n.Rate)) / (countRate + movie.VoteCount);
+                    movie.VoteAverage = double.Parse(movie.VoteAverage.ToString(".000"));
+                    movie.VoteCount += countRate;
+                }
                 return popMovies;
             }
             return null;
@@ -319,6 +344,7 @@ namespace IMDB.Services.Api
                 string strContent = readStream.ReadToEnd();
 
                 Movie popMovies = JsonConvert.DeserializeObject<Movie>(strContent);
+
                 return popMovies;
             }
             return null;
@@ -382,6 +408,14 @@ namespace IMDB.Services.Api
                 string strContent = readStream.ReadToEnd();
 
                 APIListResult<Movie> popMovies = JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
+                foreach (var movie in popMovies.results)
+                {
+                    var rate = _context.Rates.Where(n => n.MovieId == movie.Id);
+                    var countRate = await rate.CountAsync();
+                    movie.VoteAverage = (movie.VoteAverage * movie.VoteCount + await rate.SumAsync(n => n.Rate)) / (countRate + movie.VoteCount);
+                    movie.VoteAverage = double.Parse(movie.VoteAverage.ToString(".000"));
+                    movie.VoteCount += countRate;
+                }
                 return popMovies;
             }
             return null;
@@ -507,8 +541,16 @@ namespace IMDB.Services.Api
                 using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
                 string strContent = readStream.ReadToEnd();
 
-                var movie = JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
-                return movie;
+                var popMovies = JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
+                foreach (var movie in popMovies.results)
+                {
+                    var rate = _context.Rates.Where(n => n.MovieId == movie.Id);
+                    var countRate = await rate.CountAsync();
+                    movie.VoteAverage = (movie.VoteAverage * movie.VoteCount + await rate.SumAsync(n => n.Rate)) / (countRate + movie.VoteCount);
+                    movie.VoteAverage = double.Parse(movie.VoteAverage.ToString(".000"));
+                    movie.VoteCount += countRate;
+                }
+                return popMovies;
             }
             return null;
         }
@@ -582,6 +624,14 @@ namespace IMDB.Services.Api
                 string strContent = readStream.ReadToEnd();
 
                 var movie = JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
+                foreach (var movies in movie.results)
+                {
+                    var rate = _context.Rates.Where(n => n.MovieId == movies.Id);
+                    var countRate = await rate.CountAsync();
+                    movies.VoteAverage = (movies.VoteAverage * movies.VoteCount + await rate.SumAsync(n => n.Rate)) / (countRate + movies.VoteCount);
+                    movies.VoteAverage = double.Parse(movies.VoteAverage.ToString(".000"));
+                    movies.VoteCount += countRate;
+                }
                 return movie;
             }
             return null;
@@ -624,6 +674,14 @@ namespace IMDB.Services.Api
                 string strContent = readStream.ReadToEnd();
 
                 var movie = JsonConvert.DeserializeObject<APIListResult<Movie>>(strContent);
+                foreach (var movies in movie.results)
+                {
+                    var rate = _context.Rates.Where(n => n.MovieId == movies.Id);
+                    var countRate = await rate.CountAsync();
+                    movies.VoteAverage = (movies.VoteAverage * movies.VoteCount + await rate.SumAsync(n => n.Rate)) / (countRate + movies.VoteCount);
+                    movies.VoteAverage = double.Parse(movies.VoteAverage.ToString(".000"));
+                    movies.VoteCount += countRate;
+                }
                 return movie;
             }
             return null;

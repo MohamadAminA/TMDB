@@ -433,9 +433,9 @@
 .menu-area {
     grid-column: span 4;
 }
-.header-right form {
-    display: flex;
-}
+	.header-right form {
+		display: flex !important;
+	}
 .hero-area-content .author-review {
     float: none;
 }
