@@ -10,12 +10,13 @@ using TMDbLib.Objects.Reviews;
 using TMDbLib.Objects.Search;
 using Newtonsoft.Json;
 using TMDbLib.Objects.Discover;
+using System.Diagnostics.CodeAnalysis;
 
 namespace IMDB.Domain.DTOs
 {
     public class MovieDTO
     {
-        
+
         public class APIListResult<T>
         {
             public int Page { get; set; }
@@ -26,7 +27,7 @@ namespace IMDB.Domain.DTOs
 
         public class DiscoverFilterMovie
         {
-            public int Page { get; set; } = 1; 
+            public int Page { get; set; } = 1;
             public string Region { get; set; }
             public DiscoverMovieSortBy? SortBy { get; set; }
             public bool IncludeAdult { get; set; }
@@ -174,5 +175,32 @@ namespace IMDB.Domain.DTOs
 
         }
 
+
     }
+
+    public class CrewEqualityComparer : IEqualityComparer<Crew>
+    {
+        public bool Equals(Crew x, Crew y)
+        {
+            return x.Name.Equals(y.Name);
+        }
+
+        public int GetHashCode([DisallowNull] Crew obj)
+        {
+            return obj.Name.GetHashCode();
+        }
+    }
+    public class CastEqualityComparer : IEqualityComparer<Cast>
+    {
+        public bool Equals(Cast x, Cast y)
+        {
+            return x.Name.Equals(y.Name);
+        }
+
+        public int GetHashCode([DisallowNull] Cast obj)
+        {
+            return obj.Name.GetHashCode();
+        }
+    }
+
 }

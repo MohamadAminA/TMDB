@@ -37,10 +37,33 @@ namespace IMDB.Controllers
             List<Movie> WatchListMovies = new List<Movie>();
             foreach (var movie in WatchList)
             {
-                WatchListMovies.Add(await _movie.GetMovieById(movie.Id));
+                var MovieDetail = await _movie.GetMovieById(movie.MovieId);
+                if(MovieDetail != null )
+                    WatchListMovies.Add(MovieDetail);
             }
             model.WatchList = WatchListMovies;
-            model.MovieLists = await _list.GetMovieListsById(userId);
+
+            var MovieLists = await _list.GetMovieListsById(userId);
+            model.MovieLists = new List<FavouriteMovieList>();
+            foreach (var list in MovieLists)
+            {
+                var FavouriteList = new FavouriteMovieList()
+                {
+                    CreateDate = list.CreateDate,
+                    Id = list.Id,
+                    Title = list.Title,
+                    User = list.User,
+                    Movies = new List<Movie>()
+                };
+                foreach (var movie in list.FavouriteMovies)
+                {
+                    var MovieDetails = await _movie.GetMovieById(movie.MovieId);
+                    if (MovieDetails != null)
+                        FavouriteList.Movies.Add(MovieDetails);
+                }
+                model.MovieLists.Add(FavouriteList);
+            }
+
             return View(model);
         }
         [HttpPost]  
@@ -50,7 +73,7 @@ namespace IMDB.Controllers
                 return RedirectToActionPermanent("Index","SignIn");
             int userId = int.Parse(User.Identity.Name);
             await _list.AddFavouriteList(Title, userId);
-            
+            await _list.SaveChangesAsync();
             return RedirectToAction("Index");
         }
     }

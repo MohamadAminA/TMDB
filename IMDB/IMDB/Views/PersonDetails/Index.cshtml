@@ -12,7 +12,7 @@
 		<div class="transformers-box">
 			<div class="row flexbox-center">
 				<div class="col-lg-5">
-					<img id="radiusImg" src="http://image.tmdb.org/t/p/original/@Model.ProfilePath" alt="portfolio" />
+					<img id="radiusprofile" src="@((string.IsNullOrEmpty(Model.ProfilePath))?"/img/cast/defult.png":"http://image.tmdb.org/t/p/original/"+@Model.ProfilePath)" alt="dont have profile" style="height:100%;width:100%;border-radius: 10%;" />
 				</div>
 				<div class="col-lg-7">
 					<div class="transformers-content mtr-30">
@@ -132,14 +132,14 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="row portfolio-item">
-                    @foreach (var item in Model.MovieCredits.Cast)
+                    @foreach (var item in Model.MovieCredits.Cast.OrderByDescending(n=>n.PosterPath).Take(20))
                     {
                         <div id="f1" class="col-lg-3 col-md-4 col-sm-6 soon popular born">
                             <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img">
 
-                                        <img id="radiusImg" src="http://image.tmdb.org/t/p/w185/@item.PosterPath" alt="portfolio" />
+                                        <img id="radiusImg" src="@((string.IsNullOrEmpty(@item.PosterPath)) ? "/img/DefultMovie.jpg" : "http://image.tmdb.org/t/p/w185/" + @item.PosterPath)" alt="portfolio" />
 
                                         <div onclick="GetId(@item.Id)" id="div">
                                             <a id="@item.Id" class="popup-youtube">
@@ -196,14 +196,14 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="row portfolio-item">
-						@foreach (var item in Model.MovieCredits.Crew)
+						@foreach (var item in Model.MovieCredits.Crew.OrderByDescending(n => n.PosterPath).Take(20))
 						{
 							<div id="f1" class="col-lg-3 col-md-4 col-sm-6 soon popular born">
 								<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
 									<div class="single-portfolio">
 										<div class="single-portfolio-img">
 
-											<img id="radiusImg" src="http://image.tmdb.org/t/p/w185/@item.PosterPath" alt="portfolio" />
+											<img id="radiusImg" src="@((string.IsNullOrEmpty(@item.PosterPath)) ? "/img/DefultMovie.jpg" : "http://image.tmdb.org/t/p/w185/" + @item.PosterPath)" alt="portfolio" />
 
 											<div onclick="GetId(@item.Id)" id="div">
 												<a id="@item.Id" class="popup-youtube">
