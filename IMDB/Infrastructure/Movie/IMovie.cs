@@ -87,5 +87,7 @@ namespace Infrastructure
 
         public Task<MovieCredits> GetCreditsByPersonId(int person_id);
 
+        public Task<APIListResult<Person>> SearchPeople(string query, int page = 1);
+
     }
 }

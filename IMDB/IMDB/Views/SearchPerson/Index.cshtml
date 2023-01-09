@@ -1,5 +1,5 @@
 ﻿@using IMDB.Domain.CardViewModel
-@model SearchViewModel
+@model SearchPeopleViewModel
 @section Header{
 
 	<style>
@@ -37,19 +37,19 @@
 		<div class="container">
 			<form asp-controller="SearchMovie" asp-action="Search">
 
-				<input type="hidden" asp-for="Movies.Page" />
+				<input type="hidden" asp-for="People.Page" />
 				<div class="row flexbox-center">
 					<div class="col-lg-6 text-center text-lg-left">
 						<div class="section-title">
-							<h1><i class="icofont icofont-movie"></i>Best Resualts For You</h1>
+							<h1><i class="icofont icofont-movie"></i>Best Results For You</h1>
 						</div>
 					</div>
-				@if (Model.Movies != null)
+				@if (Model.People != null)
 				{
 					<div class="col-lg-6 text-center text-lg-right">
 						<div class="portfolio-menu">
 							<ul>
-								<li>@Model.Movies.total_results Resualt Found </li>
+								<li>@Model.People.total_results Result Found </li>
 							</ul>
 						</div>
 					</div>
@@ -60,36 +60,23 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="row portfolio-item">
-						@if (Model.Movies == null)
+						@if (Model.People == null)
 						{
-							<h1>No Movie Found</h1>
+							<h1>No Person Found</h1>
 						}
 						else
-							@foreach (var item in Model.Movies?.results)
+							@foreach (var cast in Model.People?.results)
 							{
-								<div id="f1" class="col-lg-4 col-md-4 col-sm-6 ">
-									<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
+								<div class="col-lg-3 col-md-4 col-sm-6 popular soon TrendingDay released to">
+									<a asp-controller="PersonDetails" asp-action="Index" asp-route-id="@cast.Id">
 										<div class="single-portfolio">
-											<div class="single-portfolio-img">
-
-												<img id="radiusImg" src="@((string.IsNullOrEmpty(@item.PosterPath)) ? "/img/DefultMovie.jpg" : "http://image.tmdb.org/t/p/w185/" + @item.PosterPath)" alt="portfolio" />
-
-												<div onclick="GetId(@item.Id)" id="div">
-													<a id="@item.Id" class="popup-youtube">
-														<i class="icofont icofont-ui-play"></i>
-													</a>
-												</div>
+											<div class="single-portfolio-img" id="oadAction">
+												<img id="radiusprofile" src="@((string.IsNullOrEmpty(cast.ProfilePath))?"/img/cast/defult.png":"http://image.tmdb.org/t/p/w185/"+@cast.ProfilePath)" alt="dont have profile" style="border-radius: 10%;" />
 											</div>
 											<div class="portfolio-content">
-												<h2 id="senoh">@item.Title</h2>
+												<h2 id="senoh">@cast.Name</h2>
 												<div class="review">
-													<div class="author-review">
-														@for (int i = 1; i < item.VoteAverage / 2; i++)
-														{
-															<i class="icofont icofont-star"></i>
-														}
-													</div>
-													<h5>@item.VoteCount voters</h5>
+													<h4>@cast.Popularity Popularity</h4>
 												</div>
 											</div>
 										</div>
@@ -101,31 +88,31 @@
 			</div>
 			<div class="row">
 				<div class="col-sm-3"></div>
-				@if (Model.Movies != null && Model.Movies.total_results / 20 > 1)
+				@if (Model.People != null && Model.People.total_results / 20 > 1)
 				{
 					<div class="col-sm-6">
 						<div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
 							<div class="btn-group">
 								<ul class="pagination">
-									@if (Model.Movies.Page > 1)
+									@if (Model.People.Page > 1)
 									{
 
 										<li style="margin-top: 10%;margin-left: 2%;">
-											<button asp-route-page="@(Model.Movies.Page-1)" class="btn btn-outline btn-primary " type="submit">
+											<button asp-route-page="@(Model.People.Page-1)" class="btn btn-outline btn-primary " type="submit">
 												<i class="icofont icofont-arrow-left"></i>
 											</button>
 										</li>
 									}
-									@for (int i = (Model.Movies.Page == 1 || Model.Movies.Page == 2 || Model.Movies.Page == 3) ? 1 : Model.Movies.Page - 3; i < Model.Movies.Page + 3 && i <= Model.Movies.total_pages && i < 500; i++)
+									@for (int i = (Model.People.Page == 1 || Model.People.Page == 2 || Model.People.Page == 3) ? 1 : Model.People.Page - 3; i < Model.People.Page + 3 && i <= Model.People.total_pages && i < 500; i++)
 									{
 										<li style="margin-top: 10%;margin-left: 2%;">
-											<button type="submit" asp-route-page="@(i)" class="btn btn-sm @((i != Model.Movies.Page)?"btn-outline-primary":"disabled btn-primary")">
+											<button type="submit" asp-route-page="@(i)" class="btn btn-sm @((i != Model.People.Page)?"btn-outline-primary":"disabled btn-primary")">
 												@i
 											</button>
 										</li>
 
 									}
-									@if (Model.Movies.total_pages > Model.Movies.Page + 2 && Model.Movies.Page < 500)
+									@if (Model.People.total_pages > Model.People.Page + 2 && Model.People.Page < 500)
 									{
 
 										<li style=" margin-top: 10%;margin-left:2%;" class="text-nowrap">
@@ -133,16 +120,16 @@
 										</li>
 										<li style="margin-top: 10%;margin-left: 2%;">
 
-											<button asp-route-page="@(Model.Movies.total_pages > 500?500:Model.Movies.total_pages)" class="btn btn-outline btn-primary" type="submit">
-												@(Model.Movies.total_pages > 500 ? 500 : Model.Movies.total_pages)
+											<button asp-route-page="@(Model.People.total_pages > 500?500:Model.People.total_pages)" class="btn btn-outline btn-primary" type="submit">
+												@(Model.People.total_pages > 500 ? 500 : Model.People.total_pages)
 											</button>
 										</li>
 									}
-									@if (Model.Movies.total_pages > Model.Movies.Page && Model.Movies.Page < 500)
+									@if (Model.People.total_pages > Model.People.Page && Model.People.Page < 500)
 									{
 
 										<li style="margin-top: 10%;margin-left: 2%;">
-											<button asp-route-page="@(Model.Movies.Page+1)" class="btn btn-outline btn-primary" type="submit">
+											<button asp-route-page="@(Model.People.Page+1)" class="btn btn-outline btn-primary" type="submit">
 												<i class="icofont icofont-arrow-right"></i>
 											</button>
 										</li>
@@ -154,10 +141,7 @@
 					</div>
 				}
 
-				<input type="hidden" name="query" value="@Model.Search?.SearchTitle" />
-
-				<input type="hidden" name="date" value="@Model.Search?.ReleaseDate" />
-
+				<input type="hidden" name="query" value="@Model.Query" />
 			</div>
 		</form>
 	</div>

@@ -1,4 +1,6 @@
-﻿using Infrastructure;
+﻿using System.Threading.Tasks;
+using IMDB.Domain.CardViewModel;
+using Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IMDB.Controllers
@@ -10,10 +12,13 @@ namespace IMDB.Controllers
         {
             _movie = movie;
         }
-        public IActionResult Index(string query)
+        public async Task<IActionResult> Index(string query,int page = 1)
 		{
-            
-			return View();
+            SearchPeopleViewModel model = new SearchPeopleViewModel();
+            model.People = await _movie.SearchPeople(query, page);
+            model.Query = query;
+            model.Page = page;
+			return View(model);
 		}
 	}
 }
