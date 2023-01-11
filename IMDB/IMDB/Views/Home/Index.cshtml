@@ -10,7 +10,7 @@
     <div class="container">
         <div class="hero-area-slider">
 
-            
+
             @foreach (var movie in @Model.PopularMovies.results.Take(3))
             {
                 <div class="row hero-area-slide">
@@ -204,27 +204,31 @@
 </section>
 <!--show movies section-->
 <!--0-->
-<div>
-<form id="forNonn" style=" z-index: 100;display: none ;width: 29%;height: 108px;margin-left: 33%;margin-top: 2%;" asp-controller="ApiController" asp-action="AddMovieToList">
-                <div onclick="claoo()"></div>
-                <div class="row" style="z-index: 1000;max-height: 1px;max-height: 1px;">
+<section id="forNonn" style="display: none ; position: fixed;left: 46%;top: 38%;z-index: 1000;">
 
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <div class="col-lg-12" style="margin-top: 16px;max-width: 100%;margin-left: 33%;">
+    <div>
+    <form  asp-controller="ApiController" asp-action="AddMovieToList" style="
+    position: fixed;
+    left: 48%;
+    top: 48%;
+    z-index: 1000;
+">
+        <div onclick="claoo()"></div>
+        <div class="row" style="z-index: 1000;max-height: 1px;max-height: 1px;">
 
-                            <a href="/Api">like list </a>
-                            <a>best list</a>
-                            <a>bad list</a>
-                        </div>
-
-                    }
-
-
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div id="qwe" class="col-lg-12" style="margin-top: 16px;max-width: 100%;margin-left: 33%;">
+                    <br/>
                 </div>
 
-            </form>
-            </div>
+            }
+        </div>
+
+    </form>
+</div>
+
+</section>
 <section class="portfolio-area pt-60">
     <div class="container">
         <div class="row flexbox-center">
@@ -249,7 +253,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="row portfolio-item">
-                    @foreach (var item in Model.PopularMovies.results.OrderByDescending(n=>n.VoteAverage).Take(20))
+                    @foreach (var item in Model.PopularMovies.results.OrderByDescending(n => n.VoteAverage).Take(20))
                     {
                         <div id="f1" class="col-lg-3 col-md-4 col-sm-6 soon popular born">
                             <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
@@ -268,9 +272,9 @@
                                         <h3 id="senoh">@item.Title</h3>
                                         <div class="review">
                                             <h3>
-                                            <div class="author-review">
-                                                 @item.VoteAverage 
-                                            </div>
+                                                <div class="author-review">
+                                                    @item.VoteAverage
+                                                </div>
                                             </h3>
                                             <h5 style=" display: contents;"> @item.VoteCount voters </h5>
                                             <svg id="sv+@item.Id" onclick="cll(@item.Id)" onmouseover="hov(@item.Id)" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive" viewBox="0 0 16 16"><path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" /></svg>
@@ -300,14 +304,14 @@
                                     <div class="portfolio-content">
                                         <h3 id="senoh">@item.Title</h3>
                                         <div class="review">
-                    
+
                                             <h3>
-                                            <div class="author-review">
-                                                 @item.VoteAverage 
-                                            </div>
+                                                <div class="author-review">
+                                                    @item.VoteAverage
+                                                </div>
                                             </h3>
 
-                                        
+
                                             <h5 style=" display: contents;">@item.VoteCount voters  </h5>
                                             <svg id="sv+@item.Id" onclick="cll(@item.Id)" onmouseover="hov(@item.Id)" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive" viewBox="0 0 16 16"><path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" /></svg>
                                             <svg id="sq+@item.Id" onclick="cll(@item.Id)" onmouseout="dow(@item.Id)" style="display:none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16"><path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" /></svg>
@@ -356,7 +360,7 @@
                             <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
                                 <div class="single-portfolio">
                                     <div class="single-portfolio-img">
-                                        <img id="radiusImg" src="@((string.IsNullOrEmpty(@item.PosterPath)) ? "/img/DefultMovie.jpg" : "http://image.tmdb.org/t/p/w185/" + @item.PosterPath)" alt="portfolio"  style="border-radius: 30px;" />
+                                        <img id="radiusImg" src="@((string.IsNullOrEmpty(@item.PosterPath)) ? "/img/DefultMovie.jpg" : "http://image.tmdb.org/t/p/w185/" + @item.PosterPath)" alt="portfolio" style="border-radius: 30px;" />
                                         <div onclick="GetId(@item.Id)" id="div">
                                             <a id="@item.Id" class="popup-youtube">
                                                 <i class="icofont icofont-ui-play"></i>
@@ -367,9 +371,9 @@
                                         <h3 id="senoh">@item.Title</h3>
                                         <div class="review">
                                             <h3>
-                                            <div class="author-review">
-                                                 @item.VoteAverage 
-                                            </div>
+                                                <div class="author-review">
+                                                    @item.VoteAverage
+                                                </div>
                                             </h3>
                                             <h5 style=" display: contents;">@item.VoteCount voters  </h5>
                                             <svg id="sv+@item.Id" onclick="cll(@item.Id)" onmouseover="hov(@item.Id)" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive" viewBox="0 0 16 16"><path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" /></svg>
@@ -579,23 +583,9 @@
                     <a href="#">Read More</a>
                 </div>
             </div>
-            <form id="forNonn" style=" z-index: 100;display: none ;width: 29%;height: 108px;margin-left: 33%;margin-top: 2%;" asp-controller="ApiController" asp-action="AddMovieToList">
-        <div onclick="claoo()" style="width: 600%; height: 600%; position: absolute;top: 0;left: 0;z-index: 99;margin-left: -110%;margin-top: -110%;"></div>
-                <div class="row" style="z-index: 1000;max-height: 1px;max-height: 1px;">
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <div class="col-lg-12" style="margin-top: 16px;max-width: 100%;margin-left: 33%;">
-                            <a href="/Api/AddMovieToList?1">like list </a>
-                            <a href="/Api/AddMovieToList?1">best list</a>
-                            <a href="/Api/AddMovieToList?1">bad list</a>
-                        </div>
-                    }
-                </div>
-            </form>
-
         </div>
     </div>
- 
+
 
 </section><!-- news section end -->
 <script>
@@ -616,15 +606,42 @@
         document.getElementById(w).setAttribute("style", "display : initial")
     }
 
-    function cll(intt) {
+    function addToList(id , par){
         console.log("aaaaaaaaaaa")
-         document.getElementById("forNonn").setAttribute('style', 'display : flex');
+        $.ajax({
+            type: "GET",
+            url: '/api/Api/AddMovieToWatchList?listId='+ id +'&movieId='+par,
+            dataType: "json",
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                consol.log("true")
+            },
+        });
+    }
+
+    function cll(parameter) {
+        document.getElementById("forNonn").setAttribute('style', 'display : flex ;margin-left: 44%;');
+
+        $('#qwe').empty();
+        var res = "";
+        var finalres = "";
         $.ajax({
             type: "GET",
             url: '/api/Api/GetLists',
+            dataType: "json",
+            contentType: false,
+            processData: false,
             success: function (response) {
                 console.log(response)
-            }
-        })
+                $('#qwe').empty();
+                $.each(response, function () {
+                    res += "<li'><p onclick='addToList(" + this.id + "," + parameter + ")'>" + this.title + "</p></li><br/>";
+                });
+                finalres = "<ul>" + res + "</ul>";
+                $('#qwe').append(finalres);
+                $('#qwe').click();
+            },
+        });
     }
 </script>
