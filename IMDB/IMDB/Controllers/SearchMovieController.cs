@@ -17,7 +17,7 @@ namespace IMDB.Controllers
         public async Task<IActionResult> Search(string query,int mode, DiscoverFilterMovie filter, int page = 1)
         {
             if (mode == 1)
-                return RedirectToAction("index","SearchPerson",query);
+                return RedirectToAction("index","SearchPerson",new { query = query });
             var model = new SearchViewModel();
 
             if (!string.IsNullOrWhiteSpace(query))

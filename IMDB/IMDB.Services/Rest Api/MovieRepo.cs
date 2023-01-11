@@ -323,6 +323,33 @@ namespace IMDB.Services.Api
             return null;
         }
 
+        public async Task<APIListResult<Person>> SearchPeople(string query ,int page = 1)
+        {
+
+            HttpClient httpClient = new HttpClient();
+
+            string path = $"\r\nhttps://api.themoviedb.org/3/search/person?{api_key}&language=en-US&query={query}&page={page}&include_adult=false";
+
+
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+
+            HttpResponseMessage response = await httpClient.GetAsync(path);
+            if (response.IsSuccessStatusCode)
+            {
+                var res = await response.Content.ReadAsStreamAsync();
+
+                using Stream receiveStream = res;
+                using StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8);
+                string strContent = readStream.ReadToEnd();
+
+                APIListResult<Person> popPeople = JsonConvert.DeserializeObject<APIListResult<Person>>(strContent);
+
+                return popPeople;
+            }
+            return null;
+        }
+
         public async Task<Movie> GetLatestMovies()
         {
 
