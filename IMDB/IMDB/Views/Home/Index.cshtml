@@ -207,26 +207,26 @@
 <section id="forNonn" style="display: none ; position: fixed;left: 46%;top: 38%;z-index: 1000;">
 
     <div>
-    <form  asp-controller="ApiController" asp-action="AddMovieToList" style="
+        <form asp-controller="ApiController" asp-action="AddMovieToList" style="
     position: fixed;
     left: 48%;
     top: 48%;
     z-index: 1000;
 ">
-        <div onclick="claoo()"></div>
-        <div class="row" style="z-index: 1000;max-height: 1px;max-height: 1px;">
+            <div onclick="claoo()"></div>
+            <div class="row" style="z-index: 1000;max-height: 1px;max-height: 1px;">
 
-            @if (User.Identity.IsAuthenticated)
-            {
-                <div id="qwe" class="col-lg-12" style="margin-top: 16px;max-width: 100%;margin-left: 33%;">
-                    <br/>
-                </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div id="qwe" class="col-lg-12" style="margin-top: 16px;max-width: 100%;margin-left: 33%;">
+                        <br />
+                    </div>
 
-            }
-        </div>
+                }
+            </div>
 
-    </form>
-</div>
+        </form>
+    </div>
 
 </section>
 <section class="portfolio-area pt-60">
@@ -279,7 +279,67 @@
                                             <h5 style=" display: contents;"> @item.VoteCount voters </h5>
                                             <svg id="sv+@item.Id" onclick="cll(@item.Id)" onmouseover="hov(@item.Id)" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive" viewBox="0 0 16 16"><path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" /></svg>
                                             <svg id="sq+@item.Id" onclick="cll(@item.Id)" onmouseout="dow(@item.Id)" style="display:none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16"><path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" /></svg>
+                                        </div>
+                                        <div style="margin-top: 5px;margin-left: 29%;">
+                                            <div>
 
+                                                <a onclick="clq(@item.Id, 1)">
+                                                    <svg onmouseover="fillStar(@item.Id ,1)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 1)" onmouseover="fillStar(@item.Id ,1)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 2)">
+                                                    <svg onclick="clq(@item.Id, 2)" onmouseover="fillStar(@item.Id ,2)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 2)" onmouseover="fillStar(@item.Id ,2)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 3)">
+                                                    <svg onclick="clq(@item.Id, 3)" onmouseover="fillStar(@item.Id , 3)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 3)" onmouseover="fillStar(@item.Id ,3)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 4)">
+                                                    <svg onclick="clq(@item.Id, 4)" onmouseover="fillStar(@item.Id ,4)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 4)" onmouseover="fillStar(@item.Id ,4)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 5)">
+                                                    <svg onclick="clq(@item.Id, 5)" onmouseover="fillStar(@item.Id ,5)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 5)" onmouseover="fillStar(@item.Id ,5)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+
+                                            </div>
+                                            @*------------------------------------------------------------------------------------------------------------------------------------------------------------*@
+                                            <div style="margin-top: -24px;">
+
+                                                <a onclick="clq(@item.Id, 1)">
+                                                    <svg onclick="clq(@item.Id, 1)" onmouseover="fillStar(@item.Id , 1)" id="ff1+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 1)" onmouseover="fillStar(@item.Id ,1)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 2)">
+                                                    <svg onclick="clq(@item.Id, 2)" onmouseover="fillStar(@item.Id ,2)" id="ff2+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 2)" onmouseover="fillStar(@item.Id ,2)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 3)">
+                                                    <svg onclick="clq(@item.Id, 3)" onmouseover="fillStar(@item.Id ,3)" id="ff3+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 3)" onmouseover="fillStar(@item.Id ,3)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 4)">
+                                                    <svg onclick="clq(@item.Id, 4)" onmouseover="fillStar(@item.Id ,4)" id="ff4+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 4)" onmouseover="fillStar(@item.Id ,4)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 5)">
+                                                    <svg onclick="clq(@item.Id, 5)" onmouseover="fillStar(@item.Id ,5)" id="ff5+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 5)" onmouseover="fillStar(@item.Id ,5)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -317,6 +377,67 @@
                                             <svg id="sq+@item.Id" onclick="cll(@item.Id)" onmouseout="dow(@item.Id)" style="display:none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16"><path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" /></svg>
 
                                         </div>
+                                        <div style="margin-top: 5px;margin-left: 29%;">
+                                            <div>
+
+                                                <a onclick="clq(@item.Id, 1)">
+                                                    <svg onmouseover="fillStar(@item.Id ,1)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 1)" onmouseover="fillStar(@item.Id ,1)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 2)">
+                                                    <svg onclick="clq(@item.Id, 2)" onmouseover="fillStar(@item.Id ,2)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 2)" onmouseover="fillStar(@item.Id ,2)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 3)">
+                                                    <svg onclick="clq(@item.Id, 3)" onmouseover="fillStar(@item.Id , 3)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 3)" onmouseover="fillStar(@item.Id ,3)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 4)">
+                                                    <svg onclick="clq(@item.Id, 4)" onmouseover="fillStar(@item.Id ,4)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 4)" onmouseover="fillStar(@item.Id ,4)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 5)">
+                                                    <svg onclick="clq(@item.Id, 5)" onmouseover="fillStar(@item.Id ,5)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 5)" onmouseover="fillStar(@item.Id ,5)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+
+                                            </div>
+                                            @*------------------------------------------------------------------------------------------------------------------------------------------------------------*@
+                                            <div style="margin-top: -24px;">
+
+                                                <a onclick="clq(@item.Id, 1)">
+                                                    <svg onclick="clq(@item.Id, 1)" onmouseover="fillStar(@item.Id , 1)" id="ff1+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 1)" onmouseover="fillStar(@item.Id ,1)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 2)">
+                                                    <svg onclick="clq(@item.Id, 2)" onmouseover="fillStar(@item.Id ,2)" id="ff2+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 2)" onmouseover="fillStar(@item.Id ,2)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 3)">
+                                                    <svg onclick="clq(@item.Id, 3)" onmouseover="fillStar(@item.Id ,3)" id="ff3+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 3)" onmouseover="fillStar(@item.Id ,3)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 4)">
+                                                    <svg onclick="clq(@item.Id, 4)" onmouseover="fillStar(@item.Id ,4)" id="ff4+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 4)" onmouseover="fillStar(@item.Id ,4)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 5)">
+                                                    <svg onclick="clq(@item.Id, 5)" onmouseover="fillStar(@item.Id ,5)" id="ff5+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 5)" onmouseover="fillStar(@item.Id ,5)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -348,6 +469,67 @@
                                             <svg id="sq+@item.Id" onclick="cll(@item.Id)" onmouseout="dow(@item.Id)" style="display:none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16"><path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" /></svg>
 
                                         </div>
+                                        <div style="margin-top: 5px;margin-left: 29%;">
+                                            <div>
+
+                                                <a onclick="clq(@item.Id, 1)">
+                                                    <svg onmouseover="fillStar(@item.Id ,1)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 1)" onmouseover="fillStar(@item.Id ,1)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 2)">
+                                                    <svg onclick="clq(@item.Id, 2)" onmouseover="fillStar(@item.Id ,2)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 2)" onmouseover="fillStar(@item.Id ,2)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 3)">
+                                                    <svg onclick="clq(@item.Id, 3)" onmouseover="fillStar(@item.Id , 3)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 3)" onmouseover="fillStar(@item.Id ,3)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 4)">
+                                                    <svg onclick="clq(@item.Id, 4)" onmouseover="fillStar(@item.Id ,4)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 4)" onmouseover="fillStar(@item.Id ,4)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 5)">
+                                                    <svg onclick="clq(@item.Id, 5)" onmouseover="fillStar(@item.Id ,5)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 5)" onmouseover="fillStar(@item.Id ,5)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+
+                                            </div>
+                                            @*------------------------------------------------------------------------------------------------------------------------------------------------------------*@
+                                            <div style="margin-top: -24px;">
+
+                                                <a onclick="clq(@item.Id, 1)">
+                                                    <svg onclick="clq(@item.Id, 1)" onmouseover="fillStar(@item.Id , 1)" id="ff1+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 1)" onmouseover="fillStar(@item.Id ,1)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 2)">
+                                                    <svg onclick="clq(@item.Id, 2)" onmouseover="fillStar(@item.Id ,2)" id="ff2+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 2)" onmouseover="fillStar(@item.Id ,2)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 3)">
+                                                    <svg onclick="clq(@item.Id, 3)" onmouseover="fillStar(@item.Id ,3)" id="ff3+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 3)" onmouseover="fillStar(@item.Id ,3)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 4)">
+                                                    <svg onclick="clq(@item.Id, 4)" onmouseover="fillStar(@item.Id ,4)" id="ff4+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 4)" onmouseover="fillStar(@item.Id ,4)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 5)">
+                                                    <svg onclick="clq(@item.Id, 5)" onmouseover="fillStar(@item.Id ,5)" id="ff5+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 5)" onmouseover="fillStar(@item.Id ,5)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -378,6 +560,67 @@
                                             <h5 style=" display: contents;">@item.VoteCount voters  </h5>
                                             <svg id="sv+@item.Id" onclick="cll(@item.Id)" onmouseover="hov(@item.Id)" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive" viewBox="0 0 16 16"><path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" /></svg>
                                             <svg id="sq+@item.Id" onclick="cll(@item.Id)" onmouseout="dow(@item.Id)" style="display:none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16"><path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" /></svg>
+                                        </div>
+                                        <div style="margin-top: 5px;margin-left: 29%;">
+                                            <div>
+
+                                                <a onclick="clq(@item.Id, 1)">
+                                                    <svg onmouseover="fillStar(@item.Id ,1)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 1)" onmouseover="fillStar(@item.Id ,1)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 2)">
+                                                    <svg onclick="clq(@item.Id, 2)" onmouseover="fillStar(@item.Id ,2)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 2)" onmouseover="fillStar(@item.Id ,2)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 3)">
+                                                    <svg onclick="clq(@item.Id, 3)" onmouseover="fillStar(@item.Id , 3)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 3)" onmouseover="fillStar(@item.Id ,3)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 4)">
+                                                    <svg onclick="clq(@item.Id, 4)" onmouseover="fillStar(@item.Id ,4)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 4)" onmouseover="fillStar(@item.Id ,4)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 5)">
+                                                    <svg onclick="clq(@item.Id, 5)" onmouseover="fillStar(@item.Id ,5)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 5)" onmouseover="fillStar(@item.Id ,5)" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+                                                    </svg>
+                                                </a>
+
+                                            </div>
+                                            @*------------------------------------------------------------------------------------------------------------------------------------------------------------*@
+                                            <div style="margin-top: -24px;">
+
+                                                <a onclick="clq(@item.Id, 1)">
+                                                    <svg onclick="clq(@item.Id, 1)" onmouseover="fillStar(@item.Id , 1)" id="ff1+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 1)" onmouseover="fillStar(@item.Id ,1)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 2)">
+                                                    <svg onclick="clq(@item.Id, 2)" onmouseover="fillStar(@item.Id ,2)" id="ff2+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 2)" onmouseover="fillStar(@item.Id ,2)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 3)">
+                                                    <svg onclick="clq(@item.Id, 3)" onmouseover="fillStar(@item.Id ,3)" id="ff3+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 3)" onmouseover="fillStar(@item.Id ,3)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 4)">
+                                                    <svg onclick="clq(@item.Id, 4)" onmouseover="fillStar(@item.Id ,4)" id="ff4+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 4)" onmouseover="fillStar(@item.Id ,4)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+                                                <a onclick="clq(@item.Id, 5)">
+                                                    <svg onclick="clq(@item.Id, 5)" onmouseover="fillStar(@item.Id ,5)" id="ff5+@item.Id" style="display :none ;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path onclick="clq(@item.Id, 5)" onmouseover="fillStar(@item.Id ,5)" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                </a>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -606,11 +849,11 @@
         document.getElementById(w).setAttribute("style", "display : initial")
     }
 
-    function addToList(id , par){
+    function addToList(id, par) {
         console.log("aaaaaaaaaaa")
         $.ajax({
             type: "GET",
-            url: '/api/Api/AddMovieToWatchList?listId='+ id +'&movieId='+par,
+            url: '/api/Api/AddMovieToWatchList?listId=' + id + '&movieId=' + par,
             dataType: "json",
             contentType: false,
             processData: false,
@@ -618,6 +861,7 @@
                 consol.log("true")
             },
         });
+        document.getElementById("forNonn").setAttribute("style", "display: none ; position: fixed;left: 46%;top: 38%;z-index: 1000;")
     }
 
     function cll(parameter) {
@@ -643,5 +887,108 @@
                 $('#qwe').click();
             },
         });
+    }
+    function clq(id, parametr) {
+        console.log(parametr)
+        if (parametr == 1) {
+            $.ajax({
+                type: "GET",
+                url: '/api/Api/RateMovie?movieId=' + id + '&rate=' + 0,
+                dataType: "json",
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    console.log('/api/Api/RateMovie?movieId=' + id + '&rate=' + 0)
+                },
+            });
+        }
+        if (parametr == 2) {
+            $.ajax({
+                type: "GET",
+                url: '/api/Api/RateMovie?movieId=' + id + '&rate=' + 25,
+                dataType: "json",
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    console.log('/api/Api/RateMovie?movieId=' + id + '&rate=' + 0)
+                },
+            });
+        }
+        if (parametr == 3) {
+            $.ajax({
+                type: "GET",
+                url: '/api/Api/RateMovie?movieId=' + id + '&rate=' + 50,
+                dataType: "json",
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    console.log('/api/Api/RateMovie?movieId=' + id + '&rate=' + 0)
+                },
+            });
+        }
+        if (parametr == 4) {
+            $.ajax({
+                type: "GET",
+                url: '/api/Api/RateMovie?movieId=' + id + '&rate=' + 75,
+                dataType: "json",
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    console.log('/api/Api/RateMovie?movieId=' + id + '&rate=' + 0)
+                },
+            });
+        }
+        if (parametr == 5) {
+            $.ajax({
+                type: "GET",
+                url: '/api/Api/RateMovie?movieId=' + id + '&rate=' + 100,
+                dataType: "json",
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    console.log('/api/Api/RateMovie?movieId=' + id + '&rate=' + 0)
+                },
+            });
+        }
+    }
+    function fillStar(id, parametr) {
+        console.log(id)
+        console.log(parametr)
+        if (parametr == 1) {
+            document.getElementById("ff1+" + id).setAttribute("style", "color: #d7d716;rotate: 360deg;transition: 2s;");
+            document.getElementById("ff2+" + id).setAttribute("style", "display :none ;");
+            document.getElementById("ff3+" + id).setAttribute("style", "display :none ;");
+            document.getElementById("ff4+" + id).setAttribute("style", "display :none ;");
+            document.getElementById("ff5+" + id).setAttribute("style", "display :none ;");
+        }
+        if (parametr == 2) {
+            document.getElementById("ff1+" + id).setAttribute("style", "color: #d7d716;rotate: 360deg;transition: 2s;");
+            document.getElementById("ff2+" + id).setAttribute("style", "color: #d7d716;rotate: 360deg;transition: 2s;");
+            document.getElementById("ff3+" + id).setAttribute("style", "display :none ;");
+            document.getElementById("ff4+" + id).setAttribute("style", "display :none ;");
+            document.getElementById("ff5+" + id).setAttribute("style", "display :none ;");
+        }
+        if (parametr == 3) {
+            document.getElementById("ff1+" + id).setAttribute("style", "color: #d7d716;rotate: 360deg;transition: 2s;");
+            document.getElementById("ff2+" + id).setAttribute("style", "color: #d7d716;rotate: 360deg;transition: 2s;");
+            document.getElementById("ff3+" + id).setAttribute("style", "color: #d7d716;rotate: 360deg;transition: 2s;");
+            document.getElementById("ff4+" + id).setAttribute("style", "display :none ;");
+            document.getElementById("ff5+" + id).setAttribute("style", "display :none ;");
+        }
+        if (parametr == 4) {
+            document.getElementById("ff1+" + id).setAttribute("style", "color: #d7d716;rotate: 360deg;transition: 2s;");
+            document.getElementById("ff2+" + id).setAttribute("style", "color: #d7d716;rotate: 360deg;transition: 2s;");
+            document.getElementById("ff3+" + id).setAttribute("style", "color: #d7d716;rotate: 360deg;transition: 2s;");
+            document.getElementById("ff4+" + id).setAttribute("style", "color: #d7d716;rotate: 360deg;transition: 2s;");
+            document.getElementById("ff5+" + id).setAttribute("style", "display :none ;rotate: 360deg;transition: 2s;");
+        }
+        if (parametr == 5) {
+            document.getElementById("ff1+" + id).setAttribute("style", "color: #d7d716;rotate: 360deg;transition: 2s;");
+            document.getElementById("ff2+" + id).setAttribute("style", "color: #d7d716;rotate: 360deg;transition: 2s;");
+            document.getElementById("ff3+" + id).setAttribute("style", "color: #d7d716;rotate: 360deg;transition: 2s;");
+            document.getElementById("ff4+" + id).setAttribute("style", "color: #d7d716;rotate: 360deg;transition: 2s;");
+            document.getElementById("ff5+" + id).setAttribute("style", "color: #d7d716;rotate: 360deg;transition: 2s;");
+        }
+
     }
 </script>
