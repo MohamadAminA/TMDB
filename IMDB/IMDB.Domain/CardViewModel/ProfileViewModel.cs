@@ -13,5 +13,6 @@ namespace IMDB.Domain.CardViewModel
         public User User { get; set; }
         public List<Movie> WatchList { get; set; }
         public List<FavouriteMovieList> MovieLists { get; set; }
+        public bool IsOwner { get; set; }
     }
 }

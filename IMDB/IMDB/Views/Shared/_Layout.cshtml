@@ -208,6 +208,7 @@
 					<div class="mainmenu">
 						<ul id="primary-menu">
 							<li><a class="active" href="/">Home</a></li>
+							<li><a href="/Users">Users</a></li>
 							<li><a href="/PersonDetails/Index/1">Celebrity Details</a></li>
 							<li><a href="/MovieDetails/Index/882598">Movie Details</a></li>
 							<li><a href="/Support/Index">Support</a></li>
@@ -265,10 +266,10 @@
 					<div class="widget">
 						<h4>Subscribe</h4>
 						<p>Sign Up in IMDb and enjoy the world of Movies , TV Shows &amp; . . . </p>
-						<a src="/signup" class="theme-btn" >Sign Up</a>
+						<a href="/signup" class="theme-btn" >Sign Up</a>
 						<br />
 						<br />
-						Have an Account ? <a src="/signin" class="theme-btn" >Login</a>
+						Have an Account ? <a href="/signin" class="theme-btn" >Login</a>
 					</div>
 				</div>
 			</div>
@@ -306,13 +307,15 @@
 	<script>
 		function claoo() {
 			document.getElementById("forNonn").setAttribute('style', 'display : none');
+						document.getElementById("modal-edit").setAttribute('style', 'display : none');
 		}
 		function openo() {
 			document.getElementById("forNonn").setAttribute('style', 'display : flex');
 		}
-		function openedit(id) {
-			document.getElementById("modalup").setAttribute('style', 'display : flex');
+		function openedit(id,name) {
+			document.getElementById("modal-edit").setAttribute('style', 'display : flex');
 			document.getElementById("val").setAttribute('value', id);
+			document.getElementById("inp").setAttribute('value', name);
 			console.log(id);
 		}
 		function clo() {
@@ -321,17 +324,6 @@
 			document.getElementById("line").remove();
 		}
 		function GetId(Id) {
-			console.log("aaaaaaaaaaa")
-			$.ajax({
-				type: "GET",
-				url: '/api/Api/AddMovieToWatchList?movieId=' + Id,
-				dataType: "json",
-				contentType: false,
-				processData: false,
-				success: function (response) {
-					consol.log("true")
-				},
-			});
 			document.getElementById("c0").setAttribute("style", "display: block; height: 119%; background-color: #000728f0;");
 			$.ajax({
 				type: "GET",

@@ -27,6 +27,33 @@
 		.portfolio-menu li.active::before, .portfolio-menu li:hover::before {
 			background: #313deb;
 		}
+
+		.comment {
+			font-size: 23px;
+			padding: 0px 0px 15px 15px;
+			background-color: #03092b78;
+		}
+
+		.reply {
+			border: 2px solid;
+			border-radius: 30px 30px 30px 0px;
+		}
+
+		.secondrep {
+			border: 2px solid;
+			border-radius: 0px 30px 30px 30px;
+		}
+
+		.img-person {
+			border-radius: 30px;
+			height: 30px;
+			width: 30px;
+		}
+
+		.badge-secondary {
+			background-color: rgb(15, 28, 61);
+			font-size: 15px;
+		}
 	</style>
 }
 	<!-- breadcrumb area start -->
@@ -106,7 +133,7 @@
 								</div>
 								<div class="author-review">
 									@Model.Movie.VoteAverage
-									@for (int i = 1; i < Model.Movie.VoteAverage / 2 ; i++)
+									@for (int i = 1; i < Model.Movie.VoteAverage / 2; i++)
 									{
 										<i class="icofont icofont-star"></i>
 									}
@@ -176,7 +203,7 @@
 				<div class="details-content">
 					<section class="portfolio-area pt-60">
 						<div class="container">
-							<div class="row flexbox-center">
+							<div class="row">
 								<div class="col-lg-6 text-center text-lg-left">
 									<div class="section-title" id="4444">
 										<h1><i class="icofont icofont-movie"></i> Casts </h1>
@@ -198,7 +225,7 @@
 															<img id="radiusprofile" src="@((string.IsNullOrEmpty(cast.ProfilePath))?"/img/cast/defult.png":"http://image.tmdb.org/t/p/w185/"+@cast.ProfilePath)" alt="dont have profile" style="border-radius: 10%;" />
 														</div>
 														<div id="senoh" class="portfolio-content">
-															<h3 >@cast.Name</h3>
+															<h3>@cast.Name</h3>
 
 															<div class="review">
 																<div class="author-review">
@@ -231,7 +258,7 @@
 				<div class="details-content">
 					<section class="portfolio-area pt-60">
 						<div class="container">
-							<div class="row flexbox-center">
+							<div class="row">
 								<div class="col-lg-6 text-center text-lg-left">
 									<div class="section-title" id="4444">
 										<h1><i class="icofont icofont-movie"></i> Crews </h1>
@@ -351,95 +378,153 @@
 							int counter6 = 0;
 							int counter7 = 0;
 						}
-						@foreach (var riv in Model.Reviews)
-						{
-							if (counter > 20)
+						<div class="row justify-content-end">
+							@foreach (var riv in Model.Reviews)
 							{
-								break;
-							}
-							if (riv.ReplayParent == null)
-							{
-								<a onclick="rep(@riv.Id)">
-									<p style="font-size: 22px; padding-left: 15px; background-color: #353842; margin-bottom: 0px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv.User.Name - <small>@riv.CreatedAt.ToString("MM/dd  h:mm")</small></p>
-
-									<p style="font-size: 22px; padding-left: 15px; background-color: #353842; margin-bottom: 7px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv.Content</p>
-								</a>
-								foreach (var riv2 in Model.Reviews)
+								if (counter > 20)
 								{
-									if (riv2.ReplayParent == riv.Id)
-									{
-										<a onclick="rep(@riv2.Id)">
-											<p style="font-size: 22px; padding-left: 90px; background-color: #082da8; margin-bottom: 0px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv2.User.Name  - <small>@riv.CreatedAt.ToString("MM/dd  h:mm")</small></p>
-
-											<p style="font-size: 22px; padding-left: 90px; background-color: #082da8; margin-bottom: 7px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv2.Content</p>
-										</a>
-										foreach (var riv3 in Model.Reviews)
-										{
-											if (riv3.ReplayParent == riv2.Id)
-											{
-												<a onclick="rep(@riv3.Id)">
-													<p style="font-size: 22px; padding-left: 160px; background-color: #011760; margin-bottom: 0px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv3.User.Name  - <small>@riv.CreatedAt.ToString("MM/dd  h:mm")</small></p>
-
-													<p style="font-size: 22px; padding-left: 160px; background-color: #011760; margin-bottom: 7px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv3.Content</p>
-												</a>
-												foreach (var riv4 in Model.Reviews)
-												{
-													if (riv4.ReplayParent == riv3.Id)
-													{
-														<a onclick="rep(@riv4.Id)">
-															<p style="font-size: 22px; padding-left: 230px; background-color: #006262; margin-bottom: 0px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv4.User.Name  - <small>@riv.CreatedAt.ToString("MM/dd  h:mm")</small></p>
-
-															<p style="font-size: 22px; padding-left: 230px; background-color: #006262; margin-bottom: 7px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv4.Content</p>
-														</a>
-														foreach (var riv5 in Model.Reviews)
-														{
-															if (riv5.ReplayParent == riv4.Id)
-															{
-																<a onclick="rep(@riv5.Id)">
-																	<p style="font-size: 22px; padding-left: 300px; background-color: #082da8; margin-bottom: 0px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv5.User.Name  - <small>@riv.CreatedAt.ToString("MM/dd  h:mm")</small></p>
-
-																	<p style="font-size: 22px; padding-left: 300px; background-color: #082da8; margin-bottom: 7px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv5.Content</p>
-																</a>
-																foreach (var riv6 in Model.Reviews)
-																{
-																	if (riv6.ReplayParent == riv5.Id)
-																	{
-																		<a onclick="rep(@riv6.Id)">
-																			<p style="font-size: 22px; padding-left: 370px; background-color: #011760; margin-bottom: 0px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv6.User.Name  - <small>@riv.CreatedAt.ToString("MM/dd  h:mm")</small></p>
-
-																			<p style="font-size: 22px; padding-left: 370px; background-color: #011760; margin-bottom: 7px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv6.Content</p>
-																		</a>
-																		foreach (var riv7 in Model.Reviews)
-																		{
-																			if (riv7.ReplayParent == riv6.Id)
-																			{
-																				<a onclick="rep(@riv7.Id)">
-																					<p style="font-size: 22px; padding-left: 440px; background-color: #006262; margin-bottom: 0px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv7.User.Name  - <small>@riv.CreatedAt.ToString("MM/dd  h:mm")</small></p>
-
-																					<p style="font-size: 22px; padding-left: 440px; background-color: #006262; margin-bottom: 7px; font-family: inherit; font-size: inherit; line-height: inherit; ">@riv7.Content</p>
-																				</a>
-																				counter7++;
-																			}
-																		}
-																		counter6++;
-																	}
-																}
-																counter5++;
-															}
-														}
-														counter4++;
-													}
-												}
-												counter3++;
-											}
-										}
-										counter2++;
-									}
+									break;
 								}
-								counter++;
-							}
+								if (riv.ReplayParent == null)
+								{
+									<div class="col-12 reply">
+										<div class="row " style="margin:10px">
+											<a class="badge badge-secondary text-nowrap" href="/Profile?userId=@riv.UserId"><img class="img-person" src="/img/cast/defult.png"> @riv.User.Name - <small>@riv.CreatedAt.ToString("MM/dd  h:mm")</small></a>
 
-						}
+											<p class="comment col-11">@riv.Content</p>
+											<buttom class="btn btn-outline-primary btn-sm col-1" onclick="rep(@riv.Id)">
+												<i class="icofont icofont-reply"></i>
+											</buttom>
+										</div>
+									</div>
+									foreach (var riv2 in Model.Reviews)
+									{
+										if (riv2.ReplayParent == riv.Id)
+										{
+											<div class="col-11  secondrep">
+												<div class="row" style="margin:10px">
+													<a class="badge badge-secondary text-nowrap" href="/Profile?userId=@riv2.UserId"><img class="img-person" src="/img/cast/defult.png"> @riv2.User.Name - <small>@riv2.CreatedAt.ToString("MM/dd  h:mm")</small></a>
+
+													<p class="comment col-11">@riv2.Content</p>
+													<buttom class="btn btn-outline-primary btn-sm col-1" onclick="rep(@riv2.Id)">
+														<i class="icofont icofont-reply"></i>
+													</buttom>
+												</div>
+											</div>
+											foreach (var riv3 in Model.Reviews)
+											{
+												if (riv3.ReplayParent == riv2.Id)
+												{
+																								<div class="col-10  secondrep">
+												<div class="row" style="margin:10px">
+															<a class="badge badge-secondary text-nowrap" href="/Profile?userId=@riv.UserId"><img class="img-person" src="/img/cast/defult.png"> @riv3.User.Name - <small>@riv3.CreatedAt.ToString("MM/dd  h:mm")</small></a>
+
+															<p class="comment col-11">@riv3.Content</p>
+													<buttom class="btn btn-outline-primary btn-sm col-1" onclick="rep(@riv.Id)">
+														<i class="icofont icofont-reply"></i>
+													</buttom>
+												</div>
+											</div>
+													foreach (var riv4 in Model.Reviews)
+													{
+														if (riv4.ReplayParent == riv3.Id)
+														{
+															<div class="col-9  secondrep">
+																<div class="row" style="margin:10px">
+																	<a class="badge badge-secondary text-nowrap" href="/Profile?userId=@riv.UserId"><img class="img-person" src="/img/cast/defult.png"> @riv4.User.Name - <small>@riv4.CreatedAt.ToString("MM/dd  h:mm")</small></a>
+
+																	<p class="comment col-11">@riv4.Content</p>
+																	<buttom class="btn btn-outline-primary btn-sm col-1" onclick="rep(@riv.Id)">
+																		<i class="icofont icofont-reply"></i>
+																	</buttom>
+																</div>
+															</div>
+															foreach (var riv5 in Model.Reviews)
+															{
+																if (riv5.ReplayParent == riv4.Id)
+																{
+															<div class="col-8  secondrep">
+																<div class="row" style="margin:10px">
+																	<a class="badge badge-secondary text-nowrap" href="/Profile?userId=@riv.UserId"><img class="img-person" src="/img/cast/defult.png"> @riv5.User.Name - <small>@riv5.CreatedAt.ToString("MM/dd  h:mm")</small></a>
+
+																			<p class="comment col-11">@riv5.Content</p>
+																	<buttom class="btn btn-outline-primary btn-sm col-1" onclick="rep(@riv.Id)">
+																		<i class="icofont icofont-reply"></i>
+																	</buttom>
+																</div>
+															</div>
+																	foreach (var riv6 in Model.Reviews)
+																	{
+																		if (riv6.ReplayParent == riv5.Id)
+																		{
+																			<div class="col-7  secondrep">
+																				<div class="row" style="margin:10px">
+																					<a class="badge badge-secondary text-nowrap" href="/Profile?userId=@riv.UserId"><img class="img-person" src="/img/cast/defult.png"> @riv6.User.Name - <small>@riv6.CreatedAt.ToString("MM/dd  h:mm")</small></a>
+
+																					<p class="comment col-11">@riv6.Content</p>
+																					<buttom class="btn btn-outline-primary btn-sm col-1" onclick="rep(@riv.Id)">
+																						<i class="icofont icofont-reply"></i>
+																					</buttom>
+																				</div>
+																			</div>
+																			foreach (var riv7 in Model.Reviews)
+																			{
+																				if (riv7.ReplayParent == riv6.Id)
+																				{
+																					<div class="col-6"></div>
+																					<div class="col-6  secondrep">
+																						<div class="row" style="margin:10px">
+																							<a class="badge badge-secondary text-nowrap" href="/Profile?userId=@riv.UserId"><img class="img-person" src="/img/cast/defult.png"> @riv7.User.Name - <small>@riv7.CreatedAt.ToString("MM/dd  h:mm")</small></a>
+
+																							<p class="comment col-11">@riv7.Content</p>
+																							<buttom class="btn btn-outline-primary btn-sm col-1" onclick="rep(@riv.Id)">
+																								<i class="icofont icofont-reply"></i>
+																							</buttom>
+																						</div>
+																					</div>
+																					
+																					foreach (var riv8 in Model.Reviews)
+																					{
+																						if (riv8.ReplayParent == riv7.Id)
+																						{
+																							<div class="col-7"></div>
+																							<div class="col-5  secondrep">
+																								<div class="row" style="margin:10px">
+																									<a class="badge badge-secondary text-nowrap" href="/Profile?userId=@riv.UserId"><img class="img-person" src="/img/cast/defult.png"> @riv8.User.Name - <small>@riv8.CreatedAt.ToString("MM/dd  h:mm")</small></a>
+
+																									<p class="comment col-12">@riv8.Content</p>
+																									@*<buttom class="btn btn-outline-primary btn-sm col-1" onclick="rep(@riv.Id)">
+																										<i class="icofont icofont-reply"></i>
+																									</buttom>*@
+																								</div>
+																							</div>
+																							
+																						
+																						}
+																					}
+																					counter7++;
+																				}
+																			}
+																			counter6++;
+																		}
+																	}
+																	counter5++;
+																}
+															}
+															counter4++;
+														}
+													}
+													counter3++;
+												}
+											}
+											counter2++;
+										}
+									}
+									counter++;
+								}
+
+							}
+						</div>
 						@if (!User.Identity.IsAuthenticated)
 						{
 							<div class="col-lg-3">
