@@ -864,47 +864,9 @@
         document.getElementById("forNonn").setAttribute("style", "display: none ; position: fixed;left: 46%;top: 38%;z-index: 1000;")
     }
 
-        function addToWatch(id) {
-        $.ajax({
-			console.log("aaaaaaaaaaa")
-			$.ajax({
-				type: "GET",
-				url: '/api/Api/AddMovieToWatchList?movieId=' + Id,
-				dataType: "json",
-				contentType: false,
-				processData: false,
-				success: function (response) {
-					consol.log("true")
-				},
-			});
-        });
-        document.getElementById("forNonn").setAttribute("style", "display: none ; position: fixed;left: 46%;top: 38%;z-index: 1000;")
-    }
+       
 
-    function cll(parameter) {
-        document.getElementById("forNonn").setAttribute('style', 'display : flex ;margin-left: 44%;');
 
-        $('#qwe').empty();
-        var res = "";
-        var finalres = "";
-        $.ajax({
-            type: "GET",
-            url: '/api/Api/GetLists',
-            dataType: "json",
-            contentType: false,
-            processData: false,
-            success: function (response) {
-                console.log(response)
-                $('#qwe').empty();
-                $.each(response, function () {
-                    res += "<li'><p class'btn btn-outline-primary' onclick='addToList(" + this.id + "," + parameter + ")'>" + this.title + "</p></li><br/>";
-                });
-                finalres = "<ul>" + res + "</ul>";
-                $('#qwe').append(finalres);
-                $('#qwe').click();
-            },
-        });
-    }
 
     function clq(id, parametr) {
         console.log(parametr)
@@ -1008,5 +970,51 @@
             document.getElementById("ff5+" + id).setAttribute("style", "color: #d7d716;rotate: 360deg;transition: 2s;");
         }
 
+    }
+</script>
+<script>
+        function cll(parameter) {
+        document.getElementById("forNonn").setAttribute('style', 'display : flex ;margin-left: 44%;');
+        console.log(parameter);
+        $('#qwe').empty();
+        var q = "<li><p class='btn btn-outline-primary' onclick='addToWatch(" + parameter + ")'>Watch List</p></li><br/>"
+        var res = "";
+        var finalres = "";
+        $.ajax({
+            type: "GET",
+            url: '/api/Api/GetLists',
+            dataType: "json",
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                console.log(response)
+                $('#qwe').empty();
+                $.each(response, function () {
+                    res += "<li><p class='btn btn-outline-primary' onclick='addToList(" + this.id + "," + parameter + ")'>" + this.title + "</p></li><br/>";
+                });
+                finalres = "<ul>"+q + res + "</ul>";
+                
+                $('#qwe').append(finalres);
+                $('#qwe').click();
+            },
+        });
+    }
+
+
+</script>
+<script>
+     function addToWatch(id) {
+			console.log("aaaaaaaaaaa")
+			$.ajax({
+				type: "GET",
+				url: '/api/Api/AddMovieToWatchList?movieId=' + id,
+				dataType: "json",
+				contentType: false,
+				processData: false,
+				success: function (response) {
+					consol.log("true")
+				},
+			});
+        document.getElementById("forNonn").setAttribute("style", "display: none ; position: fixed;left: 46%;top: 38%;z-index: 1000;")
     }
 </script>

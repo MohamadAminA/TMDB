@@ -29,19 +29,22 @@
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	<style>
-		#f1{
-			margin-top: 20px ;
-		}
-		#f2{
-			margin-top: 20px ;
-		}
-		#f3{
-			margin-top: 20px ;
-		}
-
-		#f4{
+		#f1 {
 			margin-top: 20px;
 		}
+
+		#f2 {
+			margin-top: 20px;
+		}
+
+		#f3 {
+			margin-top: 20px;
+		}
+
+		#f4 {
+			margin-top: 20px;
+		}
+
 		#senoh {
 			text-overflow: ellipsis;
 			overflow: hidden;
@@ -161,19 +164,19 @@
 						<img src="/assets/img/logo.png" style="max-height:70px;margin-top:30px" />
 					</a>
 				</div>
-				<div class="header-right" >
-					<form asp-controller="SearchMovie" asp-action="Search" method="post" >
+				<div class="header-right">
+					<form asp-controller="SearchMovie" asp-action="Search" method="post">
 						<div class="row" style="border: 1px solid #eee;border-radius: 30px;">
 
 							<input type="hidden" name="page" value="1" />
 							<div class="col-2">
-							<select name="mode" style="opacity:0.9;">
-								<option value="0">Movie</option>
-								<option value="1">Cast</option>
-							</select>
+								<select name="mode" style="opacity:0.9;">
+									<option value="0">Movie</option>
+									<option value="1">Cast</option>
+								</select>
 							</div>
 							<div class="col-8">
-							<input type="text" name="query" />
+								<input type="text" name="query" />
 							</div>
 							<div class="col-2">
 								<input id="search-btn" type="submit" value="Search" />
@@ -236,11 +239,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-sm-6">
-					<div class="widget"><a href="/">
-						<img src="/assets/img/logo.png" alt="about" />
-						@*<p>7th Harley Place, London W1G 8LZ United Kingdom</p>
-						<h6><span>Call us: </span>(+880) 111 222 3456</h6>*@
-					</a></div>
+					<div class="widget">
+						<a href="/">
+							<img src="/assets/img/logo.png" alt="about" />
+							@*<p>7th Harley Place, London W1G 8LZ United Kingdom</p>
+							<h6><span>Call us: </span>(+880) 111 222 3456</h6>*@
+						</a>
+					</div>
 				</div>
 				<div class="col-lg-3 col-sm-6">
 					<div class="widget">
@@ -266,10 +271,10 @@
 					<div class="widget">
 						<h4>Subscribe</h4>
 						<p>Sign Up in IMDb and enjoy the world of Movies , TV Shows &amp; . . . </p>
-						<a href="/signup" class="theme-btn" >Sign Up</a>
+						<a href="/signup" class="theme-btn">Sign Up</a>
 						<br />
 						<br />
-						Have an Account ? <a href="/signin" class="theme-btn" >Login</a>
+						Have an Account ? <a href="/signin" class="theme-btn">Login</a>
 					</div>
 				</div>
 			</div>
@@ -307,12 +312,11 @@
 	<script>
 		function claoo() {
 			document.getElementById("forNonn").setAttribute('style', 'display : none');
-						document.getElementById("modal-edit").setAttribute('style', 'display : none');
+
 		}
-		function openo() {
-			document.getElementById("forNonn").setAttribute('style', 'display : flex');
-		}
-		function openedit(id,name) {
+
+
+		function openedit(id, name) {
 			document.getElementById("modal-edit").setAttribute('style', 'display : flex');
 			document.getElementById("val").setAttribute('value', id);
 			document.getElementById("inp").setAttribute('value', name);
@@ -395,7 +399,17 @@
 			});
 		}
 	</script>
+	<script>
+		function openo() {
+			document.getElementById("forNonn").setAttribute('style', 'display : flex');
+		}
+	</script>
+	<script>
+		function closeEdit() {
+			document.getElementById("modal-edit").setAttribute('style', 'display : none');
 
+		}
+	</script>
 	@await RenderSectionAsync("Footer", false)
 
 </body>
