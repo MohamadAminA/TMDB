@@ -34,6 +34,41 @@
 		</div>
 	</section><!-- breadcrumb area end -->
 	<section class="portfolio-area pt-60">
+	<form asp-controller="SearchMovie" asp-action="Search" method="post">
+		<div class="col-xs-9 col-md-9 container " style="background-color: #080d6182;border-radius: 11px;">
+			<div class="row" style="margin-left: 8%;">
+				<div style="margin-left: 3%;">
+					<input name="People" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="director" />
+					<label style="margin-left: 41%;" id="sss">director</label>
+				</div>
+				<div style="margin-left: 3%;">
+					<input name="People" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="actor" />
+					<label style="margin-left: 41%;" id="sss">actor</label>
+				</div>
+				<div style="margin-left: 3%;">
+					<input name="TimeTo" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="year direct" />
+					<label style="margin-left: 41%;" id="sss">year direct</label>
+				</div>
+			</div>
+			<div class="row" style="margin-left: 8%;">
+				<div style="margin-left: 3%;">
+					<input name="Region" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="country" />
+					<label style="margin-left: 41%;" id="sss">counter</label>
+				</div>
+				<div style="margin-left: 3%;">
+					<input name="TimeFrom" id="qwer" style="border-radius: 6px; background-color: #aeabab;width: 107%;" type="text" placeholder="old" />
+					<label style="margin-left: 41%;" id="sss">old</label>
+				</div>
+				<div style="margin-left: 3%;">
+					<input name="Genres" id="qwer" style="margin-left: 11%;width: 118%;border-radius: 6px; background-color: #aeabab;" type="text" placeholder="ganre" />
+					<label style="margin-left: 41%;" id="sss">ganre</label>
+				</div>
+			</div>
+			<div class="row">
+				<input type="submit" value="Search" />
+			</div>
+		</div>
+	</form>
 		<div class="container">
 			<form asp-controller="SearchMovie" asp-action="Search">
 
