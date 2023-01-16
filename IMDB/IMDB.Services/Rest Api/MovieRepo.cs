@@ -669,25 +669,25 @@ namespace IMDB.Services.Api
             HttpClient httpClient = new HttpClient();
 
 
-            StringBuilder path = new StringBuilder($"https://api.themoviedb.org/3/discover/movie?{api_key}&region={filter.Region}&sort_by={filter.SortBy}&include_adult={filter.IncludeAdult}&page={filter.Page}&primary_release_date.gte={filter.ReleaseDateFrom?.ToString("YYYY-MM-DD")}&primary_release_date.lte={filter.ReleaseDateTo?.ToString("YYYY-MM-DD")}&with_release_type={filter.ReleaseType}&vote_count.gte={filter.VoteCountFrom}&vote_count.lte={filter.VoteCountTo}&vote_average.gte={filter.VoteAverageFrom}&vote_average.lte={filter.VoteAverageTo}&with_runtime.gte={filter.TimeFrom}&with_runtime.lte={filter.TimeTo}");
-            if(filter.People!=null&& filter.People.Count != 0)
-            {
-                path.Append("&with_people=");
-                foreach (var person in filter.People)
-                {
-                    path.Append(person);
-                    path.Append(",");
-                }
-            }
-            if (filter.Genres != null && filter.Genres.Count != 0)
-            {
-                path.Append("&with_genres=");
-                foreach (var genre in filter.Genres)
-                {
-                    path.Append(genre);
-                    path.Append(",");
-                }
-            }
+            StringBuilder path = new StringBuilder($"https://api.themoviedb.org/3/discover/movie?{api_key}&region={filter.Region}&sort_by={filter.SortBy}&include_adult={filter.IncludeAdult}&page={filter.Page}&primary_release_date.gte={filter.ReleaseDateFrom}&primary_release_date.lte={filter.ReleaseDateTo}&with_release_type={filter.ReleaseType}&vote_count.gte={filter.VoteCountFrom}&vote_count.lte={filter.VoteCountTo}&vote_average.gte={filter.VoteAverageFrom}&vote_average.lte={filter.VoteAverageTo}&with_runtime.gte={filter.TimeFrom}&with_runtime.lte={filter.TimeTo}&with_people={filter.People}&with_genres={filter.Genres}");
+            //if(!=null&& filter.People.Count != 0)
+            //{
+            //    path.Append("");
+            //    foreach (var person in filter.People)
+            //    {
+            //        path.Append(person);
+            //        path.Append(",");
+            //    }
+            //}
+            //if ( != null && filter.Genres.Count != 0)
+            //{
+            //    path.Append("");
+            //    foreach (var genre in filter.Genres)
+            //    {
+            //        path.Append(genre);
+            //        path.Append(",");
+            //    }
+            //}
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
 

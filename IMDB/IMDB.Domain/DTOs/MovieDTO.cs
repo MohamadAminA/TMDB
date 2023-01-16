@@ -31,15 +31,15 @@ namespace IMDB.Domain.DTOs
             public string Region { get; set; }
             public DiscoverMovieSortBy? SortBy { get; set; }
             public bool IncludeAdult { get; set; }
-            public DateTime? ReleaseDateFrom { get; set; }
-            public DateTime? ReleaseDateTo { get; set; }
+            public string ReleaseDateFrom { get; set; }
+            public string ReleaseDateTo { get; set; }
             public ReleaseDateType? ReleaseType { get; set; }
             public int? VoteCountFrom { get; set; }
             public int? VoteCountTo { get; set; }
             public double? VoteAverageFrom { get; set; }
             public double? VoteAverageTo { get; set; }
-            public List<int> People { get; set; }
-            public List<int> Genres { get; set; }
+            public string People { get; set; }
+            public string Genres { get; set; }
             public int? TimeFrom { get; set; }
             public int? TimeTo { get; set; }
 

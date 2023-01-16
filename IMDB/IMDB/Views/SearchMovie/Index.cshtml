@@ -103,33 +103,77 @@
 		<div class="col-xs-9 col-md-9 container " style="background-color: #080d6182;border-radius: 11px;">
 			<div class="row" style="margin-left: 8%;">
 				<div style="margin-left: 3%;">
-					<input name="People" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="director" />
+					<input class="form-control" name="People" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="People" />
 					<label style="margin-left: 41%;" id="sss">director</label>
 				</div>
 				<div style="margin-left: 3%;">
-					<input name="People" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="actor" />
-					<label style="margin-left: 41%;" id="sss">actor</label>
+						<input name="TimeFrom" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="TimeFrom" />
+						<label style="margin-left: 41%;" id="sss">TimeFrom</label>
 				</div>
 				<div style="margin-left: 3%;">
-					<input name="TimeTo" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="year direct" />
-					<label style="margin-left: 41%;" id="sss">year direct</label>
+						<input name="TimeTo" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="TimeTo" />
+					<label style="margin-left: 41%;" id="sss">TimeTo</label>
 				</div>
 			</div>
 			<div class="row" style="margin-left: 8%;">
 				<div style="margin-left: 3%;">
 					<input name="Region" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="country" />
-					<label style="margin-left: 41%;" id="sss">counter</label>
+					<label style="margin-left: 41%;" id="sss">Country</label>
 				</div>
 				<div style="margin-left: 3%;">
-					<input name="TimeFrom" id="qwer" style="border-radius: 6px; background-color: #aeabab;width: 107%;" type="text" placeholder="old" />
-					<label style="margin-left: 41%;" id="sss">old</label>
-				</div>
-				<div style="margin-left: 3%;">
-					<input name="Genres" id="qwer" style="margin-left: 11%;width: 118%;border-radius: 6px; background-color: #aeabab;" type="text" placeholder="ganre" />
-					<label style="margin-left: 41%;" id="sss">ganre</label>
+						<input name="Genres" id="qwer" style="margin-left: 11%;width: 118%;border-radius: 6px; background-color: #aeabab;" type="text" placeholder="Genres" />
+						<label style="margin-left: 41%;" id="sss">Genres</label>
 				</div>
 			</div>
-			<div class="row">
+			
+				<div class="row" style="margin-left: 8%;">
+					<div style="margin-left: 3%;">
+						<input class="" name="ReleaseDateFrom" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="ReleaseDateFrom" />
+						<label style="margin-left: 41%;" id="sss">ReleaseDateFrom</label>
+					</div>
+					<div style="margin-left: 3%;">
+						<input name="ReleaseDateTo" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="ReleaseDateTo" />
+						<label style="margin-left: 41%;" id="sss">ReleaseDateTo</label>
+					</div>
+
+				</div>
+
+				<div class="row	">
+					<div class="col-md-4 form-control">
+						<select name="SortBy">
+							<option value="0">Undefined</option>
+							<option value="1">Popularity</option>
+							<option value="2">PopularityDesc</option>
+							<option value="3">ReleaseDate</option>
+							<option value="4">ReleaseDateDesc</option>
+							<option value="5">Revenue</option>
+							<option value="6">RevenueDesc</option>
+							<option value="7">PrimaryReleaseDate</option>
+							<option value="8">PrimaryReleaseDateDesc</option>
+							<option value="9">OriginalTitle</option>
+							<option value="10">OriginalTitleDesc</option>
+							<option value="11">VoteAverage</option>
+							<option value="12">VoteAverageDesc</option>
+							<option value="13">VoteCount</option>
+							<option value="14">VoteCountDesc</option>
+						</select>
+					</div>
+					<div class="col-md-4">
+						<input name="VoteCountFrom" id="qwer"  type="text" placeholder="VoteCountFrom" />
+					</div>
+					<div class="col-md-4">
+						<input name="VoteCountTo" id="qwer"  type="text" placeholder="VoteCountTo" />
+					</div>
+					<div class="col-md-4">
+						<input name="VoteAverageFrom" id="qwer"  type="text" placeholder="VoteAverageFrom" />
+					</div>
+					<div class="col-md-4">
+						<input name="VoteAverageTo" id="qwer"  type="text" placeholder="VoteAverageTo" />
+					</div>
+
+				</div>
+
+				<div class="row">
 				<input type="submit" value="Search" />
 			</div>
 		</div>
