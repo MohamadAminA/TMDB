@@ -2,307 +2,300 @@
 @model SearchViewModel
 @section Header{
 
-	<style>
-		.li {
-			margin: 10px;
-		}
+    <style>
+        .li {
+            margin: 10px;
+        }
 
-		.col-lg-12 {
-			-webkit-box-flex: 0;
-			-ms-flex: 0 0 100%;
-			flex: 0 0 100%;
-			max-width: 100%;
-			background-color: #03092b78;
-			border-radius: 15px;
-			box-shadow: rgba(18, 11, 247, 0.4) 5px 5px, rgba(21, 6, 204, 0.3) 10px 10px, rgba(23, 7, 138, 0.2) 15px 15px, rgba(19, 2, 100, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
-			padding-bottom: 20px;
-		}
+        .col-lg-12 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+            background-color: #03092b78;
+            border-radius: 15px;
+            box-shadow: rgba(18, 11, 247, 0.4) 5px 5px, rgba(21, 6, 204, 0.3) 10px 10px, rgba(23, 7, 138, 0.2) 15px 15px, rgba(19, 2, 100, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+            padding-bottom: 20px;
+        }
 
-		hr {
-			margin-bottom: 8px;
-			border-top: 1px solid #ddd;
-		}
+        hr {
+            margin-bottom: 8px;
+            border-top: 1px solid #ddd;
+        }
 
-		.portfolio-menu li.active::before, .portfolio-menu li:hover::before {
-			background: #313deb;
-		}
-	</style>
+        .portfolio-menu li.active::before, .portfolio-menu li:hover::before {
+            background: #313deb;
+        }
+    </style>
 }
-	<!-- breadcrumb area start -->
-	<section class="breadcrumb-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12" style="box-shadow: rgba(18, 11, 247, 0) 5px 5px, rgba(21, 6, 204, 0) 10px 10px, rgba(23, 7, 138, 0) 15px 15px, rgba(19, 2, 100, 0) 20px 20px, rgba(240, 46, 170, 0) 25px 25px; ">
-					<div class="breadcrumb-area-content">
+<!-- breadcrumb area start -->
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12" style="box-shadow: rgba(18, 11, 247, 0) 5px 5px, rgba(21, 6, 204, 0) 10px 10px, rgba(23, 7, 138, 0) 15px 15px, rgba(19, 2, 100, 0) 20px 20px, rgba(240, 46, 170, 0) 25px 25px; ">
+                <div class="breadcrumb-area-content">
 
-						<div class="col-md-12 animatedParent animateOnce z-index-50">
-							<div class="panel panel-default animated fadeInUp">
-								<div class="panel-heading clearfix">
-									<h3 class="panel-title">Filter</h3>
-									<br />
-									<ul class="panel-tool-options">
-										<li><a data-rel="collapse" href="#"><i class="icon-down-open"></i></a></li>
-									</ul>
-								</div>
-								@*<div class="panel-body">
-									<div class="table-responsive">
-										<table class="table table-striped table-border table-hover dataTables-example">
-											<thead class="thead-dark">
-												<tr>
-													<th>
-														ردیف
-													</th>
+                    <div class="col-md-12 animatedParent animateOnce z-index-50">
+                        <div class="panel panel-default animated fadeInUp">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title">Filter</h3>
+                                <br />
+                                <ul class="panel-tool-options">
+                                    <li><a data-rel="collapse" href="#"><i class="icon-down-open"></i></a></li>
+                                </ul>
+                            </div>
+                            @*<div class="panel-body">
+                            <div class="table-responsive">
+                            <table class="table table-striped table-border table-hover dataTables-example">
+                            <thead class="thead-dark">
+                            <tr>
+                            <th>
+                            ردیف
+                            </th>
 
-													<th>
-														نام کسب و کار
-													</th>
+                            <th>
+                            نام کسب و کار
+                            </th>
 
-													<th>تعداد بازدید</th>
-													<th>آمار</th>
-												</tr>
-												@{
-												rowNo = 0;
-												var golds = ViewBag.Golds as List<DomainClass.Businesses.Business>;
-											}
-											@foreach (var item in golds)
-											{
-												<tr>
-													<td>
-														@(++rowNo)
-													</td>
+                            <th>تعداد بازدید</th>
+                            <th>آمار</th>
+                            </tr>
+                            @{
+                            rowNo = 0;
+                            var golds = ViewBag.Golds as List<DomainClass.Businesses.Business>;
+                            }
+                            @foreach (var item in golds)
+                            {
+                            <tr>
+                            <td>
+                            @(++rowNo)
+                            </td>
 
-													<td>
-														@item.Name
-													</td>
-
-
-													<td>
-														@(item.BusinessVisitRecords.Count)
-													</td>
-													<td><a class="btn btn-primary" href="/Admin/Businesses/BusinessChart?id=@item.Id"><i class="fas fa-eye"></i></a></td>
-												</tr>
-											}
-									</table>
-								</div>
-
-							</div>*@
-
-						</div>
+                            <td>
+                            @item.Name
+                            </td>
 
 
-					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section><!-- breadcrumb area end -->
+                            <td>
+                            @(item.BusinessVisitRecords.Count)
+                            </td>
+                            <td><a class="btn btn-primary" href="/Admin/Businesses/BusinessChart?id=@item.Id"><i class="fas fa-eye"></i></a></td>
+                            </tr>
+                            }
+                            </table>
+                            </div>
+
+                            </div>*@
+
+                        </div>
 
 
-	<section class="portfolio-area pt-60">
-	<form asp-controller="SearchMovie" asp-action="Search" method="post">
-		<div class="col-xs-9 col-md-9 container " style="background-color: #080d6182;border-radius: 11px;">
-			<div class="row" style="margin-left: 8%;">
-				<div style="margin-left: 3%;">
-					<input class="form-control" name="People" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="People" />
-					<label style="margin-left: 41%;" id="sss">director</label>
-				</div>
-				<div style="margin-left: 3%;">
-						<input name="TimeFrom" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="TimeFrom" />
-						<label style="margin-left: 41%;" id="sss">TimeFrom</label>
-				</div>
-				<div style="margin-left: 3%;">
-						<input name="TimeTo" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="TimeTo" />
-					<label style="margin-left: 41%;" id="sss">TimeTo</label>
-				</div>
-			</div>
-			<div class="row" style="margin-left: 8%;">
-				<div style="margin-left: 3%;">
-					<input name="Region" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="country" />
-					<label style="margin-left: 41%;" id="sss">Country</label>
-				</div>
-				<div style="margin-left: 3%;">
-						<input name="Genres" id="qwer" style="margin-left: 11%;width: 118%;border-radius: 6px; background-color: #aeabab;" type="text" placeholder="Genres" />
-						<label style="margin-left: 41%;" id="sss">Genres</label>
-				</div>
-			</div>
-			
-				<div class="row" style="margin-left: 8%;">
-					<div style="margin-left: 3%;">
-						<input class="" name="ReleaseDateFrom" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="ReleaseDateFrom" />
-						<label style="margin-left: 41%;" id="sss">ReleaseDateFrom</label>
-					</div>
-					<div style="margin-left: 3%;">
-						<input name="ReleaseDateTo" id="qwer" style="border-radius: 6px; background-color: #aeabab;" type="text" placeholder="ReleaseDateTo" />
-						<label style="margin-left: 41%;" id="sss">ReleaseDateTo</label>
-					</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- breadcrumb area end -->
 
-				</div>
 
-				<div class="row	">
-					<div class="col-md-4 form-control">
-						<select name="SortBy">
-							<option value="0">Undefined</option>
-							<option value="1">Popularity</option>
-							<option value="2">PopularityDesc</option>
-							<option value="3">ReleaseDate</option>
-							<option value="4">ReleaseDateDesc</option>
-							<option value="5">Revenue</option>
-							<option value="6">RevenueDesc</option>
-							<option value="7">PrimaryReleaseDate</option>
-							<option value="8">PrimaryReleaseDateDesc</option>
-							<option value="9">OriginalTitle</option>
-							<option value="10">OriginalTitleDesc</option>
-							<option value="11">VoteAverage</option>
-							<option value="12">VoteAverageDesc</option>
-							<option value="13">VoteCount</option>
-							<option value="14">VoteCountDesc</option>
-						</select>
-					</div>
-					<div class="col-md-4">
-						<input name="VoteCountFrom" id="qwer"  type="text" placeholder="VoteCountFrom" />
-					</div>
-					<div class="col-md-4">
-						<input name="VoteCountTo" id="qwer"  type="text" placeholder="VoteCountTo" />
-					</div>
-					<div class="col-md-4">
-						<input name="VoteAverageFrom" id="qwer"  type="text" placeholder="VoteAverageFrom" />
-					</div>
-					<div class="col-md-4">
-						<input name="VoteAverageTo" id="qwer"  type="text" placeholder="VoteAverageTo" />
-					</div>
+<section class="portfolio-area pt-60">
+    <form asp-controller="SearchMovie" asp-action="Search" method="post">
+        <div class="col-xs-8 col-md-8 container " style="border-radius: 11px; box-shadow: rgb(18 11 247 / 40%) 5px 5px, rgb(21 6 204 / 30%) 10px 10px, rgb(23 7 138 / 20%) 15px 15px, rgb(19 2 100 / 10%) 20px 20px, rgb(240 46 170 / 5%) 25px 25px;">
+            <div class="row">
 
-				</div>
+                <div class="col-md-4" style="margin-bottom:5 px ;">
+                    <input class="form-control" name="People" id="qwer" style="width: 67%;border-radius: 6px;background-color: #000315;border: 1px solid #fff;" type="text" placeholder="People" />
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" name="TimeFrom" id="qwer" style="width: 67%;border-radius: 6px;background-color: #000315;border: 1px solid #fff;" type="text" placeholder="TimeFrom" />
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" name="TimeTo" id="qwer" style="width: 67%;border-radius: 6px;background-color: #000315;border: 1px solid #fff;" type="text" placeholder="TimeTo" />
+                </div>
+            </div>
+           
+            <div class="row">
+                <div class="col-md-4">
+                    <input class="form-control" name="Region" id="qwer" style="width: 67%;border-radius: 6px;background-color: #000315;border: 1px solid #fff;" type="text" placeholder="country" />
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" name="Genres" id="qwer" style=" width: 67%;border-radius: 6px;background-color: #000315;border: 1px solid #fff;width: 67%;border-radius: 6px;" type="text" placeholder="Genres" />
+                </div>
+            </div>
 
-				<div class="row">
-				<input type="submit" value="Search" />
-			</div>
-		</div>
-	</form>
-		<div class="container">
-			<form asp-controller="SearchMovie" asp-action="Search">
+            <div class="row">
+                <div class="col-md-4">
+                    <input class="form-control" name="ReleaseDateFrom" id="qwer" style="width: 67%;border-radius: 6px;background-color: #000315;border: 1px solid #fff;" type="text" placeholder="ReleaseDateFrom" />
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" name="ReleaseDateTo" id="qwer" style="width: 67%;border-radius: 6px;background-color: #000315;border: 1px solid #fff;" type="text" placeholder="ReleaseDateTo" />
+                </div>
 
-				<input type="hidden" asp-for="Movies.Page" />
-				<div class="row flexbox-center">
-					<div class="col-lg-6 text-center text-lg-left">
-						<div class="section-title">
-							<h1><i class="icofont icofont-movie"></i>Best Resualts For You</h1>
-						</div>
-					</div>
-				@if (Model.Movies != null)
-				{
-					<div class="col-lg-6 text-center text-lg-right">
-						<div class="portfolio-menu">
-							<ul>
-								<li>@Model.Movies.total_results Resualt Found </li>
-							</ul>
-						</div>
-					</div>
-				}
+            </div>
 
-			</div>
-			<hr />
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="row portfolio-item">
-						@if (Model.Movies == null)
-						{
-							<h1>No Movie Found</h1>
-						}
-						else
-							@foreach (var item in Model.Movies?.results)
-							{
-								<div id="f1" class="col-lg-4 col-md-4 col-sm-6 ">
-									<a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
-										<div class="single-portfolio">
-											<div class="single-portfolio-img">
+            <div class="row	">
+                <select name="SortBy" style="margin-left: 2.50%;margin-right: 11%;">
+                    <option value="0">Undefined</option>
+                    <option value="1">Popularity</option>
+                    <option value="2">PopularityDesc</option>
+                    <option value="3">ReleaseDate</option>
+                    <option value="4">ReleaseDateDesc</option>
+                    <option value="5">Revenue</option>
+                    <option value="6">RevenueDesc</option>
+                    <option value="7">PrimaryReleaseDate</option>
+                    <option value="8">PrimaryReleaseDateDesc</option>
+                    <option value="9">OriginalTitle</option>
+                    <option value="10">OriginalTitleDesc</option>
+                    <option value="11">VoteAverage</option>
+                    <option value="12">VoteAverageDesc</option>
+                    <option value="13">VoteCount</option>
+                    <option value="14">VoteCountDesc</option>
+                </select>
+                <div class="col-md-4">
+                    <input class="form-control" name="VoteCountFrom" id="qwer" style="width: 67%;border-radius: 6px;background-color: #000315;border: 1px solid #fff;" type="text" placeholder="VoteCountFrom" />
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" name="VoteCountTo" id="qwer" style="width: 67%;border-radius: 6px;background-color: #000315;border: 1px solid #fff;" type="text" placeholder="VoteCountTo" />
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" name="VoteAverageFrom" id="qwer" style="width: 67%;border-radius: 6px;background-color: #000315;border: 1px solid #fff;" type="text" placeholder="VoteAverageFrom" />
+                </div>
+                <div class="col-md-4">
+                    <input class="form-control" name="VoteAverageTo" id="qwer" type="text" style="width: 67%;border-radius: 6px;background-color: #000315;border: 1px solid #fff;width: 67%;border-radius: 6px;" placeholder="VoteAverageTo" />
+                </div>
 
-												<img id="radiusImg" src="@((string.IsNullOrEmpty(@item.PosterPath)) ? "/img/DefultMovie.jpg" : "http://image.tmdb.org/t/p/w185/" + @item.PosterPath)" alt="portfolio" />
+            </div>
 
-												<div onclick="GetId(@item.Id)" id="div">
-													<a id="@item.Id" class="popup-youtube">
-														<i class="icofont icofont-ui-play"></i>
-													</a>
-												</div>
-											</div>
-											<div class="portfolio-content">
-												<h2 id="senoh">@item.Title</h2>
-												<div class="review">
-													<div class="author-review">
-														@for (int i = 1; i < item.VoteAverage / 2; i++)
-														{
-															<i class="icofont icofont-star"></i>
-														}
-													</div>
-													<h5>@item.VoteCount voters</h5>
-												</div>
-											</div>
-										</div>
-									</a>
-								</div>
-							}
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-3"></div>
-				@if (Model.Movies != null && Model.Movies.total_results / 20 > 1)
-				{
-					<div class="col-sm-6">
-						<div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
-							<div class="btn-group">
-								<ul class="pagination">
-									@if (Model.Movies.Page > 1)
-									{
+            <div class="row">
+                <input type="submit" value="Search" style="width: 39%;border-radius: 6px;background-color: #000315;border: 1px solid #fff;margin-left: 29%;margin-top: 2%;margin-bottom: 2%;" />
+            </div>
+        </div>
+    </form>
+    <div class="container">
+        <form asp-controller="SearchMovie" asp-action="Search">
 
-										<li style="margin-top: 10%;margin-left: 2%;">
-											<button asp-route-page="@(Model.Movies.Page-1)" class="btn btn-outline btn-primary " type="submit" >
-												<i class="icofont icofont-arrow-left"></i>
-											</button>
-										</li>
-									}
-									@for (int i = (Model.Movies.Page == 1 || Model.Movies.Page == 2 || Model.Movies.Page == 3) ? 1 : Model.Movies.Page - 3; i < Model.Movies.Page + 3 && i <= Model.Movies.total_pages && i < 500; i++)
-									{
-										<li style="margin-top: 10%;margin-left: 2%;">
-											<button type="submit" asp-route-page="@(i)" class="btn btn-sm @((i != Model.Movies.Page)?"btn-outline-primary":"disabled btn-primary")" >
-												@i
-											</button>
-										</li>
+            <input type="hidden" asp-for="Movies.Page" />
+            <div class="row flexbox-center">
+                <div class="col-lg-6 text-center text-lg-left">
+                    <div class="section-title">
+                        <h1><i class="icofont icofont-movie"></i>Best Resualts For You</h1>
+                    </div>
+                </div>
+                @if (Model.Movies != null)
+                {
+                    <div class="col-lg-6 text-center text-lg-right">
+                        <div class="portfolio-menu">
+                            <ul>
+                                <li>@Model.Movies.total_results Resualt Found </li>
+                            </ul>
+                        </div>
+                    </div>
+                }
 
-									}
-									@if (Model.Movies.total_pages > Model.Movies.Page + 2 && Model.Movies.Page < 500)
-									{
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row portfolio-item">
+                        @if (Model.Movies == null)
+                        {
+                            <h1>No Movie Found</h1>
+                        }
+                        else
+                            @foreach (var item in Model.Movies?.results)
+                            {
+                                <div id="f1" class="col-lg-4 col-md-4 col-sm-6 ">
+                                    <a asp-controller="MovieDetails" asp-action="Index" asp-route-id="@item.Id">
+                                        <div class="single-portfolio">
+                                            <div class="single-portfolio-img">
 
-										<li style=" margin-top: 10%;margin-left:2%;" class="text-nowrap">
-											 . . . 
-										</li>
-										<li style="margin-top: 10%;margin-left: 2%;">
-											
-											<button  asp-route-page="@(Model.Movies.total_pages > 500?500:Model.Movies.total_pages)" class="btn btn-outline btn-primary" type="submit">
-												@(Model.Movies.total_pages > 500 ? 500 : Model.Movies.total_pages)
-											</button>
-										</li>
-									}
-									@if (Model.Movies.total_pages > Model.Movies.Page && Model.Movies.Page < 500)
-									{
+                                                <img id="radiusImg" src="@((string.IsNullOrEmpty(@item.PosterPath)) ? "/img/DefultMovie.jpg" : "http://image.tmdb.org/t/p/w185/" + @item.PosterPath)" alt="portfolio" />
 
-										<li style="margin-top: 10%;margin-left: 2%;">
-											<button  asp-route-page="@(Model.Movies.Page+1)" class="btn btn-outline btn-primary" type="submit">
-												<i class="icofont icofont-arrow-right"></i>
-											</button>
-										</li>
-									}
+                                                <div onclick="GetId(@item.Id)" id="div">
+                                                    <a id="@item.Id" class="popup-youtube">
+                                                        <i class="icofont icofont-ui-play"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="portfolio-content">
+                                                <h2 id="senoh">@item.Title</h2>
+                                                <div class="review">
+                                                    <div class="author-review">
+                                                        @for (int i = 1; i < item.VoteAverage / 2; i++)
+                                                        {
+                                                            <i class="icofont icofont-star"></i>
+                                                        }
+                                                    </div>
+                                                    <h5>@item.VoteCount voters</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3"></div>
+                @if (Model.Movies != null && Model.Movies.total_results / 20 > 1)
+                {
+                    <div class="col-sm-6">
+                        <div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
+                            <div class="btn-group">
+                                <ul class="pagination">
+                                    @if (Model.Movies.Page > 1)
+                                    {
 
-								</ul>
-							</div>
-						</div>
-					</div>
-				}
+                                        <li style="margin-top: 10%;margin-left: 2%;">
+                                            <button asp-route-page="@(Model.Movies.Page-1)" class="btn btn-outline btn-primary " type="submit">
+                                                <i class="icofont icofont-arrow-left"></i>
+                                            </button>
+                                        </li>
+                                    }
+                                    @for (int i = (Model.Movies.Page == 1 || Model.Movies.Page == 2 || Model.Movies.Page == 3) ? 1 : Model.Movies.Page - 3; i < Model.Movies.Page + 3 && i <= Model.Movies.total_pages && i < 500; i++)
+                                    {
+                                        <li style="margin-top: 10%;margin-left: 2%;">
+                                            <button type="submit" asp-route-page="@(i)" class="btn btn-sm @((i != Model.Movies.Page)?"btn-outline-primary":"disabled btn-primary")">
+                                                @i
+                                            </button>
+                                        </li>
 
-				<input type="hidden" name="query" value="@Model.Search?.SearchTitle" />
+                                    }
+                                    @if (Model.Movies.total_pages > Model.Movies.Page + 2 && Model.Movies.Page < 500)
+                                    {
 
-				<input type="hidden" name="date" value="@Model.Search?.ReleaseDate" />
+                                        <li style=" margin-top: 10%;margin-left:2%;" class="text-nowrap">
+                                            . . .
+                                        </li>
+                                        <li style="margin-top: 10%;margin-left: 2%;">
 
-			</div>
-		</form>
-	</div>
+                                            <button asp-route-page="@(Model.Movies.total_pages > 500?500:Model.Movies.total_pages)" class="btn btn-outline btn-primary" type="submit">
+                                                @(Model.Movies.total_pages > 500 ? 500 : Model.Movies.total_pages)
+                                            </button>
+                                        </li>
+                                    }
+                                    @if (Model.Movies.total_pages > Model.Movies.Page && Model.Movies.Page < 500)
+                                    {
+
+                                        <li style="margin-top: 10%;margin-left: 2%;">
+                                            <button asp-route-page="@(Model.Movies.Page+1)" class="btn btn-outline btn-primary" type="submit">
+                                                <i class="icofont icofont-arrow-right"></i>
+                                            </button>
+                                        </li>
+                                    }
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <input type="hidden" name="query" value="@Model.Search?.SearchTitle" />
+
+                <input type="hidden" name="date" value="@Model.Search?.ReleaseDate" />
+
+            </div>
+        </form>
+    </div>
 </section><!-- movie section end -->
