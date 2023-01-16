@@ -17,5 +17,6 @@ namespace Infrastructure
         public User GetUserByName(string name);
         public bool IsUserExist(int id = 0, string name = "");
         public void SaveChanges();
+        public Task<List<User>> GetUsersAsync();
     }
 }

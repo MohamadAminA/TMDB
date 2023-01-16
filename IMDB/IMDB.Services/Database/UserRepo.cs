@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using IMDB.DataLayer;
 using IMDB.DataLayer.Model;
 using Infrastructure;
+using Microsoft.EntityFrameworkCore;
 
 namespace IMDB.Services.Database
 {
@@ -90,6 +91,11 @@ namespace IMDB.Services.Database
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<List<User>> GetUsersAsync()
+        {
+            return await _context.Users.Include(n=>n.FavouriteMovieLists).ToListAsync();
         }
     }
 }

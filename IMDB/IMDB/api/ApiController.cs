@@ -67,7 +67,7 @@ namespace IMDB.api
                 return RedirectToActionPermanent("Index", "SignIn");
             await _list.AddFavouriteList(Title, int.Parse(User.Identity.Name));
             await _list.SaveChangesAsync();
-            return Ok();
+            return RedirectToAction("Index","Profile");
 
         }
 
@@ -82,8 +82,8 @@ namespace IMDB.api
 
         }
 
-        [HttpGet("RemovieList")]
-        public async Task<IActionResult> RemovieList(string ListId)
+        [HttpGet("RemoveList")]
+        public async Task<IActionResult> RemoveList(string ListId)
         {
             if (!User.Identity.IsAuthenticated)
                 return RedirectToActionPermanent("Index", "SignIn");

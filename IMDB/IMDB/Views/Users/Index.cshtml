@@ -1,0 +1,89 @@
+﻿@using IMDB.DataLayer.Model
+@model List<User>
+
+	@section Header{
+
+	<style>
+		.li {
+			margin: 10px;
+		}
+
+		.col-lg-12 {
+			-webkit-box-flex: 0;
+			-ms-flex: 0 0 100%;
+			flex: 0 0 100%;
+			max-width: 100%;
+			background-color: #03092b78;
+			border-radius: 15px;
+			box-shadow: rgba(18, 11, 247, 0.4) 5px 5px, rgba(21, 6, 204, 0.3) 10px 10px, rgba(23, 7, 138, 0.2) 15px 15px, rgba(19, 2, 100, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+			padding-bottom: 20px;
+		}
+
+		hr {
+			margin-bottom: 8px;
+			border-top: 1px solid #ddd;
+		}
+
+		.portfolio-menu li.active::before, .portfolio-menu li:hover::before {
+			background: #313deb;
+		}
+	</style>
+}
+	<!-- breadcrumb area start -->
+	<section class="breadcrumb-area">
+		<div class="container">
+		</div>
+	</section><!-- breadcrumb area end -->
+	<section class="portfolio-area pt-60">
+		<div class="container">
+				<div class="row flexbox-center">
+					<div class="col-lg-6 text-center text-lg-left">
+						<div class="section-title">
+							<h1><i class="icofont icofont-movie"></i>All Users</h1>
+						</div>
+					</div>
+				@if (Model != null)
+				{
+					<div class="col-lg-6 text-center text-lg-right">
+						<div class="portfolio-menu">
+							<ul>
+								<li>@Model.Count Result Found </li>
+							</ul>
+						</div>
+					</div>
+				}
+
+			</div>
+			<hr />
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="row portfolio-item">
+						@if (Model == null)
+						{
+							<h1>No Person Found</h1>
+						}
+						else
+							@foreach (var cast in Model.OrderBy(n=>n.Name))
+							{
+								<div class="col-lg-3 col-md-4 col-sm-6 popular soon TrendingDay released to">
+									<a asp-controller="Profile" asp-action="Index" asp-route-userId="@cast.Id">
+										<div class="single-portfolio text-center">
+											<div class="single-portfolio-img" id="oadAction">
+												<img id="radiusprofile" src="/img/cast/defult.png" alt="dont have profile" style="border-radius: 10%;" />
+											</div>
+											<div class="portfolio-content">
+												<h2 id="senoh">@cast.Name</h2>
+												<div class="review">
+													<h4>@cast.FavouriteMovieLists.Count List</h4>
+													<h6>@cast.RegisterDate.ToString("yyyy-MM-dd")</h6>
+												</div>
+											</div>
+										</div>
+									</a>
+								</div>
+							}
+					</div>
+				</div>
+			</div>
+	</div>
+</section><!-- movie section end -->

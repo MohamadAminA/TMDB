@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using IMDB.DataLayer.Model;
@@ -12,7 +13,6 @@ using static IMDB.Domain.DTOs.MovieDTO;
 
 namespace IMDB.Controllers
 {
-    [Authorize]
     public class ProfileController : Controller
     {
         readonly IUser _user;
@@ -26,12 +26,15 @@ namespace IMDB.Controllers
             _movie = movie;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int userId)
         {
-            if(!User.Identity.IsAuthenticated)
-                return RedirectToActionPermanent("Index", "SignIn");
-            int userId = int.Parse(User.Identity.Name);
+
+            if(userId == 0 && !User.Identity.IsAuthenticated)
+                return RedirectToAction("Index", "SignIn");
+            userId = userId == 0 ? int.Parse(User.Identity.Name): userId;
+            
             ProfileViewModel model = new ProfileViewModel();
+            model.IsOwner = userId == int.Parse(User.Identity.Name);
             model.User = await _user.GetUserById(userId);
             var WatchList = await _list.GetWatchListById(userId);
             List<Movie> WatchListMovies = new List<Movie>();

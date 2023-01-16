@@ -4,21 +4,14 @@
 @inject IMovie _movie;
 @section header{
     <style>
-        #forNonn {
+/*        #forNonn {
             display: flex;
             width: 14%;
             height: 0px;
             margin-left: 39%;
             margin-top: -1%;
         }
-
-        #modalup {
-            display: flex;
-            width: 14%;
-            height: 0px;
-            margin-left: 39%;
-            margin-top: -1%;
-        }
+*/
     </style>
 }
 <!-- header section start -->
@@ -28,54 +21,71 @@
 </section><!-- breadcrumb area end -->
 <!-- transformers area start -->
 
-<form id="forNonn" style="position:fixed; display : none ;" asp-controller="Profile" asp-action="AddMovieList">
-    <div onclick="claoo()" style="width: 600%; height: 600%; position: absolute;top: 0;left: 0;z-index: 99;margin-left: -110%;margin-top: -110%;"></div>
-    <div class="row" style="z-index: 1000;">
+<section id="forNonn" style="display: none ; position: fixed;left: 46%;top: 38%;z-index: 1000;">
+    <div onclick="claoo()" style="width: 100%; height: 100%; position: absolute;top: 0;left: 0;z-index: 99;"></div>
+    <div>
+        <form id="modalup"  asp-controller="api" asp-action="AddList" method="get" style="
+    position: fixed;
+    left: 48%;
+    top: 48%;
+    z-index: 1000;
+">
+            <div class="row" style="z-index: 1000;max-height: 1px;max-height: 1px;">
 
-        @if (User.Identity.IsAuthenticated)
-        {
+                @if (User.Identity.IsAuthenticated)
+                {
             <div class="col-lg-12">
                 <div class="textarea-container">
                     <label>Add New Favourite List</label>
-                    <input name="Title" placeholder="Type List Name" style="background-color : #08142e;" />
+                    <input class="form-control" name="Title" placeholder="Type List Name" style="background-color : #08142e;color:white" />
                 </div>
             </div>
             <div class="details-comment" style="margin-top: 6%;margin-left: 37%;">
                 <input type="submit" class="theme-btn theme-btn2" value="ok" style="padding: 9px 31px;" />
                 @*<p>You may use these HTML tags and attributes: You may use these HTML tags and attributes: You may use these HTML tags and attributes: </p>*@
             </div>
-        }
 
+                }
+            </div>
 
-
+        </form>
     </div>
 
-</form>
+</section>
 
-<form id="modalup" style="position:fixed; display : none ;" asp-controller="api" asp-area="api" asp-action="UpdateList">
-    <div onclick="claoo()" style="width: 600%; height: 600%; position: absolute;top: 0;left: 0;z-index: 99;margin-left: -110%;margin-top: -110%;"></div>
-    <div class="row" style="z-index: 1000;position: fixed;z-index: 100;">
+<section id="modal-edit" style="display: none ; position: fixed;left: 46%;top: 38%;z-index: 1000;">
+    <div onclick="closeEdit()" style="width: 100%; height: 100%; position: absolute;top: 0;left: 0;z-index: 99;"></div>
+    <div>
+        <div id="modalup" style="
+    position: fixed;
+    left: 48%;
+    top: 48%;
+    z-index: 1000;
+">
+            <div class="row" style="z-index: 1000;max-height: 1px;max-height: 1px;">
 
-        @if (User.Identity.IsAuthenticated)
-        {
+                @if (User.Identity.IsAuthenticated)
+                {
             <div class="col-lg-12">
                 <div class="textarea-container">
                     <label>Add New Favourite List</label>
-                    <input name="title" placeholder="Type List Name" style="background-color : #08142e;" />
+                    <input id="inp" name="title" placeholder="Type List Name" style="background-color : #08142e;" />
                     <input id="val" type="hidden" name="id" />
                 </div>
             </div>
             <div class="details-comment" style="margin-top: 6%;margin-left: 37%;">
-                <input type="submit" class="theme-btn theme-btn2" value="ok" style="padding: 9px 31px;" />
-                @*<p>You may use these HTML tags and attributes: You may use these HTML tags and attributes: You may use these HTML tags and attributes: </p>*@
+                <input onclick="update()" type="submit" class="theme-btn theme-btn2" value="ok" style="padding: 9px 31px;" />
+                <input  onclick="del()" type="submit" class="btn btn-danger" value="Delete" style="padding: 9px 31px;" />
             </div>
-        }
 
+                }
+            </div>
 
-
+        </div>
     </div>
 
-</form>
+</section>
+
 
 <section class="transformers-area">
     <div class="container">
@@ -125,9 +135,12 @@
                             </li>
 
                         </ul>
-                        <div onclick="openo()">
+                        @if(Model.IsOwner){
+                                                    <div onclick="openo()">
                             <a class="theme-btn">Add List</a>
                         </div>
+                        }
+
                     </div>
                 </div>
             </div>
@@ -174,6 +187,11 @@
                                                             </div>
                                                         </h3>
                                                         <h5 style=" display: contents;">@item.VoteCount voters  </h5>
+                                                                                                            @if (Model.IsOwner)
+                                                    {
+                                                            <svg id="sv+@item.Id" onclick="watch(@item.Id)" onmouseover="hov(@item.Id)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-x" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M6.146 5.146a.5.5 0 0 1 .708 0L8 6.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 7l1.147 1.146a.5.5 0 0 1-.708.708L8 7.707 6.854 8.854a.5.5 0 1 1-.708-.708L7.293 7 6.146 5.854a.5.5 0 0 1 0-.708z" /><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" /></svg>
+                                                            <svg id="sq+@item.Id" onclick="watch(@item.Id)" onmouseout="dow(@item.Id)" style="display:none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-x-fill" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zM6.854 5.146a.5.5 0 1 0-.708.708L7.293 7 6.146 8.146a.5.5 0 1 0 .708.708L8 7.707l1.146 1.147a.5.5 0 1 0 .708-.708L8.707 7l1.147-1.146a.5.5 0 0 0-.708-.708L8 6.293 6.854 5.146z" />	</svg>
+                                                    }
                                                     </div>
                                                 </div>
                                             </div>
@@ -195,7 +213,12 @@
                 <div class="row flexbox-center">
                     <div class="col-lg-6 text-center text-lg-left">
                         <div class="section-title">
-                            <h1><i class="icofont icofont-movie"></i>@list.Title <small onclick="openedit(@list.Id)" class="icofont icofont-edit"></small></h1>
+                            <h1><i class="icofont icofont-movie"></i>@list.Title
+                                @if (Model.IsOwner)
+                                {
+                                <small onclick="openedit(@list.Id,'@list.Title')" class="icofont icofont-edit"></small>
+                                }    
+                            </h1>
 
                         </div>
                     </div>
@@ -235,8 +258,11 @@
                                                         </div>
                                                     </h3>
                                                     <h5 style=" display: contents;"> @item.VoteCount voters </h5>
-                                                    <svg id="sv+@item.Id" onclick="cll(@item.Id , @list.Id)" onmouseover="hov(@item.Id)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-x" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M6.146 5.146a.5.5 0 0 1 .708 0L8 6.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 7l1.147 1.146a.5.5 0 0 1-.708.708L8 7.707 6.854 8.854a.5.5 0 1 1-.708-.708L7.293 7 6.146 5.854a.5.5 0 0 1 0-.708z" /><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" /></svg>
-                                                    <svg id="sq+@item.Id" onclick="cll(@item.Id , @list.Id)" onmouseout="dow(@item.Id)" style="display:none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-x-fill" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zM6.854 5.146a.5.5 0 1 0-.708.708L7.293 7 6.146 8.146a.5.5 0 1 0 .708.708L8 7.707l1.146 1.147a.5.5 0 1 0 .708-.708L8.707 7l1.147-1.146a.5.5 0 0 0-.708-.708L8 6.293 6.854 5.146z" />	</svg>
+                                                    @if (Model.IsOwner)
+                                                    {
+                                                        <svg id="sv+@item.Id" onclick="cll(@item.Id , @list.Id)" onmouseover="hov(@item.Id)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-x" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M6.146 5.146a.5.5 0 0 1 .708 0L8 6.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 7l1.147 1.146a.5.5 0 0 1-.708.708L8 7.707 6.854 8.854a.5.5 0 1 1-.708-.708L7.293 7 6.146 5.854a.5.5 0 0 1 0-.708z" /><path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" /></svg>
+                                                        <svg id="sq+@item.Id" onclick="cll(@item.Id , @list.Id)" onmouseout="dow(@item.Id)" style="display:none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-x-fill" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zM6.854 5.146a.5.5 0 1 0-.708.708L7.293 7 6.146 8.146a.5.5 0 1 0 .708.708L8 7.707l1.146 1.147a.5.5 0 1 0 .708-.708L8.707 7l1.147-1.146a.5.5 0 0 0-.708-.708L8 6.293 6.854 5.146z" />	</svg>
+                                                    }
                                                 </div>
                                             </div>
                                         </div>
@@ -313,5 +339,50 @@
             });
         window.location.reload();
         }
+
+    function watch(id) {
+        console.log(id);
+        $.ajax({
+            type: "GET",
+            url: '/api/Api/RemoveMovieFromWatchList?movieId=' + id,
+            dataType: "json",
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                consol.log("true")
+            },
+        });
+        window.location.reload();
+    }
+        function update() {
+        var tit = document.getElementById("inp").value;
+        console.log(tit);
+        var ide = document.getElementById("val").getAttribute('value');
+        $.ajax({
+            type: "GET",
+            url: '/api/Api/UpdateList?title=' + tit+'&id='+ide,
+            dataType: "json",
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                consol.log("true")
+            },
+        });
+        window.location.reload();
+    }
+            function del() {
+        var ide = document.getElementById("val").getAttribute('value');
+        $.ajax({
+            type: "GET",
+            url: '/api/Api/RemoveList?ListId='+ide,
+            dataType: "json",
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                consol.log("true")
+            },
+        });
+        window.location.reload();
+    }
 
 </script>
