@@ -51,12 +51,14 @@ namespace IMDB
             });
             #endregion
 
+            
+            
             #region DataBase Context
             services.AddDbContext<ContextDB>(options =>
                 options.UseSqlServer(
 
-                    "Data Source=AMIN-LAPTOP\\SQLEXPRESS;Initial Catalog=IMDB_DB;Integrated Security=true;MultipleActiveResultSets=true;",
-                    //"Data Source=DESKTOP-0QSKDOG;Initial Catalog=IMDB_DB;Integrated Security=true;MultipleActiveResultSets=true;",
+                    //"Data Source=AMIN-LAPTOP\\SQLEXPRESS;Initial Catalog=IMDB_DB;Integrated Security=true;MultipleActiveResultSets=true;",
+                    "Data Source=DESKTOP-0QSKDOG;Initial Catalog=IMDB_DB;Integrated Security=true;MultipleActiveResultSets=true;",
                     b => b.MigrationsAssembly("IMDB.DataLayer")),
                     ServiceLifetime.Transient
             );
